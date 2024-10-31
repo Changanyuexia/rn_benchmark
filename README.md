@@ -16,7 +16,7 @@ The baseline/ provides models and scripts to serve for the tasks within this dat
 
 Baseline models include: BART, T5
 
-LLM models include: Llama3.1, mistral-v0.3, Qwen. We refer to the framework from https://github.com/hiyouga/LLaMA-Factory to run LLMs.
+LLM models include: Llama3.1, mistral-v0.3, Qwen. 
 
 
 Results
