@@ -1,35 +1,40 @@
-# rn_benchmark_dataset
+# CommitsSum Dataset
 
-Dataset Overview
+## Dataset Overview
 
-The rn_benchmark_dataset supports three distinct release note generation tasks:
+The CommitsSum benchmark dataset supports three distinct release note generation tasks:
 
-commits2sum: Generates release notes from commit messages.
+- **commits2sum**: Generates release notes from commit messages.
+- **tree2sum**: Generates release notes using commit tree information.
+- **diff2sum**: Generates release notes based on code differences.
 
-tree2sum: Generates release notes using commit tree information.
+## Baseline Models
 
-diff2sum: Generates release notes based on code differences.
+Models and scripts for the dataset tasks are located in the `baseline/` directory. The baseline models include:
+- BART
+- T5
 
-Baseline Models
+LLM models include:
+- Llama3.1
+- mistral-v0.3
+- Qwen
 
-The baseline/ provides models and scripts to serve for the tasks within this dataset. 
+## Results
 
-Baseline models include: BART, T5
+The `results/` directory contains the human evaluation results.
 
-LLM models include: Llama3.1, mistral-v0.3, Qwen. 
+- `eval.py`: A script for measuring model performance using metrics such as BLEU-4, ROUGE-L, and METEOR.
 
+## Getting Started
 
-Results
+### Download the Dataset
 
-The results/ directory contains the human evaluation results.
+Download and unzip the dataset from the `dataset/` directory. We support the sample data here.
 
-eval.py: script for measuring model performance using metrics such as BLEU-4, ROUGE-L, and METEOR.
+### Run Baselines
 
+Use the provided scripts in `baseline/` to reproduce the baseline results. Below is an example instruction to run baselines. Note that you need to download the model BART from the official site.
 
-Getting Started
+```bash
+python3 baselines/BART/run.py -t dataset/diff_rn/train.csv -d dataset/diff_rn/val.csv -e dataset/diff_rn/test.csv -ms model/BART/diff_rn -s result/BART/diff_rn -epoch 5
 
-Download the Dataset: Download and unzip the dataset from dataset/.
-
-Run Baselines: Use the provided scripts in baseline/ to reproduce the baseline results.
-
-Run LLMs: using https://github.com/hiyouga/LLaMA-Factory to run Llama3.1, mistral-v0.3, Qwen.
