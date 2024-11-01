@@ -8,6 +8,20 @@ The CommitsSum benchmark dataset supports three distinct release note generation
 - **tree2sum**: Generates release notes using commit tree information.
 - **diff2sum**: Generates release notes based on code differences.
 
+## Directory Structure
+
+### data_collection
+
+Contains scripts and utilities for fetching tags, release notes, and commit data from repositories. 
+
+### clean
+
+Includes scripts for cleaning and preprocessing the release notes and commit data. 
+
+### dataset
+
+Includes each dataset for model evaluation across three tasks
+
 ## Baseline Models
 
 Models and scripts for the dataset tasks are located in the `baseline/` directory. The baseline models include:
@@ -37,4 +51,3 @@ Use the provided scripts in `baseline/` to reproduce the baseline results. Below
 
 ```bash
 python3 baselines/BART/run.py -t dataset/diff_rn/train.csv -d dataset/diff_rn/val.csv -e dataset/diff_rn/test.csv -ms model/BART/diff_rn -s result/BART/diff_rn -epoch 5
-
