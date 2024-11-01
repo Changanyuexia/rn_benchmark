@@ -10,13 +10,17 @@ The CommitsSum benchmark dataset supports three distinct release note generation
 
 ## Directory Structure
 
-### data_collection/
+### data_collection
 
-Contains scripts and utilities for fetching tags, release notes, and commit data from repositories. This directory is crucial for building the initial dataset used in the tasks.
+Contains scripts and utilities for fetching tags, release notes, and commit data from repositories. 
 
-### clean/
+### clean
 
-Includes scripts for cleaning and preprocessing the release notes and commit data. This step ensures data quality and consistency before it's used in modeling tasks.
+Includes scripts for cleaning and preprocessing the release notes and commit data. 
+
+### dataset
+
+Includes each dataset for model evaluation across three tasks
 
 ## Baseline Models
 
