@@ -9,7 +9,7 @@ The CommitsSum benchmark dataset supports three distinct release note generation
 - **diff2sum**: Generates release notes based on code differences.
 
 ## Directory Structure
-requirement.txt includes the enviroment packages.
+requirement.txt includes the environment packages.
 
 ### data_collection
 
