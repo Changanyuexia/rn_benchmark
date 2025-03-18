@@ -52,3 +52,5 @@ Use the provided scripts in `baseline/` to reproduce the baseline results. Below
 
 ```bash
 python3 baselines/BART/run.py -t dataset/diff_rn/train.csv -d dataset/diff_rn/val.csv -e dataset/diff_rn/test.csv -ms model/BART/diff_rn -s result/BART/diff_rn -epoch 5
+
+For fine-tuning and inference with large language models (LLMs), we utilize the framework provided by https://github.com/hiyouga/LLaMA-Factory.
