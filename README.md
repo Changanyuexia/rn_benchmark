@@ -19,7 +19,7 @@ Contains scripts and utilities for fetching tags, release notes, and commit data
 
 Includes scripts for cleaning and preprocessing the release notes and commit data. 
 
-### dataset
+### data
 
 Includes each dataset for model evaluation across three tasks
 
@@ -36,21 +36,17 @@ LLM models include:
 
 ## Results
 
-The `results/` directory contains the human evaluation results.
+The `results/` directory contains all fine-tuning and few-shot results across three tasks.
 
 - `eval.py`: A script for measuring model performance using metrics such as BLEU-4, ROUGE-L, and METEOR.
 
 ## Getting Started
 
-### Download the Dataset
+### Download the Data
 
-Download and unzip the dataset from the `dataset/` directory. We support the sample data here.
+Download and unzip the dataset from the `data/` directory. We support the sample data here.
 
-### Run Baselines
-
-Use the provided scripts in `baseline/` to reproduce the baseline results. Below is an example instruction to run baselines. Note that you need to download the model BART from the official site.
-
-```bash
-python3 baselines/BART/run.py -t dataset/diff_rn/train.csv -d dataset/diff_rn/val.csv -e dataset/diff_rn/test.csv -ms model/BART/diff_rn -s result/BART/diff_rn -epoch 5
-```
-For fine-tuning and inference with large language models (LLMs), we utilize the framework provided by https://github.com/hiyouga/LLaMA-Factory.
+### Run experiments
+we provide job_bart.sh and job_t5.sh for fine-tuning with bart and t5 across three tasks.
+For fine-tuning with LLMs including Qwen2.5-7B, LLaMA3.1-8B, and Mistral-8B, we utilize the framework provided by https://github.com/hiyouga/LLaMA-Factory.
+And run_infer_all_tasks.sh is for few-shot with LLMs across three tasks.
