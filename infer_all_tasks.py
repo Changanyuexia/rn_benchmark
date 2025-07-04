@@ -370,7 +370,6 @@ def main():
         enforce_eager=True,
     )
 
-    # 新增：diff_rn 只跑0-shot，其余任务全shot
     # for task_name in ["graph_rn", "rn", "diff_rn"]:
     #     if task_name == "diff_rn":
     #         shots = [0]
