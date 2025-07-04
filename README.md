@@ -19,38 +19,44 @@ Contains scripts and utilities for fetching tags, release notes, and commit data
 
 Includes scripts for cleaning and preprocessing the release notes and commit data. 
 
-### dataset
+### data
 
 Includes each dataset for model evaluation across three tasks
 
-## Baseline Models
+## Models
 
-Models and scripts for the dataset tasks are located in the `baseline/` directory. The baseline models include:
+Fine-tuned models including
 - BART
 - T5
+- Qwen2.5-7B https://huggingface.co/Qwen/Qwen2.5-7B-Instruct
+- Ministral-8B https://huggingface.co/mistralai/Ministral-8B-Instruct-2410
+- Llama3.1-8B https://huggingface.co/meta-llama/Llama-3.1-8B-Instruct
+  
+Few-shot models including
+- Qwen2.5-7B https://huggingface.co/Qwen/Qwen2.5-7B-Instruct
+- Ministral-8B https://huggingface.co/mistralai/Ministral-8B-Instruct-2410
+- Llama3.1-8B https://huggingface.co/meta-llama/Llama-3.1-8B-Instruct
+- Mistral-22B https://huggingface.co/mistralai/Mistral-Small-Instruct-2409
+- Qwen2.5-32B https://huggingface.co/Qwen/Qwen2.5-32B-Instruct
+- llama3.3-70B https://huggingface.co/meta-llama/Llama-3.3-70B-Instruct
+- Qwen2.5-72B https://huggingface.co/Qwen/Qwen2.5-72B-Instruct
 
-LLM models include:
-- Llama3.1
-- mistral-v0.3
-- Qwen
 
 ## Results
 
-The `results/` directory contains the human evaluation results.
+The `results/` directory contains all fine-tuning and few-shot results across three tasks.
 
 - `eval.py`: A script for measuring model performance using metrics such as BLEU-4, ROUGE-L, and METEOR.
 
 ## Getting Started
 
-### Download the Dataset
+### Download the Data
 
-Download and unzip the dataset from the `dataset/` directory. We support the sample data here.
+Download and unzip the dataset from the `data/` directory. We support the sample data here.
 
-### Run Baselines
+### Run experiments
+We provide job_bart.sh and job_t5.sh for fine-tuning with bart and t5 across three tasks.
 
-Use the provided scripts in `baseline/` to reproduce the baseline results. Below is an example instruction to run baselines. Note that you need to download the model BART from the official site.
+For fine-tuning with LLMs including Qwen2.5-7B, LLaMA3.1-8B, and Mistral-8B, we utilize the framework provided by https://github.com/hiyouga/LLaMA-Factory.
 
-```bash
-python3 baselines/BART/run.py -t dataset/diff_rn/train.csv -d dataset/diff_rn/val.csv -e dataset/diff_rn/test.csv -ms model/BART/diff_rn -s result/BART/diff_rn -epoch 5
-```
-For fine-tuning and inference with large language models (LLMs), we utilize the framework provided by https://github.com/hiyouga/LLaMA-Factory.
+And run_infer_all_tasks.sh is for few-shot with LLMs across three tasks.
