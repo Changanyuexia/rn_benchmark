@@ -8,5 +8,5 @@
 source ~/.bashrc
 conda activate LLM
 
-python3 src/T5/run.py -t rn_benchmark/data/commit2sum/train.csv -d rn_benchmark/data/commit2sum/val.csv -e rn_benchmark/data/commit2sum/test.csv -ms model/T5/rn -s rn_benchmark/result/T5/fine-tune/commit2sum -epoch 3
+python3 src/T5/run.py -t rn_benchmark/data/commit2sum/train.csv -d rn_benchmark/data/commit2sum/val.csv -e rn_benchmark/data/commit2sum/test.csv -ms model/T5 -s rn_benchmark/result/T5/fine-tune/commit2sum -epoch 3
 

@@ -8,5 +8,5 @@
 source ~/.bashrc
 conda activate LLM
 
-python3 src/BART/run.py -t rn_benchmark/data/commit2sum/train.csv -d rn_benchmark/data/commit2sum/val.csv -e rn_benchmark/data/commit2sum/test.csv -ms model/BART/rn -s rn_benchmark/result/BART/fine-tune/commit2sum -epoch 3
+python3 src/BART/run.py -t rn_benchmark/data/commit2sum/train.csv -d rn_benchmark/data/commit2sum/val.csv -e rn_benchmark/data/commit2sum/test.csv -ms model/BART -s rn_benchmark/result/BART/fine-tune/commit2sum -epoch 3
 
