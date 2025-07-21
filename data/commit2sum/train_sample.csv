@@ -1,0 +1,1000 @@
+commits,release
+"Release procedure notes. Would be better if this lived on 11ty.io but it’s going here for now.
+Fixes, fixes
+v0.8.1","Eleventy is a Simpler Static Site Generator.
+v0.8.1 Documentation
+Support Eleventy:
+Starring us on GitHub! This will increase our project’s visibility on staticgen.com, a big giant list of static site generators.
+Follow us on Twitter @​eleven_ty!
+Join 14 other lovely people and become an Eleventy Open Collective Supporter!
+Install
+Install to your Local project (preferred): npm install @11ty/eleventy
+Already installed in your local project? Upgrade your version: npm update @11ty/eleventy
+Want to install globally? npm install -g @11ty/eleventy
+Already installed globally? Upgrade your Global version: npm update -g @11ty/eleventy
+Read more about local versus global installation
+Changelog
+Bug fixes
+Eleventy was not paginating correctly with data: collections Fixes
+Eleventy was not paginating correctly with data: collections.all Fixes
+NPM Audits
+None
+Dependency Major Release Bumps
+None
+Administration
+Issues fixed in v0.8.1 Milestone
+All code changes from v0.8.0 to v0.8.1
+Code coverage stats for v0.8.1"
+"Update CHANGELOG.md
+backup: fix restore erroring due to closed reader
+activity: fix ip validity check ()
+Update CHANGELOG.md","Fixed
+Backups being restored from remote storage (s3) erroring out due to a closed stream.
+Fix IP validation logic for activity logs filtering out valid IPs instead of invalid IPs
+SHA256 Checksum"
+"New coverage stats
+Adds tests for
+Add collections.all refs to tests for
+Fixes
+Had to remove this test for Windows. Not sure why it’s there since path.resolve requires String arguments in the spec and errors (correctly) on Windows when undefined is passed in.
+Assist for
+inputDir passed to TemplatePassthrough
+Fixes
+Allows eleventy version checking and errors in downstream projects.
+
+eleventyConfig.versionCheck(""v0.3.1"")
+Fixes.
+Adds tests for.
+Ensures `TemplatePassthrough` target’s subdirectory structure is retained.
+Fixes - Prevent partial matches when filtering tag(s).
+Test for
+Fixes
+Couple more tests for
+Fixes
+v0.3.1","Eleventy is a simpler Static Site Generator!
+https://www.11ty.io/
+Getting Started Quick Guide
+Support Eleventy by starring us on GitHub! This will increase our project’s visibility on staticgen.com, a big giant list of static site generators.
+Changelog
+Update .eleventy.js Configuration during --watch and Eleventy will reload everything for you transparently:
+Gets the test suite passing on Windows 10 :
+Fixes a bug with Passthrough Copy files and input directories that were not ""."":. Thanks @Wilto!
+Adds an easy way to namespace plugins (a group of filters, tags, helpers, collections, etc) with the Configuration API:
+Fixes a bug with collections and tags when tags were assigned as a string in front matter: tags: mytag. Thanks @Wilto!
+Fixes a bug with templateEngineOverride and permalink adding markdown paragraphs.
+Milestone
+Bugs fixed in Milestone
+Dependency semver Major Version Upgrades:
+None"
+"Update CHANGELOG.md
+[security] enforce process limits at a per-container level to avoid abusive clients impacting other instances
+Apply container limits to install containers, defaulting to minimums if the server's resources are set too low
+Update CHANGELOG.md","Added
+[security] Adds support for limiting the total number of pids any one container can have active at once to prevent malicious users from impacting other instances on the same node.
+Server install containers now use the limits assigned to the server, or a globally defined minimum amount of memory and CPU rather than having unlimited resources.
+SHA256 Checksum"
+"Update CHANGELOG.md
+Correctly determine name for archive files when decompressing; closes pterodactyl/panel
+Update CHANGELOG.md","Fixed
+Fixes a bug that would cause the file unarchiving process to put all files in the base directory rather than the directory in which the files should be located.
+SHA256 Checksum"
+"Version bump (1.5.0) ()
+Update Turkish translation ()
+Update automatically ui/client version
+Updated useragent
+Cosmetic changes
+Changed key pair id
+Improved some data
+Add challenge data to manifest request (only ARM devices)
+Use a single loop
+Simplified get_metadata and VideoId derive_parent
+Version bump (1.5.1) ()","Implemented fix/workaround to get resolutions until to 1080p with ARM devices
+Updated translations tr"
+"Couple of missed renames.
+Link was wrong.
+v0.2.2","Installation
+npm install --save-dev @11ty/eleventy
+WARNING npm package name has been renamed to use the @11ty scope. Install using @11ty/eleventy. Previous version (eleventy-cli) is now deprecated (but still works as is). Sorry, y’all—for proper code organization and future maintenance I needed to pull that bandaid off as soon as possible.
+Links
+README
+List all issues closed
+Release notes
+Tagged content and collections! Add a tags list to your front matter and use the collections.tagName variables in your data. Read more about Collections and Tags
+Adds friendly warning message if you don’t meet minimum Node version requirement (version 8+)
+Worth noting explicitly that unlike Jekyll, files and directories that start with an underscore are processed.
+Adds continuous integration with Travis CI
+A little help from my friends
+With a pull request from @aakoch—thanks!
+For our version naming pattern, major and minor versions are combined with https://en.wiktionary.org/wiki/eleventy"
+"Update CHANGELOG.md
+parser(yaml): fix issues
+
+Closes https://github.com/pterodactyl/panel/issues/4236
+Closes https://github.com/pterodactyl/wings/pull/139
+rpm: update to 1.7.0 ()
+it's to its ()
+backups: add an option to change gzip compression level ()
+environment(docker): set outgoing ip correctly ()
+
+Closes https://github.com/pterodactyl/panel/issues/3841
+Update README.md","Fixed
+YAML parser has been updated to fix some strange issues
+Added
+Added Force Outgoing IP option for servers to ensure outgoing traffic uses the server's IP address
+Adds an option to control the level of gzip compression for backups
+SHA256 Checksum"
+"Version bump (0.16.0) ()
+Fix typo
+Update translation jp kr ()
+
+* Update KR stranslation
+
+* Update ko_kr/ja_jp
+
+* done for main user interface
+* WIP for Settings
+
+* Update translation for JP/KR
+
+* Update Settings
+
+* Still working on
+
+* Update KR/JP translation
+
+* KR/JP Translation - 0.16.0
+
+* Fix typo
+
+* Add ja ko to language tag in addon.xml
+Added SPDX license identifier and copyright
+
+Only to python files as required from addon-checker
+Fixed wrong docstrings
+Fixed unicodedecode error when using non ascii char on inputdialog
+Fix for flake8
+Update hungarian translation ()
+Update pt_br strings.po 12/2/2019 ()
+
+* Update pt_br strings.po 12/2/2019
+
+Added minor corrections to the translation, like correct use of gender in portuguese and alters on forms of expression used in Portugal to the forms of expression used in Brazil.
+
+* Update strings.po
+Add Python 3.5 testing support
+Fixed unicodedecode error on android device
+
+Beelink GT1mini-2
+in the ro.product.model instead of number 2 has a special char and this is the cause of the errors
+Some fixes for non default Skins
+Updated fr translation
+Improved and fixed gui path
+Override default timeout also in ipc over http
+Add compare dict with excluded keys option
+Fixed possible cases of fake data in player_state
+Recognition of streams between episodes only for Kodi 19
+
+This also fix some other problems:
+-issue that resetting of the settings saved at db, caused by false data returned by player_status
+-double db saving of settings caused by the delay by the Kodi player to perform the restored data
+-in some cases incorrect management of the workaround used for forced subtitles, which could be applied even if the subtitle setting on Kodi settings wasn't actually on 'Forced only'
+Code climate update config ()
+code climate: avoid too many return statements
+code climate: number of line exceeded
+code climate: pep8 indent
+code climate: exceeded arguments
+Raised level of cognitive complexity
+
+This project requires a higher complexity
+Moved parental control data extraction to website
+code climate: refactor nfsession
+code climate: refactor library
+prefetch_login is not as internal method
+Subtitle property adj for future versions of InputStream Adaptive
+
+-allow to show/set multiple property to each subtitle track
+Fixed stream continuity after 34f3b70481df30d40b27c2892f64a7
+Fixed wrong content type to lists of movies
+Workaround to intercept skin widget calls
+
+This freeze the add-on instance until service starts,
+this is not a safe solution because depends on which window is open,
+for now there is no better solution
+Allow to distinguish dolby atmos streams
+Updated user agent for windows
+Updated some manifest parameters
+Changed library context menu behaviour
+
+Allow exports a single season in manual mode library update
+Do not allow library operations to the single episodes
+Version bump (0.16.1)","Allowed to export individual seasons to the library (manual mode)
+Dolby atmos audio streams are now specified (Kodi 19)
+Added workaround to fix skin widgets
+Handled subtitle properties for next version of InputStream Adaptive
+Introduced accurate handling of subtitles (Kodi 19)
+Improved handling of subtitles (Kodi 18)
+Improved return to main page from search dialog
+Improved cancel login dialog after the logout
+Improved timeout on IPC over HTTP
+Fixed an issue that showed the wrong label while browsing movies·
+Fixed ParentalControl/Rating GUI on custom skins·
+Fixed an issue that cause unicodedecode error on some android devices
+Fixed an issue that can cause unicodedecode error in user/password
+Added japanese language
+Updated kr, hu, pt_br, fr
+Many improvements to the code"
+"fix slide link
+fix typos
+refactor examples
+update READMEs in examples
+update docs
+update docs
+fix typos in READMEs
+fix typos in quickstarts
+update
+update docs
+add random_state as argument to fit_predict
+update docs
+update READMEs about the data
+update README
+fix docstrings
+add new eval metric for ope
+run with new updates
+refactor estimators
+add random_state for seaborn.barplot
+rerun after new updates
+update docs
+update READMEs
+update
+add continuous reward option
+rerun after new updates
+add multiclass to bandit reduction
+refactor dataset module
+add obp.dataset.multiclass
+rerun with a new version
+fix some docstring inconsistencies
+update version","This release enhances the OBP package in the following ways.
+add some new contents to the obp document: https://zr-obp.readthedocs.io/en/latest/index.html
+In particular, you can use ""off-policy evaluation"" section as a textbook about this area
+add obp.dataset.MultiClassToBanditReduction class for handling multi-class classification datasets as bandit feedback
+this will allow researchers to run their synthetic experiments with some multi-class classification datasets easily
+relevant quickstart and example will be added to the repository soon
+add continuous reward option to obp.dataset.SyntheticBanditDataset
+add squared error (se) option for the evaluation of OPE with obp.ope.OffPolicyEvaluation
+fix some README and docstring inconsistencies
+refactor the dataset and ope modules"
+"Bump PID limit to 512 by default
+Update codeql-analysis.yml
+Fix environment variables with the same prefix being skipped unintentionally ()
+
+If you have two env variables (for example ONE_VARIABLE and ONE_VARIABLE_NAME) ONE_VARIABLE_NAME has prefix ONE_VARIABLE and will be skipped.
+
+Co-authored-by: Jakob <dev@schrej.net>
+installer: support 'start_on_completion' ()
+archive: fix socket files aborting backups
+change minimum go version to 1.16, add multiplatform docker image
+server(fs): keep file mode when extracting archive
+feat(logrotate): fix config with bad user
+
+fixes https://github.com/pterodactyl/panel/issues/3452
+docker: change final image from busybox to distroless
+
+This should resolve any issues with missing ca-certificates or tzdata.
+
+Fixes https://github.com/pterodactyl/panel/issues/3442
+docker: fix build
+break everything
+
+- upgrade dependencies
+- run gofmt and goimports to organize code
+- fix typos
+- other small tweaks
+downloader: fix internal range check
+Perhaps don't break _everything_ on people.
+Add deprecation flag on the directory, don't remove it entirely
+Update CHANGELOG.md","Fixed
+Environment variable starting with the same prefix no longer get merged into a single environment variable value (skipping all but the first).
+The start_on_completion flag for server installs will now properly start the server.
+Fixes socket files unintentionally causing backups to be aborted.
+Files extracted from a backup now have their preior mode properly set on the restored files, rather than defaulting to 0644.
+Fixes logrotate issues due to a bad user configuration on some systems.
+Updated
+The minimum Go version required to compile Wings is now go1.16.
+Deprecated
+Both of these deprecations will be removed in Wings@2.0.0.
+The Server.Id() method has been deprecated in favor of Server.ID().
+The directory field on the /api/servers/:server/files/pull endpoint is deprecated and should be updated to use root instead for consistency with other endpoints.
+SHA256 Checksum"
+"Version bump (1.3.1)
+Add Plot fallback to skin not support PlotOutline
+Fixed UnicodeWarning error
+
+globals.py:225: UnicodeWarning: Unicode equal comparison failed to convert both arguments to Unicode - interpreting them as being unequal
+                                              if path not in sys.path:
+Fixed unicodedecode error
+Close socket safe way
+Fixed pylint errors
+Update spanish translation [es_ES] ()
+
+* Add files via upload
+
+* Add files via upload
+Updated sv-se translation
+modelgroup must always be in capital letters
+Removed Title property simplifies things
+Fixed upnext regression
+Fixed UnicodeDecodeError on chinese OS and improved error output
+Version bump (1.3.2) ()","Fixed some issues on chinese systems
+Fixed errors on loading lists
+Fixed missing plot in some skins
+Fixed ESN generation (lower case issue)
+Fixed UpNext regressions
+Updated translations es, sv-se"
+"Update CHANGELOG.md
+Prevent excessive memory usage when large lines are sent over the console
+Quick note about the importance of the copy
+Add test for scan reader
+Sink pool cleanup and organization; better future support when we add more sinks
+Add test coverage for sinks; prevent panic on nil channels
+Improve power lock logic ()
+Ensure a file uploaded using SFTP is properly owned at the end; closes pterodactyl/panel
+Replace encoding/json with goccy/go-json for cpu and memory usage improvement
+
+This new package has significant better resource usage, and we do a _lot_ of JSON parsing in this application, so any amount of improvement becomes significant
+Re-implement ContainerInspect call in Wings to use more performant json encoder ()
+
+* First pass at re-implementing the Docker inspect call to use more efficient json parser
+
+* Improve logic
+Update CHANGELOG.md
+Reduce the size of the buffered reader to improve CPU performance","Fixed
+Rewrote handler logic for the power actions lock to hopefully address issues people have been having when a server crashes and they're unable to start it again until restarting Wings.
+Fixes files uploaded with SFTP not being owned by the Pterodactyl user.
+Fixes excessive memory usage when large lines are sent through the console event handler.
+Changed
+Replaced usage of encoding/json throughout the codebase with a more performant encoder (goccy/go-json) to hopefully improve overall performance for JSON operations.
+Added custom ContainerInspect function to handle direct calls to Docker's CLI and make use of the new JSON encoder logic. This should reduce the total number of memory allocations and be more performant overall in a hot pathway.
+SHA256 Checksum"
+"Update CHANGELOG.md
+server(filesystem): fix file names when extracting archives ()
+dockerfile: update to go 1.20.10 ()
+sftp: log ip on inbound connection failure
+ci: update go to 1.20.11 and 1.21.4
+go: update dependencies
+go: update dependencies
+ci: update go to 1.20.12 and 1.21.5
+ci: actions/upload-artifact v3 -> v4
+ci(push): only upload artifacts built with go 1.20.12
+Update README.md
+go: update dependencies
+
+Signed-off-by: Matthew Penner <me@matthewp.io>
+config: fix docker Go API deprecation
+
+Signed-off-by: Matthew Penner <me@matthewp.io>
+ci: update to go 1.21.8 and 1.22.1
+
+Signed-off-by: Matthew Penner <me@matthewp.io>
+server(filesystem): rebuild everything imaginable
+
+This wonderfully large commit replaces basically everything under the
+`server/filesystem` package, re-implementing essentially everything.
+
+This is related to
+https://github.com/pterodactyl/wings/security/advisories/GHSA-494h-9924-xww9
+
+If any vulnerabilities related to symlinks persist after this commit, I
+will be very upset.
+
+Signed-off-by: Matthew Penner <me@matthewp.io>
+Update CHANGELOG.md
+
+Signed-off-by: Matthew Penner <me@matthewp.io>
+Update README.md
+
+Signed-off-by: Matthew Penner <me@matthewp.io>","Changed
+Release binaries are now built with Go 1.21.8
+Updated Go dependencies
+Fixed
+SHA256 Checksum"
+"ASD-974 - Handle occasional Amazon authentication popup auto-closing,
+MFTF 2.3/2.4
+ASD-974 - Handle popup remaining open with no actionable items
+ASD-974 - Remove invalid test action for MFTF/Magento 2.4.3
+ASD-1048 - Remove references to Zend classes removed in Magento 2.4.6, update requirements for PHP 8.2
+ASD-1020 - (wip) Testing conditions for second screen behavior
+ASD-1020 - (wip) Better react to behavior of popup second screen
+ASD-1020 - MFTF tweaks for address change/sign in failures
+ASD-1020 - Revert MFTF changes (wait for Amazon loader)
+ASD-1020 - Remove wait for Amazon loader from popup helper
+ASD-1020 - Amazon Sign In fix for 2.4 MFTFs
+ASD-1020 - Remove doubled click on AP Sign In button (MFTF 2.4)
+ASD-1049 - Decrement coupon usages when cancelling order due to failure
+of completeCheckoutSession
+Version bump to 5.14.2 and update changelog","Removed usage of Zend libraries and updated requirements for PHP 8.2/Magento 2.4.6 compatibility
+Fixed issue where coupon usage is not properly decremented when placing order fails"
+"Version bump (0.16.2)
+Cookie debug output
+Forgot to update description
+Do not close output stream
+
+This prevent the error:
+ValueError: I/O operation on closed file
+from the http server
+Added sendSignal non-blocking workaround
+Using non-blocking send signal
+fix: sqlite3 library deadlock
+fix flake8
+Updated message request info
+Added user ID token authentication
+Handle http 401 error
+Refresh session data at service startup to update authURL
+Added OrderedDict in convert_to_string
+Fixed servers shutdown
+
+shutdown() must be done before server_close() in order to stop serve_forever
+
+this fix: [WinError 10038] An operation was attempted on something that is not a socket
+Removed ugly dependency workaround
+Add carriage return to the supplemental message
+Listing menu simplified a bit
+Added IS_ADDON_FIRSTRUN
+
+Can be used to avoid to execute parts of code on subsequent addon
+invocations and so optimize a bit the startup time.
+
+The value will remain stored thanks to reuseLanguageInvoker,
+but if the addon is updated or disabled and so reenabled, this value will
+also be reset.
+Show sceduling info only after setup
+Check addon upgrade only at first run
+Initialize databases only at first startup
+
+*for MySQL the check is performed in any case
+flake8 fixes
+Added folder exists method
+Fixed edge case of getDirectory error
+
+This fix the error of:
+ERROR: XFILE::CDirectory::GetDirectory - Error getting ...
+due to missing delimiter at the end of path
+Removed unused mkdir data path
+
+It never worked because data_path is a ""special"" address,
+so it always generated an exception,
+and in case the folder is created by init cache
+Saves the current kodi profile name as global
+
+-Avoid multiple rpc requests
+-Avoid problems with the use of the addon after rename the current kodi profile
+Fixed unicodedecode error on py2
+ndb file cache no more used
+Cache class changes
+
+-Removed global hack
+-ttl read directly from global settings
+-General cleanup
+Version bump (0.16.3)","Fixed an issue that causing addon freeze on export/update to library
+Fixed an regression issue that causing http error 401
+Fixed an issue that causing unicodedecode error at startup
+Fixed an issue that in some cases prevented the export of a tv show season
+Generally optimized addon speed
+Many improvements to the code"
+"Update README.md
+cmd(configure): fix panel url not being set
+
+Fixes https://github.com/pterodactyl/panel/issues/5087
+server(filesystem): handle individual compressed files ()
+Update README.md
+Update CHANGELOG.md","Fixed
+Auto-configure not working ()
+Individual files unable to be decompressed ()
+SHA256 Checksum"
+"Update CHANGELOG.md
+Update README.md
+Update README.md
+go: update dependencies
+
+This updates the docker client to include the fix added with
+https://github.com/moby/moby/pull/45962 which solves a breaking change
+to Go due to CVE-2023-29406.
+ci: ubuntu-22.04, go1.19.11, go1.20.6
+go: update dependencies
+Update CHANGELOG.md","Changed
+Updated Go dependencies (this resolves an issue related to http: invalid Host header with Docker)
+Wings is now built with go1.19.11
+SHA256 Checksum"
+"Adjusted amazon-core require deps
+
+By adding jquery/jquery-storageapi as a require dependency $.cookieStorage is always available. In some instances it is not available, depending on what scripts are used in any given instanc.e
+Title underlines have been to short
+Title underline fixed
+AMAZON-28: Removed admin layout file because all it contained was reference to non-existing css file
+AMAZON-16: Make sure URLs displayed are unique
+AMAZON-29: Admin version data added
+AMAZON-30: Charge on Order notification now uses success style instead of warning
+AMAZON-17: Add configuration option for ""Store Name""
+AMAZON-31: Added a feature to block Amazon checkout widget when quote grand total is 0
+AMAZON-31: Shipping information plugin now ignores quote with grand total 0
+AMAZON-30: Card charge notification removed
+Updating supported versions of PHP per Magento documentation - http://devdocs.magento.com/guides/v2.1/install-gde/system-requirements-tech.html
+AMAZON-31: Do not remove 'free' method in case it exists
+AMAZON-31: Restore original validation line
+AMAZON-29: Version info update
+AMAZON-38: Forces extension explicitly use built in modernizr plugin
+AMAZON-31: Fixed a condition that is no longer necessary
+AMAZON-38: Refix the Modernizr requirement with adding support for both v2 and v3 APIs
+AMAZON-29: Missing newline
+AMAZON-29: Comments, internationalisation
+AMAZON-43: Updated code safety, do not operate or order when payment != amazon
+i18n
+version bump
+updated installation instructions
+Update installation.rst
+
+Fix typo.
+Updated installation guide","This release incorporates:
+Enhancements
+Handling of orders with an order total of zero
+Display module version in administrative back-end
+Relaxation of Modernizr requirements, now accepts v2 and v3
+Improved support of Japanese names
+Removed disturbing message from checkout if capture on order placement is active
+Add store name configuration option
+Fixes
+Issue in CompleteOrder.php interfering with other payment options
+URLs did not respect store view configuration
+Removed obsolete admin layout file
+added missing dependency to jquery-storageapi"
+"Version bump (15.2)
+Updated request data
+Added instructions to limit resolution
+New Issue and Pull request templates
+Descriptions for the newbies..
+Fixed pull request template position
+Preparations
+
+This PR includes:
+- New Makefile targets for testing
+- A pylint configuration
+- A codeconv configuration
+- A tox configuration
+- Remove existing broken tests
+- Add Kodi stub files for integration tests
+- Add a simply run script to test the plugin
+- Improve addon.xml and README.md
+Fix fanart size and icon transparency
+
+https://github.com/CastagnaIT/plugin.video.netflix/issues/191#issuecomment-529259561
+Fix pylint and flake8 issues
+
+This is a set of fixes for known pylint and flake8 issues.
+The goal is to enable pylint and tox by default so new code
+is properly tested and conforms to pylint and flake8 checks.
+Separate run tests in Makefile
+Fixes
+Fix Fanart resolution and icon.png (again)
+First integration tests
+
+This is the first set of integration tests.
+Improve LibraryUpdateService: wait for settings to be written
+Fix library.py _get_item when source is ""special://""
+
+If the item path is ""special://"" we need to search both translated and untranslated paths in the kodi library, because it's possible to add a ""special://"" path to sources
+https://github.com/CastagnaIT/plugin.video.netflix/issues/199#issuecomment-529958007
+Removed mac uuid in favour of device uuid
+
+This fixes problems with newer androids 9/10
+that have random mac address and also with apple devices
+Use randomized uuid with library autoupdate
+Small fixes after pylint/flake cleanup
+Fix perpetual_path_request after Pylint fixes
+Add more Dutch translations and fix English spelling
+Version bump (0.15.3)","Initial conversion to python 3
+Initial integration tests
+Implemented device uuid to avoid always asking credentials
+Fixed a problem when library source is special:// or a direct path
+Fixed run library update on slow system like RPI
+Updated dutch language
+Minor fixes"
+"Update CHANGELOG.md
+config: add option to disable panel config updates ()
+build(deps): bump golang.org/x/text from 0.3.7 to 0.3.8 ()
+
+Bumps [golang.org/x/text](https://github.com/golang/text) from 0.3.7 to 0.3.8.
+- [Release notes](https://github.com/golang/text/releases)
+- [Commits](https://github.com/golang/text/compare/v0.3.7...v0.3.8)
+
+---
+updated-dependencies:
+- dependency-name: golang.org/x/text
+  dependency-type: indirect
+...
+
+Signed-off-by: dependabot[bot] <support@github.com>
+Co-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>
+build(deps): bump golang.org/x/net ()
+
+Bumps [golang.org/x/net](https://github.com/golang/net) from 0.0.0-20221004154528-8021a29435af to 0.7.0.
+- [Release notes](https://github.com/golang/net/releases)
+- [Commits](https://github.com/golang/net/commits/v0.7.0)
+
+---
+updated-dependencies:
+- dependency-name: golang.org/x/net
+  dependency-type: indirect
+...
+
+Signed-off-by: dependabot[bot] <support@github.com>
+Co-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>
+server(filesystem): fix archiver path matching
+
+Closes https://github.com/pterodactyl/panel/issues/4630
+ci: update to go 1.19 and 1.20
+server(filesystem): fix archive test
+system: fix sink pool test
+go: update dependencies
+Update CHANGELOG.md","Added
+Added a config option to disable Wings config.yml updates from the Panel (ec6d6d8)
+Changed
+Wings is now built with Go 1.19.7
+Fixed
+Fixed archives containing partially matched file names (43b3496)
+SHA256 Checksum"
+"v0.3.3
+specify ejs on example
+Add per template times to output
+More caching, more speed.
+* Trying to use a shallow clone when creating collections instead of deep (for speed)
+* Adds eleventyConfig.setDynamicPermalinks and FRONT_MATTER.dynamicPermalink options to disable rendering of permalinks for speed
+Only show per ms numbers with more than 10 templates
+Default dynamicPermalinks to true, obvs
+Remove deep clone code
+Fixes
+Adds better `page` docs, including examples for
+Add version info to `fileSlug`.
+Add an EleventyExtensionMap to map from keys in templateFormats to file extensions.
+Add link to enhancement backlog
+Backlog link needs to include closed issues.
+Dry run language
+Refactor to prepare for
+We aren’t actually using copyTimes
+Re-runs on changes to both _includes and _data directories when --watching. Fixes
+Fixes. Now re-runs on changes to passthrough files/dirs
+Directory needs to exist for
+Test for
+Get rid of unnecessary static
+Rename class
+Switch to Browsersync for --serve (seamless reloads when watch finishes). Works transparently with `pathPrefix` to emulate the subdirectory specified in your config file. Smart reloads CSS files: 1. If they are in _includes, reload the entire page (css files included directly in <style>). 2. If they are anywhere else, injects them without reload.
+v0.3.4","Eleventy is a simpler Static Site Generator!
+https://www.11ty.io/
+Getting Started Quick Guide
+Support Eleventy by starring us on GitHub! This will increase our project’s visibility on staticgen.com, a big giant list of static site generators.
+Follow us on Twitter @​eleven_ty!
+Changelog
+Switches --serve mode to use browser-sync. Smarter reloads (and CSS) --serve automatically does a --watch (you don’t need both).
+--watch now works with passthrough copy files () AND data files ().
+Adds new page.fileSlug variable for easier clean permalinks ():
+More inputPath => fileSlug examples:
+2018-01-01-file.md       => file
+dir/file.md              => file
+Returns parent directory if an `index` template
+index.md                 => """" (empty)
+dir/index.md             => dir
+dir/2018-01-01-index.md  => dir
+Huge performance boost (switched an unnecessary deep clone to shallow)
+Milestone
+Bugs fixed in Milestone
+Dependency semver Major Version Upgrades:
+None"
+"ci: remove use of deprecated `::set-output`
+ci: cleanup
+ci(docker): fix latest tag
+ci: update go versions
+environment(docker): improve logging and stacks
+sftp: disable insecure protocols
+Ensure files are closed after they are done being used
+server(filesystem): fix Writefile being broken
+ci: update push-artifact action
+system: close Docker client once finished
+router: close body once finished
+router(transfer): decrease WaitForStop timeout
+router(transfer): throw error if server fails to stop
+activity: fix IP parsing, drop all columns with malformed ips
+Update CHANGELOG.md","Changed
+Release binaries are now built with Go 1.18.10
+Timeout when stopping a server before a transfer begins has been reduced to 15 seconds from 1 minute
+Removed insecure SSH protocols for use with the SFTP server
+Fixed
+Unnecessary Docker client connections being left open, causing a slow leak of file descriptors
+Files being left open in parts of the server's filesystem, causing a leak of file descriptors
+IPv6 addresses being corrupted by flawed port stripping logic for activity logs, old entries with malformed IPs will be deleted from the local SQLite database automatically
+A server that times out while being stopped at the beginning of a transfer no longer causes the server to become stuck in a transferring state
+SHA256 Checksum"
+"Version bump (0.15.5)
+Increased default cache ttl
+Fixed missing identifier in video_list_sorted
+Cleanup and improved speed of add/remove to mylist
+Fixed library full sync from '92 elements bug'
+Added menu to force mylist update
+Pylint fixes
+Added option to highlight titles contained in my list
+Updated Italian language
+Fixed wrong position of append kwarg value
+Catch a license error
+Check mastertoken validity only to a manifest request
+Added supplemental info about tvshow/movie
+Fixed purge cache
+
+wrong path of files
+Added lenght of trailer video
+Fixed InvalidVideoId error when play a trailer
+Removed unused customexportname settings
+Reworked settings general menu
+Reworked settings library menu
+Reworked settings expert menu
+
+this also add two new options to show/reset the ESN
+Fixed mixed languages of infolabels in cache
+
+Caused when there are multiple profiles in different languages
+Also childrens profiles now have a 'my list'
+Fixed multiplication suppl. info to plot
+Updated addon screenshots
+Do not check setting if enabled
+
+This check is not necessary becouse this function is executed by a
+settings action that depend from mylist_library_sync setting
+
+And causes the inability to start synchronization if
+mylist_library_sync is activated at the same time without close the
+settings screen
+Sync changes made to tvshows in my list from other apps
+Fixed wrong get_tvshows_id_list query
+Added notification to completed library sync
+Added owner/kids info to profiles descriptions
+Force to use owner account profile to sync mylist
+
+the authURL seems to specify also the profile used so for now allow
+synchronization only on the main profile
+
+in the future you can also implement an option to decide which profile
+to synchronize the mylist
+Enabled export NFOs on sync mylist to kodi library
+Some fixes to translations
+Updated italian translation
+AuthURL is changed while the profile change is executed
+
+Seem the cause of error:
+
+HTTPError: 401 Client Error: Unauthorized for url:
+https://www.------.com/api/shakti/v7bb27746/playlistop
+
+when try to add/remove to mylist after switching to another profile
+Clean and fixed generate esn
+
+now manufacturer string is limited to 5 char
+example with nvidia shield:
+ro.product.manufacturer = 'NVIDIA'
+ro.product.model = 'Shield android tv'
+ro.nrdp.modelgroup = 'SHIELDANDROIDTV'
+esn output:
+old: NFANDROID2-PRV-SHIELDANDROIDTV-NVIDIASHIELD=ANDROID=TV
+new: NFANDROID2-PRV-SHIELDANDROIDTV-NVIDISHIELD=ANDROID=TV
+Version bump (0.15.6)","Added customizable color to titles already contained in mylist
+Added menu to mylist menu to force update of the list
+Added trailers video length
+Added supplemental info to tvshow/movie plot (shown in green)
+Added add/remove to my-list also in childrens profiles
+Added owner/kids account profile infos to profiles menu items
+Added notification when library auto-sync is completed (customizable)
+Library auto-sync now take in account of changes made to mylist from other apps
+Library auto-sync now can export automatically NFOs
+Increased default cache ttl from 10m to 120m
+Improved speed of add/remove operations to mylist
+More intuitive settings menus
+Updated addon screenshots
+Fixed generate ESN on android
+Fixed ""Perform full sync"" setting now work without close settings window
+Fixed HTTPError 401 on add/remove to mylist
+Fixed cache on sorted lists
+Fixed library full sync when mylist have huge list
+Fixed wrong cache identifier
+Fixed videoid error when play a trailer
+Fixed purge cache that didn't delete the files
+Fixed mixed language of plot/titles when more profiles have different languages
+Other fixes"
+"Update CHANGELOG.md
+Improve support for block/mutex contention in pprof
+Fix panic condition when no response is returned
+Return context cancelations as a locker locked error
+Pass a context through to the start/stop/terminate actions
+Fix logic for context based environment stopping
+
+Uses dual contexts to handle stopping using a timed context, and also terminating the entire process loop if the parent context gets canceled.
+Add additional debug points to server start process
+Fix failing test
+Move the sink pool to be a shared tool
+Simplify the event bus system; address pterodactyl/panel
+
+If my debugging is correct, this should address pterodactyl/panel in its entirety by addressing a few areas where it was possible for a channel to lock up and cause everything to block
+Don't trigger a panic condition decoding event stats; closes pterodactyl/panel
+Remove unused function
+Check for error before prefix; fixes abandoned routine; closes pterodactyl/panel
+
+Due to the order of the previous logic in ScanReader, an error not caused by EOF would effectively get ignored since an error will always be returned with `isPrefix` equal to false, thus triggering the first break, and error checking is not performed beyond that point.
+
+Thus, canceling an installation process for a server while this process was running would hang the routine and cause the loop to run endlessly, even with a canceled context.
+Fix panic conditions","Fixed
+Fixes error that would sometimes occur when starting a server that would cause the temporary power action lock to never be released due to a blocked channel.
+Fixes a bug causing the CPU usage of Wings to get stuck at 100% when a server is deleted while the installation process is running.
+Changed
+Cleans up a lot of the logic for handling events between the server and environment process to make it easier to make modifications to down the road.
+Cleans up logic handling the StopAndWait logic for stopping a server gracefully before terminating the process if it does not respond.
+SHA256 Checksum"
+"Version bump (0.16.1)
+Update Dutch
+Updated es translation
+Update README.md
+
+Simplified some parts
+Removed per profile watched settings
+
+No longer required
+Language changes suggested by users
+Updated it, de translation
+Some python 3 fixes
+Add season number in infolabel to season items
+Updated pl translation
+Handled not available metadata
+Sqlite connections and multi threads a way to solve
+
+In the latest kodi builds a problem between shared connections between different threads has been highlighted, which was not present before or was present in a rare cases always on linux devices (RPI and some Android). I don't understand why the problem's only just come up now.
+
+This problem seem to be affected low power devices, can happen more easily than sqlite read/write with the same connection so causing side-effects to the sqlite module.
+
+The main problem is that sqlite doesn't really support shared connections by several different threads and mishandles multiple readings/writings at same time.
+Updated readme
+Properties must not be shared with multiple kodi profiles
+Get list of profiles by api
+Removed html parser from profile name
+Fixed missing profile on first login
+is_logged_in must not be internal method
+Corrected description
+Hidden SSL setting - developers only
+A hack way to speed up requests made by requests module
+
+This allows you to speed up the first request (made by requests module)
+about halving the time it takes to get a response
+
+With some devices/os you can see a significant improvement at the first start of the addon
+Version bump (0.16.2)","Improved add-on startup
+Improved loading of profiles list
+Added in expert setting a choice to speed up service or addon startup
+Fixed an issue that causing addon misbehaviour using multiple Kodi profiles
+Fixed an issue that causing addon breakage with sqlite connections
+Fixed some python 3 issues on Android
+Handled cases of metadata not available
+Permanently removed sharing Kodi videos settings between profiles
+Updated de, es, it translations
+Minor improvements"
+"Update README.md
+Minor changes to README.md and Beta callout
+Remove reliance on legacy config value being set
+Version bump
+Update changelog
+Version bump in readme
+Refer to CHANGELOG.md for release notes
+Add GH Issues link.
+Update README.md
+Update CHANGELOG.md
+Remove di entry for removed plugin","Same functionality as 5.0.0, but with a minor fix to remove a dependency on a Legacy configuration value being set.
+Please see and CHANGELOG.md for more information."
+"Made another commit to 0.11.0
+Adds afterBuild/beforeBuild events, adds argument to beforeWatch event to pass in the files that changed.
+v0.11.1","v0.11.1 Documentation
+Install or Upgrade
+Install to your local project: npm install @11ty/eleventy
+Already installed in your local project? Upgrade your version: npm update @11ty/eleventy
+Read more about local project versus global installation
+How can you support Eleventy?
+Star us on GitHub!
+Follow us on Twitter @​eleven_ty!
+Support us on Open Collective!
+Thank you to everyone that contributed code, documentation, answered questions, filed issues, said a kind word on Twitter
+The TL;DR List
+New Build Events
+afterBuild, beforeBuild and Changed Files argument passed to beforeWatch
+Documentation: https://www.11ty.dev/docs/events/
+Administration
+Issues fixed in v0.11.1 Milestone
+All code changes from v0.11.0 to v0.11.1"
+"Update CHANGELOG.md
+
+Signed-off-by: Matthew Penner <me@matthewp.io>
+server(filesystem): fix archive creation with ignore
+
+Signed-off-by: Matthew Penner <me@matthewp.io>
+server(filesystem): fix archives in subdirectories
+
+When creating an archive starting from a subdirectory instead of the
+root of a server's filesystem, the walker would treat the paths as if
+they where relative to the parent of the subdirectory, instead of as
+descendants of the subdirectory.
+
+Fixes https://github.com/pterodactyl/panel/issues/5030
+Update CHANGELOG.md
+
+Signed-off-by: Matthew Penner <me@matthewp.io>","Fixed
+Backups missing content when a .pteroignore file is used
+Archives originating from a subdirectory not containing any files ()
+SHA256 Checksum"
+"Version bump (1.12.11) ()
+Fix to version suffix added from kodi
+Version bump (1.12.12) ()","REPOSITORY CHANGED: The repository has been changed, to receive future updates
+the add-on will try update it automatically to new v2.0, if for some reason this not
+happens you can update it manually by downloading: repository.castagnait-2.0.0.zip
+from Github Readme: https://github.com/CastagnaIT/plugin.video.netflix
+Fix broken addon startup due to update error"
+"ASD-1193 adds default pending payment order status for express checkout
+ASD-1193 sets processing order state anytime charge status is authorized or captured
+ASD-1193 adds cron cleanup base files - wip
+ASD-1193 adds open state cleanup logic
+ASD-1193 adds canceled state cleanup logic
+ASD-1193 phpcs fixes
+ASD-1193 explicitely sets order status only when successful
+ASD-1193 adds handling for pre-auth failures, and capture transactions
+ASD-1193 phpcs fixes
+ASD-1193 changes chargeId check to be regex uuid
+ASD-1193 polishes stalled order identification
+ASD-1193 renames CleanUp casing typo
+ASD-1193 phpcs fixes
+ASD-1193 - update to 30 minutes before cleaning up transactions
+ASD-1193 - code review improvements
+ASD-1193 - use correct log message
+ASD-1193 - add log prefix, adjust behavior when session Open to always attempt to complete checkout session
+release version update
+ASD-1193 - couple cleanup items
+Allow php8.3 support in composer.json
+Update requirejs-config.js (Issue)
+
+Fixes Amazon_Pay/js/amazon-product-add.js 404 (Not Found)
+Update changelog for release
+ASD-1193 - set payment status to processing so it can be invoiced
+ASD-1193 - handle charge on order / automatic config that produced invoice could not be created error
+phpcs changes","Changed php allowed versions to include 8.3
+Fixed issue where orders could be processing but not capture payment
+Fixed issue with amazon-product-add.js 404 not found (thanks @tim-breitenstein-it!)
+Fixed issue where a variable could be undefined (thanks @dimitriBouteille!)
+Fixed issue where incorrect message ""can't create invoice"" could be displayed"
+"version increase 2.1.3 ()
+asd-77: fix missing street address for German addresses
+Increase version number to 2.1.4
+Increase version number to 2.1.4","Fixes
+Fixed a bug where German addresses were missing the street, reported in.
+Version information
+This release targets Magento 2 installations with version numbers between 2.2.6 and 2.2.x."
+"Update CHANGELOG.md
+Update README.md
+chore: remove unnecessary use of fmt.Sprintf ()
+chore: slice loop replace ()
+workflows: update actions, use go 1.20.10 and 1.21.3
+go: update dependencies
+Update CHANGELOG.md","Changed
+Release binaries are now built with Go 1.20.10 (resolves CVE-2023-44487)
+Updated Go dependencies
+SHA256 Checksum"
+"Account for whitespace/newline trimming on responses from
+MagentoWebDriver's magentoCLI() function
+GH-1129 - Adjust GraphQL config query to match rest endpoint behavior w/
+omitPayloads
+Undefined index 'charge_permission_id'
+
+Async Error log was full of these.  
+
+amazonAsyncIpnLogger.ERROR: Exception: Notice: Undefined index: charge_permission_id in /var/www/shop/prod/vendor/amzn/amazon-pay-magento-2-module/Model/AsyncManagement/Charge.php on line 213 in /var/www/shop/prod/vendor/magento/framework/App/ErrorHandler.php:61
+Stack trace: /var/www/shop/prod/vendor/amzn/amazon-pay-magento-2-module/Model/AsyncManagement/Charge.php(213): Magento\Framework\App\ErrorHandler->handler() /var/www/shop/prod/vendor/amzn/amazon-pay-magento-2-module/Model/AsyncManagement/Charge.php(167): Amazon\Pay\Model\AsyncManagement\Charge->decline() /var/www/shop/prod/vendor/amzn/amazon-pay-magento-2-module/Model/AsyncUpdater.php(79): Amazon\Pay\Model\AsyncManagement\Charge->processStateChange() /var/www/shop/prod/vendor/amzn/amazon-pay-magento-2-module/Cron/ProcessAsync.php(71): Amazon\Pay\Model\AsyncUpdater->processPending() [internal function]: Amazon\Pay\Cron\ProcessAsync->execute() /var/www/shop/prod/vendor/magento/module-cron/Observer/ProcessCronQueueObserver.php(368): call_user_func_array() /var/www/shop/prod/vendor/magento/module-cron/Observer/ProcessCronQueueObserver.php(879): Magento\Cron\Observer\ProcessCronQueueObserver->_runJob() /var/www/shop/prod/vendor/magento/module-cron/Observer/ProcessCronQueueObserver.php(840): Magento\Cron\Observer\ProcessCronQueueObserver->tryRunJob() /var/www/shop/prod/vendor/magento/module-cron/Observer/ProcessCronQueueObserver.php(280): Magento\Cron\Observer\ProcessCronQueueObserver->processPendingJobs() /var/www/shop/prod/vendor/magento/framework/Event/Invoker/InvokerDefault.php(88): Magento\Cron\Observer\ProcessCronQueueObserver->execute() /var/www/shop/prod/vendor/magento/framework/Event/Invoker/InvokerDefault.php(74): Magento\Framework\Event\Invoker\InvokerDefault->_callObserverMethod() /var/www/shop/prod/vendor/magento/framework/Event/Manager.php(66): Magento\Framework\Event\Invoker\InvokerDefault->dispatch() /var/www/shop/prod/generated/code/Magento/Framework/Event/Manager/Proxy.php(95): Magento\Framework\Event\Manager->dispatch() /var/www/shop/prod/vendor/magento/framework/App/Cron.php(86): Magento\Framework\Event\Manager\Proxy->dispatch() /var/www/shop/prod/vendor/magento/module-cron/Console/Command/CronCommand.php(117): Magento\Framework\App\Cron->launch() /var/www/shop/prod/vendor/symfony/console/Command/Command.php(255): Magento\Cron\Console\Command\CronCommand->execute() /var/www/shop/prod/vendor/magento/framework/Interception/Interceptor.php(58): Symfony\Component\Console\Command\Command->run() /var/www/shop/prod/vendor/magento/framework/Interception/Interceptor.php(138): Magento\Cron\Console\Command\CronCommand\Interceptor->___callParent() /var/www/shop/prod/vendor/magento/framework/Interception/Interceptor.php(153): Magento\Cron\Console\Command\CronCommand\Interceptor->Magento\Framework\Interception\{closure}() /var/www/shop/prod/generated/code/Magento/Cron/Console/Command/CronCommand/Interceptor.php(77): Magento\Cron\Console\Command\CronCommand\Interceptor->___callPlugins() /var/www/shop/prod/vendor/symfony/console/Application.php(1009): Magento\Cron\Console\Command\CronCommand\Interceptor->run() /var/www/shop/prod/vendor/symfony/console/Application.php(273): Symfony\Component\Console\Application->doRunCommand() /var/www/shop/prod/vendor/magento/framework/Console/Cli.php(115): Symfony\Component\Console\Application->doRun() /var/www/shop/prod/vendor/symfony/console/Application.php(149): Magento\Framework\Console\Cli->doRun() /var/www/shop/prod/bin/magento(23): Symfony\Component\Console\Application->run() {main} [] []
+Add logging if declined payment has no associated charge permission ID,
+skip call to closeChargePermission
+Retrieve fresh button config when store view changes
+Version bump to 5.13.1 and update changelog","Fixed issue with invalid array reference if a transaction doesn’t have a charge permission

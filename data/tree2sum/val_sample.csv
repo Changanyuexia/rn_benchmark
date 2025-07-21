@@ -1,0 +1,1000 @@
+commits,release
+"* 5a9c7a17 v0.3.6
+* 2c0a3559 Comment
+* 59901d37 Fixes #138
+* ea74244c Try #3 for centering
+* 49f28cbf Try to center the logo
+* 26b13f53 Add logo to README and keywords to package.json
+* 1a32cf04 Moved docs to 11ty.io
+* 810d8dd4 Moved documentation to 11ty.io/docs
+* ee969d54 Add tests and docs around existing support for JSON and JS front matter.
+* 93d1a6cd Better handling of vague indexOf errors when passing non-string values to url filter
+* 4beb9c10 Regressions around url and outputPath in collections, #135
+* 00442d29 Regression with data.page.url and data.page.outputPath for #135
+* d4380760 Fixes #135 !!!!!!!!!!!!!!
+* 92111be2 Add some tests around #127
+* 00bd9e58 Fixes #110","Eleventy is a simpler Static Site Generator!
+https://www.11ty.io/
+Documentation
+Support Eleventy by starring us on GitHub! This will increase our project’s visibility on staticgen.com, a big giant list of static site generators.
+Follow us on Twitter @​eleven_ty!
+Changelog
+Fix issue with cascade of template and directory data files (template values should override directory values, the reverse was happening)
+url filter now accepts falsy values (improvement over vague indexOf errors before)
+Fix for issue with pagination with aliasing and permalink slug filter
+Better top level error handling (get rid of UnhandledPromiseRejectionWarning’s, especially with passthrough copy errors)
+Milestone
+Bugs fixed in v0.3.6 Milestone"
+"* 7d68958 Update CHANGELOG.md
+* 32d6594 fix incorrect error handling logic when a JWT is created wrongly; closes pterodactyl/panel#3295
+* 023d7ec Close websocket connections and allow the client to re-connect on send errors; ref pterodactyl/panel#3596
+* 981756b Support escaping dollar signs in the YAML config file; closes pterodactyl/panel#3692","Fixed
+Fixes improper event registration and error handling during socket authentication that would cause the incorrect error message to be returned to the client, or no error in some scenarios. Event registration is now delayed until the socket is fully authenticated to ensure needless listeners are not registed.
+Fixes dollar signs always being evaluated as environment variables with no way to escape them. They can now be escaped as $$ which will transform into a single dollar sign.
+Changed
+A websocket connection to a server will be closed by Wings if there is a send error encountered and the client will be left to handle reconnections, rather than simply logging the error and continuing to listen for new events.
+SHA256 Checksum"
+"* fc1a7626 Version bump (0.15.11)
+*   ebc91037 Merge pull request #320 from dagwieers/dutch-updates
+|\  
+| * 5b893ec7 Update Dutch translation
+* | 6e14ab52 Update fr translation
+|/  
+* 2d6064f0 Sync with My List only when enabled
+* 8ff16336 write dvhe codec for hevc-dv* (Dolby Vision) in manifest
+* 5f7113c4 Print to the log the logging level if enabled
+* 38bc9652 Fixed default logging level
+* d54f61cb Fixed decode on py3
+* b8d56b1f Fixed SQLite thread error on py3
+* 33542259 Moved some imports inside func to speedup
+* abe6b6eb Update README.md","Fixed a critical error on auto-update
+Fixed some error on py3
+Fix to handle dolby vision on Kodi 19
+Updated fr_fr, nl_nl translations
+Minor fixes"
+"* 9fb0c404 v0.3.5
+* cfa4f5ee Fixes #125
+* d44c66ba make sure path exists when comparing isInclude, removes pify (superfluous with fs-extra)
+* 4817962a Fix for .htaccess (all files starting with dot) in passthrough copies
+* 78565980 Only browser-sync on --serve
+* b6dc9b0f Fixes #110, wraps it all in a try catch.
+* 5661a922 Switch to an async file read
+* d80b86d4 Check to make sure we have a path before we split it
+* dda137ff Move browsersync stuff to EleventyServe class.
+* 45aa0d44 Better handling of redirects (with cleanup)
+* 92009efc Automatic browsersync server reload if pathPrefix changes in config. All config changes _should_ happen transparently without requiring manual intervention.
+* 34347dc3 Add note about quoted/unquoted includes on liquid templates.
+* 1c6a01d5 Fixes #115
+*   5aaeaa4e Merge branch 'paulrobertlloyd-master'
+|\  
+| * 6481ee79 Got 3 more skipped tests passing too!
+| *   e5888fd8 Merge branch 'master' of https://github.com/paulrobertlloyd/eleventy into paulrobertlloyd-master
+| |\  
+* | \   1ba94ac1 Merge pull request #122 from paulrobertlloyd/master
+|\ \ \  
+| |/ /  
+|/| /   
+| |/    
+| * fa3a94e8 Update liquidjs dependancy
+* a5d723ec Fixes #121","Eleventy is a simpler Static Site Generator!
+https://www.11ty.io/
+Getting Started Quick Guide
+Support Eleventy by starring us on GitHub! This will increase our project’s visibility on staticgen.com, a big giant list of static site generators.
+Follow us on Twitter @​eleven_ty!
+Changelog
+Option to opt-out of automatic .gitignore ignores in Eleventy. Use eleventyConfig.setUseGitIgnore(false);:
+Major semver update: Upgrades liquidjs to 4.0.0:
+Fixes issue with using permalink in layout front matter.
+Fixes issue with using collections and pagination together
+Milestone
+Bugs fixed in Milestone"
+"* dd4a7b09 Version bump (15.2)
+*   41547a89 Merge pull request #179 from CastagnaIT/fixes
+|\  
+| * 92936582 If falkor cache profile list is empty do not delete profiles
+| * d6d69c04 Fix LibraryUpdateService at first run
+| * 8b534a69 Readded superclass methods to shared db class
+| * 7b1097b4 Deleted database files
+| * 2a3d2459 Implemented create SQLite database
+| * 4f840d3c Perform upgrade and configuration checks after login
+| * 3f685421 Fix esn key handshake on session initialization
+|/  
+*   49531589 Merge pull request #172 from notoco/master
+|\  
+| * 5a551fa4 Update Polish strings
+|/  
+* 14c71edf Added more debug profile info and hidden esn","Fixed key handshake at addon first run
+Fixed library update service at first run
+Local database now dynamically created by code
+Profile data is not deleted if an problem occurred
+Minor fixes"
+"* c27e06b server: ensure last lines are always logged
+* 13a9ee9 Use GID from config for container (#106)
+* 760554f Update CHANGELOG.md
+* bb7ee24 router: support the `Access-Control-Request-Private-Network` header (#117)
+* 649dc96 Server Event Optimizations (#116)
+* 521cc2a Don't turn SSL into lowercase (#114)
+* 1892b27 environment: allow overriding memory overhead; closes pterodactyl/panel#3728 (#111)
+* ed4d903 Redacts redacted info from all (#112)
+* cdb86ab RPM is now tracking v1.5.3 (#109)
+* f92b502 ci: fix release version, again
+* aa0d5d4 ci: fix version replace and Docker version
+* 66eb993 Update diagnostics command (#108)
+* 04b9ef6 run gofumpt
+* 43d66d1 config: don't expand 'environment variables'
+* 44dfb8f change default version to be 'develop'
+* d8df353 replace deprecated ioutil function calls
+* be543ce parser(ini): allow setting the section name","Fixed
+Fixes SSL paths being improperly converted to lowercase in environments where the path is case-sensitive.
+Fixes a memory leak due to the implemention of server event processing.
+Changed
+Selecting to redact information now redacts URLs from the log output when running the diagnostic command.
+Added
+Adds support for modifying the default memory overhead percentages in environments where the shipped values are not adequate.
+Adds support for sending the Access-Control-Request-Private-Network header in environments where Wings will be accessed over a private network. This is defaulted to off.
+SHA256 Checksum"
+"* e0bf59c0 Version bump (1.12.7) (#1247)
+*   a37b3989 Merge pull request #1245 from CastagnaIT/Leia_mpd_fix
+|\  
+| * 77122aa3 Fix missing/wrong MPD data
+|/  
+* 5b86f291 Fix search by language","Fixed wrong/missing MPD data
+Fixed bug in search by subtitle/audio language"
+"* 75e39d5d Version bump (1.2.1)
+* 45b52a87 Updated german translation für v.1.2.1 (#622)
+* cbdca686 Fixed password validity check regression
+* 11a4b12d Try handle MSL error ""Email or password is incorrect""
+* 26ff4d7a Updated it translation
+* c87ed30f Assign proper cdn id after ae8e17aea7478ba24c7281c10e4fe6b83cfebd69
+*   0b26f537 Merge pull request #619 from CastagnaIT/service_playback
+|\  
+| * e144959a Set time limit for paused playback
+| * e51c2ed1 Removed not needed imports
+| * 0e112ab6 Reorganized service playback modules
+|/  
+*   b482af96 Merge pull request #623 from wagnerch/tsfix
+|\  
+| * 25748596 remove fractional seconds sent in logblobs
+| * 370e347c fix wrong timestamps in viewing activity
+* | 3c5059c6 fix CacheMiss exception in StreamContinuityManager (#618)
+* | a6fc6310 Add missing return
+* | cc591604 Catch InputStreamHelper errors avoids confusing users
+* |   cde097f9 Merge pull request #620 from CastagnaIT/cdn
+|\ \  
+| |/  
+|/|   
+| * ae8e17ae Add CDN selection setting
+|/  
+* ffa1fa16 Fixed send signal to upnext
+*   255b2f5f Merge pull request #599 from CastagnaIT/kodi_api_changes
+|\  
+| * 1f28665d On Kodi 19 makeLegalFilename is moved to xbmcvfs module
+* | fdbb9d65 Catch error 401 more deeply
+* | e6346cd7 Fixed conversion of protection data
+* | 4eb48963 Init lenght more precise
+* | 35beb047 Fixed get_video_raw_data path request
+* | 8dab286d Fixed h265 video mediaflag
+* | f4bf4140 Minor event data update
+* | 1d23047d Changed service address with 127.0.0.1 see note
+* | 1e6d5901 Fixed first param as list
+|/  
+*   6d3bfb26 Merge pull request #608 from CastagnaIT/authurl_issue
+|\  
+| * ba205e04 Fixed unrelated pylint
+| * c867bdf7 Reviewed first access and profile switch
+| * ac0a34dc Add json graph optional param
+| * 3e572196 Add profilegate endpoint
+| * d5be74db Revert accept attribute
+| * 7a1e4325 Add some falcor json graph helper functions
+|/  
+* 13a9bb2b Fixed double profile switch with autoselection
+* c347b618 Added accept prop to endpoints config
+* 8c91af2a Update README.md
+* 565269bd Catch possible error on rollback
+* 6e2f9f32 Intercept missing library on linux
+* c6754ac5 Update README.md
+* 5223f520 Merge pull request #564 from CastagnaIT/verbump","Reviewed access and profile selection to mitigate http error 401 (not resolved)
+Add Open Connect CDN setting
+Set time limit for paused playback
+Fixed a issue caused wrong date in viewing activity
+Fixed dash content protection data
+Fixed a issue caused UpNext to crash
+Fixed a issue caused KeyError when play videos
+Fixed a issue caused TypeError on more addon rollback
+Fixed a issue caused a double profile switch on selection
+Fixed a issue caused slow playback video starts (on windows)
+Fixed a issue caused missing of h265 media flag
+Fixed broken ""force the update of my list"" context menu
+Some changes for Kodi 19 due to API changes
+Updated translations de, it
+Other minor improvements/changes"
+"* 500b5a39 Version bump (1.18.4) (#1308)
+* 428687b8 Updated it translation
+* 22455d2a Updated german translation for version 1.18.4 (#1311)
+* c1e8888b JP/KR tranlsation (1.18.4) (#1310)
+* 744e1a4d Update strings.po (#1307)
+* bad0f0b7 Sync translations with en
+*   c523df99 Merge pull request #1303 from CastagnaIT/tvshownfo
+|\  
+| * f329ccbc Fixed tvshow.nfo not exported on library update
+* 07018278 Merge pull request #1302 from JoshOrndorff/patch-1
+* 7b877e6a Use single `viewableId` instead of list","Fix error ""This title is not available to watch instantly"" when using MSL manifest v1
+Fixed tvshow.nfo not exported on library auto-update
+Update translations gl_es, jp, kr, de"
+"* 39cc0bec Version bump (1.20.5) (#1539)
+* 6633e1dc update zh_TW language (#1541)
+* 604107f9 Update Simplified Chinese translation for 1.20.5 (#1540)
+* 7333ac4f Pylint fixes
+* 91c4de15 Add uiVersion to event params
+* 2f918810 Removed fetching of loco data
+* 8b6b7a7a Disabled update loco context on playback stop
+* 00aae8d8 Handle ErrorMessage on display_error_info
+* f15c7af5 Revert ""Replaced MSL idtoken auth with netflixid on android""","NOTICE FOR ANDROID DEVICES: The website has fixed the recent bug for ""MSL: Email or password is incorrect"" error,
+so video playback is now restored for all Android devices.
+Disabled update loco context, is not more used to update watched status
+Minor changes
+Update translations zh_cn, zh_tw"
+"* e63a52091 Fixes #726
+* e5ec8972b Append `.` to pck in longest common prefix in Autodetect#getPattern. Refactored rewriteImportLayout test to reflect changes. fixes #733 (#734)
+* cab537b65 Added check for empty leadingAnnotations in visitClassDec of RemoveAnnotationVisitor. fixes #727.
+* 638065d47 Remove annotations from a list with size greater than 1 while preserving the exising formatting in RemoveAnnotationVisitor. fixes #728. (#732)","Fixes:
+Remove annotations from a list with size greater than 1.
+RemoveAnnotation throws index out of bounds if a leading annotation doesn't exist
+OrderImports sets blocks with common packages to all others.
+JavaVisitor#visitMethodDeclaration doesn't visit annotations on the name prefix."
+"*   e03443287 Merge pull request #12513 from inoryy:patch-4
+|\  
+| * 8bcf358fd Remove unused _remat_static_argnums import.
+* |   7962b01f5 Merge pull request #12485 from LenaMartens:checkify-lower
+|\ \  
+| |/  
+|/|   
+| * 27e3981d5 lowerable errors behind a config flag.
+| * 78ecc1442 Lowerable checks!!
+|/  
+*   28672cca0 Merge pull request #12496 from mattjj:improve-leak-checker-2
+|\  
+| * 03abcc7c5 fix typo in test
+* |   9c6656951 Merge pull request #12468 from LenaMartens:checkify-but-better
+|\ \  
+| * | 7078f81dd Checkify: misc improvements.
+* | |   2df61b1aa Merge pull request #12421 from jakevdp:jax-array
+|\ \ \  
+| * | | 0cb233eec Add initial jax.Array base class for instance checks & annotation
+|/ / /  
+* | |   2180710c2 Merge pull request #12511 from hawkinsp:release
+|\ \ \  
+| * | | bcd36d8eb Jax and jaxlib 0.3.18 release candidate.
+|/ / /  
+* | |   53de05774 Merge pull request #12510 from hawkinsp:context
+|\ \ \  
+| * | | f4bc663c3 Wrap multiprocess test popen() uses in a context manager.
+|/ / /  
+* | | ec15e8301 - Wraps calls to lax.xeinsum and _einsum in a named call with their 'spec', the string specifying the computation. Makes xprof traces more interpretable.
+* | | 7c85ca38f Only look at hlo_modules for output sharding if there is more than 1 device because if there is only 1 device, the spmd partitioner won't run.
+* | | 8ee712987 Fix jnp.unwrap() test failures on GPU.
+* | |   d2fcfb6b8 Merge pull request #12407 from hirwa-nshuti:docs-fix
+|\ \ \  
+| |_|/  
+|/| |   
+| * | 820efab6f removed repeated nan_to_num in docs
+* | |   e76aa7789 Merge pull request #12437 from sudhakarsingh27:add_multi_host_pjit_tests
+|\ \ \  
+| * | | 4dd0d8513 add multihost pjit tests
+* | | | 1fa0dda76 Return single device Arrays from `.device_buffer` and `.device_buffers`.
+* | | |   43bbce0cc Merge pull request #12486 from hawkinsp:debugging
+|\ \ \ \  
+| * | | | a88c5ad78 Fix xla extension version test in debugging.py
+* | | | |   737327a42 Merge pull request #12490 from mattjj:improve-leak-checker
+|\ \ \ \ \  
+| |_|/ / /  
+|/| | | |   
+| * | | | b6ef90ffd fix leak checker internal error
+* | | | | a6b24b379 Add regression test for lax.rev simplification error
+* | | | | ecb27a9b2 Update the `_check_special` code to not use xla_shape since its deprecated and does not work with Array.
+* | | | |   d078f3f5f Merge pull request #12478 from sharadmv:sharding-docs
+|\ \ \ \ \  
+| * | | | | 99d4d8b89 Update debugging docs to have sharding visualization
+* | | | | |   e8865c826 Merge pull request #12481 from kho:changelist/476272494
+|\ \ \ \ \ \  
+| |_|/ / / /  
+|/| | | | |   
+| * | | | | c82315177 Allow transpose axes to be negative to match (undocumented) NumPy behavior
+|/ / / / /  
+* | | | | 0c085471c Modify CorrCoef test to not rely on floating poing representation of 1/3
+* | | | | 38fb8ed22 Fix copyright attribution for some newly added files.
+* | | | |   6c47dc51c Merge pull request #12471 from ROCmSoftwarePlatform:rocm-dockerfile-update
+|\ \ \ \ \  
+| * | | | | 9a11b6182 [ROCM] Update Dockerfil.rocm to Ubuntu20
+| | |_|_|/  
+| |/| | |   
+* | | | | da50bdd75 Fix the asan failure in pjit_test_cpu build target
+* | | | | c8f55414f Convert the devices in the `Mesh` constructor to a numpy array if its a list, tuple, etc.
+| |_|/ /  
+|/| | |   
+* | | |   254dc24a8 Merge pull request #11961 from jakeh-gc:plugin_device
+|\ \ \ \  
+| * | | | 21f82c6c0 Use the pjrt plugin device client.
+|  / / /  
+* | | |   342f89603 Merge pull request #12484 from hawkinsp:doc
+|\ \ \ \  
+| |_|_|/  
+|/| | |   
+| * | | eed327914 Improve documentation for unique_indices.
+|/ / /  
+* | / 67b7ae259 [sparse] Move `_bcoo_nse` to sparse util.
+| |/  
+|/|   
+* | 805073f36 Add inspect_array_sharding, enabling looking at shardings in pjit-ted functions
+* |   11a6fd9e7 Merge pull request #12476 from jakevdp:match-sharding
+|\ \  
+| * | 3d23592cf [array] full_like: only match sharding if shape==None
+|/ /  
+* |   dfdf00c2e Merge pull request #12472 from google:sharadmv-patch-2
+|\ \  
+| * | 1a8a8a558 Fix example in `pjit` docstring
+* | |   bc08381da Merge pull request #12152 from nvcastet:add_slurm_orchestrator_support
+|\ \ \  
+| |/ /  
+|/| |   
+| * | 412a5379c Add generic interface for auto initialization of distributed JAX service
+| |/  
+* | ba557d5e1 Change JAX's copyright attribution from ""Google LLC"" to ""The JAX Authors."".
+* | d52de206c Disable tests that timeout in debug mode in CI
+* | a157982e8 Make `jit(f).lower(*args)` go via lower_sharding_computation when `jax_array` is enabled.
+|/  
+* 640e15fe0 Don't tuple arguments passed to XLA:CPU
+* 405a2310c Implement pjit fast path in cpp for jax.Array inputs
+* 52476d1ab Add addressable_data to Array (similar to GDA) to aid in transition and also in auto spmd partitioner mode, always convert to MeshPspecSharding.
+* a09ef8a6a Temporarily skip LaxBackedNumpyTests.testUnwrap on gpu to unblock jaxlib build
+*   d41fa296f Merge pull request #12370 from jakevdp:lax-sort-overload
+|\  
+| * 7ffe16b9f [typing] overloaded type declaration for variadic lax.sort
+* |   62d17837d Merge pull request #12451 from jakevdp:array-declarations
+|\ \  
+| * | 2dde63334 [typing] add class-level declarations of Array members.
+|/ /  
+* | 541aadcfe [XLA:GPU] Allow simplifying lowering-precision-conversions by default
+* | b9e384363 Add many args benchmark for jax.Array
+* | c7f2712e7 Flip default value of jax_unique_mhlo_module_names to False.
+* | d0e1c3e68 Disable tests under sanitizers that are timing out in CI.
+* |   fd90f40c4 Merge pull request #12443 from cloudhan:fix-mlir-chlo-stablehlo-symbols
+|\ \  
+| * | dc414c863 Switch from experimental_strict_action_env to incompatible_strict_action_env to avoid deprecation warning
+| * | 3fa2c933f Fix linker error due to chlo and stablehol symbols are not exported in mlir dll
+|  /  
+* | 6183727ac Update pjit_test to skip GDA tests with Array is enabled.
+* |   310bcd57a Merge pull request #12389 from LenaMartens:check-while-2
+|\ \  
+| * | 018e700ea Checkify: support batched while.
+* | |   60c5b324a Merge pull request #12418 from jakevdp:jep-update
+|\ \ \  
+| * | | fce109999 Update JEP-12049 implementation discussion
+* | | |   e855a9c45 Merge pull request #12428 from jakevdp:tracer-methods
+|\ \ \ \  
+| |/ / /  
+|/| | |   
+| * | | 74698048f Tracer: add missing __round__ and __reversed__ methods
+* | | | fc2902c6a Make the gda and xmap sharding check work generally by checking the OpSharding protos.
+* | | |   24bc153e4 Merge pull request #12425 from sharadmv:vis-pmap
+|\ \ \ \  
+| * | | | 0276a6e77 Add support for pmap sharding
+|/ / / /  
+* | | |   09d3ee183 Merge pull request #12424 from sharadmv:vis-fixes
+|\ \ \ \  
+| * | | | f825a3c8c Limit console width for visualize_sharding
+|/ / / /  
+* / / / e41e8d9a8 Only copy_to_device if the indices match. Otherwise reshard the array if its uncommitted. This is important where you have 1 process per device.
+|/ / /  
+* | |   441f40035 Merge pull request #12386 from sharadmv:viz_sharding
+|\ \ \  
+| |_|/  
+|/| |   
+| * | 2d8b22870 Add function to visualize `Sharding`s
+* | |   2c315b3fc Merge pull request #12422 from jakevdp:fix-doc-build
+|\ \ \  
+| * | | be65694ac docs: avoid deprecated matplotlib axis creation
+* | | |   65cb0ff56 Merge pull request #12419 from jakevdp:kill-subprocs
+|\ \ \ \  
+| |/ / /  
+|/| | |   
+| * | | 2936c8a2c multiprocess_gpu_test: kill open subprocesses to avoid warning
+|/ / /  
+* | |   aa2f898c7 Merge pull request #12414 from hawkinsp:xla
+|\ \ \  
+| * | | bec9d2e16 Bump XLA version.
+|/ / /  
+* | | a24726d57 Remove fast_path_args from Array and add `id` checks to Sharding's `__eq__` method as a fast shortcut.
+* | | 9d8363a5d Fix the bug where the indices returned from `_get_input_metadata` were of length equal to the length of global devices but should have been the length of local devices instead. `shard_args` only deals with local devices and indices.
+* | | 590b5b5d7 Add `Array` counterparts to the serialization_test.py and disable the GDA tests if jax_array is enabled.
+* | | e6bdb00d3 Skip remote_transfer_test because Array does not have the xla_shape method since its deprecated.
+* | | dce93e45b Silence some pytype errors.
+* | | eec1b4a01 Set the sharding of uncommitted single device sharding Arrays correctly and fix some miscellaneous tests with Array too. Enable pjit_test and xmap_test with Array too (all of them are mechanical changes).
+* | | e010ae784 Pass device_assignment to ShardingContext instead of first_sharding which contains partitioning of an input too.
+* | | 45e48b3a7 Mark multiprocess_gpu_test as manual to skip it in OSS
+* | | 35a5012ee Fix and add test for weakref_lru_cache asan issue.
+* | |   2a7dcb8a2 Merge pull request #12383 from jakevdp:valid-shape
+|\ \ \  
+| * | | a423dc7cd tests: fix is_valid_shape() function
+|/ / /  
+* | |   a7f4cb028 Merge pull request #12143 from wonhyeongseo:multinomial
+|\ \ \  
+| * | | 3f6eb4069 JAX implementation of scipy.stats.multinomial pmf & logpmf
+* | | | 28741b8e0 Some miscellaneous changes to make tests pass when jax.Array is enabled by default.
+|/ / /  
+* | | 311f85e8b Adjust tolerance for lu test in preparation for XLA switch from cublas to cublasLt
+* | |   fa86ce4b7 Merge pull request #12369 from jakevdp:fix-dtype-case
+|\ \ \  
+| * | | 5829c6ae9 Change case of typing.Dtype -> typing.DType
+* | | | 83048253d Remove the optional OpSharding typehint from XLACompatibleSharding
+* | | | 60ec5414c Enable the debugging_primitives pjit(xmap) case. Also don't check for sharding mismatch when the array is not committed. Check the device assignment only for committed arrays.
+| |_|/  
+|/| |   
+* | |   979119948 Merge pull request #12361 from sharadmv:for-unroll
+|\ \ \  
+| * | | 08c5753ee Implement unrolling for for_loop
+| | |/  
+| |/|   
+* | | 2fb86959f [jax] Update expected error message in preparation for new XLA:GPU runtime
+* | |   8a1c5b8be Merge pull request #12371 from jakevdp:scatter-typing
+|\ \ \  
+| * | | ed0683800 [typing] clear up logic in scatter_update
+| | |/  
+| |/|   
+* | |   1bc967294 Merge pull request #12372 from jakevdp:array-issubclass
+|\ \ \  
+| * | | bdb264e60 jax.Array: add issubclass test analogous to existing DeviceArray test.
+|/ / /  
+* | |   fa760bf1b Merge pull request #12368 from mattjj:relu-comment
+|\ \ \  
+| |/ /  
+|/| |   
+| * | f3710aeb5 add paper link about grad-relu-at-zero
+|/ /  
+* | 1338864c1 Change TensorFlow to depend on StableHLO instead of vendoring it
+* | 13a7034e6 Internal change
+* | 0a5d8e8ec Make nested xmap work with Arrays and GDA (in single process).
+* | c2ce0db3f Add a jit decorator to comparison operators.
+|/  
+* 71b0968f7 skip some for_loop test cases on gpu due to flakey timeouts
+*   ef0256843 Merge pull request #12347 from mattjj:djax-einsum
+|\  
+| * 49a6034fa [dynamic-shapes] enable basic einsum support, following jax2tf shape polys
+* |   b27d8c126 Merge pull request #12342 from jakevdp:typing-test
+|\ \  
+| * | b3c31ebe7 Add typing_test.py
+* | | 2547e8110 Use C++ Array in pmap path and move PmapSharding to cpp
+* | | da90234ca Delete soft_pmap as it has no users. Please use `pjit` or `xmap` if you do want soft_pmap.
+* | |   dc7db8d1b Merge pull request #12346 from jakevdp:jax-array-test
+|\ \ \  
+| * | | 8eb44fd19 jax_array_test: set config once & fix X64 failure
+| | |/  
+| |/|   
+* | |   b7bc0953f Merge pull request #12149 from sharadmv:for-nesting
+|\ \ \  
+| |/ /  
+|/| |   
+| * | f26f1e8af Add support for closing over `Ref`s in nested for loops
+|/ /  
+* | ad326b99d Use cases_from_list to subsample enumerated cases in for_loop_test
+* |   a2930e6a1 Merge pull request #11859 from jakevdp:jep-type-annotation
+|\ \  
+| |/  
+|/|   
+| * 358363e17 JEP 12049: Type Annotation Roadmap
+* | dc4922fd0 Bump shards on for_loop_test
+* |   ee521736b Merge pull request #12300 from jakevdp:typing-simple
+|\ \  
+| |/  
+|/|   
+| * cc72a20e9 use jax._src.typing in lax.py & a few other places
+| * 4fed097b1 jax._src/typing: add basic types
+* |   ec24005ae Merge pull request #12334 from jakevdp:fix-ensure-index
+|\ \  
+| * | 45b71e5d8 ensure_index: raise better error for traced inputs
+* | |   c491aaad8 Merge pull request #12213 from jakevdp:environment-info
+|\ \ \  
+| * | | 0fb462efd Add jax.print_environment_info()
+| * | | 00636617c jax.test_util: add capture_stdout context manager
+|/ / /  
+* | | e5725f1df Split for_loop_test out of lax_control_flow_test
+* | | ef4853347 Add a MLIR constant handler for GDA.
+* | |   b439d7682 Merge pull request #12332 from jakevdp:fix-index-take
+|\ \ \  
+| |/ /  
+|/| |   
+| * | 34eae3de8 jax.lax: ensure GatherDimensionNumbers contains tuples for hashability
+|/ /  
+* / 3243e23aa [sparse] Lower batch-mode bcoo_dot_genernal to cusparseSpMM.
+|/  
+* 5c266bae0 [jax2tf] Disable some tests for experimental_native_lowering
+* 864849d07 Increase the GPU shard count to 40 since its timing out every once in a while in kokoro.
+* 120b2801f Bounce to host for any sharding that's not PmapSharding or a sharding with a single device for `__iter__` and `__getitem__`.
+* 29886a10f Skip the infeed test since its failing on GPU with jax at HEAD and latest jaxlib on pypi
+* 980aa318f Minimally support `device` argument on `jit` in the `jax.Array` path
+* bb66e806f Remove the jax_array disables from call_tf_test.py. They work now.
+* d7726e7b2 Make `__getitem__` work for PmapSharding just like SDA works. DA is already covered with the current implementation.
+*   635eebf46 Merge pull request #12311 from jakevdp:fix-lax-array
+|\  
+| * 07f55b389 jax.Array: support fast path for lax.transpose & lax.squeeze
+* | b764aadbc Add pmap benchmarks using jax.Array
+* | 60505e909 Enabled cpp_jit test with Array now that Array is in C++. Also check for the unsafe_buffer_pointer in the trivial_computation tests rather than an identity check. Also set the array priority to 100 and that makes the float0 test pass.
+|/  
+*   056f4008e Merge pull request #12308 from jakevdp:fix-shape-error
+|\  
+| * fcac395ee lax.broadcast_shapes: clearer error for incompatible shapes
+* | 4746a39e5 Show the correct sharding in `is_compatible_aval` error in `MeshPspecSharding` when created via `_from_parsed_pspec`. Preserve the original PartitionSpec from ParsedPartitionSpec if it exists, else calculate it.
+|/  
+* 40c80d7d0 Remove jax._src from JAX namespace.
+*   bc59bd1dd Merge pull request #12270 from gnecula:tf_readme
+|\  
+| * a3ffdeed5 [jax2tf] Updates to the documentation
+* | 244b1e7ea [jax2tf] Fixes a bug in gather (enable_xla=False)
+* | 193c0f664 Minimally support the `backend` argument on `jit` in the jax.Array path.
+* | 160e14308 [Rollback] Add a github presubmit build which runs with jax.Array flag enabled for OSS coverage.
+* |   9050f0d3a Merge pull request #12301 from mattjj:djax-vmap-2
+|\ \  
+| * | 58826507c [dynamic-shapes] add basic vmap-of-indexing support
+|/ /  
+* | 49672cd2b Add a github presubmit build which runs with jax.Array flag enabled for OSS coverage.
+* |   edfbbd720 Merge pull request #12297 from mattjj:computation-follows-data-prng
+|\ \  
+| * | 47b2dfe92 add _device attribute to PRNGKeyArray so that computation follows key placement
+* | | 09a3796d5 Enable `testArrayCopy` now that its fixed.
+* | |   5b65df062 Merge pull request #12296 from hawkinsp:minver
+|\ \ \  
+| * | | 6c59d72c7 Bump the minimum jaxlib version to 0.3.15.
+* | | |   d68d82c3b Merge pull request #12261 from hawkinsp:compile
+|\ \ \ \  
+| * | | | 8b41888db Drop support for non-MLIR modules in compile().
+| |/ / /  
+* | | | fc84b2728 Support deserializing from non-chunked storage such as tensorstore.array.
+* | | | 0400db959 Introduce class PyArray that contains the data members of python Array.
+* | | | a2e05b0df Try Cuda 11.2 build in presubmit for GPU. Presubmit uses 11.2 and CI uses 11.1
+|/ / /  
+* | |   001ae222c Merge pull request #12241 from sharadmv:for-loop-invar
+|\ \ \  
+| * | | 6967c7ef5 Add sound loop invariance detection
+* | | | baffd72d9 [xla:jitrt] Enable serializing GPU executable for JAX
+* | | | 751be205d Add a test for jnp.array(..., copy=True) for Array.
+|/ / /  
+* | |   2ccd72472 Merge pull request #12239 from sharadmv:for-read-write-effects
+|\ \ \  
+| * | | b6c3b9df1 Split State effect into Read/Write/Accum effects and tie them to Ref avals
+* | | | 2929d79d0 Use `value` instead of `ValueOrDie`.
+* | | | eebf49116 Rollforward of #12232
+* | | | 7fbf8ec66 Fix Forward. The fix is on the user's end. Original PR: https://github.com/google/jax/pull/12217
+| |_|/  
+|/| |   
+* | | 6ddf3c4d9 Reapply: Use MLIR bytecode when passing IR to backends.
+|/ /  
+* | b3393e3b6 Checkify: add jvp rule for assert_p.
+* | 14f1a345a roll back breakage
+* |   672c497bb Merge pull request #12269 from google:yashk2810-patch-16
+|\ \  
+| * | 46d2325b3 Ignore the mypy errors.
+* | |   428f13a24 Merge pull request #12268 from skye:jax_test
+|\ \ \  
+| |/ /  
+|/| |   
+| * | 031f0b1a1 Add missing Google-internal option to jax_test
+|/ /  
+* |   b09a6175f Merge pull request #12217 from mattjj:dce-and-execute-trivial
+|\ \  
+| * | 3c811b152 fix bugs, infeed/outfeed must be considered effectful
+| * | b7e4e44cb DCE jaxpr and trivial_jaxpr support for lower_sharding_computation
+| |/  
+* | c8ac6dbe6 [PJRT:C] Control whether to call wrapped C++ PJRT client directly with a global variable `kPjRtCApiBypass`.
+* | b3012ebba For execute_sharded_on_local_devices, the overload that takes PyBuffers should take precedence during overload resolution.
+* | ccdcab213 Revert: Use MLIR bytecode when passing IR to backends.
+* | b69e5e661 Raises a warning if Math is done on Arrays that are not fully addressable.
+* | 79a74f37f Rollback of #12232: Breaks internal target with `NotImplementedError: Differentiation rule for 'assert' not implemented`
+* |   2831232b6 Merge pull request #12251 from gnecula:tf_refactor2
+|\ \  
+| * | f1fc7fe30 [jax2tf] Refactor the experimental_native_lowering path in jax2tf
+* | | 57b5acf1b Roll forward: Upgrade logistic into a primitive.
+* | | f62ab8fef Use MLIR bytecode when passing IR to backends.
+* | | abab39a0c [jax2tf] Rename models_test.py, since it is not  a test
+* | | 8008a3aa0 [jax2tf] Updates convert_models_results.md table
+|/ /  
+* / 9c79439b0 Avoid direct references to jax._src.
+|/  
+*   e9204e312 Merge pull request #12215 from sharadmv:for-loop-remat
+|\  
+| * b2a5d2c3b Add partial_eval_custom rule for `for_loop`
+* |   5506d3fc8 Merge pull request #12223 from gnecula:ds_lower_aval
+|\ \  
+| * | fe055d06b Allow get_aval to work on ShapeDtypeStruct
+* | |   f3cefe10e Merge pull request #12172 from sudhakarsingh27:separate_marker_for_multinode_gpu_tests
+|\ \ \  
+| * | | 5f1858f53 Add pytest marker inside the test only if pytest is present in the env
+* | | | dc4591dd6 Fix NaNs in the gradient of jnp.interp when the spline being interpolated into contains knots that are small and nearby.
+|/ / /  
+* | | e7ddb2f5a Use reduce_window for faster cumulative reductions on small inputs on GPU.
+* | |   bfab12a45 Merge pull request #12232 from LenaMartens:not-checkify
+|\ \ \  
+| * | | 82f74d189 Checkify: Remove some `err` <-not-> `pred` flipping.
+|  / /  
+* | | 748ba4057 Fix some cases where deserialization hangs:
+* | |   ba15118bb Merge pull request #12225 from PhilipVinc:patch-1
+|\ \ \  
+| * | | 52236adee Show link to GitHub repo in navbar
+* | | |   048f28055 Merge pull request #12230 from gnecula:tf_refactor_new
+|\ \ \ \  
+| * | | | 56c2c0baa [jax2tf] Refactor top-level jax2tf.convert
+* | | | | a1e4f68a7 [jax2tf] Rewrites `converters_eval` framework.
+|/ / / /  
+* | | | 892dea5d8 Fix NaNs in the gradient of jnp.interp when the spline being interpolated into contains the same knot coordinate twice.
+* | | | 70c339ea2 Internal change
+* | | |   98429b618 Merge pull request #12205 from gnecula:tf_refactor
+|\ \ \ \  
+| |/ / /  
+|/| | |   
+| * | | 33d1c08a3 Update jax/experimental/jax2tf/jax2tf.py
+| * | | 9e2fa4d24 [jax2tf] Refactor top-level jax2tf.convert
+|/ / /  
+* | |   4ae5cb31b Merge pull request #12196 from marcvanzee:tfjs
+|\ \ \  
+| |/ /  
+|/| |   
+| * | 7cc7da857 Improves quickdraw example in jax2tf
+* | |   15fbf2271 Merge pull request #12204 from froystig:aot-docs
+|\ \ \  
+| * | | a2ad414e7 mention AOT readiness in changelog
+| * | | bb68fbeef write in-process AOT walkthrough doc
+| * | | 43db06491 write and generate package API documentation for `jax.stages`
+| * | | 4505d57a6 docstring for `jax.stages.Wrapped`
+| | |/  
+| |/|   
+* | | d17e516ea Add benchmarks for jax.Array
+* | | bd425e5dc Rolling back due to breaking tests
+| |/  
+|/|   
+* | 3e54ac0af Make `__iter__` of `Array` behave like DA when there is a SingleDeviceSharding and like SDA when there is a non-trivial sharding.
+* |   34ce471a4 Merge pull request #12203 from sharadmv:pure-callback-jit
+|\ \  
+| * | e1410bd16 Use lowering as impl rule for `pure_callback`
+| |/  
+* |   76a449402 Merge pull request #12201 from jakevdp:bcoo-dynamic-slice
+|\ \  
+| * | 47b9f216b [sparse] add sparse support for dynamic_slice
+* | | de876a7ed Enable cuBLASLt by default in XLA for most matmuls
+| |/  
+|/|   
+* |   086918310 Merge pull request #12200 from froystig:key-scalar-only-ops
+|\ \  
+| |/  
+|/|   
+| * 5ac804386 require scalar key arrays when seeding, splitting, and folding
+|/  
+*   1dbfa8893 Merge pull request #12178 from gnecula:tf_repeat
+|\  
+| * 906a212b8 [shape_poly] Add limited support for jnp.repeat with shape polymorphism
+* 0584c6a1c Add support to handle arbitrary shardings to KeyArray. Resolve all the TODOs that were created before.
+*   bf7525e12 Merge pull request #12170 from froystig:just-dtype
+|\  
+| * 8f045b12d internal rename: swap mentions of ""custom eltypes"" for ""opaque dtypes""
+* 6eb80fb0e Add fast path args to Array similar to GDA to speed up initialization and other operations like calculating indices and addressable_device_assignment.
+* 59c2fc9ea [jax2tf] add a new test for jax2tf gda test.
+* 2f7951b3d Add `__hash__` and `__eq__` to PmapSharding
+*   e1b250caf Merge pull request #12186 from sharadmv:fix-64-dtype
+|\  
+| * 311a9cb5d Throw error when 64-bit dtypes used incorrectly in `jax.pure_callback`
+* |   fc7c8de3f Merge pull request #12184 from froystig:key-array-pickle
+|\ \  
+| * | 023764376 support key array pickling
+|  /  
+* |   e98eb442f Merge pull request #12177 from froystig:test-rng-upgrade
+|\ \  
+| |/  
+|/|   
+| * fe2de26b2 test the RNG key upgrade in one of our github CI runs
+* 1126062a9 Merge pull request #12183 from jakevdp:update-pypi
+* ee4ea27c3 update version and changelog for pypi","GitHub commits.
+Changes
+Ahead-of-time lowering and compilation functionality (tracked in
+{jax-issue}) is stable and public. See the
+overview and the API docs
+for {mod}jax.stages.
+Introduced {class}jax.Array, intended to be used for both isinstance checks
+and type annotations for array types in JAX. Notice that this included some subtle
+changes to how isinstance works for {class}jax.numpy.ndarray for jax-internal
+objects, as {class}jax.numpy.ndarray is now a simple alias of {class}jax.Array.
+Breaking changes
+jax._src is no longer imported into the from the public jax namespace.
+This may break users that were using JAX internals.
+jax.soft_pmap has been deleted. Please use pjit or xmap instead.
+jax.soft_pmap is undocumented. If it were documented, a deprecation period
+would have been provided."
+"* dbeb97d39 Create 0.2.21 jax release
+*   b6318f89c Merge pull request #7993 from gnecula:tf_share_const
+|\  
+| * b1ad9e32a [jax2tf] Ensure that shared constants in JAX are shared also in the converted function
+* |   b992034ea Merge pull request #7983 from jakevdp:fix-std-basis
+|\ \  
+| * | 0957e8165 Use traced identity in jacobian std_basis
+* | |   9389db192 Merge pull request #7975 from google:custom-derivatives-api-boundary
+|\ \ \  
+| * | | 322a9544d disable pytype on custom derivative calls
+| * | | d3615ef27 mark custom derivative calls as API boundaries for stack trace filtering
+* | | | 2c2f4033c Move contents of jax.lib to jax._src.lib.
+| |_|/  
+|/| |   
+* | |   94cd1ea0a Merge pull request #7978 from gnecula:tf_comment
+|\ \ \  
+| * | | 613eeb892 Apply review suggestions
+| * | | 60d0b0829 [jax2tf] Minor updates to the jax2tf examples documentation
+* | | |   484b5af5c Merge pull request #7982 from hawkinsp:checktol
+|\ \ \ \  
+| |_|_|/  
+|/| | |   
+| * | | be2882716 Add atol and rtol arguments to jtu._CheckAgainstNumpy().
+|/ / /  
+* | |   b0541802f Merge pull request #7981 from hawkinsp:indexing
+|\ \ \  
+| * | | 46288a299 Fix wrong dtype output from indexing with an empty slice.
+|/ / /  
+* | | 1182e7aaf Add traceback to Graph Tensor runtime error and update error message.
+* | |   799ca30f3 Merge pull request #7980 from hawkinsp:indexing
+|\ \ \  
+| * | | 3509db5db Merge static indexing forward and gradient test cases.
+|/ / /  
+* | |   b70d2093e Merge pull request #7979 from hawkinsp:tpugather
+|\ \ \  
+| |/ /  
+|/| |   
+| * | b85f43904 Reenable indexing TPU tests that pass at HEAD.
+|/ /  
+* |   31f76c3b1 Merge pull request #7974 from jakevdp:fix-fromdense-jit
+|\ \  
+| * | 907c59302 [sparse]: fix fromdense JIT code path
+| |/  
+* |   5b4f07d81 Merge pull request #7973 from hawkinsp:comment
+|\ \  
+| |/  
+|/|   
+| * 41a0f6a68 Remove a stale comment.
+|/  
+*   4bc6b2702 Merge pull request #7966 from jakevdp:faster-conv
+|\  
+| * d7e94b9ee convolutions: use flip() to clean up reverse-indexing
+* |   f71c2cce4 Merge pull request #7927 from hawkinsp:ndarray
+|\ \  
+| * | 52b592739 Turn jnp.ndarray into a true abstract base class.
+|/ /  
+* |   fc7775e1d Merge pull request #7968 from hawkinsp:partial
+|\ \  
+| * | 58c7ee46b Remove jax.util.partial.
+| |/  
+* / 1163e218e Attempt to land https://github.com/google/jax/pull/6400 again.
+|/  
+*   9a5cf7c81 Merge pull request #7947 from nonconvexopt:main
+|\  
+| * 8b489134c Reflected the opinions from the reviewer.
+| * d45cb85a2 Update developer.md
+* |   2d03bde7e Merge pull request #7943 from rsepassi:main
+|\ \  
+| * | 2cee42cf6 Check presence of __jax_array__ in _arraylike before calling it in isscalar
+* | |   244649203 Merge pull request #7964 from hawkinsp:sourcecontext
+|\ \ \  
+| * | | 33e7f2d1e Add the equation source context in jaxpr_subcomp.
+* | | | 45c1a1b06 Make sure that xmap raises a clear error when using an undefined resource name
+|/ / /  
+* | |   5caaed986 Merge pull request #7938 from hawkinsp:partial
+|\ \ \  
+| * | | f35ab3693 Remove jax.partial from the JAX API.
+* | | |   6a34d24fd Merge pull request #7948 from gnecula:hcb_remat
+|\ \ \ \  
+| |/ / /  
+|/| | |   
+| * | | d172ba7b7 [host_callback] Fix an assertion failure for grad(remat(host_callback))
+| | |/  
+| |/|   
+* | |   ab464bd70 Merge pull request #7956 from brettkoonce:cuda-config-tweak
+|\ \ \  
+| * | | 9c5009efd tweak cuda/rocm targets
+|/ / /  
+* | |   62230f652 Merge pull request #7950 from yashk2810:options
+|\ \ \  
+| * | | d0acd9f34 Add flags to configure the cuda_compute_capability and rocm_amd_targets
+|/ / /  
+* | |   f47926a23 Merge pull request #7940 from hawkinsp:api
+|\ \ \  
+| * | | 6a1b62656 Remove jax.api.
+* | | |   a93c4d7f3 Merge pull request #7937 from sharadmv:axis-index-fix
+|\ \ \ \  
+| * | | | 8ae58be90 Fix for singleton axis name in `axis_index_translation_rule`
+* | | | |   2201f4a6c Merge pull request #7942 from jakevdp:changelog
+|\ \ \ \ \  
+| |_|_|_|/  
+|/| | | |   
+| * | | | 9a2697437 Update changelog for several recent PRs
+* | | | |   394ef618d Merge pull request #7868 from PWhiddy:main
+|\ \ \ \ \  
+| |/ / / /  
+|/| | | |   
+| * | | | af22aae1e fix html formatting of markdown
+* | | | |   470b30c90 Merge pull request #7941 from jakevdp:broadcast-shapes
+|\ \ \ \ \  
+| * | | | | 8905fb8ea jnp.insert: use broadcast_shapes
+| | |_|/ /  
+| |/| | |   
+* | | | |   12e731d89 Merge pull request #7939 from jakevdp:missing-doc
+|\ \ \ \ \  
+| |/ / / /  
+|/| | | |   
+| * | | | 3e0e47cde DOC: add missing jax.numpy functions
+|/ / / /  
+* | | |   75f941bcb Merge pull request #7936 from jakevdp:jnp-insert
+|\ \ \ \  
+| |_|/ /  
+|/| | |   
+| * | | b895f530d jax.numpy: add wrapper for np.insert
+|/ / /  
+* | |   0851e05ef Merge pull request #7925 from jakevdp:boolean-scalar
+|\ \ \  
+| * | | abeeb48ba jnp.array: raise TypeError on boolean scalar indices
+* | | | 960d19e54 bazelrc changes for building Cuda 11.4 wheels with cudnn 8.2
+| |_|/  
+|/| |   
+* | |   e67d49b8a Merge pull request #7838 from khdlr:map_coordinates_reflect_mirror
+|\ \ \  
+| * | | 5ed619afb Implement 'reflect' and 'mirror' padding modes for scipy.ndimage.map_coordinates
+* | | |   03e9a26a3 Merge pull request #7833 from inailuig:linear_call_xla
+|\ \ \ \  
+| * | | | 0055a6f90 add a test for linear_call with jit
+| * | | | b9e26dc86 hook up xla initial style translation rule for linear_call_p
+* | | | |   4425efadd Merge pull request #7924 from zhangqiaorjc:comment_fix
+|\ \ \ \ \  
+| |_|_|/ /  
+|/| | | |   
+| * | | | aec40b48d Update docs for nan checker and tfds example.
+* | | | |   a6043777a Merge pull request #7926 from jakevdp:fix-changelog
+|\ \ \ \ \  
+| |/ / / /  
+|/| | | |   
+| * | | | 404e22ec6 Add Changelog for jax v0.2.21 development
+|/ / / /  
+* | | |   13c74bc36 Merge pull request #7920 from gnecula:tf_comment
+|\ \ \ \  
+| * | | | d417e31d9 [jax2tf] Document an expected error when saving converted functions
+|/ / / /  
+* | | |   d78114174 Merge pull request #7917 from jakevdp:fix-exports
+|\ \ \ \  
+| * | | | 33e2bed1b Fix package exports
+* | | | |   064ee7416 Merge pull request #7916 from hawkinsp:part
+|\ \ \ \ \  
+| |/ / / /  
+|/| | | |   
+| * | | | b56c2ccad Remove export of jax.lax.partial.
+|/ / / /  
+* | | |   47b40e001 Merge pull request #7847 from google:prng-type
+|\ \ \ \  
+| * | | | 9134794dd expose random key array type
+* | | | |   ff6ece9b5 Merge pull request #7915 from jakevdp:readme-comment
+|\ \ \ \ \  
+| * | | | | d0e21072e DOC: add brief comments to example in README
+|/ / / / /  
+* | | | |   5c58afa64 Merge pull request #7855 from cyprienc:scipy-stats-nbinom
+|\ \ \ \ \  
+| * | | | | 8c8f0a8c7 Feat: scipy.stats.nbinom implementation
+* | | | | |   788ecc5e4 Merge pull request #7907 from jakevdp:take-arraylike
+|\ \ \ \ \ \  
+| * | | | | | 066a3bd1c jnp.take: require array argument (but not indices) to be arraylike
+* | | | | | |   c365d7f91 Merge pull request #7908 from hawkinsp:api3
+|\ \ \ \ \ \ \  
+| |/ / / / / /  
+|/| | | | | |   
+| * | | | | | 8b2123968 Switch internal users of jax.util.partial to use functools.partial.
+* | | | | | |   f9299bb9e Merge pull request #7914 from gnecula:tf_call_tf_var
+|\ \ \ \ \ \ \  
+| * | | | | | | 805e359f4 [call_tf] Fix bug when calling TF functions with variables in a jit context.
+|/ / / / / / /  
+* | | | | | |   4cf786a30 Merge pull request #7886 from josephrocca:patch-1
+|\ \ \ \ \ \ \  
+| * | | | | | | 507cc99c8 Add a note about Google Colab setup
+|/ / / / / / /  
+* | | | | | |   f172f9337 Merge pull request #7904 from jakevdp:parallel-take
+|\ \ \ \ \ \ \  
+| * | | | | | | 04afc0cc7 ppermute: avoid passing lists of indices to jnp.take
+| |/ / / / / /  
+* | | | | | |   9045672ae Merge pull request #7906 from sharadmv:pdot-precision
+|\ \ \ \ \ \ \  
+| * | | | | | | ebd8d9584 Add precision param for pdot
+* | | | | | | |   0e31f0eda Merge pull request #7812 from google:rerejames
+|\ \ \ \ \ \ \ \  
+| |_|/ / / / / /  
+|/| | | | | | |   
+| * | | | | | | 36154fac3 handle linear custom_jvp functions
+|/ / / / / / /  
+* | | | | | |   60e7044a3 Merge pull request #7903 from hawkinsp:api2
+|\ \ \ \ \ \ \  
+| * | | | | | | a84426cb8 Switch internal users of jax.ops.index_... to use x.at[x].set() APIs.
+| |/ / / / / /  
+* | | | | | |   86abf6ca7 Merge pull request #7869 from dan-zheng:numpy_printoptions
+|\ \ \ \ \ \ \  
+| |/ / / / / /  
+|/| | | | | |   
+| * | | | | | 035b27ffb Add `jnp.get_printoptions` and `jnp.printoptions`.
+|/ / / / / /  
+* | | | | |   4d68a7992 Merge pull request #7606 from jakevdp:jnp-mypy
+|\ \ \ \ \ \  
+| * | | | | | 245581411 Add PEP484-compatible export for jax and its subpackages
+|/ / / / / /  
+* | | | | |   836bfb297 Merge pull request #7902 from hawkinsp:api
+|\ \ \ \ \ \  
+| * | | | | | 9f083d11d Use jax.* APIs rather than api.* names in tests.
+|/ / / / / /  
+* | | | | | 3218b0602 Expose allow_spmd_sharding_propagation_to_output in Python
+* | | | | | 80599c082 Replace uses of jax.partial with functools.partial, in preparation for removing jax.partial.
+* | | | | |   c9915fe75 Merge pull request #7900 from hawkinsp:flake
+|\ \ \ \ \ \  
+| * | | | | | 40e634aaa Relax test tolerance for a lax_test.py test.
+|/ / / / / /  
+* | | | | |   ab8eaba71 Merge pull request #7889 from gnecula:tf_comment
+|\ \ \ \ \ \  
+| * | | | | | b59db5b18 [jax2tf] Fix stale comments
+|/ / / / / /  
+* | | | | | ab544cb26 flip lower bits to derive seeds for the custom test PRNG
+* | | | | |   a05f18fd6 Merge pull request #7875 from hawkinsp:debugprint
+|\ \ \ \ \ \  
+| * | | | | | 2e4b1bc1b Remove some debug print statements left in lax_numpy.
+* | | | | | |   321434dcc Merge pull request #7879 from google:prng-shape
+|\ \ \ \ \ \ \  
+| * | | | | | | 2d7a98bea make PRNGKeyArray.shape a property, add tests for it and for disallowed addition
+* | | | | | | |   1113262fd Merge pull request #7880 from google:doc-rm-nbs
+|\ \ \ \ \ \ \ \  
+| |/ / / / / / /  
+|/| | | | | | |   
+| * | | | | | | e659c5497 docs: remove application tutorials
+|/ / / / / / /  
+* | | | | | |   8ca275abb Merge pull request #7814 from TinaZetongJia:pjit_tutorial
+|\ \ \ \ \ \ \  
+| * | | | | | | bc01a3a5c removing ipynb in format
+| * | | | | | | e7e8183a4 not exclude 08-pjit.md
+| * | | | | | | ae8bbab79 add space
+| * | | | | | | 4a3669279 added all imgs
+| * | | | | | | c0d9d76e8 added first img
+| * | | | | | |   d18d24bb3 Merge branch 'pjit_tutorial' of https://github.com/TinaZetongJia/jax into pjit_tutorial
+| |\ \ \ \ \ \ \  
+| | * | | | | | | 849ce5132 delete images
+| * | | | | | | | da186f4df delete pjit notebook
+| |\| | | | | | | 
+| | * | | | | | | 851316f0e Uploaded smaller images
+| | * | | | | | | d3dd4e0ad don't use top-level headings
+| | * | | | | | | 701ffe728 sync md file
+| | * | | | | | | 1edbf7636 Remove stderr blocks
+| | * | | | | | | a48cbbbe3 add markdown version
+| | * | | | | | | 9f1504bd7 added pjit tuorial colab
+| * | | | | | | | add830037 added images for pjit tutorial
+| * | | | | | | | 24961d726 added pjit tuorial colab
+* | | | | | | | | cc2efbf03 Add new lowering APIs for xmap
+* | | | | | | | | d5110bea9 Avoid accidental on-device array creation in _reduction_init_val.
+* | | | | | | | | 5a99c3d78 Fix performance degradation due to repeated aval creation. Fix error when printing a DeviceArray without an aval.
+| |_|/ / / / / /  
+|/| | | | | | |   
+* | | | | | | | c845d15b3 Cache used_axis_names calls for jaxprs
+| |_|_|_|_|_|/  
+|/| | | | | |   
+* | | | | | | 00528a42e Add new lowering APIs for jit
+* | | | | | |   d6a4b2f1b Merge pull request #7734 from sharadmv:xmap-custom-vjp
+|\ \ \ \ \ \ \  
+| * | | | | | | cc3e19799 Combine initial_style_batchers with collective_rules
+|/ / / / / / /  
+* | | | | | | 8353d6d4d Add more @jit decorators to jax.numpy functions.
+* | | | | | | e7e5140dc Move implementation of jax.flatten_util to jax._src.flatten_util. Add a jax.flatten_util shim.
+* | | | | | | 7f277068a [JAX] Include the function name in the error message when hash/equality of a static argument fails.
+* | | | | | |   b0e0e4610 Merge pull request #7854 from hawkinsp:rename
+|\ \ \ \ \ \ \  
+| * | | | | | | f39b392e1 Use shorter variable names in lax.py.
+* | | | | | | |   64884e613 Merge pull request #7843 from hawkinsp:linspace
+|\ \ \ \ \ \ \ \  
+| * | | | | | | | 086cbdf0f Add a @jit decorator around jnp.linspace.
+* | | | | | | | | 5b4757d23 New lowering APIs for pjit
+| |_|_|_|/ / / /  
+|/| | | | | | |   
+* | | | | | | | e869e5e0f Move contents of jax.api_util to jax._src.api_util and add a forwarding shim.
+| |/ / / / / /  
+|/| | | | | |   
+* | | | | | | bf351d1e9 Drop support for the deprecated StreamExecutor CPU backend.
+* | | | | | | 1158530fa Remove axis name from named_shape when unmapping avals

@@ -1,0 +1,1000 @@
+commits,release
+"* 0e9aa6e3 Merge pull request #1140 from BearGroup/release/5.14.1
+* 3392cbb0 Version bump to 5.14.1 and update changelog
+* 66ec7616 Merge pull request #60 from BearGroup/asd-943
+* e4717327 Fix phpcs warnings
+* 6574b8ea ASD-943 - Add estimated order amount to button render/updates, remove decoupled render/checkout","Changed how buttons are rendered for compatibility with estimated order amount feature
+Removed estimated order amount from PDP button"
+"* 984bd10 Update CHANGELOG.md
+* f5a64a0 docker: use go1.18
+* 6fb6126 server(transfers): track progress of archive creation and extraction (#143)
+* 3edec80 go: update minimum to 1.18, update dependencies (#144)
+* 0637eeb docker: add configuration for user namespace remapping (#121)
+* e98d249 Add configuration for trusted proxies (#141)
+* b20bf6d ci: pin go-version to 1.18.7
+* 1b268b5 Update FUNDING.yml
+* 7245791 backups(s3): send uploaded parts in complete request","Fixed
+The S3 backup driver now supports Cloudflare R2
+Added
+During a server transfer, there is a new ""Archiving"" status that outputs the progress of creating the server transfer archive.
+Adds a configuration option to control the list of trusted proxies that can be used to determine the client IP address.
+Adds a configuration option to control the Docker user namespace setting when Wings creates containers.
+Changed
+Releases are now built using Go 1.18 — the minimum version required to build Wings is now Go 1.18.
+SHA256 Checksum"
+"* f0010483 Version bump (0.16.4)
+* d1e3210d Update addon.xml (#458)
+*   5d2724da Merge pull request #460 from CastagnaIT/drm
+|\  
+| * e7754184 Updated ESN generator
+|/  
+* c0945ee1 Update czech language (#453)
+* 7d13f3df Updated german translation for v.0.16.4 (see #306) (#452)
+* 67a6c779 Removed kodi-addon-checker requirement
+* b96b4a6c Added ""because you liked"" to raccomendations menu
+* ddde80bd Updated es translation
+* 67bb93ee Moved debug settings to the right position
+* 40275111 Added debug option to always show codec info on playback
+*   18c39565 Merge pull request #442 from CastagnaIT/upnext_runtime
+|\  
+| * c5035bdd Added runtime info to Up Next
+* | cd87b44c Updated german translation for v.0.16.4 (see #306) (#446)
+* | 9e9f1f39 Fixed czech translation
+* |   965a8d91 Merge pull request #444 from CastagnaIT/drop_languages
+|\ \  
+| * | 2a455da7 Dropped no longer maintained languages
+|/ /  
+* | 332e611e Added czech language to video content
+* | ffdea1b6 Czech language (#440)
+* | e0fe3c4a Reset user id token after an handshake
+|/  
+* e43a8107 Added get methods for infolabels info
+* 94a18f72 Fixed error on py3 due to wrong decode
+* 6d458538 Fixed strm resume workaround
+* 761fef07 Check if the user id token is still valid
+* 8a554812 Revert ""Removed html parser from profile name""
+* c41c19ae Updated italian translation
+* e0350ad3 Add Up Next install option and fixed labels
+* bdce6f8e Load the manifest from cache
+* 3d5317bc Manage caches from the service individually
+* 0c8897e9 Cleanups
+*   0d13e403 Merge pull request #424 from CastagnaIT/upnext_credits
+|\  
+| * 297d51f5 Changed upnext default behaviour
+| * 5e4ac376 Use notification_offset for upnext
+|/  
+*   1353f0e6 Merge pull request #374 from CastagnaIT/upnext
+|\  
+| * f17b4271 Delegate upnext to start the next video
+* 53f8dba1 Fixed wrong mpd seconds strings
+* 65050ab6 Added is_debug_verbose
+* 9fbe2dac Merge pull request #437 from CastagnaIT/verbump
+* 5b748807 Fix settings monitor suspend","Up Next is now supported only from version 1.1.0 and up
+Added czech language
+Added ""because you liked"" to recommendations menu
+Added Up Next install option
+Implemented Up Next feature, end time information
+Implemented Up Next feature, fast start next video
+Fixed the error ""Request failed validation during key exchange""
+Fixed an issue that causing opening Up Next notification in wrong position
+Fixed html tags in profiles names
+Fixed STRM files resume workaround
+Fixed retrieving infolabels from library on python 3
+Managed user id token key expiration
+Manifest is saved to hdd with enabled verbose debugging only
+Updated de, es, hu, it translations
+Some minor changes, fixes"
+"* 3bbd64b5 Version bump (0.15.8)
+*   0bef7908 Merge pull request #280 from CastagnaIT/cookiebroken
+|\  
+| * 42600a17 Fixed problem of non working cookies
+* | 40706a1c Updated german translation (#276)
+|/  
+* ab866896 Fixed UnicodeEncodeError when UpNext sending play_callback
+*   bdeb67df Merge pull request #274 from CastagnaIT/limitsync
+|\  
+| * d1e23b10 Do not sync on non-owner profile
+|/  
+* 7de3b32a Fixed prefetch_login unhandled exception
+* 29e267bf Merge pull request #272 from CastagnaIT/verbump
+* 714f091e Merge pull request #271 from notoco/PolishTranslation
+* a9735e6a Update Polsih strings","Fixed addon open issue caused to a broken cookies
+Updated de translations
+Fixed an issue that cause UpNext sometimes to fail
+Minor fixes"
+* 7fa7cc3 Fix permissions not being checked correctly for admins,"Fixed
+Fixes SFTP authentication failing for administrative users due to a permissions adjustment on the Panel.
+SHA256 Checksum"
+"* 2cc203fc Merge pull request #1074 from BearGroup/release/5.7.1
+* 5673ce27 Version bump to 5.7.1 and add to changelog
+*   f2562839 Merge remote-tracking branch 'origin/asd-769' into integration
+|\  
+| * 38f50bb6 ASD-769 - Remove PID and buyerToken from logs
+*   eb9759b2 Merge branch 'asd-755' into integration
+|\  
+| * d12017fa ASD-755 - also remove fields from address if they are a single dash ""-""
+| * 09db423b ASD-755 - if no phone number is provided, use ""0"" to satisfy Amazon API
+* 555d6829 Merge branch 'asd-756' into integration
+* b79484ca ASD-756 - add option to load quote from masked cart ID for REST requests","Fixed issue when phone number not required and entered in Magento
+Updated API calls to take in a masked cart ID so they can be used without relying on Magento sessions
+Updated logging to sanitize some data"
+* b618ec8 Bump PID limit to 512 by default,"Changed
+Upped the process limit for a container from 256 to 512 in order to address edge-cases for some games that spawn a lot of processes.
+SHA256 Checksum"
+"* 7e3560b Fix optional before required parameter deprecation
+* 0e45c84 Skip PsalmTest also on older versions
+* 5e8f88b Fix PsalmTest and skip it on newer versions
+* cde1f9d Avoid psalm phar
+* 14065b3 Remove ignore-platform-req and extend PHP versions
+* ab06144 Make implicit nullable types explicit (#431)
+* c5ea790 Fix typos (#396)","What's Changed
+Fix typos by @krsriq in
+Make implicit nullable types explicit by @nicolas-grekas in
+New Contributors
+@krsriq made their first contribution in
+@nicolas-grekas made their first contribution in
+Full Changelog: v2.6.2...v2.6.3"
+"* 2401ec70 Version bump (1.20.6) (#1550)
+* 2c1b16e5 [pylint] fix broad-exception-raised
+* 1732ce2b Updated czech translation (#1548)
+* 0990df8c Update Polish translation (#1547)
+* 5253e01e Fix set_value sqlite params","Fix SQLite error on startup using some linux systems
+Update translations po, cs_cz"
+"*   0282b4bfa Merge pull request #12538 from jakevdp:bundle-pyi
+|\  
+| * 6e6fb10ca setup: bundle *.pyi files with distribution
+*   aafc70d29 Merge pull request #12556 from hawkinsp:rocm
+|\  
+| * f7bafb3d4 Disable multiprocess_gpu_test that fails on ROCm.
+* |   5fe7a5440 Merge pull request #12555 from hawkinsp:release
+|\ \  
+| * | 8d8643664 jax/jaxlib 0.3.20 release candidate.
+| |/  
+* |   39eabe878 Merge pull request #12552 from hawkinsp:nccl
+|\ \  
+| |/  
+|/|   
+| * eabb91e53 Fix test failure in GPU CI if NCCL_DEBUG is enabled.
+|/  
+*   96abd9ac7 Merge pull request #12540 from sharadmv:cond-lowering-fix
+|\  
+| * ddeaa8dbb Fix lowering bug in effectful batched cond and add tests
+* 96a85bd59 Make addressable_shards a property like local_shards
+*   948906885 Merge pull request #12546 from mattjj:issue12542
+|\  
+| * b175e1173 [c++ jit] only set use_fastpath in cache_miss if all args are DeviceArrays
+* | b4e1d0af8 Propagate `name` through ExecuteReplicated for `dispatch.check_special`
+|/  
+* 933b6a2fa Fix the bug where XLA doesn't provide shardings for all the outputs if all the elements in the output tuple have the same sharding. XLA decides to run the `FusionTupleDeduplicator` to put the sharding on ROOT instead of the tuple.
+* c8bff11d1 Add `addressable_` counterparts of `local_` to GDA to make it easier for users to move to Array as both will have the same API.
+* e4f2bff0a Disintegrate `Array` into DeviceBuffers inside GDA. This is required for backwards compatibility changes as users can create GDAs and pass that to pjit even when Array is switched on.
+* 0919a6776 Merge pull request #12534 from google:update-pypi
+* d028d9398 Update version and changelog for jax 0.3.19 release","Notable changes:
+Adds missing .pyi files that were missing from the previous release ().
+Fixes an incompatibility between jax 0.3.19 and the libtpu version it pinned (). Requires jaxlib 0.3.20.
+Fix incorrect pip url in setup.py comment ()."
+"* b818b096b Use MavenSettings and activeProfiles set when an AST is parsed to subsequently resolve dependencies in recipes / fixes #2333
+* 330f8932f Replace duplicate String literals of enums in ReplaceDuplicateStringLiterals without JavaTemplate.
+* d909d51dc Revert support for duplicate string literals on enums in ReplaceDuplicateStringLiterals until JavaTemplate is fixed.
+* f4279b6f2 Insert the replaced string literal after the J.EnumValueSet in ReplaceDuplicateStringLiterals. fixes #2330
+* 11401cb23 Added normalizeName to VariableNameUtils. Added variable name normalization to ReplaceDuplicateStringLiterals. fixes #2329
+* c3d6f8dfd Break apart recipe and take advantage of new markup syntax (#2326)
+* 63b7b972e Fix the JavaTemplate AnnotationTemplateGenerator so that MethodDeclaration and VariableDeclaration annotations are templated correctly. (#2325)
+* d7db74256 FindImports getVisitor public visibility
+* b1c0ab0bf Case pattern marshaled into Case Expressions (#2323)","What's Changed
+Maven recipe running will now use the effective MavenSettings and active profiles that existed at parsing time.
+Case pattern marshaled into Case Expressions by @tkvangorder in
+Fix the JavaTemplate AnnotationTemplateGenerator so that MethodDeclar… by @pway99 in
+Break apart recipe and take advantage of new markup syntax by @shanman190 in
+Full Changelog: v7.32.0...v7.32.1"
+"* f824f0d Ignore code coverage for getCurrentTime on 32 bit
+* 72a0db5 Warn if time is about to overflow on 32 bit
+* 8b38da2 Support 32-bit platforms
+* 5316e74 Different approach for 32-bit support
+* 1541424 Remove Gemfile.lock
+* 0240f01 Bump nokogiri from 1.8.2 to 1.10.3 in /docs (#272)
+* a4fd818 Swap sign of returned time on 32-bit systems
+* 5dcdd83 Declare variables as static within function
+* 944a2dd Move Coroutine::__destruct to Placeholder
+* 58c7bfb Improve try / catch nesting
+* 558f1e9 Catch also \Exception in clearLoopRethrows()
+* 214443b Fix code style
+* c128280 Fix exceptions bubbling from Coroutine::__destruct
+* aeb5de1 Add failing Coroutine test
+* a660af7 Annotate that throwIfRequested might throw CancelledException
+* 4e82239 Fix typo (#268)
+* 272f78d Note method to retreive array of exceptions
+* 19bcf9b Use shared style repo
+* 4e3251c Test on PHP 7.3 & 7.4
+* ef83723 Fix signal handler in NativeDriver when used with pcntl_async_signals
+* afb6000 Fix typo on homepage (#263)
+* 0fd6b8c Fix phpdoc types for call / asyncCall (#260)
+* c6f8425 Use a custom priority queue for timers
+* b6fc1e1 Move nowUpdateNeeded setting to getTimeout()
+* c3afc5e Fix #256 - Ensure nowUpdateNeeded is set to true after a blocking wait in NativeDriver
+* 216315e Update Loop::now() docs","Fixed issue where the loop time in NativeDriver was not refreshed after waiting for I/O streams ()
+Fixed compatibility issue of NativeDriver with pcntl_async_signals() ()
+A custom queue is now used for timers in NativeDriver to allow cancelled timers to be garbage collected immediately instead of after their original expiration time ()
+Resolving a promise with an object that throws when destructed will now forward that exception to the event loop error handler ()
+Fixed loop time to support 32-bit systems ()"
+"* a6a05be8 Version bump (1.23.3) (#1693)
+*   f5ae0891 Merge pull request #1692 from CastagnaIT/changes
+|\  
+| * 61ae1675 [api_requests] Disabled login with credentials
+| * efeaac7d [infolabels] workaround for missing arts
+| * 79446995 [session] updated page to get email
+| * fe3b0d3b [msl_utils] Updated manifest endpoint
+|/  
+* feb1351b [access] fix react context data paths","Disabled login with e-mail/password (new website protections)
+Add workaround for missing images to tvshow/movies
+Fixed login with Auth key due to e-mail parsing problem"
+"*   58d516c49 Merge pull request #12764 from midjourney:gda_sharding_property
+|\  
+| * bd054f819 add sharding property to GDA
+* 9bb2c999d Reenable some tests disabled in the past because of an LLVM bug.
+*   012398bdc Merge pull request #12761 from skye:colab_tpu_driver
+|\  
+| * e2aa93914 Update Colab TPU driver version
+|/  
+*   6b459f5eb Merge pull request #12758 from skye:version
+|\  
+| * a6e0e7762 Update version.py, setup.py and CHANGELOG post jax 0.3.22 release
+|/  
+*   1fb886ce4 Merge pull request #12749 from hawkinsp:tests
+|\  
+| * 0d3277b5c Port more tests from jtu.cases_from_list to jtu.sample_product.
+*   7a323b7b9 Merge pull request #12748 from ROCmSoftwarePlatform:fixedROCm_builds_typo
+|\  
+| * 8c13142ae fixed build instructions typo
+*   be3addf71 Merge pull request #12738 from mattjj:issue12643
+|\  
+| * b27acedf1 add more info to pytree prefix key errors
+* 335f45ebb Use `_rewriting_take` and `_chunk_iter` path during `__getitem__` and `__iter__` respectively when the Array is fully replicated","Changes
+Update Colab TPU driver version for new jaxlib release."
+"* 7a5126498 Bumped patch version
+* 0f72091c9 Stop NetworkAddressRules doing DNS lookups
+* 984e79f2f Make NetworkAddressRulesAdheringDnsResolver testable
+* 92d77937b Applied DNS resolver enforcement to webhooks extension
+* 027ddafc3 Moved enforcement of network address rules to Apache client DNS resolver to avoid race condition where rules can be bypassed via successive lookups returning different IP addresses","Security
+This security release addresses the following issues
+CVE-2023-41327 - Controlled SSRF through URL in the WireMock Webhooks Extension and WireMock Studio
+Base CVSS Score: 4.6 (AV:A/AC:L/PR:N/UI:R/S:U/C:N/I:L/A:L/E:F/RL:O/RC:C)
+CVE-2023-41329 - Domain restrictions bypass via DNS Rebinding in WireMock and WireMock Studio webhooks, proxy and recorder modes
+Base CVSS Score: 3.9 (AV:A/AC:H/PR:H/UI:N/S:U/C:L/I:L/A:L/E:F/RL:O/RC:C)
+NOTE: WireMock Studio, a proprietary distribution discontinued in 2022, is also affected by those issues and also affected by CVE-2023-39967 - Overall CVSS Score 8.6 - “Controlled and full-read SSRF through URL parameter when testing a request, webhooks and proxy mode”. The fixes will not be provided. The vendor recommends migrating to WireMock Cloud which is available as SaaS and private beta for on-premises deployments
+Related releases
+WireMock Docker 3.0.3-1 - Docker Image with the Patch
+WireMock 2.35.1 /  WireMock Docker 2.35.1-1 - Backport to WireMock 2.x
+Python WireMock 2.6.1 - Python library that bundles the WireMock JAR file
+NOTE: Other distributions like Testcontainers modules or Helm chart need explicit version declaration, and hence a user action is needed to update the dependencies should they be considered a risk
+Credits
+@W0rty, @numacanedo, @Mahoney, @tomakehurst, @oleg-nenashev"
+"* c19204cf4 Skip UTF-8 BOM characters in XMLLexer.
+* 922e19583 Recipe.noop()","Fixes
+Skip UTF-8 BOM characters in XMLLexer.
+Features
+Add Recipe.noop() for use especially in tests validating parsing logic by running a no-op recipe over the input and expecting the source code to be unchanged."
+"* 34d4930e3 Bump patch version to 3.0.1
+* ae6ed02ad Stopped updating package-lock.json when bumping versions
+* a3024195d Fixed bump patch and minor versions logic
+* ae525f952 Fixed get patch version function in build
+*   0d4ccca5c Merge pull request #2347 from wiremock/better-stub-id-validation-in-admin-api
+|\  
+| * c5e8230ee Added validation of UUIDs in path parameters in the admin API so that clearer errors are reported when non UUIDs are provided or item isn't found
+|/  
+*   5273a43dc Merge pull request #2339 from wiremock/fix-exception-in-diff
+|\  
+| * e95a0dee9 Stop returning 500s for unmatched path patterns
+* | ab05ee918 Ensured that the shadow JAR is always built last. Relocated dependencies in webhooks. (#2344)
+* |   9eaaa6949 Merge pull request #2337 from wiremock/dependabot/gradle/com.diffplug.spotless-6.21.0
+|\ \  
+| * | e70c9566b Bump com.diffplug.spotless from 6.20.0 to 6.21.0
+* | |   36f04c793 Merge pull request #2343 from wiremock/semver-release-drafter
+|\ \ \  
+| |_|/  
+|/| |   
+| * | 7f442f645 Revert Release Drafter to semver after the 3.0.0 release
+|/ /  
+* |   47def844d Merge pull request #2338 from wiremock/revert-2336-exception-in-matcher
+|\ \  
+| * | ac35a94de Revert ""Stop returning 500s for unmatched path patterns""
+* | |   e4ad24aea Merge pull request #2335 from wiremock/fix-filters
+|\ \ \  
+| |/ /  
+|/| |   
+| * | d8b62cfed Respect StopAction in V1 Filter
+| |/  
+* |   8256cd17d Merge pull request #2336 from wiremock/exception-in-matcher
+|\ \  
+| |/  
+|/|   
+| * 8133889fa Stop returning 500s for unmatched path patterns
+|/  
+* 77f9b4d3a Add annotations for Beta and Internal APIs (#2332)
+* 8b87ded11 Removed redundant relocation of javax.annotation from the build
+* 3af632788 Shadow additional packages (#2327)
+*   439a7cf92 Merge pull request #2305 from pks-1981/guava3
+|\  
+| *   7c084200c Merge branch 'master' into guava3
+| |\  
+| * | d1b1cf5ad update
+| * | 28f296bb0 update
+| * | f041bb599 Replace Guava by JDK (Partly)
+| * | 84d7522ec Replace Guava by JDK (Partly)
+| * | a3a729e10 Replace Guava by JDK (Partly)
+| * |   e6958d830 Merge branch 'master' into guava3
+| |\ \  
+| * | | 3af3f5e76 update
+| * | | 1ce669c67 update
+| * | | e24f3f286 update
+| * | | cb2e3f60d Merge branch 'master' into guava3
+| * | | 0779d9553 update
+| * | | 2a00ec9e5 update
+| * | | ba9c4d6ae Merge branch 'master' into guava3
+| * | | d68624ed6 update
+| * | | bd4eb7ef8 update
+| * | | a87546f0f update
+| * | | 149ea9f27 update
+| * | | 436372f70 update
+| * | | 70238b1ac update
+| * | | f4d311411 update
+| * | | d0deb955e update
+| * | | 8eb3396e2 update
+| * | | b60acec7c update
+| * | | cd42e07ea update
+| * | | a0f09d1d4 update
+| * | | 3b4611fd6 Merge branch 'master' into guava3
+| * | | 2dc5c0420 update
+| * | | 481e5354b update
+| * | | 599dee3ef update
+| * | | cf3118724 update
+| * | | 39cbf5a94 update
+| * | | 5d19955e4 Merge remote-tracking branch 'origin/master' into guava3
+| * | | 370b6c46a Replace Guava by JDK (Partly)
+|  / /  
+* | / bedd957cd Excluded transitive jsr305 dependency from build to avoid javax.annotation classes ending up in the standalone JAR
+| |/  
+|/|   
+* | 01997b6e4 Added beta warning comment to all stores interfaces (other than Stores which already had it)
+* |   27fb9302d Merge pull request #2321 from wiremock/dependabot/gradle/io.netty-netty-all-4.1.97.Final
+|\ \  
+| |/  
+|/|   
+| * 99000bd72 Bump io.netty:netty-all from 4.1.96.Final to 4.1.97.Final
+|/  
+*   ad7fd92c4 Merge pull request #2303 from ikalu/958
+|\  
+| *   61b30d63e Merge remote-tracking branch 'origin/958' into 958
+| |\  
+| | * 0918d3b82 Address review comments
+| | *   daa14d496 Merge remote-tracking branch 'origin/958' into 958
+| | |\  
+| | | *   5288f3303 Merge remote-tracking branch 'origin/958' into 958
+| | | |\  
+| | | | * affe31eb0 Add simple healthcheck api
+| | | * 602cb595f Add simple healthcheck api
+| | * 4c8fcfda7 Add simple healthcheck api
+| * ed392db86 Address review comments
+| * 68ea49303 Add simple healthcheck api
+| * 61bc3b932 Address review comments
+| * e6af9264f Add simple healthcheck api
+* 78f04e2a5 Merge pull request #2299 from pks-1981/2296
+* 06fa96259 update
+* 0b2ab7be1 Merge branch 'master' into 2296
+* de53c3a1f update
+* fe4b83874 Merge branch 'master' into 2296
+* 0211c848a update
+* f628be9f2 update
+* 457e9dc6a update
+* 5332bee63 Merge branch 'master' into 2296
+* a63a23c7e update
+* 9abfdf469 Merge branch 'master' into 2296
+* 1f7b5f0cf Change Queue on to Deque in InMemoryRequestJournalStore and ServeEvent","Bug fixes
+Stop returning 500s for unmatched path patterns () @Mahoney
+Ensure that the shadow JAR is always built last to ensure webhooks fat JAR wins () @tomakehurst
+Added validation of UUIDs in path parameters in the admin API so that clearer errors are reported when non UUIDs are provided or item isn't found rather than throwing a 500 error () @tomakehurst
+Respect StopAction in V1 Filter () @Mahoney
+Thanks to the regression reporters: @defnngj , @oleg-nenashev , @Mahoney"
+"* 57a350e9 Version bump (1.20.1) (#1491)
+*   cad4a732 Merge pull request #1489 from CastagnaIT/fix_linux
+|\  
+| * 1b2b70ee Fix MSL manifest xid for linux devices
+* |   f19748f3 Merge pull request #1490 from CastagnaIT/settings_support
+|\ \  
+| |/  
+|/|   
+| * 0d92aac9 Allow execute settings without check login
+| * 6d1327e7 Settings changes for about/logout
+|/  
+* 3e91c2a9 Merge pull request #1482 from CastagnaIT/service_startup
+* 5cab4ae7 Improvement to check service at startup","Fixed playback on linux devices
+Protected Logout setting with a confirmation dialog
+Wait for service startup without notification
+Add support info on add-on settings"
+"* c4d590b1b Update values for release 0.4.1
+*   17c679609 Merge pull request #13619 from jakevdp:sparse-validate
+|\  
+| * e9cc52387 [sparse] validate BCOO on instantiation
+* dc8ead04b Update CHANGELOG to indicate that 0.4.0 was yanked.
+* 71569e1d1 Remove the specialized sm versions for testing. It caused release wheels to ship without correct sm versions compiled in.
+* 0bdb7ec04 Finish jax and jaxlib release 0.4.0
+* d491d9fd3 Remove the cached check in aot compiled call in MeshExecutable because a fast C++ dispatch path exists. This leads to a better error message which contains the shape and arg value.
+*   23001ae78 Merge pull request #13603 from gnecula:native_unused
+|\  
+| * 2f9dd041f [jax2tf] Fix native lowering for modules that don't use some inputs.
+* 5e8c0ec91 Merge pull request #13614 from hawkinsp:cuda
+* 7bd6cc13e Note CUDA 11.8 is required for Hopper and Ada Lovelace series GPUs.","Changes
+Support for Python 3.7 has been dropped, in accordance with JAX's
+{ref}version-support-policy.
+The behavior of XLA_PYTHON_CLIENT_MEM_FRACTION=.XX has been changed to allocate XX% of
+the total GPU memory instead of the previous behavior of using currently available GPU memory
+to calculate preallocation. Please refer to
+GPU memory allocation for
+more details.
+The deprecated method .block_host_until_ready() has been removed. Use
+.block_until_ready() instead."
+"* cae57bc76 Rename ModifierResults to Java11ModifierResults to avoid runtime name collisions with the Java 8 equivalent
+* e15deef5b Experimental support for recipe and parsing timeout (fixes #483) (#485)
+* fac8d21cd AddImport considers J.FieldAccess.target.type when comparing types.  Fixes #484
+* 7445e8894 UnnecessaryThrows (fixes #463) and RedundantFileCreation
+* 3320c5dab Update 0002-recipe-naming.md
+* cd71b83e9 Update 0002-recipe-naming.md
+* 738b7f204 Update 0002-recipe-naming.md
+* 026bfde5e disabled unit test for issue #484. AddImport does not consider the J.FieldAccess.target.type
+* 65e570882 Update 0002-recipe-naming.md
+* 7396425f3 Update README.md
+* f1a14fd01 Create 0002-recipe-naming.md
+* 8bd11a34b Use ShallowClass for JavaType.Method throw list
+* bb7373bb1 Revert ""Revert ""Fix reporting of which recipes made changes. Fixes #482""""
+* f819f7757 Revert ""Fix reporting of which recipes made changes. Fixes #482""
+* 2c55ec3a0 Fix ArrayIndexOutOfBounds in MethodNameCasing
+* 2607e2abc Fix reporting of which recipes made changes. Fixes #482
+* 89b494336 Polish display name and description of XXE vulnerability
+* 9da463aef Fixing NPE in TypeUtils
+* 65e7fb2a9 Adding thrown exceptions to JavaType.Method  (#480)
+* 9526417e5 moving Java11PrimitiveWrapperClassConstructorToValueOfTest from Java11TreeDebugTests.kt to Java11VisitorDebugTests.kt
+* f6c58398b Cleanup recipe for Converting Primitive Wrapper Class Constructors to valueOf (#478)
+* eab52bc5d Fixing tests (#479)
+* ec8c6e835 Fix spurious import added for static fields (fixes #477)
+* a29f80c30 Add test for issue #474
+* 42061f2e4 UseDiamondOperator (fixes #465) and UnnecessaryExplicitTypeArguments (fixes #475)
+* db67f3ae2 Code cleanup recipe that lists all cleanup recipes (fixes #472)","Fix reporting of which recipes made changes. ( )
+Fix possible runtime name collision between rewrite-java-11 and rewrite-java-8 versions of class ""ModifierResults"" cae57bc
+Fix ArrayIndexOutOfBounds in MethodNameCasing 2c55ec3
+Fix NPE in TypeUtils 9da463a
+Fix spurious import added for static fields ()
+UseDiamondOperator () and UnnecessaryExplicitTypeArguments ()
+Adding thrown exceptions to JavaType.Method ()
+Add Cleanup recipe for Converting Primitive Wrapper Class Constructors to valueOf ()"
+"* 89558810d Print idempotence for prefix of varargs parameters in Javadoc
+* 78f82c871 License headers
+* 8a42e33d8 Add CommitMessage marker
+* ddf55a1bd Find `@Option` annotations without `example` values (#3917)
+* ef368c047 `FindParseFailures`: Null-safe
+* b716dc3e3 Fix `TypesInUse` regression (#3914)
+* 670dd5c84 Do not unwrap negated assignment","What's Changed
+Fix TypesInUse regression by @knutwannheden in
+Find @Option annotations without example values by @timtebeek in
+Do not unwrap negated assignment 670dd5c
+FindParseFailures: Null-safe ef368c0
+Add CommitMessage marker 8a42e33
+Print idempotence for prefix of varargs parameters in Javadoc 8955881
+Full Changelog: v8.13.3...v8.13.4"
+"* 9cf0f031f Fix #3908 - Maven repositories in settings.xml override repositories of the same id in pom.xml, including the default maven central repository
+* b5e239c85 Validate that Change(Managed)DependencyGroupIdAndArtifactId updates GAV (#3889)
+* 02d0ee956 `SpacesVisitor`: Remove spaces before statement semicolon (#3905)
+* 86f816463 Fix LOWER_CAMEL, UPPER_CAMEL to handle uppercase abbreviation better (#3906)
+* 3aaf8311d Oops, fix conditional
+* 62fe4341f Add pretty checkmarks to error message about unexpected file creation in recipe tests.
+* 74c1c0d51 Improve error messages in RewriteTest relating to erroneous creation/non-creation of files
+* 5f3642b38 `UnnecessaryParentheses`: Fix for negated `instanceof`
+* ed00d58d1 Constructor call type attribution should include generics (#3902)
+* c625f30ca Don't call `J.ClassDeclaration#withBody()` using `null`","What's Changed
+Constructor call type attribution should include generics by @knutwannheden in
+Fix LOWER_CAMEL, UPPER_CAMEL to handle uppercase abbreviation better by @seonwoo960000 in
+SpacesVisitor: Remove spaces before statement semicolon by @knutwannheden in
+Validate that Change(Managed)DependencyGroupIdAndArtifactId updates GAV by @tobli in
+Fix - Maven repositories in settings.xml override repositories of the same id in pom.xml, including the default maven central repository by @sambsnyd in 9cf0f03
+Full Changelog: v8.13.0...v8.13.2"
+* 7d3655a77 Add simple single file multipart file upload to HttpSender (#3910),"What's Changed
+Add simple single file multipart file upload to HttpSender by @pstreef in
+Full Changelog: v8.13.2...v8.13.3"
+"* 53f421eb1 Normalization of maven repositories that don't permit directory listing (#3961)
+* 1124e3d3c Get gradle AddPropertyTest passing given changes to underlying AddProperty recipe
+* 44e811175 Update AddProperty description to reflect its new behavior
+* 1a9289a12 Improve AddProperty to insert in alphabetical order by key
+* 5976dc853 Make DependencyUseStringNotation compatible with G.GString (#3960)
+* 43906c545 Add FindClassHierarchy recipe to produce a data table of class declarations, their superclasses, and interfaces
+* 03ca1336f License headers
+* 01aaa346f Add recipe which encloses all parameters interpolated into Groovy GStrings in curly braces
+* 9c944e77f Handle empty string option (#3958)
+* 6a34a3262 feat: add from date option to FindCommitters recipe (#3957)
+* c0d1e81ab Add logic to simplify `J.Ternary`
+* 8ffc10699 Fix UpgradeDependencyVersion so it doesn't use the same GradleProject marker for every project in a multi-project build.
+* f0548deb4 Add headers for FindCommitters data tables (#3956)
+* fc0cbf173 fix: prevent all referenced properties from updating to latest regardless of recipe (#3955)","What's Changed
+fix: prevent all referenced properties from updating to latest regardless of recipe by @ajohnsonz in
+Add headers for FindCommitters data tables by @pstreef in
+feat: add from date option to FindCommitters recipe by @pstreef in
+Handle empty string option by @pstreef in
+Make DependencyUseStringNotation compatible with G.GString by @Jenson3210 in
+Normalization of maven repositories that don't permit directory listing by @jkschneider in
+New Contributors
+@Jenson3210 made their first contribution in
+Full Changelog: v8.14.3...v8.14.4"
+"* dd39b2480 Feat:token length estimator (#3836)
+* c27ef7923 Fixed prefix on key after folder scalars.
+* ea07fb7a6 added plugins to ResolvedPom + some tests (#3768)
+* 7552abd4c Delete `data-flow/model.csv` resource
+* f7772889c Modify `J.Annotation#getSimpleName()` for Kotlin
+* 23740e885 Ensure ExplicitPluginVersionTest needs no further updates
+* bb795f1ec Adjust test after new `maven-compiler-plugin` release
+* e1379a906 Add `J.NullableType` for Kotlin / C# (#3812)
+* b1ee666b4 Fix another `SemanticallyEqual` bug
+* 8907be193 Add more `SemanticallyEqualVisitor` tests
+* 6f64c1166 Fix another `SemanticallyEqualVisitor` bug
+* 3659f553d `SemanticallyEqual`: Fix bug in `visitFieldAccess()` (#3827)
+* 8e5c89ca7 Fix test failure on main after b70c34b3767afe5bfc5c5db08d833b8823f2f79d
+* b70c34b37 `SimplifyBooleanExpression` should only remove parens when related
+* dd5e50268 filePattern on FindSourceFiles is now nullable, and matches all files… (#3823)
+* ba1d1fda0 Maven POM downloader optimizations (#3822)
+* 0c7f396a4 Include Recipe class simple name in validation errors (#3819)
+* 7259cc8be Again try to improve error message from `AddPluginVisitor`","What's Changed
+Include Recipe class simple name in validation errors by @timtebeek in
+Maven POM downloader optimizations by @ammachado in
+filePattern on FindSourceFiles is now nullable, and matches all files… by @nmck257 in
+SemanticallyEqual: Fix bug in visitFieldAccess() by @knutwannheden in
+Add J.NullableType for Kotlin / C# by @kunli2 in
+added plugins to ResolvedPom + some tests by @joanvr in
+Fixed prefix on key after folder scalars. by @traceyyoshima in
+Feat:token length estimator by @justine-gehring in
+Full Changelog: v8.11.2...v8.11.3"
+"* 102623b Bump version: 1.0.0 → 1.0.1
+* ab513be Update CHANGELOG for v1.0.1
+*   784893e Merge pull request #172 from oasis-open/171-make-constant
+|\  
+| * 4229c38 Fix make_constant when value is already a constant
+|/  
+* f778a45 Remove dev and nightly Python builds from Travis.
+*   740fd63 Merge pull request #170 from emmanvg/issue-148
+|\  
+| * 5d96cf1 Update TAXII2 filter fields in documentation
+| * 410296e Update file taxii_example.py
+| * c152679 Remove 'real_stix_objs1' as it is unused in the tests
+| * 2043a51 Add two more tests for the `dict` case in TAXIICollectionSink
+| * 7e5c8a9 Sort import statements in tests.
+| * 7788ad8 Add `medallion` dependency to Travis CI tests
+| * 2fe9a0f Finish adding new tests for TAXII datastore. closes #148
+| * e4a226c Finish merging all the changes from @mbastian1135
+| * 488012d Add support for 'real_stix_objs' for test cases
+| * fb79e70 Simplify FilterSet instance in MemorySource
+| * 8a9acfe Create TAXII query correctly. closes #169
+| *   99a8f9e Merge branch 'master' into issue-148
+| |\  
+| |/  
+|/|   
+* | 3373a66 Fix README for PyPI rendering
+ /  
+* 507e399 Update .gitignore
+* 988dad7 WIP: Mock TAXIIClient Collection Endpoint
+* 84c09d7 Rename stix object fixture
+* 4d35cc6 WIP: Update tox.ini
+* 1ff640d Moved some test methods here
+* cd85683 WIP: Cleaned test_datastore to only include base store tests
+* 0d1729b Deleted test_filesystem in favor of test_datastore_filesystem.py
+* 80e4706 Add some test objs previously in test_datastore.py
+* c2e7cbb Moved from test_datastore.py -> new file test_datastore_taxii.py
+* 59ff0c4 Moved from test_datastore.py -> new file test_datastore_memory.py
+* 5c4472c Moved from test_datastore.py -> new file test_datastore_filters.py
+* 8f58f29 Moved from test_datastore.py -> new file test_datastore_filesystem.py","Fixes bug with incorrect TAXII parameters ().
+Fixes bug with constructing patterns ()."
+"* def66163 Update conf.py
+* 619b3e38 Fix divide zero guard (#1101)","What's Changed
+Fix divide zero guard by @manthey in
+Full Changelog: v1.3.3...v1.3.4"
+"* f9790ae chore(release): 1.11.11 [skip ci]
+*   ccf947e Merge pull request #2641 from iamkun/dev
+|\  
+| * f68d73e fix: day of week type literal (#2630)
+| * 0309582 chore: add french README.md (#2547)
+| * 44b0936 fix: Update 'da' locale to match correct first week of year (#2592)
+| * 2076da9 chore: Update README.md
+| * bdcc336 chore: Update README.md
+| * fa304a3 chore: Update README.md
+| * f0c9a41 fix: update locale Bulgarian monthsShort Jan (#2538)
+| * 43b62e0 chore: Update README.md
+| * e7eec41 Update README.md
+| *   305f540 Merge pull request #2470 from iamkun/master
+| |\  
+| |/  
+|/|   
+* | e363522 Merge branch 'dev' into master
+|\| 
+| * a947a51 fix: improve locale ""zh-hk"" format and meridiem (#2419)
+| * c2ea004 chore: Change CI badge style (#2454)
+| * be9a728 chore: Fix CI Badge (#2452)
+* 55e89bf chore: Readme add usage trend (#2444)","Bug Fixes
+day of week type literal () (f68d73e)
+improve locale ""zh-hk"" format and meridiem () (a947a51)
+Update 'da' locale to match correct first week of year () (44b0936)
+update locale Bulgarian monthsShort Jan () (f0c9a41)"
+"*   f4011b9f7 Merge pull request #4705 from travisn/release-1.1.9
+|\  
+| * 87da63014 build: set the v1.1.9 release tag
+|/  
+*   ccabcd532 Merge pull request #4654 from rook/mergify/bp/release-1.1/pr-4650
+|\  
+| * c361414d6 CSI: use empty dir to store provisioner socket file
+| * e9bff8441 CSI: Add privileged securityContext to all daemonset containers
+|/  
+*   0a24c166b Merge pull request #4555 from rook/mergify/bp/release-1.1/pr-4508
+|\  
+| * aec662a94 ceph: fix object bucket provisioner when rgw not on port 80
+|/  
+* 34b2ca763 Merge pull request #4525 from rook/mergify/bp/release-1.1/pr-4518
+* d46975fa2 ceph: only set isUpgrade when the image changes","Improvements
+Rook v1.1.9 is a patch release limited in scope and focusing on bug fixes.
+Ceph
+CSI driver handling of upgrade from OCP 4.2 to OCP 4.3 (, @Madhu-1)
+Fix object bucket provisioner when rgw not on port 80 (, @bsperduto)
+Only perform upgrade checks when the Ceph image changes (, @travisn)"
+"*   1acfd1822 Merge pull request #5099 from travisn/release-1.2.7
+|\  
+| * ee86a65a5 build: set manifest versions to v1.2.7
+|/  
+*   424ef212d Merge pull request #5096 from travisn/metadata-pool-pgs
+|\  
+| * ebb075f1f ceph: set pg_num for rgw metadata pools to lower default
+|/  
+*   77bc2641e Merge pull request #5089 from leseb/skip-low-size
+|\  
+| * d34b3cbeb ceph: reject small devices
+|/  
+*   7d6aff739 Merge pull request #5088 from leseb/fs-check
+|\  
+| * 91d677e32 ceph: double check for a filesystem
+|/  
+*   0cf2757ba Merge pull request #5081 from rook/mergify/bp/release-1.2/pr-5078
+|\  
+| * a485ed777 Ceph: fix updates for servicemonitor
+* |   192aab10e Merge pull request #5082 from Madhu-1/fix-5073
+|\ \  
+| |/  
+|/|   
+| * 91bf40cdf CSI: Fix enable resizer and attacher leader election
+|/  
+*   b64ee4452 Merge pull request #5077 from rook/mergify/bp/release-1.2/pr-4603
+|\  
+| * a38296258 k8sutil: set ResourceVersion for PrometheusRule
+|/  
+*   a419e747e Merge pull request #5071 from travisn/mon-duplicate-affinity
+|\  
+| * 6f98a727f ceph: avoid duplication of mon anti-affinity
+|/  
+* 9eb8677db Merge pull request #5055 from rook/mergify/bp/release-1.2/pr-5054
+* 531a14972 ceph: mention helm upgrade path for csi driver","Improvements
+Rook v1.2.7 is a patch release limited in scope and focusing on bug fixes.
+Ceph
+Apply the expected lower PG count for rgw metadata pools (, @travisn)
+Reject devices smaller than 5GiB for OSDs (, @leseb)
+Add extra check for filesystem to skip boot volumes for OSD configuration (, @leseb)
+Avoid duplication of mon pod anti-affinity (, @travisn)
+Update service monitor definition during upgrade (, @umangachapagain)
+Resizer container fix due to misinterpretation of the cephcsi version (, @Madhu-1)
+Set ResourceVersion for Prometheus rules (, @galexrt)
+Upgrade doc clarification for RBAC related to the helm chart (, @PCatinean)"
+"* be6b891 chore(release): 1.8.11 [skip ci]
+* 484a4c4 Merge pull request #539 from iamkun/dev
+* 0edabcd test: remove local test
+* 0f692c5 docs: fix doc error
+* 723f61a docs: Update quarterOfYear docs
+* dde39e9 fix: Add .add('quarter') .startOf('quarter') through plugin quarterOfYear
+* 1ac9e1e fix: Update pt locale (#538)
+* 8578546 fix: Fix CustomParseFormat plugin formatting bug (#536)
+* eeb20fa fix: Add locale support for Azerbaijani language (az) (#535)
+* 22a249c fix: Correct typescript definition `add`","Bug Fixes
+Add .add('quarter') .startOf('quarter') through plugin quarterOfYear (dde39e9), closes
+Add locale support for Azerbaijani language (az) () (eeb20fa)
+Correct typescript definition add (22a249c), closes
+Fix CustomParseFormat plugin formatting bug () (8578546), closes
+Update pt locale () (1ac9e1e)"
+"*   2d73d024d Merge pull request #3279 from travisn/version-1.0.2
+|\  
+| * f913bfa52 set the release version to v1.0.2 in deployment manifests
+|/  
+*   a0ea51457 Merge pull request #3277 from travisn/backport-latest-fixes
+|\  
+| * c1c425f63 ceph: added resource quantity comparer when checking cluster changes
+| * e7782ec5f enable proper values for metadataOnly property
+| * c4f51d40d ceph: retry on detecting ceph version
+| * c84820ab8 discover: handle false-positives observed by users
+| * 05f7e611c ceph: set the fsgroup only on the top level of the mount
+| * 1786de0c3 ceph: add missing documentation for resource limits
+| * c30df5178 ceph: add resource limit check for rbdmirror
+| * 64a7fce86 ceph: fix pod memory check
+|/  
+*   0320feadc Merge pull request #3272 from rohan47/backport-3226
+|\  
+| * e31e6eabf fixed ceph pg dump pgs_brief json deserialization
+|/  
+*   df6eeb0bd Merge pull request #3266 from sp98/backport-multi-cluster-osd-failure
+|\  
+| * 02d073451 use ceph fsid to filter ceph volume OSDs
+|/  
+*   a5e9c6fbd Merge pull request #3253 from travisn/backport-ceph-quickstart
+|\  
+| * f667bc757 ceph docs: quickstart uses the test configuration for a single osd
+|/  
+*   a892b21f0 Merge pull request #3202 from rohan47/backport-3151
+|\  
+| * 06d055adf Updated ceph image from v14.2.0-20190319 to v14.2.1-20190430
+|/  
+*   e68803534 Merge pull request #3191 from umangachapagain/backport-3105
+|\  
+| * 3fc35dd4e Added separator to enable creation of multiple SCC
+* |   c0a16a078 Merge pull request #3193 from kshlm/check-and-copy-binary-1.0
+|\ \  
+| |/  
+|/|   
+| * c974e9441 ceph: Check before copying binaries in osd pods
+|/  
+* 50b65872a Merge pull request #3184 from sabbot/backport-3182-fix
+* 0485b932f Edgefs:3181 prevents multiple targets deployment on the same node","Rook v1.0.2 is a patch release limited in scope and focusing on bug fixes.
+Improvements
+Ceph
+Handle false positives for triggering orchestration after hotplugging devices (, @noahdesu)
+Set fsgroup only on the top level of the cephfs mount (, @travisn)
+Improved diff checking when the CR changes (, @d-luu)
+Retry checking the ceph version if failed (, @leseb)
+Resource limits: Document the minimum limits, add limits for rbd mirror daemons, and fix the memory check (@leseb)
+Deserialization of pg dump for nautilus when removing OSDs (, @rohan47)
+Start OSDs only for correct ceph cluster when there are multiple ceph clusters on the same nodes (, @sp98)
+Clarify documentation for creating OSDs (, @travisn)
+Update the operator base image to v14.2.1 (, @rohan47)
+Add separator to scc yaml example (, @umangachapagain)
+Check before copying binaries in osd pods (, @kshlm)
+EdgeFS
+Proper use of metadataOnly property (, @dyusupov)
+Prevent multiple targets deployment on the same node (, @sabbot)"
+"* 566873a chore(release): 1.8.12 [skip ci]
+* 534d51c Merge pull request #545 from iamkun/dev
+* 6a297b7 chore: calendar plugin get config from locale file (#552)
+* b663444 docs: Update zh-cn doc
+* c30b715 fix: Add Occitan (oc-lnc) locale file (#551)
+* 222592d test: Update test to keep locale name and file name the same
+* f2b5ebf fix: Update localizedFormat plugin to support lowercase localizable formats (l, ll, lll, llll) (#546)
+* 3f58237 docs: Update available units table doc
+* daae556 docs: Update .get docs
+* 7318797 fix: Add .get API
+* e925de6 docs: Add Calendar plugin docs
+* d058f4a fix: Fix set Month Year error in last day of the month
+* d1b9cf9 fix: Add Calendar plugin
+* 71e4bff docs: Add IsoWeeksInYear docs
+* 2db8631 fix: Add isoWeeksInYear plugin
+*   67c3086 Merge branch 'dev' of github.com:iamkun/dayjs into dev
+|\  
+| * f75a125 fix: Add 79 locales (#541)
+* | 66e7ce6 docs: update minMax plugin docs
+* | 2870a23 fix: Add plugin minMax to sopport .max .min
+|/  
+* 317fd3e fix: Update ko locale weekdaysShort  (#543)","Bug Fixes
+Add .get API (7318797)
+Add 79 locales () (f75a125)
+Add Calendar plugin (d1b9cf9)
+Add isoWeeksInYear plugin (2db8631)
+Add Occitan (oc-lnc) locale file () (c30b715)
+Add plugin minMax to sopport .max .min (2870a23)
+Fix set Month Year error in last day of the month (d058f4a)
+Update ko locale weekdaysShort  () (317fd3e)
+Update localizedFormat plugin to support lowercase localizable formats (l, ll, lll, llll) () (f2b5ebf)"
+"* fdf648b chore(release): 1.11.4 [skip ci]
+*   c004fe6 Merge pull request #1993 from iamkun/dev
+|\  
+| * 7151139 ci: fix node 18 travis issue
+* | d02ec4b Merge pull request #1992 from iamkun/dev
+|/  
+* 79a3c19 ci: fix node 18 travis issue
+* 5585cc0 test: update test case
+* 9276274 Merge branch 'master' into dev
+* 0a1bd08 fix: zh-tw / zh-hk locale ordinal error (#1976)
+* fd51fe4 fix: fix objectSupport plugin ConfigTypeMap type (#1441) (#1990)
+* 22cbeab chore: update avatar
+* 3d31611 fix: update locale ar-* meridiem function (#1954)
+* 36662dc Add & update Sinhala README (#1958)
+* 74e82b9 fix: correct past property in ku (kurdish) locale (#1916)
+* 47f5b69 chore(release): 1.11.3 [skip ci]
+* 526f0ae fix: fix type error to add ordianl property in InstanceLocaleDataReturn and GlobalLocaleDataReturn types (#1931)
+* 8f09834 fix: fix French [fr] local ordinal (#1932)
+* 7b4a99c chore: add action lint & test (#1939)","Bug Fixes
+correct past property in ku (kurdish) locale () (74e82b9)
+fix French [fr] local ordinal () (8f09834)
+fix objectSupport plugin ConfigTypeMap type () () (fd51fe4)
+fix type error to add ordianl property in InstanceLocaleDataReturn and GlobalLocaleDataReturn types () (526f0ae)
+update locale ar-* meridiem function () (3d31611)
+zh-tw / zh-hk locale ordinal error () (0a1bd08)"
+"* 6e5ffce chore(release): 1.8.33 [skip ci]
+* 296c65c Merge pull request #998 from iamkun/dev
+* a964bca chore: update build script
+* 30f6659 chore: update build esm script
+* 50e3b3c fix: Add typescript type defs in esm build (#985)
+* bef491e test: update test
+* db976aa chore: Reduce main bundle size (#997)
+* f76e3ce fix: Add PluralGetSet plugin for plural getters/setters (#996)
+* 747c0fb fix: Fix UTC plugin bug while comparing an utc instance to a local one (#995)
+* 22f3d49 fix: Fix Timezone plugin parsing js date, Day.js object, timestamp bug && update type file (#994)
+* f2e5f32 fix: Fix isoWeek Plugin cal bug in UTC mode (#993)
+* b07182b fix: Fix Timezone plugin UTCOffset rounding bug (#987)
+* 0f881c1 fix: Update pt-br locale weekStart 0 (#984)","Bug Fixes
+Add PluralGetSet plugin for plural getters/setters () (f76e3ce)
+Add typescript type defs in esm build () (50e3b3c)
+Fix isoWeek Plugin cal bug in UTC mode () (f2e5f32)
+Fix Timezone plugin parsing js date, Day.js object, timestamp bug && update type file () (22f3d49), closes
+Fix Timezone plugin UTCOffset rounding bug () (b07182b), closes
+Fix UTC plugin bug while comparing an utc instance to a local one () (747c0fb)
+Update pt-br locale weekStart 0 () (0f881c1)"
+"* 42e494b chore(release): 1.10.6 [skip ci]
+* ae87b5d Merge pull request #1568 from iamkun/dev
+* eb087f5 fix: customParseFormat support parsing X x timestamp (#1567)
+* b5e40e6 fix: dayjs ConfigTypeMap add null & undefined (#1560)
+* bfdab5c fix: more strict delimiter in REGEX_PARSE (#1555)
+* 8e32164 fix: add sv-fi Finland Swedish locale (#1522)
+* f369844 fix: parameter type (#1549)
+* c5688f3 doc: Russian readme link changes & license translation (#1508)
+* 6508494 fix: update type file `.diff` (#1505)
+* bb5df55 fix: update customParseFormat plugin to custom two-digit year parse function (#1421)
+* b728da5 fix: Implement ordinal in Bulgarian translation (fixes #1501) (#1502)
+* 0b0c6a3 fix: Fix DayOfYear plugin when using BadMutable plugin (#1511)
+* 06f88f4 fix: add invalid date string override (#1465) (#1470)
+* b246210 fix: update names of weekdays and months in Bulgarian [bg] to lowercase (#1438)
+* b4f28df fix: update UTC plugin type file for strict parsing (#1443)","Bug Fixes
+add invalid date string override () () (06f88f4)
+add sv-fi Finland Swedish locale () (8e32164)
+customParseFormat support parsing X x timestamp () (eb087f5)
+dayjs ConfigTypeMap add null & undefined () (b5e40e6)
+Fix DayOfYear plugin when using BadMutable plugin () (0b0c6a3)
+Implement ordinal in Bulgarian translation (fixes) () (b728da5)
+more strict delimiter in REGEX_PARSE () (bfdab5c)
+parameter type () (f369844)
+update customParseFormat plugin to custom two-digit year parse function () (bb5df55)
+update names of weekdays and months in Bulgarian [bg] to lowercase () (b246210)
+update type file .diff () (6508494)
+update UTC plugin type file for strict parsing () (b4f28df)"
+"* e3750ec chore(release): 1.8.30 [skip ci]
+* bbd559f Merge pull request #962 from iamkun/dev
+* 73813ab chore: update LocalePresetType
+* f9f4de7 Fix: Locale presets type definition (#955)
+* 28ae070 fix: Fix UTC plugin wrong hour bug while adding month or year  (#957)
+* b2642e2 fix: Add Haitian Creole (ht) and Spanish Puerto Rico (es-pr) locale configs (#958)
+* 14ab808 fix: Update French (fr) locale to set correct yearStart
+* ef2d0e2 chore: Update readme","Bug Fixes
+Add Haitian Creole (ht) and Spanish Puerto Rico (es-pr) locale configs () (b2642e2)
+Fix UTC plugin wrong hour bug while adding month or year  () (28ae070)
+Update French (fr) locale to set correct yearStart (14ab808), closes"
+"* 82b5034 chore(release): 1.8.35 [skip ci]
+* 8fca859 Merge pull request #1031 from iamkun/dev
+* 1533a2c fix: Update Dutch (nl) locale to set correct yearStart
+* 40ab6d9 fix: Fix BadMutable plugin bug in .diff (#1023)
+* a09d259 fix: fix LocaleData plugin to support instance.weekdays() API (#1019)","Bug Fixes
+Fix BadMutable plugin bug in .diff () (40ab6d9)
+fix LocaleData plugin to support instance.weekdays() API () (a09d259), closes
+Update Dutch (nl) locale to set correct yearStart (1533a2c)"
+"*   35a521f82 Merge pull request #4795 from travisn/release-1.2.3
+|\  
+| * 2db8dc454 build: update manifest version to v1.2.3
+|/  
+*   fdc1ac215 Merge pull request #4794 from rook/mergify/bp/release-1.2/pr-4787
+|\  
+| * 0fa8768ac ceph: allow for empty all annotations
+* |   21523f3a5 Merge pull request #4793 from rook/mergify/bp/release-1.2/pr-4784
+|\ \  
+| |/  
+|/|   
+| * 3094964f3 ceph: ability to enable the balancer module
+* |   59a1b5f39 Merge pull request #4789 from leseb/skip-part-ceph-version
+|\ \  
+| * | c1b5ef07c ceph: skip partitions depending on the ceph version
+| |/  
+* |   b18ef1cb1 Merge pull request #4792 from rook/mergify/bp/release-1.2/pr-4788
+|\ \  
+| |/  
+|/|   
+| * 62ab3ea7e ceph: fix garbage collection for csi driver
+|/  
+*   bae0d9261 Merge pull request #4786 from rook/mergify/bp/release-1.2/pr-4682
+|\  
+| * b31647829 ceph: add partition support
+* |   b44e9969a Merge pull request #4779 from rook/mergify/bp/release-1.2/pr-4777
+|\ \  
+| |/  
+|/|   
+| * 4f9451fb4 ceph: fix TuneSlowDeviceClass spec
+| * 04c77c6c3 ceph: add missing codegen for CephVersion
+|/  
+*   d11d2c8ca Merge pull request #4763 from Madhu-1/update-csi-to-rel1.2
+|\  
+| * a6fbe8111 CSI: rename upgrade-from-v1.2-apply.yaml to  enable-csi-2.0-rbac.yaml
+| * 0749170f4 CSI: Disable resizer if cephcsi is v1.2.2
+| * b78bdb26b CSI: Add support for external-attacher v1.2.x
+| * 00b795834 integration: update CSI clusterRoles
+| * 9eba9c454 CSI: Add log if the CSI volume expansion  is not supported
+| * a1936a738 CSI: Add support for rbd erasure coded pool
+| * dfb18814e CSI: Add support for CSI volume expansion
+| * 28dbacbb9 CSI: upgrade node-driver-registrar from v1.1.0 to v1.2.0
+| * c0ba1622a CSI: update csi-attacher from v1.2.0 to v2.1.0
+| * 97b606d5b CSI: Remove containerized flag from rbd daemonset template
+| * 9726fd76c CSI: add missing image tag ENV to openshift operator
+| * 9b8a8b580 CSI: update ceph-csi image tag to v2.0.0
+* |   aca6f9a14 Merge pull request #4760 from rook/mergify/bp/release-1.2/pr-4710
+|\ \  
+| * | 021ccedeb ceph: skip the upgrade checks in tests
+| |/  
+* |   870259fa0 Merge pull request #4773 from rook/mergify/bp/release-1.2/pr-4742
+|\ \  
+| * | 9005c80aa ci: add external cluster functional test
+| * | d4394aaf8 ci: re-enable multi-cluster test
+|/ /  
+* |   02a88208c Merge pull request #4770 from rook/mergify/bp/release-1.2/pr-4549
+|\ \  
+| * | 0824b004a Ceph: Assure mon canary pods deletion
+|/ /  
+* |   39cbbc7f3 Merge pull request #4769 from rook/mergify/bp/release-1.2/pr-4767
+|\ \  
+| |/  
+|/|   
+| * 57134bdac ceph: Add nil check for ceph version
+|/  
+*   ca29b9d16 Merge pull request #4759 from rook/mergify/bp/release-1.2/pr-4680
+|\  
+| * 9a6d1aa5a Ceph: MDS pod placement adheres to fault domain topology
+|/  
+*   7da6c284b Merge pull request #4744 from rook/mergify/bp/release-1.2/pr-4629
+|\  
+| * f7b549690 ceph: add ceph version to cluster status
+|/  
+*   b5bad89a1 Merge pull request #4736 from rook/mergify/bp/release-1.2/pr-4725
+|\  
+| * 80481c6d3 ceph: fixed #4717 Ceph external cluster, repeatedly saving mon endpoints to config
+|/  
+*   200b89db3 Merge pull request #4731 from rook/mergify/bp/release-1.2/pr-4728
+|\  
+| * de4d5b003 ceph: fix resources for prepare job
+* |   964380739 Merge pull request #4732 from rook/mergify/bp/release-1.2/pr-4729
+|\ \  
+| * | d78488494 ceph: ensure crush-location osd command args is always the same
+| |/  
+* |   726157845 Merge pull request #4735 from rook/mergify/bp/release-1.2/pr-4734
+|\ \  
+| |/  
+|/|   
+| * 8894a993a ceph: fix external cluster config override cm creation
+|/  
+*   e19579e95 Merge pull request #4708 from rook/mergify/bp/release-1.2/pr-4687
+|\  
+| * e8039b658 ceph: expose c-v log per pvc
+* 7ef011f8a Merge pull request #4709 from rook/mergify/bp/release-1.2/pr-4509
+* 5a63a9ac9 ceph: client CRD test fixes","Improvements
+Rook v1.2.3 is a patch release limited in scope and focusing on bug fixes.
+Ceph
+Fix garbage collection for the disappearing CSI driver (, @travisn)
+Allow enabling of the Ceph-CSI v2.0.0 driver, with the default still as CSI v1.2.2 (, @Madhu-1)
+Allow for empty ""all"" annotations (, @travisn)
+Ability to enable the balancer module (, @leseb)
+Fix TuneSlowDeviceClass spec (, @leseb)
+Skip the upgrade checks in integration tests (, @travisn)
+Add an external cluster functional test (, @leseb)
+Remove unnecessary mon canary pods after an aborted mon failover (, @jmolmo)
+Ensure MDS pod placement adheres to zone topology if specified (, @jmolmo)
+Add nil check for ceph version in crash controller (, @Madhu-1)
+Add ceph version to cluster status (, @egafford)
+Ceph external cluster repeatedly saving mon endpoints to config (, @eliaswimmer)
+Fix resource limits for the OSD prepare job (, @leseb)
+Ensure OSD location is consistent to avoid unnecessary osds restarts (, @ashangit)
+Fix external cluster config override configmap creation (, @leseb)
+Improved ceph-volume logging in the OSD prepare job (, @leseb)
+Integration test fix for the client CR (, @mateuszlos)"
+"*   c6e0c3ecb Merge pull request #5839 from travisn/release-1.3.8
+|\  
+| * 9b66e3dd8 build: set manifest versions to v1.3.8
+|/  
+*   60e9d7c10 Merge pull request #5838 from travisn/backport-detect-version-antiaffinity
+|\  

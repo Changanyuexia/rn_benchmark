@@ -1,0 +1,1000 @@
+commits,release
+"Version bump (0.15.7)
+Fixed prefetch_login unhandled exception
+Do not sync on non-owner profile
+Fixed UnicodeEncodeError when UpNext sending play_callback
+
+The error occurred only when using UpNext addon from the Kodi library
+with tvshows that had special chars on title
+
+2019-10-29 08:24:34.543 T:3766571904   ERROR: EXCEPTION Thrown
+(PythonToCppException) : -->Python callback/script returned the following error<--
+- NOTE: IGNORING THIS CAN LEAD TO MEMORY LEAKS!
+Error Type: <type 'exceptions.UnicodeEncodeError'>
+Error Contents: 'ascii' codec can't encode character u'\xf3' in position 81: ordinal not in range(128)
+Traceback (most recent call last):
+File ""/storage/.kodi/addons/script.module.addon.signals/lib/AddonSignals.py"", line 52, in onNotification
+self._slots[sender][signal](_decodeData(data))
+File ""/storage/.kodi/addons/plugin.video.netflix/resources/lib/services/nfsession/nfsession.py"", line 533, in play_callback
+common.play_media(data['play_path'])
+File ""/storage/.kodi/addons/plugin.video.netflix/resources/lib/common/kodiops.py"", line 120, in play_media
+xbmc.executebuiltin('PlayMedia({})'.format(media))
+UnicodeEncodeError: 'ascii' codec can't encode character u'\xf3' in position 81: ordinal not in range(128)
+Updated german translation ()
+
+* Updated german translation
+Fixed problem of non working cookies
+
+it seems that the cause is due to website updates, because the cookies
+have not expired and apparently there are no other factors that
+determine invalidity
+Version bump (0.15.8)","Fixed addon open issue caused to a broken cookies
+Updated de translations
+Fixed an issue that cause UpNext sometimes to fail
+Minor fixes"
+"Version bump (0.16.3)
+Added is_debug_verbose
+Fixed wrong mpd seconds strings
+Use notification_offset for upnext
+Changed upnext default behaviour
+Cleanups
+Manage caches from the service individually
+
+-avoids possible cache locks due to improper use of cache buckets
+-makes it possible to use cache within the service even if it does not contain the data used by the frontend cache
+Load the manifest from cache
+Add Up Next install option and fixed labels
+Updated italian translation
+Revert ""Removed html parser from profile name""
+
+This reverts commit 95a347bb65ec27abe0258941b25d5502702ffb3d.
+Check if the user id token is still valid
+Fixed strm resume workaround
+Fixed error on py3 due to wrong decode
+Added get methods for infolabels info
+Added runtime info to Up Next
+Reset user id token after an handshake
+Czech language ()
+
+* Czech language
+
+Translated into Czech language
+
+* Update strings.po
+Added czech language to video content
+Dropped no longer maintained languages
+Fixed czech translation
+Updated german translation for v.0.16.4 (see) ()
+Added debug option to always show codec info on playback
+
+*reused an unused id language
+Moved debug settings to the right position
+Updated es translation
+Added ""because you liked"" to raccomendations menu
+Removed kodi-addon-checker requirement
+
+after the new release of xmlschema to 1.1.0
+cause errors to building wheel in Travis CI
+on Python 2.7 enviroment
+Updated german translation for v.0.16.4 (see) ()
+Update czech language ()
+
+* Update czech language
+
+Added czech translation ....
+
+* Update czech language
+
+Added czech translation ....
+
+* Update strings.po
+Updated ESN generator
+
+on android now is mandatory append the widewine uuid system identifier
+Update addon.xml ()
+
+* Update czech language
+
+Added czech translation ....
+
+* Update czech language
+
+Added czech translation ....
+
+* Update strings.po
+
+* Update addon.xml
+
+Add czech plugin description....
+Version bump (0.16.4)","Up Next is now supported only from version 1.1.0 and up
+Added czech language
+Added ""because you liked"" to recommendations menu
+Added Up Next install option
+Implemented Up Next feature, end time information
+Implemented Up Next feature, fast start next video
+Fixed the error ""Request failed validation during key exchange""
+Fixed an issue that causing opening Up Next notification in wrong position
+Fixed html tags in profiles names
+Fixed STRM files resume workaround
+Fixed retrieving infolabels from library on python 3
+Managed user id token key expiration
+Manifest is saved to hdd with enabled verbose debugging only
+Updated de, es, hu, it translations
+Some minor changes, fixes"
+"ASD-943 - Add estimated order amount to button render/updates, remove
+decoupled render/checkout
+Fix phpcs warnings
+Version bump to 5.14.1 and update changelog","Changed how buttons are rendered for compatibility with estimated order amount feature
+Removed estimated order amount from PDP button"
+"Include error in log output if one occurs during move
+Fix permissions not being checked correctly for admins","Fixed
+Fixes SFTP authentication failing for administrative users due to a permissions adjustment on the Panel.
+SHA256 Checksum"
+"Update README.md
+backups(s3): send uploaded parts in complete request
+Update FUNDING.yml
+ci: pin go-version to 1.18.7
+Add configuration for trusted proxies ()
+docker: add configuration for user namespace remapping ()
+go: update minimum to 1.18, update dependencies ()
+server(transfers): track progress of archive creation and extraction ()
+docker: use go1.18
+Update CHANGELOG.md","Fixed
+The S3 backup driver now supports Cloudflare R2
+Added
+During a server transfer, there is a new ""Archiving"" status that outputs the progress of creating the server transfer archive.
+Adds a configuration option to control the list of trusted proxies that can be used to determine the client IP address.
+Adds a configuration option to control the Docker user namespace setting when Wings creates containers.
+Changed
+Releases are now built using Go 1.18 — the minimum version required to build Wings is now Go 1.18.
+SHA256 Checksum"
+"ASD-755 - if no phone number is provided, use ""0"" to satisfy Amazon API
+ASD-755 - also remove fields from address if they are a single dash ""-""
+Version bump to 5.7.1 and add to changelog","Fixed issue when phone number not required and entered in Magento
+Updated API calls to take in a masked cart ID so they can be used without relying on Magento sessions
+Updated logging to sanitize some data"
+"Update CHANGELOG.md
+Bump PID limit to 512 by default","Changed
+Upped the process limit for a container from 256 to 512 in order to address edge-cases for some games that spawn a lot of processes.
+SHA256 Checksum"
+"Fixed memory leak in CombinedCancellationToken ()
+Fix typos ()
+Make implicit nullable types explicit ()
+Remove ignore-platform-req and extend PHP versions
+Avoid psalm phar
+
+psalm phar is only compatible with ^7.1, while the source version is compatible with ^7.1|^8 for some reason.
+Fix PsalmTest and skip it on newer versions
+
+There are parse errors, likely caused by the old version of psalm.
+Skip PsalmTest also on older versions
+Fix optional before required parameter deprecation","What's Changed
+Fix typos by @krsriq in
+Make implicit nullable types explicit by @nicolas-grekas in
+New Contributors
+@krsriq made their first contribution in
+@nicolas-grekas made their first contribution in
+Full Changelog: v2.6.2...v2.6.3"
+"Use `_rewriting_take` and `_chunk_iter` path during `__getitem__` and `__iter__` respectively when the Array is fully replicated
+
+For example:
+
+```
+k1, k2 = jax.random.split(key, 2) # where key is fully replicated on 8 devices
+```
+
+Then `k1` and `k2` should also maintain the sharding of `key` since `key` is fully replicated.
+
+PiperOrigin-RevId: 480434272
+Port more tests from jtu.cases_from_list to jtu.sample_product.
+Update version.py, setup.py and CHANGELOG post jax 0.3.22 release
+Update Colab TPU driver version
+Reenable some tests disabled in the past because of an LLVM bug.
+
+The issue no longer reproduces at head.
+
+PiperOrigin-RevId: 480505525","Changes
+Update Colab TPU driver version for new jaxlib release."
+"[sparse] validate BCOO on instantiation
+Remove the cached check in aot compiled call in MeshExecutable because a fast C++ dispatch path exists. This leads to a better error message which contains the shape and arg value.
+
+PiperOrigin-RevId: 494815311
+Finish jax and jaxlib release 0.4.0
+
+PiperOrigin-RevId: 494833878
+Remove the specialized sm versions for testing. It caused release wheels to ship without correct sm versions compiled in.
+
+PiperOrigin-RevId: 494854373
+Update CHANGELOG to indicate that 0.4.0 was yanked.
+
+PiperOrigin-RevId: 494868884
+Update values for release 0.4.1
+
+PiperOrigin-RevId: 494889744","Changes
+Support for Python 3.7 has been dropped, in accordance with JAX's
+{ref}version-support-policy.
+The behavior of XLA_PYTHON_CLIENT_MEM_FRACTION=.XX has been changed to allocate XX% of
+the total GPU memory instead of the previous behavior of using currently available GPU memory
+to calculate preallocation. Please refer to
+GPU memory allocation for
+more details.
+The deprecated method .block_host_until_ready() has been removed. Use
+.block_until_ready() instead."
+"Move `array.py` and `sharding.py` from `experimental/` to `_src/`.
+
+PiperOrigin-RevId: 477201711
+Update version and changelog for jax 0.3.19 release
+setup: bundle *.pyi files with distribution
+Disintegrate `Array` into DeviceBuffers inside GDA. This is required for backwards compatibility changes as users can create GDAs and pass that to pjit even when Array is switched on.
+
+PiperOrigin-RevId: 477297406
+Add `addressable_` counterparts of `local_` to GDA to make it easier for users to move to Array as both will have the same API.
+
+PiperOrigin-RevId: 477332697
+Fix the bug where XLA doesn't provide shardings for all the outputs if all the elements in the output tuple have the same sharding. XLA decides to run the `FusionTupleDeduplicator` to put the sharding on ROOT instead of the tuple.
+
+PiperOrigin-RevId: 477343328
+[c++ jit] only set use_fastpath in cache_miss if all args are DeviceArrays
+
+fixes
+
+Co-authored-by: Peter Hawkins <phawkins@google.com>
+Co-authored-by: Kuangyuan Chen <chky@google.com>
+Propagate `name` through ExecuteReplicated for `dispatch.check_special`
+
+PiperOrigin-RevId: 477351323
+Make addressable_shards a property like local_shards
+
+PiperOrigin-RevId: 477358276
+Fix test failure in GPU CI if NCCL_DEBUG is enabled.
+
+If NCCL_DEBUG is enabled, NCCL prints extra status information. Make
+test accept this.
+jax/jaxlib 0.3.20 release candidate.
+Disable multiprocess_gpu_test that fails on ROCm.","Notable changes:
+Adds missing .pyi files that were missing from the previous release ().
+Fixes an incompatibility between jax 0.3.19 and the libtpu version it pinned (). Requires jaxlib 0.3.20.
+Fix incorrect pip url in setup.py comment ()."
+"Polish
+Case pattern marshaled into Case Expressions ()
+
+Co-authored-by: Tyler Van Gorder <tkvangorder@users.noreply.github.com>
+FindImports getVisitor public visibility
+Fix the JavaTemplate AnnotationTemplateGenerator so that MethodDeclaration and VariableDeclaration annotations are templated correctly. ()
+Break apart recipe and take advantage of new markup syntax ()
+Added normalizeName to VariableNameUtils.
+Added variable name normalization to ReplaceDuplicateStringLiterals.
+fixes
+Insert the replaced string literal after the J.EnumValueSet in ReplaceDuplicateStringLiterals.
+fixes
+Revert support for duplicate string literals on enums in ReplaceDuplicateStringLiterals until JavaTemplate is fixed.
+Replace duplicate String literals of enums in ReplaceDuplicateStringLiterals without JavaTemplate.
+Use MavenSettings and activeProfiles set when an AST is parsed to subsequently resolve dependencies in recipes / fixes","What's Changed
+Maven recipe running will now use the effective MavenSettings and active profiles that existed at parsing time.
+Case pattern marshaled into Case Expressions by @tkvangorder in
+Fix the JavaTemplate AnnotationTemplateGenerator so that MethodDeclar… by @pway99 in
+Break apart recipe and take advantage of new markup syntax by @shanman190 in
+Full Changelog: v7.32.0...v7.32.1"
+"Version bump (1.23.2) ()
+[access] fix react context data paths
+[msl_utils] Updated manifest endpoint
+[session] updated page to get email
+
+its backward compatible with old account interface
+[infolabels] workaround for missing arts
+
+Recently request paths data for images such as: boxarts, interestingMoment,
+artWorkByType, storyArt
+
+sometime website dont return the data
+hoping this in future will be fixed on website
+we request also itemSummary data to get the boxArt value as fallback
+[api_requests] Disabled login with credentials
+Version bump (1.23.3) ()","Disabled login with e-mail/password (new website protections)
+Add workaround for missing images to tvshow/movies
+Fixed login with Auth key due to e-mail parsing problem"
+"Fix ListUtils NPE (fixes)
+Code cleanup recipe that lists all cleanup recipes (fixes)
+
+* Move XXE vulnerability fix into the security package and rename for consistency
+* Add XXE vulnerability fix to JavaSecurityBestPractices
+UseDiamondOperator (fixes) and UnnecessaryExplicitTypeArguments (fixes)
+Add test for issue
+Fix spurious import added for static fields (fixes)
+Fixing tests ()
+Cleanup recipe for Converting Primitive Wrapper Class Constructors to valueOf ()
+
+* Cleanup recipe for Converting Primitive Wrapper Class Constructors to valueOf. Fixes
+moving Java11PrimitiveWrapperClassConstructorToValueOfTest from Java11TreeDebugTests.kt to Java11VisitorDebugTests.kt
+Adding thrown exceptions to JavaType.Method  ()
+
+* Adding thrown exceptions to method types.
+
+Adding thrown exceptions to method types.
+
+interim checkin
+
+interim checkin
+
+interim checkin
+
+Adding access flags to JavaType.Class ()
+
+Interim Check-in
+
+* Adding throw exceptions to JavaType.Method
+
+* Adding throw exceptions to JavaType.Method
+
+* Adding throw exceptions to JavaType.Method
+
+* Incorporating review feedback
+Fixing NPE in TypeUtils
+Polish display name and description of XXE vulnerability
+Fix reporting of which recipes made changes. Fixes
+Fix ArrayIndexOutOfBounds in MethodNameCasing
+Revert ""Fix reporting of which recipes made changes. Fixes""
+
+This reverts commit 2607e2abcaf72344ea811216c2f0bf0ed79e5a6d.
+Revert ""Revert ""Fix reporting of which recipes made changes. Fixes""""
+
+This reverts commit f819f7757d0efbc4b5c9e42c7ba16726a34fde3c.
+Use ShallowClass for JavaType.Method throw list
+Create 0002-recipe-naming.md
+Update README.md
+Update 0002-recipe-naming.md
+disabled unit test for issue. AddImport does not consider the J.FieldAccess.target.type
+Update 0002-recipe-naming.md
+Update 0002-recipe-naming.md
+Update 0002-recipe-naming.md
+UnnecessaryThrows (fixes) and RedundantFileCreation
+
+* Added constructorType to J.NewClass.
+* JavaType.Method throw types are deep again.
+AddImport considers J.FieldAccess.target.type when comparing types.  Fixes
+Experimental support for recipe and parsing timeout (fixes) ()
+Rename ModifierResults to Java11ModifierResults to avoid runtime name collisions with the Java 8 equivalent","Fix reporting of which recipes made changes. ( )
+Fix possible runtime name collision between rewrite-java-11 and rewrite-java-8 versions of class ""ModifierResults"" cae57bc
+Fix ArrayIndexOutOfBounds in MethodNameCasing 2c55ec3
+Fix NPE in TypeUtils 9da463a
+Fix spurious import added for static fields ()
+UseDiamondOperator () and UnnecessaryExplicitTypeArguments ()
+Adding thrown exceptions to JavaType.Method ()
+Add Cleanup recipe for Converting Primitive Wrapper Class Constructors to valueOf ()"
+"Bumped patch version
+Moved enforcement of network address rules to Apache client DNS resolver to avoid race condition where rules can be bypassed via successive lookups returning different IP addresses
+Applied DNS resolver enforcement to webhooks extension
+Make NetworkAddressRulesAdheringDnsResolver testable
+
+By using composition rather than inheritance
+Stop NetworkAddressRules doing DNS lookups
+
+By distinguishing between DomainNameWildcard rules and IP based rules
+Bumped patch version","Security
+This security release addresses the following issues
+CVE-2023-41327 - Controlled SSRF through URL in the WireMock Webhooks Extension and WireMock Studio
+Base CVSS Score: 4.6 (AV:A/AC:L/PR:N/UI:R/S:U/C:N/I:L/A:L/E:F/RL:O/RC:C)
+CVE-2023-41329 - Domain restrictions bypass via DNS Rebinding in WireMock and WireMock Studio webhooks, proxy and recorder modes
+Base CVSS Score: 3.9 (AV:A/AC:H/PR:H/UI:N/S:U/C:L/I:L/A:L/E:F/RL:O/RC:C)
+NOTE: WireMock Studio, a proprietary distribution discontinued in 2022, is also affected by those issues and also affected by CVE-2023-39967 - Overall CVSS Score 8.6 - “Controlled and full-read SSRF through URL parameter when testing a request, webhooks and proxy mode”. The fixes will not be provided. The vendor recommends migrating to WireMock Cloud which is available as SaaS and private beta for on-premises deployments
+Related releases
+WireMock Docker 3.0.3-1 - Docker Image with the Patch
+WireMock 2.35.1 /  WireMock Docker 2.35.1-1 - Backport to WireMock 2.x
+Python WireMock 2.6.1 - Python library that bundles the WireMock JAR file
+NOTE: Other distributions like Testcontainers modules or Helm chart need explicit version declaration, and hence a user action is needed to update the dependencies should they be considered a risk
+Credits
+@W0rty, @numacanedo, @Mahoney, @tomakehurst, @oleg-nenashev"
+"Fix - 100% CPU usage in NativeDriver
+
+Also use better bounds for timer - it must not execute before, but may execute a little later (on my system it were up to 7 ms actually)
+Update Loop::now() docs
+Fix - Ensure nowUpdateNeeded is set to true after a blocking wait in NativeDriver
+
+So that expired timeouts also indeed do trigger immediately instead of in the next tick.
+Move nowUpdateNeeded setting to getTimeout()
+
+Essentially the same fix as @bwoebi committed, just placed at the source of the problem.
+Use a custom priority queue for timers
+
+Fixes by allowing immediate removal of the watcher from the queue. Insert and extract is O(log(n)), peeking is O(1), and removal is O(n).
+Fix phpdoc types for call / asyncCall ()
+
+Incorrect types were indicated, due to which static analysis led to false positives.
+Fix typo on homepage ()
+Fix signal handler in NativeDriver when used with pcntl_async_signals
+
+Fixes.
+Test on PHP 7.3 & 7.4
+Use shared style repo
+Note method to retreive array of exceptions
+Fix typo ()
+Annotate that throwIfRequested might throw CancelledException
+Add failing Coroutine test
+Fix exceptions bubbling from Coroutine::__destruct
+
+This has been an edge case potentially hiding some exceptions. The tests have been refactored to error if the loop has watchers leaking from one test to another test.
+Fix code style
+Catch also \Exception in clearLoopRethrows()
+Improve try / catch nesting
+Move Coroutine::__destruct to Placeholder
+Declare variables as static within function
+Swap sign of returned time on 32-bit systems
+Bump nokogiri from 1.8.2 to 1.10.3 in /docs ()
+
+Bumps [nokogiri](https://github.com/sparklemotion/nokogiri) from 1.8.2 to 1.10.3.
+- [Release notes](https://github.com/sparklemotion/nokogiri/releases)
+- [Changelog](https://github.com/sparklemotion/nokogiri/blob/master/CHANGELOG.md)
+- [Commits](https://github.com/sparklemotion/nokogiri/compare/v1.8.2...v1.10.3)
+Remove Gemfile.lock
+Different approach for 32-bit support
+
+Prior version made time run backwards… oops.
+Support 32-bit platforms
+Warn if time is about to overflow on 32 bit
+Ignore code coverage for getCurrentTime on 32 bit","Fixed issue where the loop time in NativeDriver was not refreshed after waiting for I/O streams ()
+Fixed compatibility issue of NativeDriver with pcntl_async_signals() ()
+A custom queue is now used for timers in NativeDriver to allow cancelled timers to be garbage collected immediately instead of after their original expiration time ()
+Resolving a promise with an object that throws when destructed will now forward that exception to the event loop error handler ()
+Fixed loop time to support 32-bit systems ()"
+"Leave leftpadded AST unchanged if visitor does not change it
+Recipe.noop()
+Skip UTF-8 BOM characters in XMLLexer.","Fixes
+Skip UTF-8 BOM characters in XMLLexer.
+Features
+Add Recipe.noop() for use especially in tests validating parsing logic by running a no-op recipe over the input and expecting the source code to be unchanged."
+"Changed version to 3.0.0
+update
+update
+update
+update
+Replace Guava by JDK (Partly)
+Replace Guava by JDK (Partly)
+Replace Guava by JDK (Partly)
+update
+Bump io.netty:netty-all from 4.1.96.Final to 4.1.97.Final
+
+Bumps [io.netty:netty-all](https://github.com/netty/netty) from 4.1.96.Final to 4.1.97.Final.
+- [Commits](https://github.com/netty/netty/compare/netty-4.1.96.Final...netty-4.1.97.Final)
+
+---
+updated-dependencies:
+- dependency-name: io.netty:netty-all
+  dependency-type: direct:production
+  update-type: version-update:semver-patch
+...
+
+Signed-off-by: dependabot[bot] <support@github.com>
+update
+Added beta warning comment to all stores interfaces (other than Stores which already had it)
+Excluded transitive jsr305 dependency from build to avoid javax.annotation classes ending up in the standalone JAR
+Shadow additional packages ()
+Removed redundant relocation of javax.annotation from the build
+Add annotations for Beta and Internal APIs ()
+
+* Add annotations for Beta and Internal APIs
+
+* Spotless
+
+* Excluded transitive jsr305 dependency from build to avoid javax.annotation classes ending up in the standalone JAR
+
+* Replace Guava by JDK (Partly)
+
+* update
+
+* update
+
+* update
+
+* update
+
+* update
+
+* update
+
+* update
+
+* update
+
+* update
+
+* update
+
+* update
+
+* update
+
+* update
+
+* update
+
+* update
+
+* update
+
+* update
+
+* update
+
+* update
+
+* update
+
+* update
+
+* update
+
+* Replace Guava by JDK (Partly)
+
+* Replace Guava by JDK (Partly)
+
+* Replace Guava by JDK (Partly)
+
+* update
+
+* update
+
+* Shadow additional packages ()
+
+* Removed redundant relocation of javax.annotation from the build
+
+* Fixed Spotless errors
+
+---------
+
+Co-authored-by: Tom Akehurst <tom@wiremock.org>
+Co-authored-by: Kirill Peshin <kirill.peshin@bscmsc.ru>
+Co-authored-by: jluehe <janluehe@yahoo.com>
+Respect StopAction in V1 Filter
+
+We should only continue to V2 filters if the V1 filters return a ContinueAction.
+Stop returning 500s for unmatched path patterns
+
+The Diff rendering did not handle the `SubExpressionException` thrown in
+e.g. `MatchesJsonPathPattern`. This makes it catch that exception and
+output it in the diff.
+Bump com.diffplug.spotless from 6.20.0 to 6.21.0
+
+Bumps com.diffplug.spotless from 6.20.0 to 6.21.0.
+
+---
+updated-dependencies:
+- dependency-name: com.diffplug.spotless
+  dependency-type: direct:production
+  update-type: version-update:semver-minor
+...
+
+Signed-off-by: dependabot[bot] <support@github.com>
+Revert ""Stop returning 500s for unmatched path patterns""
+Stop returning 500s for unmatched path patterns
+
+The Diff rendering did not handle the `SubExpressionException` thrown in
+e.g. `MatchesJsonPathPattern`. This makes it catch that exception and
+output a useful value in the diff.
+Revert Release Drafter to semver after the 3.0.0 release
+Ensured that the shadow JAR is always built last. Relocated dependencies in webhooks. ()
+Added validation of UUIDs in path parameters in the admin API so that clearer errors are reported when non UUIDs are provided or item isn't found
+Fixed get patch version function in build
+Fixed bump patch and minor versions logic
+Stopped updating package-lock.json when bumping versions
+Bump patch version to 3.0.1","Bug fixes
+Stop returning 500s for unmatched path patterns () @Mahoney
+Ensure that the shadow JAR is always built last to ensure webhooks fat JAR wins () @tomakehurst
+Added validation of UUIDs in path parameters in the admin API so that clearer errors are reported when non UUIDs are provided or item isn't found rather than throwing a 500 error () @tomakehurst
+Respect StopAction in V1 Filter () @Mahoney
+Thanks to the regression reporters: @defnngj , @oleg-nenashev , @Mahoney"
+"Version bump (1.20.0) ()
+Improvement to check service at startup
+Fix MSL manifest xid for linux devices
+Settings changes for about/logout
+Allow execute settings without check login
+Version bump (1.20.1) ()","Fixed playback on linux devices
+Protected Logout setting with a confirmation dialog
+Wait for service startup without notification
+Add support info on add-on settings"
+"Version bump (1.20.5) ()
+Fix set_value sqlite params
+Update Polish translation ()
+Updated czech translation ()
+[pylint] fix broad-exception-raised
+Version bump (1.20.6) ()","Fix SQLite error on startup using some linux systems
+Update translations po, cs_cz"
+"Nuclei detection should be more stable across regions ()
+
+This does a better job of detecting the average color of the area being
+analyzed to reduce individual tile effects.  It also fixes a potential
+infinite loop in a degenerate case.
+
+Closes.
+Fix divide zero guard ()
+Update conf.py","What's Changed
+Fix divide zero guard by @manthey in
+Full Changelog: v1.3.3...v1.3.4"
+"Added support for annotations in fully qualified type names. ()
+
+* Added support for annotations in fully qualified type names.
+
+* Add `J.AnnotatedType#getAllAnnotations()`
+
+Also removed some code from `J.MethodDeclaration#getAllAnnotations()` and `J.VariableDeclarations#getAllAnnotations()` as that returned type annotations rather than annotations on the variable / method.
+
+---------
+
+Co-authored-by: Knut Wannheden <knut@moderne.io>
+Again try to improve error message from `AddPluginVisitor`
+Include Recipe class simple name in validation errors ()
+
+Fixes
+Maven POM downloader optimizations ()
+
+* Maven POM downloader optimizations
+
+* Fix missing cache metrics for Maven POM cache
+
+* Add back `@NonFinal` to `knownToExist`, because Lombok add `knowToExist\' to the list of required arguments in the constructor
+filePattern on FindSourceFiles is now nullable, and matches all files… ()
+
+filePattern on FindSourceFiles is now nullable, and matches all files on blank input, to make it a little more convenient to use in place of HasSourcePath
+`SimplifyBooleanExpression` should only remove parens when related
+
+The `SimplifyBooleanExpressionVisitor` should only remove unnecessary parentheses when the visitor already changed the parenthesized expression.
+Fix test failure on main after b70c34b3767afe5bfc5c5db08d833b8823f2f79d
+`SemanticallyEqual`: Fix bug in `visitFieldAccess()` ()
+
+* `SemanticallyEqual`: Fix bug in `visitFieldAccess()`
+
+When comparing `J.FieldAccess` instances, the targets also needs to be compared.
+
+* Start adding some more `SemanticallyEqualTest` test cases
+
+* Polish
+
+* Polish
+
+* Add more tests
+
+* Add more tests
+Fix another `SemanticallyEqualVisitor` bug
+
+The logic to compare field accesses against identifiers must also be used when comparing identifiers against field accesses.
+Add more `SemanticallyEqualVisitor` tests
+Fix another `SemanticallyEqual` bug
+Add `J.NullableType` for Kotlin / C# ()
+
+* Add J.NullableType for kotlin/JS/C#
+
+* fix
+
+* Add visiting annotations
+
+* Add visitNullableType to JavaIsoVisitor
+
+* Fix a bug
+
+* Add suffix space location and some cosmetics
+
+---------
+
+Co-authored-by: Knut Wannheden <knut@moderne.io>
+Adjust test after new `maven-compiler-plugin` release
+Ensure ExplicitPluginVersionTest needs no further updates
+Modify `J.Annotation#getSimpleName()` for Kotlin
+
+Kotlin's multi annotations are now modelled using a ""dummy"" annotation which then contains the individual annotations. This requires a custom LST element to be used for `J.Annotation#annotationType`.
+
+Note: An alternative to this solution would be to add a `getSimpleName()` method to the `NameTree` interface.
+Delete `data-flow/model.csv` resource
+
+This resource was moved to `rewrite-analysis`.
+added plugins to ResolvedPom + some tests ()
+
+* added plugins to ResolvedPom + some tests
+
+* started logic to merge plugins
+
+* merge configurations
+
+* basic executions
+
+* fix potential NPE
+
+* fix NPE
+
+* avoid empty configs
+
+---------
+
+Co-authored-by: Tim te Beek <tim@moderne.io>
+Fixed prefix on key after folder scalars.
+Feat:token length estimator ()
+
+* calculate token len for class and method definition
+
+* changed datatable to take in name instead of whole code snippet
+
+---------
+
+Co-authored-by: juju <justine.gehring@gmail.com>","What's Changed
+Include Recipe class simple name in validation errors by @timtebeek in
+Maven POM downloader optimizations by @ammachado in
+filePattern on FindSourceFiles is now nullable, and matches all files… by @nmck257 in
+SemanticallyEqual: Fix bug in visitFieldAccess() by @knutwannheden in
+Add J.NullableType for Kotlin / C# by @kunli2 in
+added plugins to ResolvedPom + some tests by @joanvr in
+Fixed prefix on key after folder scalars. by @traceyyoshima in
+Feat:token length estimator by @justine-gehring in
+Full Changelog: v8.11.2...v8.11.3"
+"Add null check. A non null ref can point to a null objectId: ()
+
+* Add null check. A non null ref can point to a null objectId:
+
+SymbolicRef[HEAD -> refs/heads/main=0000000000000000000000000000000000000000(-1)]
+
+* cleanup
+fix: prevent all referenced properties from updating to latest regardless of recipe ()
+Add headers for FindCommitters data tables ()
+Fix UpgradeDependencyVersion so it doesn't use the same GradleProject marker for every project in a multi-project build.
+Add logic to simplify `J.Ternary`
+feat: add from date option to FindCommitters recipe ()
+
+* Add date option for FindCommitters
+
+* Add test
+
+* Formatting
+
+* fix description
+Handle empty string option ()
+
+* Handle empty string option
+
+* default null
+Add recipe which encloses all parameters interpolated into Groovy GStrings in curly braces
+License headers
+Add FindClassHierarchy recipe to produce a data table of class declarations, their superclasses, and interfaces
+Make DependencyUseStringNotation compatible with G.GString ()
+
+* Fixes
+
+* Fixes
+
+---------
+
+Co-authored-by: Jente Sondervorst <jente.sondervorst@colruytgroup.com>
+Improve AddProperty to insert in alphabetical order by key
+Update AddProperty description to reflect its new behavior
+Get gradle AddPropertyTest passing given changes to underlying AddProperty recipe
+Normalization of maven repositories that don't permit directory listing ()","What's Changed
+fix: prevent all referenced properties from updating to latest regardless of recipe by @ajohnsonz in
+Add headers for FindCommitters data tables by @pstreef in
+feat: add from date option to FindCommitters recipe by @pstreef in
+Handle empty string option by @pstreef in
+Make DependencyUseStringNotation compatible with G.GString by @Jenson3210 in
+Normalization of maven repositories that don't permit directory listing by @jkschneider in
+New Contributors
+@Jenson3210 made their first contribution in
+Full Changelog: v8.14.3...v8.14.4"
+"Fix - Maven repositories in settings.xml override repositories of the same id in pom.xml, including the default maven central repository
+Add simple single file multipart file upload to HttpSender ()","What's Changed
+Add simple single file multipart file upload to HttpSender by @pstreef in
+Full Changelog: v8.13.2...v8.13.3"
+"Add simple single file multipart file upload to HttpSender ()
+Do not unwrap negated assignment
+
+Fixes https://github.com/openrewrite/rewrite/issues/3913
+Fix `TypesInUse` regression ()
+
+* Fix `TypesInUse` regression
+
+Introduced in 9d264b4f4991b62854572c5e576e2ab0514361d5
+
+Fixes:
+
+* Correct method name detection
+
+* Update rewrite-java-test/src/test/java/org/openrewrite/java/RemoveUnusedImportsTest.java
+
+Co-authored-by: Tim te Beek <tim@moderne.io>
+
+---------
+
+Co-authored-by: Tim te Beek <tim@moderne.io>
+`FindParseFailures`: Null-safe
+Find `@Option` annotations without `example` values ()
+
+* Find `@Option` annotations without `example` values
+
+As came up in Slack: https://github.com/openrewrite/gh-automation/issues/45#issuecomment-1891827588
+
+* Skip boolean fields
+Add CommitMessage marker
+License headers
+Print idempotence for prefix of varargs parameters in Javadoc","What's Changed
+Fix TypesInUse regression by @knutwannheden in
+Find @Option annotations without example values by @timtebeek in
+Do not unwrap negated assignment 670dd5c
+FindParseFailures: Null-safe ef368c0
+Add CommitMessage marker 8a42e33
+Print idempotence for prefix of varargs parameters in Javadoc 8955881
+Full Changelog: v8.13.3...v8.13.4"
+"Bump version: 0.5.1 → 1.0.0
+Fix README for PyPI rendering
+
+Title underline too short.
+Create TAXII query correctly. closes
+Simplify FilterSet instance in MemorySource
+Add support for 'real_stix_objs' for test cases
+Finish merging all the changes from @mbastian1135
+Finish adding new tests for TAXII datastore. closes
+Add `medallion` dependency to Travis CI tests
+Sort import statements in tests.
+Add two more tests for the `dict` case in TAXIICollectionSink
+Remove 'real_stix_objs1' as it is unused in the tests
+Update file taxii_example.py
+Update TAXII2 filter fields in documentation
+Remove dev and nightly Python builds from Travis.
+Fix make_constant when value is already a constant
+
+Fixes.
+Update CHANGELOG for v1.0.1
+Bump version: 1.0.0 → 1.0.1","Fixes bug with incorrect TAXII parameters ().
+Fixes bug with constructing patterns ()."
+"`ChangeMethodName`: Slightly improve performance
+
+Don't call `DeclaresMethod` twice when `ignoreDefinition = true`.
+Don't call `J.ClassDeclaration#withBody()` using `null`
+
+See: openrewrite/rewrite-static-analysis
+Constructor call type attribution should include generics ()
+
+* Constructor call type attribution should include generics
+
+When the target type of a constructor call declares generic type variables, the `J.NewClass` type attribution should also include these details. So for example the type attribution for `new ArrayList<String>()` should be a `JavaType.Method` which as the declaring type has `java.util.ArrayList<String>` rather than just `java.util.ArrayList`.
+
+An alternative to this would be to add a new `type` field to `J.NewClass`.
+
+* Polish
+
+* Update other Java parsers
+
+* Guard against NPE
+
+* Add another test case to `NewClassTest`
+
+* Try something slightly different
+
+* Keep type attribution as is for anonymous subclasses
+
+* No diamond operator for anonymous subclasses in Java 8
+`UnnecessaryParentheses`: Fix for negated `instanceof`
+
+Fixes:
+Improve error messages in RewriteTest relating to erroneous creation/non-creation of files
+Add pretty checkmarks to error message about unexpected file creation in recipe tests.
+Oops, fix conditional
+Fix LOWER_CAMEL, UPPER_CAMEL to handle uppercase abbreviation better ()
+
+* Fix LOWER_CAMEL, UPPER_CAMEL to handle uppercase abbreviation better
+
+* Apply comment
+
+---------
+
+Co-authored-by: 김선우 <seonwoo960000@toss.im>
+`SpacesVisitor`: Remove spaces before statement semicolon ()
+Validate that Change(Managed)DependencyGroupIdAndArtifactId updates GAV ()
+
+ChangeDependencyGroupIdAndArtifactId and ChangeManagedDependencyGroupIdAndArtifactId are intended to be set up to *change* maven coordinates. If the pre- and post-coordinates are the same, it's likely that the UpgradeDependencyVersion recipe was intended. This change adds validation of the newGroupId/newArtifactId options.
+
+See https://github.com/openrewrite/rewrite-java-dependencies/issues/55
+Fix - Maven repositories in settings.xml override repositories of the same id in pom.xml, including the default maven central repository","What's Changed
+Constructor call type attribution should include generics by @knutwannheden in
+Fix LOWER_CAMEL, UPPER_CAMEL to handle uppercase abbreviation better by @seonwoo960000 in
+SpacesVisitor: Remove spaces before statement semicolon by @knutwannheden in
+Validate that Change(Managed)DependencyGroupIdAndArtifactId updates GAV by @tobli in
+Fix - Maven repositories in settings.xml override repositories of the same id in pom.xml, including the default maven central repository by @sambsnyd in 9cf0f03
+Full Changelog: v8.13.0...v8.13.2"
+"chore(release): 1.8.32 [skip ci]
+
+## [1.8.32](https://github.com/iamkun/dayjs/compare/v1.8.31...v1.8.32) (2020-08-04)
+
+### Bug Fixes
+
+* Add Experimental Timezone Plugin ([](https://github.com/iamkun/dayjs/issues/974)) ([e69caba](https://github.com/iamkun/dayjs/commit/e69caba1b0957241a855aa0ae38db899fa2c3795))
+* fix parse date string error e.g. '2020/9/30' ([](https://github.com/iamkun/dayjs/issues/980)) ([231790d](https://github.com/iamkun/dayjs/commit/231790da62af0494732960c2c50d86ae9bf63ec6)), closes [](https://github.com/iamkun/dayjs/issues/979)
+* update monthDiff function to get more accurate results ([19e8a7f](https://github.com/iamkun/dayjs/commit/19e8a7f2f7582b717f49d446822e39603694433c))
+* Update UTC plugin to support keepLocalTime ([](https://github.com/iamkun/dayjs/issues/973)) ([9f488e5](https://github.com/iamkun/dayjs/commit/9f488e5aca92f0b4c2951459436829d79f86d8d7))
+fix: Update pt-br locale weekStart 0 ()
+fix: Fix Timezone plugin UTCOffset rounding bug ()
+
+fix
+fix: Fix isoWeek Plugin cal bug in UTC mode ()
+fix: Fix Timezone plugin parsing js date, Day.js object, timestamp bug && update type file ()
+
+fix, fix
+fix: Fix UTC plugin bug while comparing an utc instance to a local one ()
+fix: Add PluralGetSet plugin for plural getters/setters ()
+chore: Reduce main bundle size ()
+test: update test
+fix: Add typescript type defs in esm build ()
+chore: update build esm script
+chore: update build script
+chore(release): 1.8.33 [skip ci]
+
+## [1.8.33](https://github.com/iamkun/dayjs/compare/v1.8.32...v1.8.33) (2020-08-10)
+
+### Bug Fixes
+
+* Add PluralGetSet plugin for plural getters/setters ([](https://github.com/iamkun/dayjs/issues/996)) ([f76e3ce](https://github.com/iamkun/dayjs/commit/f76e3ce2fbe5d3e9ed9121086baf55eb0cc4d355))
+* Add typescript type defs in esm build ([](https://github.com/iamkun/dayjs/issues/985)) ([50e3b3c](https://github.com/iamkun/dayjs/commit/50e3b3c6719cb0b4ec6eff394dacd63d5db8f253))
+* Fix isoWeek Plugin cal bug in UTC mode ([](https://github.com/iamkun/dayjs/issues/993)) ([f2e5f32](https://github.com/iamkun/dayjs/commit/f2e5f327aaf12b4572296ec6e107ecc05fcf76e7))
+* Fix Timezone plugin parsing js date, Day.js object, timestamp bug && update type file ([](https://github.com/iamkun/dayjs/issues/994)) ([22f3d49](https://github.com/iamkun/dayjs/commit/22f3d49405da98db6da56d1673eebcd01b57554b)), closes [](https://github.com/iamkun/dayjs/issues/992) [](https://github.com/iamkun/dayjs/issues/989)
+* Fix Timezone plugin UTCOffset rounding bug ([](https://github.com/iamkun/dayjs/issues/987)) ([b07182b](https://github.com/iamkun/dayjs/commit/b07182bbdf5aef7f6bf1e88fcd38432e2b8ee465)), closes [](https://github.com/iamkun/dayjs/issues/986)
+* Fix UTC plugin bug while comparing an utc instance to a local one ([](https://github.com/iamkun/dayjs/issues/995)) ([747c0fb](https://github.com/iamkun/dayjs/commit/747c0fb4eba6353755b5dad3417fd8d5a408c378))
+* Update pt-br locale weekStart 0 ([](https://github.com/iamkun/dayjs/issues/984)) ([0f881c1](https://github.com/iamkun/dayjs/commit/0f881c18efb02b9d0ba7f76cba92bb504226fa95))","Bug Fixes
+Add PluralGetSet plugin for plural getters/setters () (f76e3ce)
+Add typescript type defs in esm build () (50e3b3c)
+Fix isoWeek Plugin cal bug in UTC mode () (f2e5f32)
+Fix Timezone plugin parsing js date, Day.js object, timestamp bug && update type file () (22f3d49), closes
+Fix Timezone plugin UTCOffset rounding bug () (b07182b), closes
+Fix UTC plugin bug while comparing an utc instance to a local one () (747c0fb)
+Update pt-br locale weekStart 0 () (0f881c1)"
+"chore(release): 1.8.10 [skip ci]
+
+## [1.8.10](https://github.com/iamkun/dayjs/compare/v1.8.9...v1.8.10) (2019-03-10)
+
+### Bug Fixes
+
+* **locale:** Add nepali (ne) locale ([](https://github.com/iamkun/dayjs/issues/524)) ([bdbec01](https://github.com/iamkun/dayjs/commit/bdbec01))
+* Add WeekYear plugin ([a892608](https://github.com/iamkun/dayjs/commit/a892608))
+* API .locale() with no argument should return current locale name string ([8d63d88](https://github.com/iamkun/dayjs/commit/8d63d88))
+* CustomParseFormat correct parse HH:mm:ss with only one digit like 0:12:10 ([600d547](https://github.com/iamkun/dayjs/commit/600d547))
+* CustomParseFormat plugin parse Do format string ([bf27fda](https://github.com/iamkun/dayjs/commit/bf27fda)), closes [](https://github.com/iamkun/dayjs/issues/522)
+* Expand setters like .year(2000) .hour(12) ([ac532a0](https://github.com/iamkun/dayjs/commit/ac532a0))
+* Move toObject, toArray API to separate plugin from core ([40a3431](https://github.com/iamkun/dayjs/commit/40a3431))
+fix: Correct typescript definition `add`
+
+fix
+fix: Add locale support for Azerbaijani language (az) ()
+fix: Fix CustomParseFormat plugin formatting bug ()
+
+fix:
+fix: Update pt locale ()
+
+Added some missing properties and localized formats
+fix: Add .add('quarter') .startOf('quarter') through plugin quarterOfYear
+
+fix, fix
+docs: Update quarterOfYear docs
+docs: fix doc error
+test: remove local test
+chore(release): 1.8.11 [skip ci]
+
+## [1.8.11](https://github.com/iamkun/dayjs/compare/v1.8.10...v1.8.11) (2019-03-21)
+
+### Bug Fixes
+
+* Add .add('quarter') .startOf('quarter') through plugin quarterOfYear ([dde39e9](https://github.com/iamkun/dayjs/commit/dde39e9)), closes [](https://github.com/iamkun/dayjs/issues/537) [](https://github.com/iamkun/dayjs/issues/531)
+* Add locale support for Azerbaijani language (az) ([](https://github.com/iamkun/dayjs/issues/535)) ([eeb20fa](https://github.com/iamkun/dayjs/commit/eeb20fa))
+* Correct typescript definition `add` ([22a249c](https://github.com/iamkun/dayjs/commit/22a249c)), closes [](https://github.com/iamkun/dayjs/issues/531)
+* Fix CustomParseFormat plugin formatting bug ([](https://github.com/iamkun/dayjs/issues/536)) ([8578546](https://github.com/iamkun/dayjs/commit/8578546)), closes [](https://github.com/iamkun/dayjs/issues/533)
+* Update pt locale ([](https://github.com/iamkun/dayjs/issues/538)) ([1ac9e1e](https://github.com/iamkun/dayjs/commit/1ac9e1e))","Bug Fixes
+Add .add('quarter') .startOf('quarter') through plugin quarterOfYear (dde39e9), closes
+Add locale support for Azerbaijani language (az) () (eeb20fa)
+Correct typescript definition add (22a249c), closes
+Fix CustomParseFormat plugin formatting bug () (8578546), closes
+Update pt locale () (1ac9e1e)"
+"ceph: helm chart fix for rook-ceph
+
+Go's template language doesn't treat infix `and` as a short-circuit,
+which led to fatal errors after an update in Go 1.14 surfaced that as
+a fatal error.  This commit removes the infix `and` and replaces it with
+a default dict to handle the case of a missing Heml value.
+
+Closes: https://github.com/rook/rook/issues/5378
+Signed-off-by: Judson <nyarly@gmail.com>
+(cherry picked from commit f89ecb615695ffee602b76156b7b94104ee78dff)
+tests: fix aws_1.11.x test failure
+
+kubelet in aws_1.11.x test requires kubernetes-cni 0.7.5.
+
+Signed-off-by: Satoru Takeuchi <satoru.takeuchi@gmail.com>

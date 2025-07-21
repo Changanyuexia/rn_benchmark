@@ -1,0 +1,1000 @@
+commits,release
+"* ec130423 v0.5.4
+* 5a81ba65 Adds new plugin options to support new features for eleventy-plugin-syntaxhighlight v2.0.0
+* 545ea7b7 Config tests have side effects, need to be .reset() until refactored
+* d558b5fb Better debug error stack trace formatting
+* 9bc0efba Fixes #246, normalizes front matter tags to always be an array when fetched. Maintains backwards compatibility.
+* ee89e008 Cleanup
+* ca2ab6fa Unnecessary var
+* fce1b88c Adds newest bugs link to readme
+* c207644d Working implementation of `permalink: false` to fix #61
+* fbff144a Fixes #224
+* 4bc7600c Fixes #225
+* 1b8ab3f2 A little refactor for #182
+* 86368a80 Fixes #182
+* 89681c81 Test for #183
+* 3671ba1f Fixes #205, adds test for passthroughall. Fixes #208 by switching to `recursive-copy` instead of `fs-extra`","Eleventy is a simpler Static Site Generator!
+https://www.11ty.io/
+Documentation at v0-5-4.11ty.io
+Support Eleventy by starring us on GitHub! This will increase our project’s visibility on staticgen.com, a big giant list of static site generators.
+Follow us on Twitter @​eleven_ty!
+Changelog
+Adds permalink: false option to bypass writing a template to the output directory. Set this in front matter, template or directory data files, or even a JS data file if you want to do conditional output of templates based on Environment variables. ()
+Improved error messaging, specifically with:
+Errors in configuration files ()
+Missing Filters in Liquid templates (), note the opt-in to a strict_filters Liquid option: https://www.11ty.io/docs/languages/liquid/#optional%3A-use-your-own-options
+Improved messaging about DEBUG mode when in DEBUG mode ()
+Adds Linters feature to inspect output content. ()
+Behind the scenes additions to addPlugin to facilitate more configuration options for eleventy-plugin-syntaxhighlight v2.0 https://github.com/11ty/eleventy-plugin-syntaxhighlight/releases/tag/v2.0.0
+Documentation
+The .eleventyignore docs page got lost when we moved from GitHub, it now exists here: https://www.11ty.io/docs/ignores/ ()
+@kleinfreund added a lovely Environment variables example to the documentation (using JS Data Files)
+Docs: https://www.11ty.io/docs/data-js/#example%3A-exposing-environment-variables
+Bug fixes
+Fixes major issue with --passthroughall flag ()
+Docs: https://www.11ty.io/docs/copy/#passthrough-all-content
+Tags in template objects will always be normalized to array form, if even using a single tag string in front matter data ()
+Docs: https://www.11ty.io/docs/collections/#a-single-tag%3A-cat
+Fixed an issue when crossover existed between multiple passthrough copy targets () (e.g. ./css/fonts and ./css/fonts/myFont.woff2, for example)
+Milestone
+Issues fixed in v0.5.4 Milestone
+Dependency Semver Major Updates
+None"
+"* f390784 Include error in log output if one occurs during move
+* 5df1acd We don't return public keys
+* 1927a59 Send key correctly; don't retry 4xx errors
+* 5bcf416 Add support for public key based auth
+* 37e4d57 Don't include files and folders with identical name prefixes when archiving; closes pterodactyl/panel#3946
+* 7ededdb Update CHANGELOG.md
+* 1d19771 Fix faulty handling of named pipes; closes pterodactyl/panel#4059
+* 6c98a95 Only set cpu limits if specified; closes pterodactyl/panel#3988
+* 8bd1ebe go: update dependencies
+* 93664fd router: add additional fields to remote file pull
+* 3a738e4 run gofumpt
+* 067ca5b Actually enforce upload file size limit (#122)
+* f85509a Support a custom tmp directory location
+* 225a89b Update CHANGELOG.md","Fixed
+Fixes file upload size not being properly enforced.
+Fixes a bug that prevented listing a directory when it contained a named pipe. Also added a check to prevent attempting to read a named pipe directly.
+Fixes a bug with the archiver logic that would include folders that had the same name prefix. (for example, requesting only map would also include map2 and map3)
+Requests to the Panel that return a client error (4xx response code) no longer trigger an exponential backoff, they immediately stop the request.
+Changed
+CPU limit fields are only set on the Docker container if they have been specified for the server — otherwise they are left empty.
+Added
+Added the ability to define the location of the temporary folder used by Wings — defaults to /tmp/pterodactyl.
+Adds the ability to authenticate for SFTP using public keys (requires Panel@1.8.0).
+SHA256 Checksum"
+"* cec51f1 Update CHANGELOG.md
+* b1be208 Better archive detection logic; try to use reflection as last ditch effort if unmatched
+* 203a209 Use the correct CPU period when throttling servers; closes pterodactyl/panel#4102","Fixed
+Fixes a bug causing CPU limiting to not be properly applied to servers.
+Fixes a bug causing zip archives to decompress without taking into account nested folder structures.
+SHA256 Checksum"
+"* 5b6a3b3c Version bump (1.5.1) (#715)
+* 857fca91 Simplified get_metadata and VideoId derive_parent
+* e79ecae3 Use a single loop
+*   89f38081 Merge pull request #714 from CastagnaIT/misc_updates
+|\  
+| * 45d2b260 Add challenge data to manifest request (only ARM devices)
+| * 037549e1 Improved some data
+| * b5bbd5b9 Changed key pair id
+| * e6b0fcdf Cosmetic changes
+| * 2969109d Updated useragent
+| * 8d63f939 Update automatically ui/client version
+|/  
+* 69f25948 Update Turkish translation (#712)","Implemented fix/workaround to get resolutions until to 1080p with ARM devices
+Updated translations tr"
+"* cdbe616a Version bump (1.1.1)
+* e3870c63 Avoid mix the params variable
+* 99169838 Update README.md
+* d0e5e552 Fixed unicode decode error
+* c48f83f4 Use localhost instead force IPv4 loopback
+* c2a021a6 Merge pull request #521 from CastagnaIT/verbump","Fixed critical bug caused continuous profile switching
+Fixed unicode decode error to profile auto-selection"
+"*   89a43560 Merge branch 'master' of https://github.com/amzn/amazon-payments-magento-2-plugin
+|\  
+| * c3e29057 Update installation.rst
+* | d5de3201 Updated installation guide
+|/  
+* bbb9110d updated installation instructions
+* 614999ed version bump
+*   b4e31754 Merge pull request #55 from OnTap/task--AMAZON-31
+|\  
+| * 7cfdabf9 AMAZON-31: Fixed a condition that is no longer necessary
+| *   2b1ad964 Merge remote-tracking branch 'amazon/master' into task--AMAZON-31
+| |\  
+| * | b080c808 AMAZON-31: Restore original validation line
+| * | a58edcc9 AMAZON-31: Do not remove 'free' method in case it exists
+| * | e445852c AMAZON-31: Shipping information plugin now ignores quote with grand total 0
+| * | 02499836 AMAZON-31: Added a feature to block Amazon checkout widget when quote grand total is 0
+* | |   1f37d98e Merge pull request #61 from OnTap/task--AMAZON-43
+|\ \ \  
+| * | | 940704bc AMAZON-43: Updated code safety, do not operate or order when payment != amazon
+* | | |   fb3cecc2 Merge pull request #62 from amzn/onTap-Amazon-29
+|\ \ \ \  
+| |/ / /  
+|/| | |   
+| * | | 37886cdf i18n
+| * | |   202c9947 Merge remote-tracking branch 'origin/master' into task--AMAZON-29
+| |\ \ \  
+| | | |/  
+| | |/|   
+| * | | a435f9bd AMAZON-29: Comments, internationalisation
+| * | | 892ffdcb AMAZON-29: Missing newline
+| * | | 8328dbdb AMAZON-29: Version info update
+| * | |   6ea18e82 Merge remote-tracking branch 'origin/master' into task--AMAZON-29
+| |\ \ \  
+| | | |/  
+| | |/|   
+| * | | e6df6ab1 AMAZON-29: Admin version data added
+* | | |   f28779ce Merge pull request #58 from OnTap/task--AMAZON-38
+|\ \ \ \  
+| |_|_|/  
+|/| | |   
+| * | | d9b8f7c6 AMAZON-38: Refix the Modernizr requirement with adding support for both v2 and v3 APIs
+| * | |   e521b570 Merge remote-tracking branch 'origin/master' into task--AMAZON-38
+| |\ \ \  
+| |/ / /  
+|/| | |   
+* | | |   3630810f Merge pull request #3 from Veriteworks/jp2016102402
+|\ \ \ \  
+| * | | | ef157723 added Japanese address field mapping class. added di.xml definition for Japanese address.
+| * | | | 9bd339ed added Factory classes for country specific behavior (Currently for Japanese)
+| * | | | 55c8a513 adjust number of spaces
+| * | | | 3839aa69 add full width space conversion for Japanese name.
+|  / / /  
+* | | |   6f2dbced Merge pull request #54 from OnTap/task--AMAZON-30
+|\ \ \ \  
+| * | | | b5ccf052 AMAZON-30: Card charge notification removed
+| * | | |   18141c3a Merge remote-tracking branch 'origin/master' into task--AMAZON-30
+| |\ \ \ \  
+| | | |_|/  
+| | |/| |   
+| * | | | 6e5e42d4 AMAZON-30: Charge on Order notification now uses success style instead of warning
+| | |_|/  
+| |/| |   
+* | | | 2cd784f5 Updating supported versions of PHP per Magento documentation - http://devdocs.magento.com/guides/v2.1/install-gde/system-requirements-tech.html
+* | | |   9ffd0df6 Merge pull request #50 from OnTap/task--AMAZON-17
+|\ \ \ \  
+| |_|/ /  
+|/| | |   
+| * | | 4427d4ce AMAZON-17: Add configuration option for ""Store Name""
+|/ / /  
+| | * 8ba5d30a AMAZON-38: Forces extension explicitly use built in modernizr plugin
+| |/  
+|/|   
+* |   3c38aaa9 Merge pull request #40 from OnTap/task--AMAZON-16
+|\ \  
+| * | 9417b4ad AMAZON-16: Make sure URLs displayed are unique
+| * | 12a2daad Merge branch 'master' of https://github.com/OnTap/amazon-payments-magento-2-plugin into task--AMAZON-16
+| |\| 
+| * | ad890710 Merge remote-tracking branch 'origin/master' into task--AMAZON-16
+| * | eda3436f Merge branch 'master' of https://github.com/OnTap/amazon-payments-magento-2-plugin into task--AMAZON-16
+| * | 5b6346d9 AMAZON-16: Display all store URLs in admin area for whitelisting - https://github.com/amzn/amazon-payments-magento-2-plugin/issues/35
+|  /  
+* |   2a52f93f Merge pull request #47 from OnTap/task--AMAZON-28
+|\ \  
+| |/  
+|/|   
+| * f8eae734 AMAZON-28: Removed admin layout file because all it contained was reference to non-existing css file
+|/  
+*   19b09fff Merge pull request #44 from joshdavenport/patch-1
+|\  
+| * 18bfcc85 Adjusted amazon-core require deps
+* 8a4ce2e8 Merge pull request #45 from amzn/documentation_warnings
+* 0c16d18d Title underline fixed
+* ed619c41 Title underlines have been to short","This release incorporates:
+Enhancements
+Handling of orders with an order total of zero
+Display module version in administrative back-end
+Relaxation of Modernizr requirements, now accepts v2 and v3
+Improved support of Japanese names
+Removed disturbing message from checkout if capture on order placement is active
+Add store name configuration option
+Fixes
+Issue in CompleteOrder.php interfering with other payment options
+URLs did not respect store view configuration
+Removed obsolete admin layout file
+added missing dependency to jquery-storageapi"
+"* 82f1e5d9 Version bump (1.12.12) (#1377)
+* a1973ca5 Fix to version suffix added from kodi","REPOSITORY CHANGED: The repository has been changed, to receive future updates
+the add-on will try update it automatically to new v2.0, if for some reason this not
+happens you can update it manually by downloading: repository.castagnait-2.0.0.zip
+from Github Readme: https://github.com/CastagnaIT/plugin.video.netflix
+Fix broken addon startup due to update error"
+"* 50ec1433 Merge pull request #1239 from BearGroup/release/5.17.1
+* 8a18fb15 phpcs changes
+*   6246d8bb Merge pull request #89 from BearGroup/csp-updates
+|\  
+| * 4c594984 Update script appending to use heredoc
+| * 3e9c6298 Remove extraneous formatting
+| * 66ab0fed Use secureRenderer if CSP module is unavailable
+| * 47d4fd8e Use CSP utility provided by template engine
+| * 78b0cd4d Ensure CSP compliance is backwards compatible
+| * 40b43f46 Adjustments for external script requirements/CSP restrictions for 2.4.7
+*   c0079030 Merge pull request #90 from BearGroup/invoice-fixes
+|\  
+| * 3fc44ad0 ASD-1193 - handle charge on order / automatic config that produced invoice could not be created error
+|/  
+* 5e357747 ASD-1193 - set payment status to processing so it can be invoiced
+* 170f7858 Update changelog for release
+* c7fa51f8 Update requirejs-config.js (Issue #1240)
+* 935bb54a Allow php8.3 support in composer.json
+* 492e816d ASD-1193 - couple cleanup items
+* 11041003 release version update
+* d6e40242 ASD-1193 - add log prefix, adjust behavior when session Open to always attempt to complete checkout session
+* dc1b51ee ASD-1193 - use correct log message
+* 8aebdf41 ASD-1193 - code review improvements
+* 8291f19e ASD-1193 - update to 30 minutes before cleaning up transactions
+* b36d2685 ASD-1193 phpcs fixes
+*   a0e6a10b Merge branch 'ASD-1193_cron' into ASD-1193
+|\  
+| * 1d1755fd ASD-1193 renames CleanUp casing typo
+| * faebba35 ASD-1193 polishes stalled order identification
+| * aedf22a1 ASD-1193 changes chargeId check to be regex uuid
+| * a37b20f3 ASD-1193 phpcs fixes
+| * f4d4deae ASD-1193 adds handling for pre-auth failures, and capture transactions
+| * 225834de ASD-1193 adds canceled state cleanup logic
+| * 1917b3f6 ASD-1193 adds open state cleanup logic
+| * 7c88777c ASD-1193 adds cron cleanup base files - wip
+* c4d8cb87 ASD-1193 explicitely sets order status only when successful
+* 20e40e88 ASD-1193 phpcs fixes
+* ea5fe080 ASD-1193 sets processing order state anytime charge status is authorized or captured
+* d0e1e3ea ASD-1193 adds default pending payment order status for express checkout","Changed php allowed versions to include 8.3
+Fixed issue where orders could be processing but not capture payment
+Fixed issue with amazon-product-add.js 404 not found (thanks @tim-breitenstein-it!)
+Fixed issue where a variable could be undefined (thanks @dimitriBouteille!)
+Fixed issue where incorrect message ""can't create invoice"" could be displayed"
+"* 4e3ccc18 Version bump (0.15.9)
+*   b5ef3bd4 Merge pull request #310 from notoco/update-PL
+|\  
+| * cbbc8299 Update PL
+|/  
+* 99115c6c add reuselanguageinvoker pr link
+* 095817e3 Fixed typo
+*   0256741e Merge pull request #305 from CastagnaIT/translation_ita
+|\  
+| * ba661092 Updated it translation
+|/  
+*   3a96fd79 Merge pull request #308 from CastagnaIT/handle_membershipstatus
+|\  
+| * 3aceb8df Handle membership status of user account
+|/  
+* ff15d335 Changed name of the trailers menu
+*   82d620df Merge pull request #304 from CastagnaIT/episodes_listing
+|\  
+| * 1e32f425 Fixed pagination of episodes
+|/  
+*   9eb847f8 Merge pull request #301 from CastagnaIT/logging
+|\  
+| * 89fb4d42 Updated support request
+| * 810b0457 Updated bug report
+| * a9376755 Changes to log calls
+| * 36717db1 Changes to log calls
+| * 28b9e027 Modified logging functions to save cpu load
+|/  
+* cb3aea5e Fix missing escape
+*   5f65338f Merge pull request #294 from CastagnaIT/autoupdaterework
+|\  
+| * d352db83 Added stub implementation for xbmcaddon.setSettingInt
+| * 45ec8fbf Disable auto-update/auto-sync with logout
+| * 99562760 Fixed warning info
+| * 71eeb5b7 Fixed python bug in datetime.strptime
+| * 7943cd96 Changed ask_for_confirmation description
+| * b66a2dbe Show ask for confirmation dialog when check library updates
+| * 50ab1329 Warning info to reconfigure auto-update settings
+| * 00307e4f Removed migration from ndb2 no more needed
+| * 6ada1ab7 Make sure that everything is removed with purge library
+| * 74dbb0df Added purge library to shared db
+| * c70b09d7 Added delete subfolders to delete_folder_contents
+| * d310c7c2 Reworked auto-update and auto-sync with my list
+* | b55a201b Fixed wrong indent
+* |   2006b114 Merge pull request #299 from CastagnaIT/esn_gen_fix
+|\ \  
+| * | 712a73c0 ESN generation fix
+|/ /  
+* |   151511a5 Merge pull request #298 from CastagnaIT/mylist_sortorder
+|\ \  
+| * | a1bdae36 Allow disabling sort order on my list
+| |/  
+* / 648b8c8f Update readme (#286)
+|/  
+* 94e7b5d7 Fixed executebuiltin notification on py2
+* daf37a4b Updated user agent
+*   3e6ca65e Merge pull request #211 from CastagnaIT/python3
+|\  
+| * dbb832e0 flake - pylint fixes
+| * 46bc32c4 Raise CacheMiss directly when file does not exist
+| * 5afa4514 Workaround to py2 bug ImportError: Failed to import _strptime
+| * f8120b2a Fixed pickle.loads on _get_from_disk
+| * 74e40f8d Avoid generate exception due to cookie file mmissing
+| * f8098494 Fixes for py3 and py2
+| * e7bbcd3f Rebase py3 fixes
+| * ac193f8d Show traceback when an error occour in service
+| * e3132af7 Exception message fix
+| * f7ea1377 Pylint fixes
+| * f165bae8 Use future version 0.17.1
+| * 04a621e1 Exception message fix pylint happy
+| * 4a5f088c Traceback fixes
+| * 0719a540 Disabled pylint import-outside-toplevel
+| * 01bc6944 Fixed pylint unnecessary-comprehension
+| * 1c012f54 Unicode fixes
+| * 727449df Drop # noinspection instructions for PyCharm, we now use Pylint for all inspection
+| * 6c2dc0cb xmldialogs.py: Remove unused class
+| * 79811764 uuid_device py3 fixes
+| * 2abfa48c Fix known Python 3 issues
+| * 874b2ea8 Deleted enum module
+* | 55262913 Added fade animation to skip dialog
+|/  
+* 5881c899 Translations pt_BR (#283)
+* 5fb0bae6 Update to Croatian translation (#281)","Removed limit to perform auto-update and auto-sync with my list only with main profile
+Added possibility to choose the profile to perform auto-sync with my list
+Auto-sync with my list now sync also the movies
+Auto-update now can be performed in manual and scheduled mode
+Purge library now ensures complete cleaning of the database and files
+Added possibility to disable sort order of my list from addon settings
+Updated user agents
+Modified debug logging in order to save cpu load
+Fixed pagination of episodes
+Fixed unhandled error of membership user account status
+When set to one profile the Kodi library is no longer modified by other profiles
+A lot of fixes/improvements to compatibility between py2 and py3
+Updated it, pl, pt_BR, hr_HR translations
+Minor fixes"
+"* 02cbf2d Update README.md
+* b6edf3a environment(docker): set outgoing ip correctly (#135)
+* c686992 backups: add an option to change gzip compression level (#128)
+* c736c24 it's to its (#123)
+* 9dfc651 rpm: update to 1.7.0 (#140)
+* ad26022 parser(yaml): fix issues","Fixed
+YAML parser has been updated to fix some strange issues
+Added
+Added Force Outgoing IP option for servers to ensure outgoing traffic uses the server's IP address
+Adds an option to control the level of gzip compression for backups
+SHA256 Checksum"
+"* 1d9683ed Version bump (1.12.5) (#1194)
+*   c069980a Merge pull request #1195 from CastagnaIT/upd_profiles_Leia
+|\  
+| * 8a6518e9 Updated video profiles
+|/  
+* b6289d13 Merge pull request #1192 from CastagnaIT/Leia_ep_fix
+* 76193529 Removed workaround for ""1 more item"" problem","Updated video profiles for HEVC/HEVC HDR
+Fixed missing items in episodes lists and others submenus"
+"* 2f2051fc Merge pull request #1132 from BearGroup/release/5.13.1
+* c0c09af0 Version bump to 5.13.1 and update changelog
+*   6d243d51 Merge remote-tracking branch 'origin/refresh-config-on-store-switch' into integration
+|\  
+| * 50720f66 Retrieve fresh button config when store view changes
+* |   11cd3715 Merge remote-tracking branch 'origin/gh-1126' into integration
+|\ \  
+| * | 872e2f5e Add logging if declined payment has no associated charge permission ID, skip call to closeChargePermission
+| * | 02b491df Undefined index 'charge_permission_id'
+| |/  
+* / ca853189 GH-1129 - Adjust GraphQL config query to match rest endpoint behavior w/ omitPayloads
+|/  
+* 95b7e76b Merge pull request #47 from BearGroup/mftf-244-assertion-fix
+* fc48072e Account for whitespace/newline trimming on responses from MagentoWebDriver's magentoCLI() function","Fixed issue with invalid array reference if a transaction doesn’t have a charge permission
+Fixed issue with GraphQL config query supporting omitPayloads
+Fixed issue with switching stores to refresh the Amazon Pay button config"
+"* 774c0af Update CHANGELOG.md
+* 71fbd92 activity: fix ip validity check (#159)
+* 2d64020 backup: fix restore erroring due to closed reader","Fixed
+Backups being restored from remote storage (s3) erroring out due to a closed stream.
+Fix IP validation logic for activity logs filtering out valid IPs instead of invalid IPs
+SHA256 Checksum"
+"* f90e54f9 v1.0.2 code coverage
+* bd42a2ae v1.0.2
+* 8a0d955e Bump dependencies (no major version bumps on deps, only devdeps)
+* 880255e6 Cherry pick https://github.com/11ty/eleventy/pull/2369#issuecomment-1121560097
+* 5cae4358 Cherry pick of 4c710d68965b0d0d19d9a6e7e76b1004f4e6e4e1
+* baca2ad9 fix liquid template argument parsing 	- fixes undefined arguments in shortcodes and potentially other uses 	- fixes #2348 and #2154","Eleventy v1.0.2
+Full docs for v1.0.2 on our web site
+This project would not be possible without our lovely community. Thank you to everyone that built something with Eleventy (×595 authors on our web site!), wrote a blog post about Eleventy, contributed code to core or plugins, documentation, asked questions, answered questions, braved The Leaderboards, participated on Discord, filed issues, attended (or organized!) a meetup, said a kind word on Twitter .
+A super special thanks to Peter DeHaan for their tireless contributions on the Eleventy Issue tracker.
+All of our supporters on Open Collective
+Gold Sponsors: Sanity.io, Nordhealth, CloudCannon and Silver Sponsors: Set Creative Studio, Unabridged Software, PQINA, The Coders Guild, Bejamas, Nathan Smith, Flatirons Development, Monarch Air Group, Ben Nash, getform.io, OCEG, Mercury Jets
+A full list of Backers can be found below!
+Contribute on Open Collective
+How else can you contribute to Eleventy?
+Install or Upgrade
+Install to your local project: npm install @11ty/eleventy
+Already installed in your local project? Upgrade your version: npm update @11ty/eleventy
+Read more about local project versus global installation
+Features
+Fixes for liquid argument parsing on shortcodes
+Help from @epelc @lexoyo @denisenadal @mahnunchik @harttle
+Milestone
+All bug fix issues can be perused at the GitHub milestone:
+Major Version Dependency Upgrades
+There are no major version dependency updates between 1.0.2 and 1.0.1.
+THANK YOU NOTES
+Gold Sponsors: Sanity.io, Nordhealth, CloudCannon
+Silver Sponsors: Set Creative Studio, Unabridged Software, PQINA, The Coders Guild, Bejamas, Nathan Smith, Flatirons Development, Monarch Air Group, Ben Nash, getform.io, OCEG, Mercury Jets
+OpenCollective Monthly Backers: Viljami Salminen, Tyler Gaw, Peter deHaan, Melanie Sumner, Alejandro Rodríguez, Mat Marquis, Philip Borenstein, Jérôme Coupé, Max Böck, Bryce Wray, Kristof Michiels, Nicolas Hoizey, Mike Aparicio, Ben Myers, Katie Sylor-Miller, Mark Buskbjerg, mortendk, Aaron Hans, Lauris Consulting, John Meyerhofer, Todd Libby, Luke Bonaccorsi, Dimitrios Grammatikogiannis, Wellness Researched, Devin Clark, Eric Bailey, Dave Rupert, Manuel Matuzovic, Phil Hawksworth, shawn j sandy, Jenn Schiffer, Tianyu Ge, Kyosuke Nakamura, Hans Gerwitz, Makoto Kawasaki, Horacio Gonzalez, Matthew Tole, Ivan Buncic, Rob Sterlini, Mark Boulton, Søren Birkemeyer, Richard  Hemmer, Nick Nisi, Andrew Harvard, John SJ Anderson, Ryan Swaney, Tim Giles, Alistair Shepherd, Ivo Herrmann, Flaki, John Hall, Scott McCracken, James Steinbach, Miriam Suzanne, Bentley Davis, Angelique Weger, vince falconi, Martin Schneider, Stephanie Eckles, Frontend Weekly Tokyo, Ferpection, Josh Crain, Chris Burnell, Ximenav Vf., Juan Miguel, Rich Holman, Kasper Storgaard, Kevin Healy, Greg Gibson, Hidde, Michelle Barker, Alesandro Ortiz, David A. Herron, Paul Robert Lloyd, Andrea Vaghi, Bryan Robinson, Ashur Cabrera, Raymond Camden, John Meguerian, Joe Lamyman, Jeffrey A Morgan, Brett Nelson, Paul Welsh, Ingo Steinke, Melanie Richards, Dorin Vancea, Marco Zehe, Wes Ruvalcaba, Luc Poupard, Entle Web Solutions, Ken Hawkins, Ara Abcarians, Fershad Irani, Nikita Dubko, Aaron Gustafson, Chris, Sam, Benjamin Geese, Marcus Relacion, Netin nopeustesti, Bobby Ray, Christian Miles, Cthos, Sia Karamalegos, Daniel Ryan, Raphael Höser, Noel Forte, Saneef Ansari, Flemming Meyer, Colin Fahrion, Dan Burzo, Jon Kuperman, Dan Ott, Mobilemall.pk, Cheap VPS, David Darnes, Jon Roobottom, Dana Byerly, Oisín Quinn, Renkaatsopivasti, Windesol Sähkön Kilpailutus, Luke Mitchell, SignpostMarv, THE PADDING, Bob Monsour, Patrick Byrne, zapscribbles, Frank Reding, quinnanya, Richmond Insulation, Cory Birdsong, Aram ZS, Michel van der Kroef, Vinicius Depizzol, Andy Stevenson, HelppoHinta.fi, Tanner Dolby, jpoehnelt, Ingo Sobolewski, Andrew Weisbeck, Richmond Concrete, Tom, CelineDesign, Nic Chan, Duc Lam, Alex Zappa, Stephen Bell, Brett DeWoody, alistairtweedie, Meta Tier List, Robert Haselbacher, Lene"
+"* bbc66d2a Version bump (1.12.11) (#1368)
+* 7f1ec8a9 Reintroduced no cache for Top 10 menus
+*   cb8bb2eb Merge pull request #1364 from CastagnaIT/Leia_newrepo
+|\  
+| * f40a85d5 [BACKPORT][LEIA] Migration to new repository
+* 2703d356 Merge pull request #1355 from CastagnaIT/Leia_fix_genres
+* d7d8fb25 Fixed genres/subgenres menus","REPOSITORY CHANGED: The repository has been changed, to receive future updates
+the add-on will try update it automatically to new v2.0, if for some reason this not
+happens you can update it manually by downloading: repository.castagnait-2.0.0.zip
+from Github Readme: https://github.com/CastagnaIT/plugin.video.netflix
+Fix genres/subgenres menus due to website changes"
+"* 30a807b2 Version bump (1.6.1) (#745)
+* 284df750 Removed profile name from debug info
+* 8fb39843 Removed not more needed condition
+* 4bbe827d Translate additional strings for Greek (#740)
+*   9381d037 Merge pull request #743 from WinterRabe111/fix-search-table-creation
+|\  
+| * c8347996 fix: Add search table on to sqlite db on fresh installs
+|/  
+* b594fde0 Update README.md","Fixed broken search menu on fresh installations
+Updated el-gr translation"
+"* 304fd91 Update CHANGELOG.md
+* 18de96d activity: fix IP parsing, drop all columns with malformed ips
+* a36cab1 router(transfer): throw error if server fails to stop
+* 6e0c095 router(transfer): decrease WaitForStop timeout
+* 14eea3b router: close body once finished
+* 1bc77dc system: close Docker client once finished
+* b8715d1 ci: update push-artifact action
+* 13d3490 server(filesystem): fix Writefile being broken
+* e9b8b11 Ensure files are closed after they are done being used
+* 43b7aa2 sftp: disable insecure protocols
+* 9b8b3c9 environment(docker): improve logging and stacks
+* e74d8e3 ci: update go versions
+* 4b3bd2f ci(docker): fix latest tag
+* e652d2d ci: cleanup","Changed
+Release binaries are now built with Go 1.18.10
+Timeout when stopping a server before a transfer begins has been reduced to 15 seconds from 1 minute
+Removed insecure SSH protocols for use with the SFTP server
+Fixed
+Unnecessary Docker client connections being left open, causing a slow leak of file descriptors
+Files being left open in parts of the server's filesystem, causing a leak of file descriptors
+IPv6 addresses being corrupted by flawed port stripping logic for activity logs, old entries with malformed IPs will be deleted from the local SQLite database automatically
+A server that times out while being stopped at the beginning of a transfer no longer causes the server to become stuck in a transferring state
+SHA256 Checksum"
+"* 150f8531 Version bump (1.15.1) (#1132)
+*   562a46b9 Merge pull request #1136 from CastagnaIT/audio_desc_fix
+|\  
+| * 2a50371f Fixed wrong selection of impaired audio track
+| * 5d42d691 Moved get impaired Kodi settings to common
+|/  
+* 2d8d23d7 Fix wrong path due to last changes
+* 0644cf68 Implemented new version number comparer
+*   5fa3d323 Merge pull request #1130 from CastagnaIT/ipc_misc
+|\  
+| * f420a0e8 Changes related to IPC over AddonSignals
+| * a988c4db Revert ""Fix for add/remove to My List""
+* | f6428481 Removed decorator catch_api_errors_decorator
+|/  
+* d9908f3b Not needed json conversions","Fixed regression to ESN/Widevine window
+Fixed wrong selection of audio track for impaired
+Add latest changes to IPC
+Minor changes"
+"* 08a7ccd Update CHANGELOG.md
+* 8336f6f Apply container limits to install containers, defaulting to minimums if the server's resources are set too low
+* e0078ee [security] enforce process limits at a per-container level to avoid abusive clients impacting other instances","Added
+[security] Adds support for limiting the total number of pids any one container can have active at once to prevent malicious users from impacting other instances on the same node.
+Server install containers now use the limits assigned to the server, or a globally defined minimum amount of memory and CPU rather than having unlimited resources.
+SHA256 Checksum"
+"* dfa358cd Version bump (1.18.8) (#1376)
+* e76f489b Update PtBR Language (#1372)
+* 23dbde5e Fix to version suffix added from kodi
+* d08b97bf Update Romanian translation for 1.18.7 (#1371)
+* 4db35e71 Update Simplified Chinese Translation (#1370)","REPOSITORY CHANGED: The repository has been changed, to receive future updates
+the add-on will try update it automatically to new v2.0, if for some reason this not
+happens you can update it manually by downloading: repository.castagnait-2.0.0.zip
+from Github Readme: https://github.com/CastagnaIT/plugin.video.netflix
+Fix broken addon startup due to update error
+Update translations zh_cn, ro, pt_br"
+"* 5d1d3cc Fix panic conditions
+* 9f985ae Check for error before prefix; fixes abandoned routine; closes pterodactyl/panel#3911
+* 1372eba Remove unused function
+* 879dcd8 Don't trigger a panic condition decoding event stats; closes pterodactyl/panel#3941
+* 72476c6 Simplify the event bus system; address pterodactyl/panel#3903
+* 0f2e9fc Move the sink pool to be a shared tool
+* 5c3e2c2 Fix failing test
+* 7051fee Add additional debug points to server start process
+* cd67e5f Fix logic for context based environment stopping
+* 84bbefd Pass a context through to the start/stop/terminate actions
+* 6a41786 Return context cancelations as a locker locked error
+* 1e52ffe Fix panic condition when no response is returned
+* 0f9f80c Improve support for block/mutex contention in pprof","Fixed
+Fixes error that would sometimes occur when starting a server that would cause the temporary power action lock to never be released due to a blocked channel.
+Fixes a bug causing the CPU usage of Wings to get stuck at 100% when a server is deleted while the installation process is running.
+Changed
+Cleans up a lot of the logic for handling events between the server and environment process to make it easier to make modifications to down the road.
+Cleans up logic handling the StopAndWait logic for stopping a server gracefully before terminating the process if it does not respond.
+SHA256 Checksum"
+"*   0667738 Merge pull request #20 from st-tech/feat/update-version-to-0.3.2
+|\  
+| * f09f218 update version
+| * b5a3a66 fix some docstring inconsistencies
+| * 09d8484 rerun with a new version
+| * d5b00e0 add obp.dataset.multiclass
+|/  
+*   1e1eb9f Merge pull request #19 from st-tech/feat/update-synthetic-generator
+|\  
+| * 16bfda8 refactor dataset module
+| * 87eb576 add multiclass to bandit reduction
+| * e54657b rerun after new updates
+| * 9636dde add continuous reward option
+* |   2713321 Merge pull request #18 from st-tech/feat/update-root-readme
+|\ \  
+| |/  
+|/|   
+| * 38c838c update
+|/  
+*   e6d83ad Merge pull request #17 from st-tech/feat/del_offline_bandit_simulation_expressions
+|\  
+| * addd000 update READMEs
+| * e400635 update docs
+|/  
+*   a864116 Merge pull request #16 from st-tech/feat/refactor_ope_estimators
+|\  
+| * d3b0471 rerun after new updates
+| * 6e9cdfd add random_state for seaborn.barplot
+| * 83f470b refactor estimators
+|/  
+*   9635ec6 Merge pull request #15 from st-tech/feat/add_new_performance_metric_ope_meta
+|\  
+| * 120cf10 run with new updates
+| * 7f77135 add new eval metric for ope
+|/  
+*   77635c2 Merge pull request #14 from st-tech/feat/fix-docstrings
+|\  
+| * 8951a1b fix docstrings
+|/  
+*   d52a366 Merge pull request #12 from st-tech/update-docs
+|\  
+| * a340dde update README
+| * c88b399 update READMEs about the data
+| * f32b50f update docs
+* |   3bfce2e Merge pull request #11 from kkmogi/obp/ope/regression_model
+|\ \  
+| * | 867fd03 add random_state as argument to fit_predict
+|/ /  
+* | 17dc43b update docs
+* | 6c73032 Merge pull request #10 from st-tech/update-docs
+|\| 
+| * 353f144 update
+|/  
+*   b2d01d2 Merge pull request #9 from st-tech/fix-typos
+|\  
+| * 1a3c7d7 fix typos in quickstarts
+| * 4ad2209 fix typos in READMEs
+|/  
+*   2811108 Merge pull request #8 from st-tech/update-docs
+|\  
+| * f8bdb24 update docs
+| * cb5dd46 update docs
+|/  
+*   d02d53c Merge pull request #7 from st-tech/refactor-examples
+|\  
+| * ad48500 update READMEs in examples
+| * e4ff91d refactor examples
+| * 90bb3d0 fix typos
+* f82db30 Merge pull request #6 from nmasahiro/fix-slide-link
+* cda5102 fix slide link","This release enhances the OBP package in the following ways.
+add some new contents to the obp document: https://zr-obp.readthedocs.io/en/latest/index.html
+In particular, you can use ""off-policy evaluation"" section as a textbook about this area
+add obp.dataset.MultiClassToBanditReduction class for handling multi-class classification datasets as bandit feedback
+this will allow researchers to run their synthetic experiments with some multi-class classification datasets easily
+relevant quickstart and example will be added to the repository soon
+add continuous reward option to obp.dataset.SyntheticBanditDataset
+add squared error (se) option for the evaluation of OPE with obp.ope.OffPolicyEvaluation
+fix some README and docstring inconsistencies
+refactor the dataset and ope modules"
+"*   e9b10b6f Merge pull request #1031 from BearGroup/integration
+|\  
+| * f5ee7f73 Remove di entry for removed plugin
+|/  
+* 21a02ffa Update CHANGELOG.md
+* 4e56b894 Update README.md
+*   de0df28c Merge pull request #1028 from amzn/Readme-Edits
+|\  
+| *   4426b39e Merge branch 'master' into Readme-Edits
+| |\  
+| |/  
+|/|   
+* | d3a202fa Merge pull request #1029 from BearGroup/integration
+* | 9a339488 Refer to CHANGELOG.md for release notes
+* | c38ef9fa Version bump in readme
+* | dacbf160 Update changelog
+* | 3d6d8e45 Version bump
+* | 0126c67e Remove reliance on legacy config value being set
+ /  
+* 56f21a73 Add GH Issues link.
+* e97ab3a9 Minor changes to README.md and Beta callout","Same functionality as 5.0.0, but with a minor fix to remove a dependency on a Legacy configuration value being set.
+Please see and CHANGELOG.md for more information."
+"* 08042a93 Version bump (1.9.1) (#862)
+*   f42393ee Merge pull request #856 from jurialmunkey/master
+|\  
+| * 0e599eb3 Fix for search results in JSON RPC plus history rewrite to avoid search dialog reopening onback
+* | b237629d Avoid use cache to all Top 10 menus
+* | a07db88d Add Top 10 for tv shows/movies
+* | 75d2dc11 Add new menu config no_use_cache
+* | c6f9e753 Fixed possible unreferenced variable
+* | 72d28960 Fixed possible unreferenced variables
+* | 6628e8ae Add NFAuthenticationKey for linux
+|/  
+* 849d5977 Update nl_nl (#851)
+* 72cbef4b Update Romanian translation for 1.9.0 (#850)","Add TV Shows/Movies Top 10
+Add support to NFAuthenticationKey for linux
+Fixed search results via JSON-RPC
+Fixed an issue that cause to ask to clear search history again when you return to previous menu
+Fixed possible wrong results on Top 10 menu due to cache TTL
+Updated translations ro, nl"
+"* 71c5338 Update CHANGELOG.md
+* 326f115 Update README.md
+* 06614de server(filesystem): handle individual compressed files (#184)
+* 2b0e353 cmd(configure): fix panel url not being set","Fixed
+Auto-configure not working ()
+Individual files unable to be decompressed ()
+SHA256 Checksum"
+"* 02cb64e Update CHANGELOG.md
+* 639ad76 go: update dependencies
+* a373bf8 system: fix sink pool test
+* 74b1c46 server(filesystem): fix archive test
+* 5424c67 ci: update to go 1.19 and 1.20
+* 43b3496 server(filesystem): fix archiver path matching
+* 38c69eb build(deps): bump golang.org/x/net (#163)
+* 234e11b build(deps): bump golang.org/x/text from 0.3.7 to 0.3.8 (#161)
+* ec6d6d8 config: add option to disable panel config updates (#162)","Added
+Added a config option to disable Wings config.yml updates from the Panel (ec6d6d8)
+Changed
+Wings is now built with Go 1.19.7
+Fixed
+Fixed archives containing partially matched file names (43b3496)
+SHA256 Checksum"
+"* 96256ac [security] fix vulnerability when handling remote file redirects
+*   6701aa6 Merge branch 'dane/self-upgrade' into develop
+|\  
+| * ff8926b bye bye command
+| * 6fe2468 foundation for self-upgrade logic
+* |   217ca72 Merge pull request #85 from pterodactyl/schrej/formatting
+|\ \  
+| |/  
+|/|   
+| * 6480724 organize imports with gopls format
+|/  
+* 948d927 Cleanup command running a bit
+* b2eaa3f Update CHANGELOG.md","Fixed
+[Security] Fixes a remaining security vulnerability in the code handling remote file downloads for servers relating to redirect validation.
+Added
+Adds a configuration key at api.disable_remote_download that can be set to true to completely download the remote download system.
+SHA256 Checksum"
+"* 8055d13 Update CHANGELOG.md
+* c1ff32a Update test based on corrected error response logic
+* 49dd1f7 Better support for retrying failed requests with the API
+* 3f47bfd Add backoff retries to API calls from Wings
+* ddfd6d9 Modify backup process to utilize contexts and exponential backoffs
+* da74ac8 Trim ""~"" from container prefix; closes pterodactyl/panel#3310","Fixed
+Fixes the ~ character not being properly trimmed from container image names when creating a new server.
+Changed
+Implemented exponential backoff for S3 uploads when working with backups. This should resolve many issues with external S3 compatiable systems that sometimes return 5xx level errors that should be re-attempted automatically.
+Implements exponential backoff behavior for all API calls to the Panel that do not immediately return a 401, 403, or 429 error response. This should address fragiligty in some API calls and address random call failures due to connection drops or random DNS resolution errors.
+SHA256 Checksum"
+"* 4589c35c Version bump (1.12.15) (#1519)
+* 52dcae7f Merge pull request #1518 from CastagnaIT/Leia_newchanges
+* 76e7d503 New manifest changes
+* 224543c5 Update esn timestamp on reset
+* 383f5580 Avoid escape unicode property
+* 2d25434b Partial backport of #1513","IMPORTANT NOTICE: New changes to website is causing video quality to drop to 540p after about 20h,
+this add-on update implements a workaround to fix this problem by changing ESNs every 20h.
+The workaround works only when ""Manual ESN"" is not set, so if needed remove the previously Manual ESN set.
+You can find the new setting under add-on Expert settings.
+If necessary, you can manually generate new ESN's by selecting ""Reset ESN"" setting, or you can also disable the 540p workaround.
+IMPORTANT NOTICE FOR ANDROID: Do NOT USE the ESN of the original app with the add-on, or will cause video quality drop
+to 540p also on the original android app for an unknown period of time. This problem cannot be solved by the add-on,
+there are no know solutions yet, so you can only report the 540p problem to customer service."
+"* 137b25a6 Version bump (1.13.1) (#1051)
+* 8f597480 Removed delete cache folder on old upgrade
+* 3c4787f8 Removed warning message of old upgrade
+* 112f0595 Little condition improvement
+* 249d493e Update Chinese for 1.13.0 (#1032)
+* 838f5705 Little conditions improvement
+* 84d2f923 Add note
+*   f7706b7a Merge pull request #1050 from CastagnaIT/seasons_art
+|\  
+| * 6693782b Add seasons art
+|/  
+*   4992e8fc Merge pull request #1046 from CastagnaIT/req_fixes
+|\  
+| * c8f68e7e Try better handle HTTP ReadTimeout/ConnectionError errors
+| * cf81de1a Partially reverted workaround of 918460443cb1818e3a000c520b42311a26d74b66
+| * 181fb382 Avoid expose response object between functions and better managed chunks
+| * d232eac0 Removed threaded send_signal
+* | e4854ec3 Removed leia CI
+|/  
+*   b9d43cd4 Merge pull request #1042 from CastagnaIT/track_sel_fix
+|\  
+| * c499c087 Various fixes mainly for audio/subtitle with country code selection
+* 9edce205 Fixed/updated dependencies
+* e0d14356 Update Pt-BR translation (#1037)
+* 28ac2028 Update Hungarian (#1029)
+* 9eb6ee48 Update French translation for v1.13.0 (#1024)","Add images to seasons list items
+Implemented support to Kodi language setting case ""User interface language""
+Fixed ""Prefer the audio/subtitle language with country code"" feature
+Fixed possible dependencies errors on new installations
+Fixed possible service crash on slower devices like RPI
+Better managed data chunks in some cases could cause errors on starting playback
+Tried to better handle HTTP ReadTimeout/ConnectionError errors
+Updated translations fr, hu, pt-br, zh-cn"
+"* 1f77d22 Update CHANGELOG.md
+* ac9bd1d server(filesystem): fix archives in subdirectories
+* 979df34 server(filesystem): fix archive creation with ignore","Fixed
+Backups missing content when a .pteroignore file is used
+Archives originating from a subdirectory not containing any files ()
+SHA256 Checksum"
+"* c03b3ebb Version bump (0.15.3)
+* d7cec432 Add more Dutch translations and fix English spelling
+*   4c7706b5 Merge pull request #218 from dagwieers/pr194-fix
+|\  
+| * e67b474b Small fixes after pylint/flake cleanup
+* |   ccff1a0f Merge pull request #217 from Smeulf/verbump
+|\ \  
+| |/  
+|/|   
+| * 2d3b0e86 Fix perpetual_path_request after Pylint fixes
+|/  
+*   b1f9df71 Merge pull request #203 from Smeulf/FIX_GetLibrary_get_item
+|\  
+| * 40828942 Fix library.py _get_item when source is ""special://""
+* |   76d17b5d Merge pull request #202 from Smeulf/Improve_LibraryAutoUpdateSettings
+|\ \  
+| * | c27f437e Improve LibraryUpdateService: wait for settings to be written
+| |/  
+* |   64f80913 Merge pull request #192 from CastagnaIT/credfix
+|\ \  
+| * | ae61d7da Use randomized uuid with library autoupdate
+| * | a3c4ccd6 Removed mac uuid in favour of device uuid
+|/ /  
+* |   240c663c Merge pull request #201 from Smeulf/Fix_Fanart_and_Icon-2
+|\ \  
+| * | 3f25f82e Fix Fanart resolution and icon.png (again)
+| |/  
+* |   de3a473b Merge pull request #196 from dagwieers/integration-tests
+|\ \  
+| |/  
+|/|   
+| * 3c3a9f86 First integration tests
+|/  
+*   0ba3df92 Merge pull request #195 from Smeulf/Fix_Fanart_and_Icon
+|\  
+| * 6b4b3047 Fix fanart size and icon transparency
+* |   2dcf2253 Merge pull request #194 from dagwieers/pylint-fixes
+|\ \  
+| |/  
+|/|   
+| * 097de1e0 Fixes
+| * e1a59ce8 Separate run tests in Makefile
+| * bf109727 Fix pylint and flake8 issues
+|/  
+*   600987d6 Merge pull request #193 from dagwieers/preparation
+|\  
+| * 74c8a30b Preparations
+|/  
+* 7a5898f4 Fixed pull request template position
+* af6db6ac Descriptions for the newbies..
+*   740a8b6a Merge pull request #182 from CastagnaIT/template
+|\  
+| * 4dd93b8d New Issue and Pull request templates
+|/  
+* dd8bc57f Added instructions to limit resolution
+* 6fc83dde Updated request data","Initial conversion to python 3
+Initial integration tests
+Implemented device uuid to avoid always asking credentials
+Fixed a problem when library source is special:// or a direct path
+Fixed run library update on slow system like RPI
+Updated dutch language
+Minor fixes"
+"* d649bb1 Update README.md
+* 1477b70 Update CHANGELOG.md
+* d1c0ca5 server(filesystem): rebuild everything imaginable
+* 27f3e76 ci: update to go 1.21.8 and 1.22.1
+* eadbe92 config: fix docker Go API deprecation
+* 3e804b8 go: update dependencies
+* f68965e Update README.md
+* accc833 ci(push): only upload artifacts built with go 1.20.12
+* d4bfdd4 ci: actions/upload-artifact v3 -> v4
+* 2641080 ci: update go to 1.20.12 and 1.21.5
+* 10c58d3 go: update dependencies
+* 9496b1f go: update dependencies
+* 2f1b67e ci: update go to 1.20.11 and 1.21.4
+* 579278b sftp: log ip on inbound connection failure
+* d30ab7b dockerfile: update to go 1.20.10 (#175)
+* d1fd046 server(filesystem): fix file names when extracting archives (#165)","Changed
+Release binaries are now built with Go 1.21.8
+Updated Go dependencies
+Fixed
+SHA256 Checksum"
+"* 62259a71 Version bump (1.16.2) (#1201)
+* e9d3f0d1 Update Simplified Chinese Translation (#1200)
+*   bff71dcd Merge pull request #1202 from CastagnaIT/website_changes
+|\  
+| * 3420284c Video sorted lists query changes
+* | fbe6c8a0 Changes on workflow
+* | 1eb757a5 Use regular pip install
+|/  
+* 301db926 Removed some IPC signals
+* a3abbd97 Removed some old stuff and cleanup
+*   574ce6e3 Merge pull request #1129 from CastagnaIT/manifest_changes
+|\  
+| * 1d61f42e Warning message for ISA old version installed
+| * f2947e4c Temporary allow request manifest without DRM data
+| * 3306711b Implemented licensed manifest request
+|/  
+* 3a9bf6c1 Get rid of consider-using-from-import
+* 09e19bf6 Fix some ARM devices recognized in wrong way","Implemented new licensed manifest request (to have HD is mandatory to update InputStream Adaptive to last version)
+Fixed ""This title is not available to watch instantly"" error on some ARM devices incorrectly identified
+Fixed empty lists on menu/submenus due to website changes
+Update translation zh_cn
+Minor changes"
+"* 51ceb6d0 Version bump (1.3.1)
+* 52716516 Fixed add title color wrong behaviour
+* 4ad15a5d Merge pull request #637 from CastagnaIT/verbump","Note to RPI devices: credentials will be asked again a storage problem has been fixed
+Fixed KeyError issue"
+"* 438e5fd Update CHANGELOG.md
+* a866493 go: update dependencies
+* c9d92f7 ci: ubuntu-22.04, go1.19.11, go1.20.6
+* aa8ffdf go: update dependencies
+* 8d7e23f Update README.md
+* bd26d6e Update README.md","Changed
+Updated Go dependencies (this resolves an issue related to http: invalid Host header with Docker)
+Wings is now built with go1.19.11
+SHA256 Checksum"
+"* a8011319 Version bump (1.3.2) (#648)
+* b83d9258 Fixed UnicodeDecodeError on chinese OS and improved error output
+* ff75836e Fixed upnext regression
+* 58fd4431 Removed Title property simplifies things
+* 73eefb4b modelgroup must always be in capital letters
+* 6ad3f93b Updated sv-se translation
+* 8d390250 Update spanish translation [es_ES] (#643)
+* 2f1fa370 Fixed pylint errors
+* 9b1df155 Close socket safe way
+* 3995a7c6 Fixed unicodedecode error
+* b4359875 Fixed UnicodeWarning error
+* 78bc2596 Add Plot fallback to skin not support PlotOutline
+* 91c7533a Merge pull request #642 from CastagnaIT/verbump","Fixed some issues on chinese systems
+Fixed errors on loading lists
+Fixed missing plot in some skins
+Fixed ESN generation (lower case issue)
+Fixed UpNext regressions
+Updated translations es, sv-se"
+"* 79eb8e1 Update CHANGELOG.md
+* 2cb201d go: update dependencies
+* fc1ffc8 workflows: update actions, use go 1.20.10 and 1.21.3
+* 48c55af chore: slice loop replace (#173)
+* 7a59d09 chore: remove unnecessary use of fmt.Sprintf (#174)
+* 9b5eaf4 Update README.md","Changed
+Release binaries are now built with Go 1.20.10 (resolves CVE-2023-44487)
+Updated Go dependencies
+SHA256 Checksum"
+"* 8879902a version increase to 1.2.8 (#352)
+* 39ca95b7 Support Issue APS-40 (#348)","This release incorporates:
+Enhancements
+-- this is a fix release only --
+Fixes
+Removed classes that are in later versions of the module and restored references to old customer classes that served the same function"
+"* 8f12993 Update CHANGELOG.md
+* 2931430 server(filesystem): fix archive skipping directories
+* 99b9924 router(server): fix panic on server deletion","Fixed
+Archives randomly ignoring files and directories ()
+Crash when deleting or transferring a server ()
+SHA256 Checksum"
+"* 5cf5fa43 Version bump (1.18.3) (#1291)
+* e9237d1a Merge pull request #1290 from CastagnaIT/manifest_switch
+* 652c639b Add switch to manifest v1","Add 1080P workaround for linux ARM devices
+To enable it: On Expert settings, set ""MSL manifest version"" to ""Version 1"""
+"* 9b0f63bf Version bump (0.16.3)
+*   1aa08e1d Merge pull request #435 from CastagnaIT/improvements
+|\  
+| * 78b7d55a Cache class changes
+| * 48b970bd ndb file cache no more used
+| * 44856573 Fixed unicodedecode error on py2
+| * 1e4bd951 Saves the current kodi profile name as global
+| * ec1df2ef Removed unused mkdir data path
+| * 3ef8d619 Fixed edge case of getDirectory error
+| * 16d96780 Added folder exists method
+| * 4bb11ed7 flake8 fixes
+| * 47bfc355 Initialize databases only at first startup
+| * ffd27fa5 Check addon upgrade only at first run
+| * fa756557 Show sceduling info only after setup
+| * 17ad8d67 Added IS_ADDON_FIRSTRUN
+| * 7fac131b Listing menu simplified a bit
+| * d9a88160 Add carriage return to the supplemental message
+| * 5e6c1ef9 Removed ugly dependency workaround
+|/  
+* 9dbc8447 Fixed servers shutdown
+* 2ce086df Added OrderedDict in convert_to_string
+*   68d8d298 Merge pull request #423 from CastagnaIT/handshake_upd
+|\  
+| * 91dccffc Added user ID token authentication
+| * 8da3137f Updated message request info
+* |   3610450d Merge pull request #431 from CastagnaIT/sessiondata
+|\ \  
+| * | 70357df8 Refresh session data at service startup to update authURL
+| * | c67d3cf6 Handle http 401 error
+|/ /  
+* |   bb4cba13 Merge pull request #426 from 23doors/fix_deadlock
+|\ \  
+| |/  
+|/|   
+| * 657eebe1 fix flake8
+| * d299f5b4 fix: sqlite3 library deadlock
+|/  
+* 5ba3458b Using non-blocking send signal
+* 16fb4a43 Added sendSignal non-blocking workaround
+* 13584b58 Do not close output stream
+* 08a1f419 Forgot to update description
+* faffa573 Cookie debug output
+* 8238b54e Merge pull request #417 from CastagnaIT/verbump","Fixed an issue that causing addon freeze on export/update to library
+Fixed an regression issue that causing http error 401
+Fixed an issue that causing unicodedecode error at startup
+Fixed an issue that in some cases prevented the export of a tv show season
+Generally optimized addon speed
+Many improvements to the code"
+"* 182a73f5 Version bump (0.16.1)
+* fa58e2e6 Changed library context menu behaviour
+* 6703400a Updated some manifest parameters
+* 2320171a Updated user agent for windows
+*   83ea92ae Merge pull request #377 from CastagnaIT/atmos_streams_desc
+|\  
+| * 194b7b2d Allow to distinguish dolby atmos streams
+|/  
+*   9129d39e Merge pull request #361 from CastagnaIT/skin_widget
+|\  
+| * 465a7548 Workaround to intercept skin widget calls
+|/  
+* 8e452635 Fixed wrong content type to lists of movies
+* c6b0305d Fixed stream continuity after 34f3b70481df30d40b27c2892f64a7
+* 34f3b704 Subtitle property adj for future versions of InputStream Adaptive
+* e262dc7a prefetch_login is not as internal method
+*   6686cf5e Merge pull request #373 from CastagnaIT/cclimate_fixes
+|\  
+| * fd4445d5 code climate: refactor library
+| * 625284fc code climate: refactor nfsession
+| * f5904a53 Moved parental control data extraction to website
+| * 79de84de Raised level of cognitive complexity
+| * 4e442c2d code climate: exceeded arguments
+| * 642ccbc2 code climate: pep8 indent
+| * 4ca3e78e code climate: number of line exceeded
+| * a8845245 code climate: avoid too many return statements
+|/  
+* 187c1761 Code climate update config (#370)
+*   55e54cd2 Merge pull request #369 from CastagnaIT/stream_continuity
+|\  
+| * 7fabdfa7 Recognition of streams between episodes only for Kodi 19
+| * 492f6712 Fixed possible cases of fake data in player_state
+| * 08c3a23b Add compare dict with excluded keys option
+|/  
+* af46572c Override default timeout also in ipc over http
+* 25305d4a Improved and fixed gui path
+* 44d48fe0 Updated fr translation
+* 9a850ba3 Some fixes for non default Skins
+* e0386b16 Fixed unicodedecode error on android device
+* 6669482e Add Python 3.5 testing support
+* 07852518 Update pt_br strings.po 12/2/2019 (#357)
+* d0a9f43b Update hungarian translation (#362)
+* 76879f14 Fix for flake8
+* 9b4bed3b Fixed unicodedecode error when using non ascii char on inputdialog
+* da1eff3c Fixed wrong docstrings
+*   0c68dc5d Merge pull request #353 from CastagnaIT/spdx
+|\  
+| * a3e25158 Added SPDX license identifier and copyright
+|/  
+* 5ea6b20d Update translation jp kr (#350)
+* 8f722630 Fix typo","Allowed to export individual seasons to the library (manual mode)
+Dolby atmos audio streams are now specified (Kodi 19)
+Added workaround to fix skin widgets
+Handled subtitle properties for next version of InputStream Adaptive
+Introduced accurate handling of subtitles (Kodi 19)
+Improved handling of subtitles (Kodi 18)
+Improved return to main page from search dialog
+Improved cancel login dialog after the logout
+Improved timeout on IPC over HTTP
+Fixed an issue that showed the wrong label while browsing movies·
+Fixed ParentalControl/Rating GUI on custom skins·

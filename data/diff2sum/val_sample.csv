@@ -1,401 +1,1000 @@
 commits,release
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
-"",""
+"Status: Modified
+Files: .github/workflows/docker.yml, .github/workflows/release.yml, CHANGELOG.md, cmd/configure.go, cmd/diagnostics.go, cmd/root.go, config/config.go, config/config_docker.go, environment/allocations.go, environment/docker.go, environment/docker/container.go, environment/docker/environment.go, environment/docker/stats.go, environment/environment.go, environment/settings.go, events/events.go, go.mod, loggers/cli/cli.go, parser/helpers.go, parser/parser.go, remote/errors.go, remote/http.go, remote/http_test.go, router/middleware/middleware.go, router/router_server.go, router/router_system.go, router/websocket/listeners.go, router/websocket/websocket.go, rpm/ptero-wings.spec, server/backup.go, server/errors.go, server/events.go, server/filesystem/archive.go, server/filesystem/compress_test.go, server/filesystem/filesystem.go, server/filesystem/filesystem_test.go, server/filesystem/path.go, server/filesystem/path_test.go, server/install.go, server/listeners.go, server/manager.go, server/resources.go, server/server.go, sftp/handler.go, sftp/server.go, sftp/utils.go, system/const.go, system/utils.go
+Status: Added
+Files: events/events_test.go, server/sink.go
+Status: Deleted
+Files: events/pool.go
+
+diff --git a/.github/workflows/docker.yml b/.github/workflows/docker.yml
+index a36e288..38b25cd 100644
+--- a/.github/workflows/docker.yml
++++ b/.github/workflows/docker.yml
+@@ -34,7 +34,7 @@ jobs:
+       - name: Get Build Information
+         id: build_info
+         run: |
+-          echo ""::set-output name=version_tag::${GITHUB_REF/refs\\/tags\\//}""
++          echo ""::set-output name=version_tag::${GITHUB_REF/refs\\/tags\\/v/}""
+           echo ""::set-output name=short_sha::$(git rev-parse --short HEAD)""
+       - name: Release Production Build
+         uses: docker/build-push-action@v2
+diff --git a/.github/workflows/release.yml b/.github/workflows/release.yml
+index a11dc02..b7fdb55 100644
+--- a/.github/workflows/release.yml
++++ b/.github/workflows/release.yml
+@@ -45,7 +45,7 @@ jobs:
+           git config --local user.name ""Pterodactyl CI""
+           git checkout -b $BRANCH
+           git push -u origin $BRANCH
+-          sed -i ""s/	Version = \\"".*\\""/	Version = \\""${REF:11}\\""/"" system/const.go
++          sed -i ""s/var Version = \\"".*\\""/var Version = \\""${REF:11}\\""/"" system/const.go
+           git add system/const.go
+           git commit -m ""bump version for release""
+           git push
+diff --git a/CHANGELOG.md b/CHANGELOG.md
+index b19a539..911da65 100644
+--- a/CHANGELOG.md
++++ b/CHANGELOG.md
+@@ -1,5 +1,17 @@
+ # Changelog
+ 
++## v1.5.4
++### Fixed
++* Fixes SSL paths being improperly converted to lowercase in environments where the path is case-sensitive.
++* Fixes a memory leak due to the implemention of server event processing.
++
++### Changed
++* Selecting to redact information now redacts URLs from the log output when running the diagnostic command.
++
++### Added
++* Adds support for modifying the default memory overhead percentages in environments where the shipped values are not adequate.
++* Adds support for sending the `Access-Control-Request-Private-Network` header in environments where Wings will be accessed over a private network. This is defaulted to `off`.
++
+ ## v1.5.3
+ ### Fixed
+ * Fixes improper event registration and error handling during socket authentication that would cause the incorrect error message to be returned to the client, or no error in some scenarios. Event registration is now delayed until the socket is fully authenticated to ensure needless listeners are not registed.
+diff --git a/cmd/configure.go b/cmd/configure.go
+index 1c0f45c..978615f 100644
+--- a/cmd/configure.go
++++ b/cmd/configure.go
+@@ -4,7 +4,7 @@ import (
+ 	""crypto/tls""
+ 	""encoding/json""
+ 	""fmt""
+-	""io/ioutil""
++	""io""
+ 	""net/http""
+ 	""net/url""
+ 	""os""
+@@ -19,16 +19,14 @@ import (
+ 	""github.com/pterodactyl/wings/config""
+ )
+ 
+-var (
+-	configureArgs struct {
+-		PanelURL      string
+-		Token         string
+-		ConfigPath    string
+-		Node          string
+-		Override      bool
+-		AllowInsecure bool
+-	}
+-)
++var configureArgs struct {
++	PanelURL      string
++	Token         string
++	ConfigPath    string
++	Node          string
++	Override      bool
++	AllowInsecure bool
++}
+ 
+ var nodeIdRegex = regexp.MustCompile(`^(\\d+)$`)
+ 
+@@ -140,13 +138,13 @@ func configureCmdRun(cmd *cobra.Command, args []string) {
+ 		fmt.Println(""The authentication credentials provided were not valid."")
+ 		os.Exit(1)
+ 	} else if res.StatusCode != http.StatusOK {
+-		b, _ := ioutil.ReadAll(res.Body)
++		b, _ := io.ReadAll(res.Body)
+ 
+ 		fmt.Println(""An error occurred while processing this request.\\n"", string(b))
+ 		os.Exit(1)
+ 	}
+ 
+-	b, err := ioutil.ReadAll(res.Body)
++	b, err := io.ReadAll(res.Body)
+ 
+ 	cfg, err := config.NewAtPath(configPath)
+ 	if err != nil {
+diff --git a/cmd/diagnostics.go b/cmd/diagnostics.go
+index ea847fb..605e1a5 100644
+--- a/cmd/diagnostics.go
++++ b/cmd/diagnostics.go
+@@ -6,7 +6,6 @@ import (
+ 	""errors""
+ 	""fmt""
+ 	""io""
+-	""io/ioutil""
+ 	""net/http""
+ 	""net/url""
+ 	""os/exec""
+@@ -29,19 +28,19 @@ import (
+ 	""github.com/pterodactyl/wings/system""
+ )
+ 
+-const DefaultHastebinUrl = ""https://ptero.co""
+-const DefaultLogLines = 200
+-
+-var (
+-	diagnosticsArgs struct {
+-		IncludeEndpoints   bool
+-		IncludeLogs        bool
+-		ReviewBeforeUpload bool
+-		HastebinURL        string
+-		LogLines           int
+-	}
++const (
++	DefaultHastebinUrl = ""https://ptero.co""
++	DefaultLogLines    = 200
+ )
+ 
++var diagnosticsArgs struct {
++	IncludeEndpoints   bool
++	IncludeLogs        bool
++	ReviewBeforeUpload bool
++	HastebinURL        string
++	LogLines           int
++}
++
+ func newDiagnosticsCommand() *cobra.Command {
+ 	command := &cobra.Command{
+ 		Use:   ""diagnostics"",
+@@ -79,7 +78,7 @@ func diagnosticsCmdRun(cmd *cobra.Command, args []string) {
+ 		{
+ 			Name: ""ReviewBeforeUpload"",
+ 			Prompt: &survey.Confirm{
+-				Message: ""Do you want to review the collected data before uploading to hastebin.com?"",
++				Message: ""Do you want to review the collected data before uploading to "" + diagnosticsArgs.HastebinURL + ""?"",
+ 				Help:    ""The data, especially the logs, might contain sensitive information, so you should review it. You will be asked again if you want to upload."",
+ 				Default: true,
+ 			},
+@@ -97,41 +96,40 @@ func diagnosticsCmdRun(cmd *cobra.Command, args []string) {
+ 	output := &strings.Builder{}
+ 	fmt.Fprintln(output, ""Pterodactyl Wings - Diagnostics Report"")
+ 	printHeader(output, ""Versions"")
+-	fmt.Fprintln(output, ""         wings:"", system.Version)
++	fmt.Fprintln(output, ""               Wings:"", system.Version)
+ 	if dockerErr == nil {
+-		fmt.Fprintln(output, ""Docker:"", dockerVersion.Version)
++		fmt.Fprintln(output, ""              Docker:"", dockerVersion.Version)
+ 	}
+ 	if v, err := kernel.GetKernelVersion(); err == nil {
+-		fmt.Fprintln(output, ""Kernel:"", v)
++		fmt.Fprintln(output, ""              Kernel:"", v)
+ 	}
+ 	if os, err := operatingsystem.GetOperatingSystem(); err == nil {
+-		fmt.Fprintln(output, ""    OS:"", os)
++		fmt.Fprintln(output, ""                  OS:"", os)
+ 	}
+ 
+ 	printHeader(output, ""Wings Configuration"")
+ 	if err := config.FromFile(config.DefaultLocation); err != nil {
+-
+ 	}
+ 	cfg := config.Get()
+-	fmt.Fprintln(output, ""    Panel Location:"", redact(cfg.PanelLocation))
++	fmt.Fprintln(output, ""      Panel Location:"", redact(cfg.PanelLocation))
+ 	fmt.Fprintln(output, """")
+-	fmt.Fprintln(output, "" Internal Webserver:"", redact(cfg.Api.Host), "":"", cfg.Api.Port)
+-	fmt.Fprintln(output, ""        SSL Enabled:"", cfg.Api.Ssl.Enabled)
+-	fmt.Fprintln(output, ""    SSL Certificate:"", redact(cfg.Api.Ssl.CertificateFile))
+-	fmt.Fprintln(output, ""            SSL Key:"", redact(cfg.Api.Ssl.KeyFile))
++	fmt.Fprintln(output, ""  Internal Webserver:"", redact(cfg.Api.Host), "":"", cfg.Api.Port)
++	fmt.Fprintln(output, ""         SSL Enabled:"", cfg.Api.Ssl.Enabled)
++	fmt.Fprintln(output, ""     SSL Certificate:"", redact(cfg.Api.Ssl.CertificateFile))
++	fmt.Fprintln(output, ""             SSL Key:"", redact(cfg.Api.Ssl.KeyFile))
+ 	fmt.Fprintln(output, """")
+-	fmt.Fprintln(output, ""        SFTP Server:"", redact(cfg.System.Sftp.Address), "":"", cfg.System.Sftp.Port)
+-	fmt.Fprintln(output, ""     SFTP Read-Only:"", cfg.System.Sftp.ReadOnly)
++	fmt.Fprintln(output, ""         SFTP Server:"", redact(cfg.System.Sftp.Address), "":"", cfg.System.Sftp.Port)
++	fmt.Fprintln(output, ""      SFTP Read-Only:"", cfg.System.Sftp.ReadOnly)
+ 	fmt.Fprintln(output, """")
+-	fmt.Fprintln(output, ""     Root Directory:"", cfg.System.RootDirectory)
+-	fmt.Fprintln(output, ""     Logs Directory:"", cfg.System.LogDirectory)
+-	fmt.Fprintln(output, ""     Data Directory:"", cfg.System.Data)
+-	fmt.Fprintln(output, ""  Archive Directory:"", cfg.System.ArchiveDirectory)
+-	fmt.Fprintln(output, ""   Backup Directory:"", cfg.System.BackupDirectory)
++	fmt.Fprintln(output, ""      Root Directory:"", cfg.System.RootDirectory)
++	fmt.Fprintln(output, ""      Logs Directory:"", cfg.System.LogDirectory)
++	fmt.Fprintln(output, ""      Data Directory:"", cfg.System.Data)
++	fmt.Fprintln(output, ""   Archive Directory:"", cfg.System.ArchiveDirectory)
++	fmt.Fprintln(output, ""    Backup Directory:"", cfg.System.BackupDirectory)
+ 	fmt.Fprintln(output, """")
+-	fmt.Fprintln(output, ""           Username:"", cfg.System.Username)
+-	fmt.Fprintln(output, ""        Server Time:"", time.Now().Format(time.RFC1123Z))
+-	fmt.Fprintln(output, ""         Debug Mode:"", cfg.Debug)
++	fmt.Fprintln(output, ""            Username:"", cfg.System.Username)
++	fmt.Fprintln(output, ""         Server Time:"", time.Now().Format(time.RFC1123Z))
++	fmt.Fprintln(output, ""          Debug Mode:"", cfg.Debug)
+ 
+ 	printHeader(output, ""Docker: Info"")
+ 	if dockerErr == nil {
+@@ -190,6 +188,16 @@ func diagnosticsCmdRun(cmd *cobra.Command, args []string) {
+ 		survey.AskOne(&survey.Confirm{Message: ""Upload to "" + diagnosticsArgs.HastebinURL + ""?"", Default: false}, &upload)
+ 	}
+ 	if upload {
++		if !diagnosticsArgs.IncludeEndpoints {
++			s := output.String()
++			output.Reset()
++			a := strings.ReplaceAll(cfg.PanelLocation, s, ""{redacted}"")
++			a = strings.ReplaceAll(cfg.Api.Host, a, ""{redacted}"")
++			a = strings.ReplaceAll(cfg.Api.Ssl.CertificateFile, a, ""{redacted}"")
++			a = strings.ReplaceAll(cfg.Api.Ssl.KeyFile, a, ""{redacted}"")
++			a = strings.ReplaceAll(cfg.System.Sftp.Address, a, ""{redacted}"")
++			output.WriteString(a)
++		}
+ 		u, err := uploadToHastebin(diagnosticsArgs.HastebinURL, output.String())
+ 		if err == nil {
+ 			fmt.Println(""Your report is available here: "", u)
+@@ -226,7 +234,7 @@ func uploadToHastebin(hbUrl, content string) (string, error) {
+ 		return """", err
+ 	}
+ 	pres := make(map[string]interface{})
+-	body, err := ioutil.ReadAll(res.Body)
++	body, err := io.ReadAll(res.Body)
+ 	if err != nil {
+ 		fmt.Println(""Failed to parse response."", err)
+ 		return """", err
+diff --git a/cmd/root.go b/cmd/root.go
+index 3be824e..ab0dcc7 100644
+--- a/cmd/root.go
++++ b/cmd/root.go
+@@ -355,7 +355,7 @@ func rootCmdRun(cmd *cobra.Command, _ []string) {
+ 	// Check if main http server should run with TLS. Otherwise reset the TLS
+ 	// config on the server and then serve it over normal HTTP.
+ 	if api.Ssl.Enabled {
+-		if err := s.ListenAndServeTLS(strings.ToLower(api.Ssl.CertificateFile), strings.ToLower(api.Ssl.KeyFile)); err != nil {
++		if err := s.ListenAndServeTLS(api.Ssl.CertificateFile, api.Ssl.KeyFile); err != nil {
+ 			log.WithFields(log.Fields{""auto_tls"": false, ""error"": err}).Fatal(""failed to configure HTTPS server"")
+ 		}
+ 		return
+diff --git a/config/config.go b/config/config.go
+index a75befb..052abdb 100644
+--- a/config/config.go
++++ b/config/config.go
+@@ -4,7 +4,6 @@ import (
+ 	""context""
+ 	""crypto/tls""
+ 	""fmt""
+-	""io/ioutil""
+ 	""os""
+ 	""os/exec""
+ 	""os/user""
+@@ -287,6 +286,12 @@ type Configuration struct {
+ 	// The Panel URL is automatically allowed, this is only needed for adding
+ 	// additional origins.
+ 	AllowedOrigins []string `json:""allowed_origins"" yaml:""allowed_origins""`
++
++	// AllowCORSPrivateNetwork sets the `Access-Control-Request-Private-Network` header which
++	// allows client browsers to make requests to internal IP addresses over HTTP.  This setting
++	// is only required by users running Wings without SSL certificates and using internal IP
++	// addresses in order to connect. Most users should NOT enable this setting.
++	AllowCORSPrivateNetwork bool `json:""allow_cors_private_network"" yaml:""allow_cors_private_network""`
+ }
+ 
+ // NewAtPath creates a new struct and set the path where it should be stored.
+@@ -380,7 +385,7 @@ func WriteToDisk(c *Configuration) error {
+ 	if err != nil {
+ 		return err
+ 	}
+-	if err := ioutil.WriteFile(c.path, b, 0o600); err != nil {
++	if err := os.WriteFile(c.path, b, 0o600); err != nil {
+ 		return err
+ 	}
+ 	return nil
+@@ -448,7 +453,7 @@ func EnsurePterodactylUser() error {
+ // FromFile reads the configuration from the provided file and stores it in the
+ // global singleton for this instance.
+ func FromFile(path string) error {
+-	b, err := ioutil.ReadFile(path)
++	b, err := os.ReadFile(path)
+ 	if err != nil {
+ 		return err
+ 	}
+@@ -456,31 +461,17 @@ func FromFile(path string) error {
+ 	if err != nil {
+ 		return err
+ 	}
+-	// Replace environment variables within the configuration file with their
+-	// values from the host system. This function works almost identically to
+-	// the default os.ExpandEnv function, except it supports escaping dollar
+-	// signs in the text if you pass ""$$"" through.
+-	//
+-	// ""some$$foo"" -> ""some$foo""
+-	// ""some$foo"" -> ""some"" (or ""someVALUE_OF_FOO"" if FOO is defined in env)
+-	//
+-	// @see https://github.com/pterodactyl/panel/issues/3692
+-	exp := os.Expand(string(b), func(s string) string {
+-		if s == ""$"" {
+-			return s
+-		}
+-		return os.Getenv(s)
+-	})
+ 
+-	if err := yaml.Unmarshal([]byte(exp), c); err != nil {
++	if err := yaml.Unmarshal(b, c); err != nil {
+ 		return err
+ 	}
++
+ 	// Store this configuration in the global state.
+ 	Set(c)
+ 	return nil
+ }
+ 
+-// ConfigureDirectories ensures that all of the system directories exist on the
++// ConfigureDirectories ensures that all the system directories exist on the
+ // system. These directories are created so that only the owner can read the data,
+ // and no other users.
+ //
+@@ -592,7 +583,7 @@ func ConfigureTimezone() error {
+ 		_config.System.Timezone = tz
+ 	}
+ 	if _config.System.Timezone == """" {
+-		b, err := ioutil.ReadFile(""/etc/timezone"")
++		b, err := os.ReadFile(""/etc/timezone"")
+ 		if err != nil {
+ 			if !os.IsNotExist(err) {
+ 				return errors.WithMessage(err, ""config: failed to open timezone file"")
+diff --git a/config/config_docker.go b/config/config_docker.go
+index 33e40a4..7fd2034 100644
+--- a/config/config_docker.go
++++ b/config/config_docker.go
+@@ -3,6 +3,7 @@ package config
+ import (
+ 	""encoding/base64""
+ 	""encoding/json""
++	""sort""
+ 
+ 	""github.com/docker/docker/api/types""
+ )
+@@ -51,9 +52,9 @@ type DockerConfiguration struct {
+ 	// Registries .
+ 	Registries map[string]RegistryConfiguration `json:""registries"" yaml:""registries""`
+ 
+-	// The size of the /tmp directory when mounted into a container. Please be aware that Docker
+-	// utilizes host memory for this value, and that we do not keep track of the space used here
+-	// so avoid allocating too much to a server.
++	// TmpfsSize specifies the size for the /tmp directory mounted into containers. Please be
++	// aware that Docker utilizes the host's system memory for this value, and that we do not
++	// keep track of the space used there, so avoid allocating too much to a server.
+ 	TmpfsSize uint `default:""100"" json:""tmpfs_size"" yaml:""tmpfs_size""`
+ 
+ 	// ContainerPidLimit sets the total number of processes that can be active in a container
+@@ -62,14 +63,18 @@ type DockerConfiguration struct {
+ 	// available pids and crash.
+ 	ContainerPidLimit int64 `default:""512"" json:""container_pid_limit"" yaml:""container_pid_limit""`
+ 
+-	// InstallLimits defines the limits on the installer containers that prevents a server's
++	// InstallerLimits defines the limits on the installer containers that prevents a server's
+ 	// installation process from unintentionally consuming more resources than expected. This
+ 	// is used in conjunction with the server's defined limits. Whichever value is higher will
+-	// take precedence in the install containers.
++	// take precedence in the installer containers.
+ 	InstallerLimits struct {
+ 		Memory int64 `default:""1024"" json:""memory"" yaml:""memory""`
+ 		Cpu    int64 `default:""100"" json:""cpu"" yaml:""cpu""`
+ 	} `json:""installer_limits"" yaml:""installer_limits""`
++
++	// Overhead controls the memory overhead given to all containers to circumvent certain
++	// software such as the JVM not staying below the maximum memory limit.
++	Overhead Overhead `json:""overhead"" yaml:""overhead""`
+ }
+ 
+ // RegistryConfiguration defines the authentication credentials for a given
+@@ -91,3 +96,62 @@ func (c RegistryConfiguration) Base64() (string, error) {
+ 	}
+ 	return base64.URLEncoding.EncodeToString(b), nil
+ }
++
++// Overhead controls the memory overhead given to all containers to circumvent certain
++// software such as the JVM not staying below the maximum memory limit.
++type Overhead struct {
++	// Override controls if the overhead limits should be overridden by the values in the config file.
++	Override bool `default:""false"" json:""override"" yaml:""override""`
++
++	// DefaultMultiplier sets the default multiplier for if no Multipliers are able to be applied.
++	DefaultMultiplier float64 `default:""1.05"" json:""default_multiplier"" yaml:""default_multiplier""`
++
++	// Multipliers allows overriding DefaultMultiplier depending on the amount of memory
++	// configured for a server.
++	//
++	// Default values (used if Override is `false`)
++	// - Less than 2048 MB of memory, multiplier of 1.15 (15%)
++	// - Less than 4096 MB of memory, multiplier of 1.10 (10%)
++	// - Otherwise, multiplier of 1.05 (5%) - specified in DefaultMultiplier
++	//
++	// If the defaults were specified in the config they would look like:
++	// ```yaml
++	// multipliers:
++	//   2048: 1.15
++	//   4096: 1.10
++	// ```
++	Multipliers map[int]float64 `json:""multipliers"" yaml:""multipliers""`
++}
++
++func (o Overhead) GetMultiplier(memoryLimit int64) float64 {
++	// Default multiplier values.
++	if !o.Override {
++		if memoryLimit <= 2048 {
++			return 1.15
++		} else if memoryLimit <= 4096 {
++			return 1.10
++		}
++		return 1.05
++	}
++
++	// This plucks the keys of the Multipliers map, so they can be sorted from
++	// smallest to largest in order to correctly apply the proper multiplier.
++	i := 0
++	multipliers := make([]int, len(o.Multipliers))
++	for k := range o.Multipliers {
++		multipliers[i] = k
++		i++
++	}
++	sort.Ints(multipliers)
++
++	// Loop through the memory values in order (smallest to largest)
++	for _, m := range multipliers {
++		// If the server's memory limit exceeds the modifier's limit, don't apply it.
++		if memoryLimit > int64(m) {
++			continue
++		}
++		return o.Multipliers[m]
++	}
++
++	return o.DefaultMultiplier
++}
+diff --git a/environment/allocations.go b/environment/allocations.go
+index 42f7d98..71fbeb8 100644
+--- a/environment/allocations.go
++++ b/environment/allocations.go
+@@ -31,7 +31,7 @@ type Allocations struct {
+ //
+ // You'll want to use DockerBindings() if you need to re-map 127.0.0.1 to the Docker interface.
+ func (a *Allocations) Bindings() nat.PortMap {
+-	var out = nat.PortMap{}
++	out := nat.PortMap{}
+ 
+ 	for ip, ports := range a.Mappings {
+ 		for _, port := range ports {
+@@ -94,7 +94,7 @@ func (a *Allocations) DockerBindings() nat.PortMap {
+ // To accomplish this, we'll just get the values from ""DockerBindings"" and then set them
+ // to empty structs. Because why not.
+ func (a *Allocations) Exposed() nat.PortSet {
+-	var out = nat.PortSet{}
++	out := nat.PortSet{}
+ 
+ 	for port := range a.DockerBindings() {
+ 		out[port] = struct{}{}
+diff --git a/environment/docker.go b/environment/docker.go
+index 63bcabb..56f0295 100644
+--- a/environment/docker.go
++++ b/environment/docker.go
+@@ -14,8 +14,10 @@ import (
+ 	""github.com/pterodactyl/wings/config""
+ )
+ 
+-var _conce sync.Once
+-var _client *client.Client
++var (
++	_conce  sync.Once
++	_client *client.Client
++)
+ 
+ // Docker returns a docker client to be used throughout the codebase. Once a
+ // client has been created it will be returned for all subsequent calls to this
+diff --git a/environment/docker/container.go b/environment/docker/container.go
+index 32d6df1..c531836 100644
+--- a/environment/docker/container.go
++++ b/environment/docker/container.go
+@@ -175,7 +175,7 @@ func (e *Environment) Create() error {
+ 	conf := &container.Config{
+ 		Hostname:     e.Id,
+ 		Domainname:   config.Get().Docker.Domainname,
+-		User:         strconv.Itoa(config.Get().System.User.Uid),
++		User:         strconv.Itoa(config.Get().System.User.Uid) + "":"" + strconv.Itoa(config.Get().System.User.Gid),
+ 		AttachStdin:  true,
+ 		AttachStdout: true,
+ 		AttachStderr: true,
+@@ -342,10 +342,10 @@ func (e *Environment) followOutput() error {
+ func (e *Environment) scanOutput(reader io.ReadCloser) {
+ 	defer reader.Close()
+ 
+-	events := e.Events()
+-
+-	if err := system.ScanReader(reader, func(line string) {
+-		events.Publish(environment.ConsoleOutputEvent, line)
++	if err := system.ScanReader(reader, func(v []byte) {
++		e.logCallbackMx.Lock()
++		defer e.logCallbackMx.Unlock()
++		e.logCallback(v)
+ 	}); err != nil && err != io.EOF {
+ 		log.WithField(""error"", err).WithField(""container_id"", e.Id).Warn(""error processing scanner line in console output"")
+ 		return
+diff --git a/environment/docker/environment.go b/environment/docker/environment.go
+index cacf6f7..40bc571 100644
+--- a/environment/docker/environment.go
++++ b/environment/docker/environment.go
+@@ -49,7 +49,10 @@ type Environment struct {
+ 	// Holds the stats stream used by the polling commands so that we can easily close it out.
+ 	stats io.ReadCloser
+ 
+-	emitter *events.EventBus
++	emitter *events.Bus
++
++	logCallbackMx sync.Mutex
++	logCallback   func([]byte)
+ 
+ 	// Tracks the environment state.
+ 	st *system.AtomicString
+@@ -100,9 +103,9 @@ func (e *Environment) IsAttached() bool {
+ 	return e.stream != nil
+ }
+ 
+-func (e *Environment) Events() *events.EventBus {
++func (e *Environment) Events() *events.Bus {
+ 	e.eventMu.Do(func() {
+-		e.emitter = events.New()
++		e.emitter = events.NewBus()
+ 	})
+ 
+ 	return e.emitter
+@@ -114,7 +117,6 @@ func (e *Environment) Events() *events.EventBus {
+ // ID auto-assigned when the container is created.
+ func (e *Environment) Exists() (bool, error) {
+ 	_, err := e.client.ContainerInspect(context.Background(), e.Id)
+-
+ 	if err != nil {
+ 		// If this error is because the container instance wasn't found via Docker we
+ 		// can safely ignore the error and just return false.
+@@ -215,3 +217,10 @@ func (e *Environment) SetState(state string) {
+ 		e.Events().Publish(environment.StateChangeEvent, state)
+ 	}
+ }
++
++func (e *Environment) SetLogCallback(f func([]byte)) {
++	e.logCallbackMx.Lock()
++	defer e.logCallbackMx.Unlock()
++
++	e.logCallback = f
++}
+diff --git a/environment/docker/stats.go b/environment/docker/stats.go
+index cab9479..3e14e32 100644
+--- a/environment/docker/stats.go
++++ b/environment/docker/stats.go
+@@ -90,11 +90,7 @@ func (e *Environment) pollResources(ctx context.Context) error {
+ 				st.Network.TxBytes += nw.TxBytes
+ 			}
+ 
+-			if b, err := json.Marshal(st); err != nil {
+-				e.log().WithField(""error"", err).Warn(""error while marshaling stats object for environment"")
+-			} else {
+-				e.Events().Publish(environment.ResourceEvent, string(b))
+-			}
++			e.Events().Publish(environment.ResourceEvent, st)
+ 		}
+ 	}
+ }
+diff --git a/environment/environment.go b/environment/environment.go
+index ead4d25..da21269 100644
+--- a/environment/environment.go
++++ b/environment/environment.go
+@@ -8,7 +8,6 @@ import (
+ )
+ 
+ const (
+-	ConsoleOutputEvent       = ""console output""
+ 	StateChangeEvent         = ""state change""
+ 	ResourceEvent            = ""resources""
+ 	DockerImagePullStarted   = ""docker image pull started""
+@@ -35,7 +34,7 @@ type ProcessEnvironment interface {
+ 	// Returns an event emitter instance that can be hooked into to listen for different
+ 	// events that are fired by the environment. This should not allow someone to publish
+ 	// events, only subscribe to them.
+-	Events() *events.EventBus
++	Events() *events.Bus
+ 
+ 	// Determines if the server instance exists. For example, in a docker environment
+ 	// this should confirm that the container is created and in a bootable state. In
+@@ -108,4 +107,7 @@ type ProcessEnvironment interface {
+ 	// Uptime returns the current environment uptime in milliseconds. This is
+ 	// the time that has passed since it was last started.
+ 	Uptime(ctx context.Context) (int64, error)
++
++	// SetLogCallback sets the callback that the container's log output will be passed to.
++	SetLogCallback(func([]byte))
+ }
+diff --git a/environment/settings.go b/environment/settings.go
+index 0371757..ae853cf 100644
+--- a/environment/settings.go
++++ b/environment/settings.go
+@@ -75,13 +75,7 @@ func (l Limits) ConvertedCpuLimit() int64 {
+ // server is < 4G, use 10%, if less than 2G use 15%. This avoids unexpected
+ // crashes from processes like Java which run over the limit.
+ func (l Limits) MemoryOverheadMultiplier() float64 {
+-	if l.MemoryLimit <= 2048 {
+-		return 1.15
+-	} else if l.MemoryLimit <= 4096 {
+-		return 1.10
+-	}
+-
+-	return 1.05
++	return config.Get().Docker.Overhead.GetMultiplier(l.MemoryLimit)
+ }
+ 
+ func (l Limits) BoundedMemoryLimit() int64 {
+diff --git a/events/events.go b/events/events.go
+index f26fcb3..3e7f699 100644
+--- a/events/events.go
++++ b/events/events.go
+@@ -1,122 +1,126 @@
+ package events
+ 
+ import (
+-	""encoding/json""
+ 	""strings""
+ 	""sync""
+-
+-	""github.com/gammazero/workerpool""
+ )
+ 
++type Listener chan Event
++
++// Event represents an Event sent over a Bus.
+ type Event struct {
+-	Data  string
+ 	Topic string
++	Data  interface{}
+ }
+ 
+-type EventBus struct {
+-	mu    sync.RWMutex
+-	pools map[string]*CallbackPool
++// Bus represents an Event Bus.
++type Bus struct {
++	listenersMx sync.Mutex
++	listeners   map[string][]Listener
+ }
+ 
+-func New() *EventBus {
+-	return &EventBus{
+-		pools: make(map[string]*CallbackPool),
++// NewBus returns a new empty Event Bus.
++func NewBus() *Bus {
++	return &Bus{
++		listeners: make(map[string][]Listener),
+ 	}
+ }
+ 
+-// Publish data to a given topic.
+-func (e *EventBus) Publish(topic string, data string) {
+-	t := topic
+-	// Some of our topics for the socket support passing a more specific namespace,
+-	// such as ""backup completed:1234"" to indicate which specific backup was completed.
+-	//
+-	// In these cases, we still need to send the event using the standard listener
+-	// name of ""backup completed"".
+-	if strings.Contains(topic, "":"") {
+-		parts := strings.SplitN(topic, "":"", 2)
++// Off unregisters a listener from the specified topics on the Bus.
++func (b *Bus) Off(listener Listener, topics ...string) {
++	b.listenersMx.Lock()
++	defer b.listenersMx.Unlock()
+ 
+-		if len(parts) == 2 {
+-			t = parts[0]
+-		}
++	for _, topic := range topics {
++		b.off(topic, listener)
+ 	}
++}
+ 
+-	e.mu.RLock()
+-	defer e.mu.RUnlock()
+-
+-	// Acquire a read lock and loop over all the channels registered for the topic. This
+-	// avoids a panic crash if the process tries to unregister the channel while this routine
+-	// is running.
+-	if cp, ok := e.pools[t]; ok {
+-		for _, callback := range cp.callbacks {
+-			c := *callback
+-			evt := Event{Data: data, Topic: topic}
+-			// Using the workerpool with one worker allows us to execute events in a FIFO manner. Running
+-			// this using goroutines would cause things such as console output to just output in random order
+-			// if more than one event is fired at the same time.
+-			//
+-			// However, the pool submission does not block the execution of this function itself, allowing
+-			// us to call publish without blocking any of the other pathways.
+-			//
+-			// @see https://github.com/pterodactyl/panel/issues/2303
+-			cp.pool.Submit(func() {
+-				c(evt)
+-			})
++func (b *Bus) off(topic string, listener Listener) bool {
++	listeners, ok := b.listeners[topic]
++	if !ok {
++		return false
++	}
++	for i, l := range listeners {
++		if l != listener {
++			continue
+ 		}
++
++		listeners = append(listeners[:i], listeners[i+1:]...)
++		b.listeners[topic] = listeners
++		return true
+ 	}
++	return false
+ }
+ 
+-// PublishJson publishes a JSON message to a given topic.
+-func (e *EventBus) PublishJson(topic string, data interface{}) error {
+-	b, err := json.Marshal(data)
+-	if err != nil {
+-		return err
+-	}
++// On registers a listener to the specified topics on the Bus.
++func (b *Bus) On(listener Listener, topics ...string) {
++	b.listenersMx.Lock()
++	defer b.listenersMx.Unlock()
+ 
+-	e.Publish(topic, string(b))
++	for _, topic := range topics {
++		b.on(topic, listener)
++	}
++}
+ 
+-	return nil
++func (b *Bus) on(topic string, listener Listener) {
++	listeners, ok := b.listeners[topic]
++	if !ok {
++		b.listeners[topic] = []Listener{listener}
++	} else {
++		b.listeners[topic] = append(listeners, listener)
++	}
+ }
+ 
+-// On adds a callback function that will be executed each time one of the events using the topic
+-// name is called.
+-func (e *EventBus) On(topic string, callback *func(Event)) {
+-	e.mu.Lock()
+-	defer e.mu.Unlock()
+-
+-	// Check if this topic has been registered at least once for the event listener, and if
+-	// not create an empty struct for the topic.
+-	if _, exists := e.pools[topic]; !exists {
+-		e.pools[topic] = &CallbackPool{
+-			callbacks: make([]*func(Event), 0),
+-			pool:      workerpool.New(1),
++// Publish publishes a message to the Bus.
++func (b *Bus) Publish(topic string, data interface{}) {
++	// Some of our topics for the socket support passing a more specific namespace,
++	// such as ""backup completed:1234"" to indicate which specific backup was completed.
++	//
++	// In these cases, we still need to send the event using the standard listener
++	// name of ""backup completed"".
++	if strings.Contains(topic, "":"") {
++		parts := strings.SplitN(topic, "":"", 2)
++
++		if len(parts) == 2 {
++			topic = parts[0]
+ 		}
+ 	}
+ 
+-	// If this callback is not already registered as an event listener, go ahead and append
+-	// it to the array of callbacks for this topic.
+-	e.pools[topic].Add(callback)
+-}
++	b.listenersMx.Lock()
++	defer b.listenersMx.Unlock()
+ 
+-// Off removes an event listener from the bus.
+-func (e *EventBus) Off(topic string, callback *func(Event)) {
+-	e.mu.Lock()
+-	defer e.mu.Unlock()
++	listeners, ok := b.listeners[topic]
++	if !ok {
++		return
++	}
++	if len(listeners) < 1 {
++		return
++	}
+ 
+-	if cp, ok := e.pools[topic]; ok {
+-		cp.Remove(callback)
++	var wg sync.WaitGroup
++	event := Event{Topic: topic, Data: data}
++	for _, listener := range listeners {
++		l := listener
++		wg.Add(1)
++		go func(l Listener, event Event) {
++			defer wg.Done()
++			l <- event
++		}(l, event)
+ 	}
++	wg.Wait()
+ }
+ 
+-// Destroy removes all the event listeners that have been registered for any topic. Also stops the worker
+-// pool to close that routine.
+-func (e *EventBus) Destroy() {
+-	e.mu.Lock()
+-	defer e.mu.Unlock()
++// Destroy destroys the Event Bus by unregistering and closing all listeners.
++func (b *Bus) Destroy() {
++	b.listenersMx.Lock()
++	defer b.listenersMx.Unlock()
+ 
+-	// Stop every pool that exists for a given callback topic.
+-	for _, cp := range e.pools {
+-		cp.pool.Stop()
++	for _, listeners := range b.listeners {
++		for _, listener := range listeners {
++			close(listener)
++		}
+ 	}
+ 
+-	e.pools = make(map[string]*CallbackPool)
++	b.listeners = make(map[string][]Listener)
+ }
+diff --git a/events/events_test.go b/events/events_test.go
+new file mode 100644
+index 0000000..91e6fea
+--- /dev/null
++++ b/events/events_test.go
+@@ -0,0 +1,180 @@
++package events
++
++import (
++	""testing""
++	""time""
++
++	. ""github.com/franela/goblin""
++)
++
++func TestNewBus(t *testing.T) {
++	g := Goblin(t)
++	bus := NewBus()
++
++	g.Describe(""NewBus"", func() {
++		g.It(""is not nil"", func() {
++			g.Assert(bus).IsNotNil(""Bus expected to not be nil"")
++			g.Assert(bus.listeners).IsNotNil(""Bus#listeners expected to not be nil"")
++		})
++	})
++}
++
++func TestBus_Off(t *testing.T) {
++	g := Goblin(t)
++
++	const topic = ""test""
++
++	g.Describe(""Off"", func() {
++		g.It(""unregisters listener"", func() {
++			bus := NewBus()
++
++			g.Assert(bus.listeners[topic]).IsNotNil()
++			g.Assert(len(bus.listeners[topic])).IsZero()
++			listener := make(chan Event)
++			bus.On(listener, topic)
++			g.Assert(len(bus.listeners[topic])).Equal(1, ""Listener was not registered"")
++
++			bus.Off(listener, topic)
++			g.Assert(len(bus.listeners[topic])).Equal(0, ""Topic still has one or more listeners"")
++
++			close(listener)
++		})
++
++		g.It(""unregisters correct listener"", func() {
++			bus := NewBus()
++
++			listener := make(chan Event)
++			listener2 := make(chan Event)
++			listener3 := make(chan Event)
++			bus.On(listener, topic)
++			bus.On(listener2, topic)
++			bus.On(listener3, topic)
++			g.Assert(len(bus.listeners[topic])).Equal(3, ""Listeners were not registered"")
++
++			bus.Off(listener, topic)
++			bus.Off(listener3, topic)
++			g.Assert(len(bus.listeners[topic])).Equal(1, ""Expected 1 listener to remain"")
++
++			if bus.listeners[topic][0] != listener2 {
++				// A normal Assert does not properly compare channels.
++				g.Fail(""wrong listener unregistered"")
++			}
++
++			// Cleanup
++			bus.Off(listener2, topic)
++			close(listener)
++			close(listener2)
++			close(listener3)
++		})
++	})
++}
++
++func TestBus_On(t *testing.T) {
++	g := Goblin(t)
++
++	const topic = ""test""
++
++	g.Describe(""On"", func() {
++		g.It(""registers listener"", func() {
++			bus := NewBus()
++
++			g.Assert(bus.listeners[topic]).IsNotNil()
++			g.Assert(len(bus.listeners[topic])).IsZero()
++			listener := make(chan Event)
++			bus.On(listener, topic)
++			g.Assert(len(bus.listeners[topic])).Equal(1, ""Listener was not registered"")
++
++			if bus.listeners[topic][0] != listener {
++				// A normal Assert does not properly compare channels.
++				g.Fail(""wrong listener registered"")
++			}
++
++			// Cleanup
++			bus.Off(listener, topic)
++			close(listener)
++		})
++	})
++}
++
++func TestBus_Publish(t *testing.T) {
++	g := Goblin(t)
++
++	const topic = ""test""
++	const message = ""this is a test message!""
++
++	g.Describe(""Publish"", func() {
++		g.It(""publishes message"", func() {
++			bus := NewBus()
++
++			g.Assert(bus.listeners[topic]).IsNotNil()
++			g.Assert(len(bus.listeners[topic])).IsZero()
++			listener := make(chan Event)
++			bus.On(listener, topic)
++			g.Assert(len(bus.listeners[topic])).Equal(1, ""Listener was not registered"")
++
++			done := make(chan struct{}, 1)
++			go func() {
++				select {
++				case m := <-listener:
++					g.Assert(m.Topic).Equal(topic)
++					g.Assert(m.Data).Equal(message)
++				case <-time.After(1 * time.Second):
++					g.Fail(""listener did not receive message in time"")
++				}
++				done <- struct{}{}
++			}()
++			bus.Publish(topic, message)
++			<-done
++
++			// Cleanup
++			close(listener)
++			bus.Off(listener, topic)
++		})
++
++		g.It(""publishes message to all listeners"", func() {
++			bus := NewBus()
++
++			g.Assert(bus.listeners[topic]).IsNotNil()
++			g.Assert(len(bus.listeners[topic])).IsZero()
++			listener := make(chan Event)
++			listener2 := make(chan Event)
++			listener3 := make(chan Event)
++			bus.On(listener, topic)
++			bus.On(listener2, topic)

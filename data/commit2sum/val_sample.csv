@@ -1,0 +1,1000 @@
+commits,release
+"Version bump (15.1)
+Added more debug profile info and hidden esn
+Update Polish strings
+
+Update to the last database changes.
+Fix esn key handshake on session initialization
+
+In the many prevoius changes i made a mistake,
+the esn after initialization should always be maintained
+because the key handshake was created with that esn.
+To keep in mind that however that the esn from the web login and
+esn used locally are different.
+Also there was a check for the change of esn in the login was incorrect.
+Perform upgrade and configuration checks after login
+Implemented create SQLite database
+Deleted database files
+Readded superclass methods to shared db class
+Fix LibraryUpdateService at first run
+
+At service very first run, settings.xml is not created yet and throws an error
+""update_frequency = g.ADDON.getSettingInt('auto_update') TypeError: Invalid setting type""
+If falkor cache profile list is empty do not delete profiles
+Version bump (15.2)","Fixed key handshake at addon first run
+Fixed library update service at first run
+Local database now dynamically created by code
+Profile data is not deleted if an problem occurred
+Minor fixes"
+"Update CHANGELOG.md
+parser(ini): allow setting the section name
+
+In an egg replacer putting `[]` will cause it to not be split at the first dot.
+
+Before this change putting `""find"": { ""/Script/Engine.GameSession.MaxPlayers"": ""<DATA>"" }`
+would make the section name `/Script/Engine` and the key `GameSession.MaxPlayers`.  After
+this change, the same behavior occurs, but if you wrap the key in `[]` it will set the
+section name properly, for example `""find"": { ""[/Script/Engine.GameSession].MaxPlayers"": ""<DATA>"" }`
+would make the sesion name `/Script/Engine.GameSession` and the key `MaxPlayers`.
+
+Closes https://github.com/pterodactyl/panel/issues/2533
+replace deprecated ioutil function calls
+change default version to be 'develop'
+config: don't expand 'environment variables'
+
+fixes https://github.com/pterodactyl/panel/issues/3692, again :)
+run gofumpt
+Update diagnostics command ()
+
+Co-authored-by: Matthew Penner <me@matthewp.io>
+ci: fix version replace and Docker version
+ci: fix release version, again
+RPM is now tracking v1.5.3 ()
+Redacts redacted info from all ()
+environment: allow overriding memory overhead; closes pterodactyl/panel ()
+Don't turn SSL into lowercase ()
+Server Event Optimizations ()
+router: support the `Access-Control-Request-Private-Network` header ()
+Update CHANGELOG.md
+Use GID from config for container ()
+server: ensure last lines are always logged","Fixed
+Fixes SSL paths being improperly converted to lowercase in environments where the path is case-sensitive.
+Fixes a memory leak due to the implemention of server event processing.
+Changed
+Selecting to redact information now redacts URLs from the log output when running the diagnostic command.
+Added
+Adds support for modifying the default memory overhead percentages in environments where the shipped values are not adequate.
+Adds support for sending the Access-Control-Request-Private-Network header in environments where Wings will be accessed over a private network. This is defaulted to off.
+SHA256 Checksum"
+"Version bump (1.12.6) ()
+Fix search by language
+Fix missing/wrong MPD data
+Version bump (1.12.7) ()","Fixed wrong/missing MPD data
+Fixed bug in search by subtitle/audio language"
+"Version bump (0.15.10)
+Update README.md
+
+*Updated logging instructions
+Moved some imports inside func to speedup
+Fixed SQLite thread error on py3
+
+ProgrammingError:
+SQLite objects created in a thread can only be used in that same thread.
+The object was created in thread id 140332173866752 and this is thread
+id 140333045176064.
+Fixed decode on py3
+Fixed default logging level
+Print to the log the logging level if enabled
+write dvhe codec for hevc-dv* (Dolby Vision) in manifest
+Sync with My List only when enabled
+Update fr translation
+Update Dutch translation
+
+This PR includes:
+- Updates and fixes to Dutch translations
+Version bump (0.15.11)","Fixed a critical error on auto-update
+Fixed some error on py3
+Fix to handle dolby vision on Kodi 19
+Updated fr_fr, nl_nl translations
+Minor fixes"
+"v0.3.4
+Update liquidjs dependancy
+Fixes
+Got 3 more skipped tests passing too!
+Fixes
+Add note about quoted/unquoted includes on liquid templates.
+Automatic browsersync server reload if pathPrefix changes in config. All config changes _should_ happen transparently without requiring manual intervention.
+Better handling of redirects (with cleanup)
+Move browsersync stuff to EleventyServe class.
+Check to make sure we have a path before we split it
+Switch to an async file read
+Fixes, wraps it all in a try catch.
+Only browser-sync on --serve
+Fix for .htaccess (all files starting with dot) in passthrough copies
+make sure path exists when comparing isInclude, removes pify (superfluous with fs-extra)
+Fixes
+v0.3.5","Eleventy is a simpler Static Site Generator!
+https://www.11ty.io/
+Getting Started Quick Guide
+Support Eleventy by starring us on GitHub! This will increase our project’s visibility on staticgen.com, a big giant list of static site generators.
+Follow us on Twitter @​eleven_ty!
+Changelog
+Option to opt-out of automatic .gitignore ignores in Eleventy. Use eleventyConfig.setUseGitIgnore(false);:
+Major semver update: Upgrades liquidjs to 4.0.0:
+Fixes issue with using permalink in layout front matter.
+Fixes issue with using collections and pagination together
+Milestone
+Bugs fixed in Milestone"
+"Update CHANGELOG.md
+Support escaping dollar signs in the YAML config file; closes pterodactyl/panel
+Close websocket connections and allow the client to re-connect on send errors; ref pterodactyl/panel
+fix incorrect error handling logic when a JWT is created wrongly; closes pterodactyl/panel
+
+Prior to this logic not only was the error response incorrect for events, but we registered event listeners before the authentication event; so if auth failed we flooded the socket with tons of output that was never going to be sent anyways.
+
+This change now waits to register listeners until the socket is fully authenticated and we're guaranteed to have a token present.
+Update CHANGELOG.md","Fixed
+Fixes improper event registration and error handling during socket authentication that would cause the incorrect error message to be returned to the client, or no error in some scenarios. Event registration is now delayed until the socket is fully authenticated to ensure needless listeners are not registed.
+Fixes dollar signs always being evaluated as environment variables with no way to escape them. They can now be escaped as $$ which will transform into a single dollar sign.
+Changed
+A websocket connection to a server will be closed by Wings if there is a send error encountered and the client will be left to handle reconnections, rather than simply logging the error and continuing to listen for new events.
+SHA256 Checksum"
+"Version bump (1.2.0)
+Update README.md
+Intercept missing library on linux
+Catch possible error on rollback
+Update README.md
+
+New daily builds link
+Added accept prop to endpoints config
+Fixed double profile switch with autoselection
+
+this also fix:
+-case of ProfileMissing, when a profile is deleted and autoselection try
+to login with it
+-case of ProfileMissing, when open the addon and the profile set as active no more exists
+-avoid performing switch profile when return to main menu from sub-menus
+Add some falcor json graph helper functions
+Revert accept attribute
+
+no influence to the authurl issue
+Add profilegate endpoint
+
+to now only for take note
+Add json graph optional param
+Reviewed first access and profile switch
+
+this is an attempt to reproduce more accurately the access and the profile switch,
+in order to be able to find a solution to the http 401 error problem,
+the situation has improved but in some cases the error still persist
+Fixed unrelated pylint
+On Kodi 19 makeLegalFilename is moved to xbmcvfs module
+Fixed first param as list
+Changed service address with 127.0.0.1 see note
+Minor event data update
+Fixed h265 video mediaflag
+Fixed get_video_raw_data path request
+
+cause of KeyError: u'videos' error when play videos
+Init lenght more precise
+Fixed conversion of protection data
+Catch error 401 more deeply
+
+the http 401 error seem apparently more complex
+Fixed send signal to upnext
+
+sending a signal to upnext addon with empty data will cause upnext to crash
+this will be handled in the future upnext addon versions
+Add CDN selection setting
+Catch InputStreamHelper errors avoids confusing users
+
+most of the time they think the problem is in this add-on
+Add missing return
+fix wrong timestamps in viewing activity
+remove fractional seconds sent in logblobs
+fix CacheMiss exception in StreamContinuityManager ()
+
+* fix CacheMiss exception in StreamContinuityManager
+
+* convert local variable to class
+Reorganized service playback modules
+Removed not needed imports
+Set time limit for paused playback
+Assign proper cdn id after ae8e17aea7478ba24c7281c10e4fe6b83cfebd69
+Updated it translation
+Try handle MSL error ""Email or password is incorrect""
+Fixed password validity check regression
+Updated german translation für v.1.2.1 ()
+
+* Updated german translation for v. 1.2.1
+
+See
+
+* Updated german translation
+
+* Fixed ""Open Connect CDN""
+
+See
+Version bump (1.2.1)","Reviewed access and profile selection to mitigate http error 401 (not resolved)
+Add Open Connect CDN setting
+Set time limit for paused playback
+Fixed a issue caused wrong date in viewing activity
+Fixed dash content protection data
+Fixed a issue caused UpNext to crash
+Fixed a issue caused KeyError when play videos
+Fixed a issue caused TypeError on more addon rollback
+Fixed a issue caused a double profile switch on selection
+Fixed a issue caused slow playback video starts (on windows)
+Fixed a issue caused missing of h265 media flag
+Fixed broken ""force the update of my list"" context menu
+Some changes for Kodi 19 due to API changes
+Updated translations de, it
+Other minor improvements/changes"
+"v0.3.5
+Fixes
+Add some tests around
+Fixes !!!!!!!!!!!!!!
+Regression with data.page.url and data.page.outputPath for
+Regressions around url and outputPath in collections
+Better handling of vague indexOf errors when passing non-string values to url filter
+Add tests and docs around existing support for JSON and JS front matter.
+Moved documentation to 11ty.io/docs
+Moved docs to 11ty.io
+Add logo to README and keywords to package.json
+Try to center the logo
+Try for centering
+Fixes
+Comment
+v0.3.6","Eleventy is a simpler Static Site Generator!
+https://www.11ty.io/
+Documentation
+Support Eleventy by starring us on GitHub! This will increase our project’s visibility on staticgen.com, a big giant list of static site generators.
+Follow us on Twitter @​eleven_ty!
+Changelog
+Fix issue with cascade of template and directory data files (template values should override directory values, the reverse was happening)
+url filter now accepts falsy values (improvement over vague indexOf errors before)
+Fix for issue with pagination with aliasing and permalink slug filter
+Better top level error handling (get rid of UnhandledPromiseRejectionWarning’s, especially with passthrough copy errors)
+Milestone
+Bugs fixed in v0.3.6 Milestone"
+"Version bump (1.18.3) ()
+Use single `viewableId` instead of list
+
+This PR solves (or at least works around?) the issue described in and is inspired by the fixes posted there. I don't know whether this really fixes an underlying issue, but it at least gets playback working again for me.
+Fixed tvshow.nfo not exported on library update
+Sync translations with en
+Update strings.po ()
+JP/KR tranlsation (1.18.4) ()
+Updated german translation for version 1.18.4 ()
+Updated it translation
+Version bump (1.18.4) ()","Fix error ""This title is not available to watch instantly"" when using MSL manifest v1
+Fixed tvshow.nfo not exported on library auto-update
+Update translations gl_es, jp, kr, de"
+"Version bump (1.20.4) ()
+Revert ""Replaced MSL idtoken auth with netflixid on android""
+
+This reverts commit 906f5dd2406bab1f1756147fede35ca3b284bb10.
+
+Website has fixed the bug
+Handle ErrorMessage on display_error_info
+Disabled update loco context on playback stop
+Removed fetching of loco data
+
+By testing seems the website now is able to auto update the category menu continue watching
+Add uiVersion to event params
+Pylint fixes
+Update Simplified Chinese translation for 1.20.5 ()
+update zh_TW language ()
+Version bump (1.20.5) ()","NOTICE FOR ANDROID DEVICES: The website has fixed the recent bug for ""MSL: Email or password is incorrect"" error,
+so video playback is now restored for all Android devices.
+Disabled update loco context, is not more used to update watched status
+Minor changes
+Update translations zh_cn, zh_tw"
+"Fix race condition with File#mkdirs ()
+Remove annotations from a list with size greater than 1 while preserving the exising formatting in RemoveAnnotationVisitor. fixes. ()
+Added check for empty leadingAnnotations in visitClassDec of RemoveAnnotationVisitor. fixes.
+Append `.` to pck in longest common prefix in Autodetect#getPattern. Refactored rewriteImportLayout test to reflect changes. fixes ()
+Fixes","Fixes:
+Remove annotations from a list with size greater than 1.
+RemoveAnnotation throws index out of bounds if a leading annotation doesn't exist
+OrderImports sets blocks with common packages to all others.
+JavaVisitor#visitMethodDeclaration doesn't visit annotations on the name prefix."
+"Fix AddGradleEnterpriseTest to account for minor version upgrades
+Added support for empty json files.
+Converted JsonParserTest from kotlin to java and updated with RewriteTest.
+fixes
+Maven credentials in the execution context were being incorrectly ignored. Fixes
+Fix license.
+Updated parent scope detection to handle java records in the RemoveUnusedLocalVariables recipe.
+fixes
+Updated parent scope detection to handle java records in the RenameLocalVariablesToCamelCase recipe.
+fixes
+Remove buildSrc in favor of a plugin built separately ()
+Do not call JavaType$Class#getKind() on null object in BlockStatementTemplateGenerator.
+fixes
+Set group to org.openrewrite, add shadow plugin to rewrite-gradle
+Add AutoCRLF and EOL to GitProvenance
+Reproducer for ChangeType on private inner class creates import statements that fails to compile ()
+Disabled test to reproduce issue 2521 in ChangeTypeTest.
+FindDependency doesn't attempt to match configuration when configuration is blank
+ChangeDependency* reacts to blank configuration options correctly
+Fix import
+FindDependency now supports glob (Gradle)
+Add `visitValue` to PropertyVisitor ()
+
+Co-authored-by: Tyler Van Gorder <tkvangorder@users.noreply.github.com>
+Also type-attribute Gradle's defunct 'runtime' configuration to facilitate migration and modernization of old build files
+Do not import classes that are declared in the CU in the ChangeType recipe. ()
+
+fixes.
+Updated parent scope detection to check for java records in RenamePrivateFieldsToCamelCase.
+fixes
+Yaml parsing of arrays test
+added FindProperties.find
+Convert rewrite-xml tests to Java/RewriteTest. Deprecate XmlRecipeTest
+Convert rewrite-proto tests to Java/RewriteTest. Deprecate ProtoRecipeTest
+Convert rewrite-properties tests to Java/RewriteTest. Deprecate PropertiesRecipeTest
+Add Set range support and find wrapper recipe ()
+Added Properties.Comment.Delimiter to distinguish between comments delimited by `#` or `!`.
+fixes
+Make `FinalizeLocalVariables` aware of non-modifying unary operators ()
+
+The non-modifying unary operators (`-`, `+`, `~`, and `!`) must not prevent a local variable from being made final.
+Preserve the source code delimiter of property entries in PropertiesParser. ()
+
+* Preserve the source code delimiter of property entries in PropertiesParser.
+Updated PropertiesPrinter.
+Added Option to AddProperty to set the delimiter.
+fixes
+
+* Updated rewrite-gradle recipes that add property entries.
+
+* Updated ActivateStyle.
+Polish. Removed unused imports in FindProperty.
+Replaced getMarkers().searchResult() with SearchResult.found(..)
+Add description to all projects, it is a required field when publishing
+Disable annotation parameter default value type information until we can figure out how to do it correctly
+Finish disabling java type mapping annotaiton default values
+Enable package private SourceFile path renames in ChangeType.
+fixes
+Add the Gradle testRuntime configuration ()
+Add metedata plugin to bom project","What's Changed
+JSON parser doesn't support empty JSON files
+Remove buildSrc in favor of a plugin built separately by @jkschneider in
+RemoveUnusedLocalVariables doesn't correctly handle records
+NPE in BlockStatementTemplateGenerator
+Add AutoCRLF and EOL to GitProvenance cb44631
+ChangeDependency* reacts to blank configuration options correctly 1f9e170
+FindDependency doesn't attempt to match configuration when the configuration is blank ab9d3d2
+FindDependency now supports glob (Gradle) a3b9752
+Reproducer for ChangeType on private inner class creates import state… by @ge0ffrey in
+Add visitValue() to PropertyVisitor by @tkvangorder in
+Added FindProperties.find() 114051c
+Do not import classes that are declared in the CU in the ChangeType recipe. by @traceyyoshima in
+Add Set range support and find wrapper recipe by @shanman190 in
+Make FinalizeLocalVariables aware of non-modifying unary operators by @knutwannheden in
+Preserve the source code delimiter of property entries in PropertiesParser by @traceyyoshima in
+Full Changelog: v7.34.0...v7.34.1"
+"Add async modifier for use in kotlin/python/etc
+enhancement: improve CompareEnumsWithEqualityOperator to support unwrap parentheses
+Ensure that non-fatal groovy parser warnings do not show up as parse failures
+Suppress any exceptions which might pop up from closing jgit","What's Changed
+Ensure that non-fatal groovy parser warnings do not show up as parse failures by @sambsnyd in cb7a700
+Suppress any exceptions when closing jgit by @sambsnyd in 93ab5a0
+Improve CompareEnumsWithEqualityOperator to support unwrapping parentheses by @kunli2 in 1520590
+Full Changelog: v7.37.0...v7.37.1"
+"Remove deprecated `kind` argument from `jnp.sort` and `jnp.argsort`.
+
+PiperOrigin-RevId: 631429900
+Add optional size argument to jnp.compress & jnp.extract.
+Fixed Mosaic GPU build following
+Updated the Pallas GPU lowering to work with older jaxlib versions
+
+Triton changed the signatures of LoadOp and DotOp upstream, and the lowering
+code was not ready to handle both old and new signatures.
+Minor doc fix to `jaxpr.rst`
+
+Update the written description of the example `jaxpr` to match the given snippet of code.
+Skip float64 test_nextafter on TPU
+Handle ellipsis `...` in `_attempt_rewriting_take_via_slice`.
+
+Previously `model['some_array'][:,0,0,:]` would generate a `slice`, while `model['some_array'][...,0,0,:]` would generate a `gather`. Now both of these generate `slice` eqns.
+
+PiperOrigin-RevId: 631469837
+jax.numpy: better docs for matmul-like functions
+Finish jax and jaxlib 0.4.27 release
+
+PiperOrigin-RevId: 631486157
+CI: fix typo in workflow
+CHANGELOG: move change from 0.4.27 to 0.4.28
+The Bazel version used in JAX is bumped from 6.1.2 to 6.5.0.
+
+The update is needed for Windows/Clang builds and for the future hermetic CUDA implementation.
+
+PiperOrigin-RevId: 631519200
+Implement jnp.linalg.multi_dot using opt_einsum
+Recommend the plugin in the CUDA installation instructions.
+
+PiperOrigin-RevId: 631555876
+Bump minimum jaxlib version to 0.4.27
+
+xla_extension_version is 261 and mlir_api_version is 56
+
+PiperOrigin-RevId: 631579739
+[Pallas] Fix some typos.
+
+PiperOrigin-RevId: 631592201
+[jax:mosaic-gpu] FragmentedArray can do tiled load.
+
+PiperOrigin-RevId: 631611060
+Update XLA dependency to use revision
+http://github.com/openxla/xla/commit/c6df436f9e3d2a706a3a9595e37224276fb6013b.
+
+PiperOrigin-RevId: 631629197
+Enable logging_test on all CI platforms.
+
+Should catch issues like https://github.com/google/jax/issues/21121
+Switch Windows jobs to use Clang.
+
+Remove the experimental/trial Clang job.
+
+PiperOrigin-RevId: 631814321
+Removed stale version guards and try/except blocks from Pallas GPU
+
+They are unnecessary now that the minimum jaxlib version is 0.4.27.
+Cleanup second registration of custom_partitioning callbacks now that
+the jaxlib version has been bumped.
+
+PiperOrigin-RevId: 631852273
+Refactor pipeline emitter API.
+
+Building on enrique's work, this CL refactors the emit_pipeline abstraction:
+1) factors out the VMEM double-buffering bookkeeping into a helper class.
+2) concentrate the intricate copy/wait scheduling logic into one place inside a scheduler helper
+while allowing manual overrides, callbacks don't control scheduling anymore, rather we have
+explicit loop scheduling.
+3) minimize callbacks and simplify the ""defaults"" for fusing pipelines together.
+
+Examples of fully overlapped versions of latency- and throughput- optimized AG-matmuls and
+matmul-RSs are included in new tests.
+
+PiperOrigin-RevId: 631865641
+Update XLA dependency to use revision
+http://github.com/openxla/xla/commit/68b17a8571f197676ea07479637da1546b3b501d.
+
+PiperOrigin-RevId: 631874377
+Removed get_compute_capability from jax.experimental.pallas.gpu
+
+Compute capability is available as a `str` attribute on a GPU device since
+jaxlib 0.4.26.
+Renamed is_device_gpu_at_least to is_cuda_compute_capability_at_least
+
+This makes it clear that the predicate is only supposed to be used for NVidia
+GPUs at the moment.
+Generic reduce window jvp
+
+The problem is that we want to generically jvp and tranpose over any reduction_fn. Jax already handles some of the hard parts for us, namely, ensuring that the user provided fn is jax capturable. All that is left then, is to write a jvp and tranpose fn that utilize the jax utils correctly.
+
+However, this is not so straightforward because in order to get the transpose of a reduction window, we need to be able to use both the tangents and primals. The current reduce_fn operates on (x, y) - but we actually need is, under jvp, to operate on `(x_primal, y_primal, x_tangent, y_tangent)`. In turn, this means we need to push down notions of a jvp-specific reduction_fn (captured via the usual machinery of as_fun `as_fun(jvp_fn(closed(user_reduction_jaxp)))`).
+
+For the jvp fn, we stack the primal operand and the tangent operand together, and we stack their respective initial values together - this means a good deal of changes to safety checks and assurances downstream (as well as unpacking) as the shape of the operand has changed from [K,...Kt] to [K, ...Kt, 2] where the last dim is the stacked primal and tangent values.
+
+In following CLs, we will add (1) re-entrant/recursive is_jvp and (2) transposition
+
+PiperOrigin-RevId: 631916764
+jnp.einsum: improve documentation
+TST: fix Lpmn test for new scipy
+Reverts 1956ff7d7b73794012fece2d8452e097196587fc
+
+PiperOrigin-RevId: 631974751
+[XLA:Python] Fix a memory corruption bug in the tp_name attribute of ArrayImpl and PjitFunction for Python 3.10 or earlier.
+
+This works around https://github.com/python/cpython/issues/89478, which was fixed in Python 3.11.
+
+PiperOrigin-RevId: 631984256
+Update XLA dependency to use revision
+http://github.com/openxla/xla/commit/4872030c44e20556efdfea47829d942985e0ccf1.
+
+PiperOrigin-RevId: 631997979
+jnp.linalg.multi_dot: use optimize='auto'
+Reenable examples_test in Bazel build.
+
+Fix bitrot.
+
+This test was disabled years ago because it was slow, but it isn't any more.
+
+PiperOrigin-RevId: 632138101
+Update the multi-process note in pjit's docstring
+
+PiperOrigin-RevId: 632160561
+jnp.linalg: add precision & preferred_element_type to dot-like functions
+Update XLA dependency to use revision
+http://github.com/openxla/xla/commit/d60579f54a0b6c37d1caf11dc3eb34488cf6922a.
+
+PiperOrigin-RevId: 632232639
+Prepare 0.4.28 release.","Bug fixes
+Reverted a change to make_jaxpr that was breaking Equinox ().
+Deprecations & removals
+The kind argument to jax.numpy.sort and jax.numpy.argsort
+is now removed. Use stable=True or stable=False instead.
+Removed get_compute_capability from the jax.experimental.pallas.gpu
+module. Use the compute_capability attribute of a GPU device, returned
+by jax.devices or jax.local_devices, instead.
+Changes
+The minimum jaxlib version of this release is 0.4.27."
+"FindTags throws ClassCastException (fixes)
+Add MemberReference to MethodMatcher ()
+Add overloaded constructor to `AddProperty`. Fixes
+Ensure JavaType.Method's primary constructor is the Jackson @JsonCreater
+Any source applicable tests should be ANDed together not ORed / fixes
+Any source applicable tests should be ANDed together not ORed / fixes
+Fix broken test","What's Changed
+Add MemberReference to MethodMatcher by @JLLeitschuh in
+Any source applicable tests should be applied together as a logical and instead of a logical or
+Add overloaded constructor in AddProperty to maintain backward compatibility
+Ensure JavaType.Method primary constructor is the Jackson @JsonCreater a252912
+Full Changelog: v7.34.2...v7.34.3"
+"Refactor JAX CPU kernels to make them usable from C++.
+
+Most of the work here is porting the LAPACK interface from Cython to plain C++. This is something I wanted to do anyway to make use of C++ templating facilities: the code is noticeably shorter in C++.
+
+This change removes the only use of Cython in JAX. It also removes the need for a build-time dependency on Scipy, which we only needed for Cython cimport reasons.
+
+When using C++, we most likely do not want to fetch LAPACK and BLAS kernels from Python. Therefore we add another option: we define the LAPACK functions we need using weak symbols where supported; the user can then simply link against LAPACK to provide the necessary symbols.
+
+Added a jaxlib:cpu_kernels module to facilitate using the JAX CPU kernels from C++.
+
+PiperOrigin-RevId: 394705605
+jnp.isclose/jnp.allclose: require array inputs
+[sparse] add BCOO._unbatch() utility
+[sparse] add BCOO._dedupe() method
+Update the readme to reflect that Cuda 10.1 and cuda 11.0 support is dropped.
+
+PiperOrigin-RevId: 394772160
+Delete Cuda 10.2 release and continuous builds.
+
+PiperOrigin-RevId: 394772236
+added pjit tuorial colab
+[sparse] add support for sparse-sparse matrix products
+[sparse]: fix corner case in BCOO validation
+lax.numpy: require arraylike inputs throughout
+added pjit tuorial colab
+add markdown version
+Remove stderr blocks
+sync md file
+don't use top-level headings
+Use the raw C API for ShardedDeviceArray.
+
+It's similar than PyBuffer.
+
+PiperOrigin-RevId: 395058367
+Use the raw C API for ShardedDeviceArray.
+
+It's similar than PyBuffer.
+
+PiperOrigin-RevId: 395071943
+Fix argument names for jnp.ndarray.clip and deprecate the old ones
+hook up xla initial style translation rule for linear_call_p
+Ensure that named axes consistently refer to global axis sizes in xmap
+
+Fixes.
+
+PiperOrigin-RevId: 395210686
+Implement 'reflect' and 'mirror' padding modes for scipy.ndimage.map_coordinates
+Don't cast out_axis_resources to a tuple automatically
+
+It's confusing and makes it impossible to specify non-trivial pytrees of
+out_axis_resources for functions that return lists. Also extend the error
+messages to be less confusing and hint at potential fixes.
+
+PiperOrigin-RevId: 395246450
+Move ShardedDeviceArray & PmapFunction to the raw C API and implement pickling/unpickling.
+
+PiperOrigin-RevId: 395256774
+Unpin the tpu_driver version used for Cloud TPU Colabs.
+
+This reverts https://github.com/google/jax/pull/6942. The nightly appears to work again, and we wanna pick up new fixes and improvements.
+expose random key array type
+
+This is meant to allow for downstream type annotations and checking
+(e.g. via `isinstance`).
+Uploaded smaller images
+handle dropped output values in the sparse interpreter
+avoid constvar conversion when closing a sparse jaxpr
+Remove axis name from named_shape when unmapping avals
+
+Even though `vmap` and `pmap` don't use avals with names, the batching infrastructure
+is used to implement xmap and pjit. So while we keep the introduction of names carefully
+scoped, forgetting to remove them at the right points leads to extremely confusing errors.
+
+PiperOrigin-RevId: 395423006
+Drop support for the deprecated StreamExecutor CPU backend.
+
+The TFRT backend is better and there's no reason to keep the StreamExecutor backend around any longer.
+
+PiperOrigin-RevId: 395455049
+Add a @jit decorator around jnp.linspace.
+
+Don't test integer dtype values. The exact rounding semantics may be quite sensitive to, e.g., jit compilation, and this is not something end users should be relying on. Simplify implementation to only use version that gets the endpoints correct.
+
+Use the same approach NumPy does to ensure the endpoint is included when endpoint=True: explicitly set the endpoint.
+
+Various minor cleanups.
+Move contents of jax.api_util to jax._src.api_util and add a forwarding shim.
+
+One of many changes to codify the set of exported symbols in the jax.* namespace.
+
+PiperOrigin-RevId: 395484706
+New lowering APIs for pjit
+
+This is the first in a series of refactoring patches that add the new AOT APIs
+to all JIT-like transforms in JAX. I'm sending this early, because I expect that
+it will come in handy when adding reverse-mode AD support for pjit.
+
+PiperOrigin-RevId: 395510449
+Use shorter variable names in lax.py.
+
+In the implementation of gather/scatter, use `indices` instead of `start_indices` and `scatter_indices`. Cleanup only; no functional changes intended.
+[JAX] Include the function name in the error message when hash/equality of a static argument fails.
+
+PiperOrigin-RevId: 395550728
+Move implementation of jax.flatten_util to jax._src.flatten_util. Add a jax.flatten_util shim.
+
+Change as part of cleaning up the jax.* namespace.
+
+PiperOrigin-RevId: 395551093
+added images for pjit tutorial
+delete images
+added first img
+added all imgs
+add space
+Add more @jit decorators to jax.numpy functions.
+
+PiperOrigin-RevId: 395687875
+Combine initial_style_batchers with collective_rules
+Add new lowering APIs for jit
+
+PiperOrigin-RevId: 395779305
+not exclude 08-pjit.md
+removing ipynb in format
+Cache used_axis_names calls for jaxprs
+
+All control-flow primitives are `AxisPrimitive`s now, which means that we're doing
+lots of those used-names traversals during dispatch and they can be expensive!
+This adds caching to try to lower the cost of that change.
+
+PiperOrigin-RevId: 395921887
+Remove some debug print statements left in lax_numpy.
+Fix performance degradation due to repeated aval creation.
+Fix error when printing a DeviceArray without an aval.
+
+PiperOrigin-RevId: 395946904
+Avoid accidental on-device array creation in _reduction_init_val.
+
+Revert changes to _reduction_init_val, which is carefully crafted to use classic NumPy functions so lax can pattern match on the reducer monoid.
+
+Instead, don't call _reduction_init_val on the initial argument from NumPy, which might well be a traced value.
+
+PiperOrigin-RevId: 395947318
+Add new lowering APIs for xmap
+
+PiperOrigin-RevId: 395950859
+make PRNGKeyArray.shape a property, add tests for it and for disallowed addition
+docs: remove application tutorials
+flip lower bits to derive seeds for the custom test PRNG
+
+Changing bits, instead of incrementing, fixes an inherited test that seeds
+with a maximum-valued numpy.uint64.
+
+PiperOrigin-RevId: 396061086
+[jax2tf] Fix stale comments
+Relax test tolerance for a lax_test.py test.
+
+This test fails on CPU with a very low probability.
+Also improve printing of the test name.
+Replace uses of jax.partial with functools.partial, in preparation for removing jax.partial.
+
+jax.partial is an alias for functools.partial, and functools.partial is a Python standard library API. There's no need for jax to export this function.
+
+PiperOrigin-RevId: 396370975
+Expose allow_spmd_sharding_propagation_to_output in Python
+
+We need to set this option to support reverse-mode AD of pjit in JAX.
+
+PiperOrigin-RevId: 396400683
+Use jax.* APIs rather than api.* names in tests.
+
+Tests should use our own public APIs where they exist.
+Add PEP484-compatible export for jax and its subpackages
+Add `jnp.get_printoptions` and `jnp.printoptions`.
+
+`jnp.set_printoptions` already exists but other printing utilities do not.
+
+`jnp.get_printoptions` forwards `numpy.get_printoptions`.
+`jnp.printoptions` forwards `numpy.printoptions`.
+Add precision param for pdot
+Switch internal users of jax.ops.index_... to use x.at[x].set() APIs.
+handle linear custom_jvp functions
+ppermute: avoid passing lists of indices to jnp.take
+Switch internal users of jax.util.partial to use functools.partial.
+Add a note about Google Colab setup
+
+User must run `jax.tools.colab_tpu.setup_tpu()`
+Feat: scipy.stats.nbinom implementation
+
+fix: increasing tolerance check for testNBinomLogPmf in scipy_stats_test.py
+add a test for linear_call with jit
+[call_tf] Fix bug when calling TF functions with variables in a jit context.
+
+The code was assuming that the `.captured_inputs` of a function are
+variables in the same order as `.variables`. This seems to not be
+true. Lookup variables now by handle.
+jnp.take: require array argument (but not indices) to be arraylike
+DOC: add brief comments to example in README
+Remove export of jax.lax.partial.
+Fix package exports
+[jax2tf] Document an expected error when saving converted functions
+
+If the JAX function is not reverse-mode differentiable (e.g., lax.while_loop) then
+it should be converted without gradients, or saved without gradients.
+Update docs for nan checker and tfds example.
+Add Changelog for jax v0.2.21 development
+jnp.array: raise TypeError on boolean scalar indices
+fix html formatting of markdown
+bazelrc changes for building Cuda 11.4 wheels with cudnn 8.2
+
+PiperOrigin-RevId: 397088624
+jax.numpy: add wrapper for np.insert
+Fix for singleton axis name in `axis_index_translation_rule`
+Remove jax.api.
+
+Functions exported as jax.api were aliases for names in jax.*. Use the jax.* names instead.
+DOC: add missing jax.numpy functions
+jnp.insert: use broadcast_shapes
+Update changelog for several recent PRs
+Check presence of __jax_array__ in _arraylike before calling it in isscalar
+Update developer.md
+[host_callback] Fix an assertion failure for grad(remat(host_callback))
+
+Fixes:
+Add flags to configure the cuda_compute_capability and rocm_amd_targets
+Reflected the opinions from the reviewer.
+tweak cuda/rocm targets
+
+Closes.
+Remove jax.partial from the JAX API.
+
+Use functools.partial instead.
+Make sure that xmap raises a clear error when using an undefined resource name
+
+PiperOrigin-RevId: 397762568
+Add the equation source context in jaxpr_subcomp.
+
+Improves tracebacks if XLA translation fails.
+Remove jax.util.partial.
+convolutions: use flip() to clean up reverse-indexing
+Attempt to land https://github.com/google/jax/pull/6400 again.
+
+This PR changes `jax.numpy.array()` to avoid creating any on-device arrays during tracing. As a consequence, calls to `jnp.array()` in a traced context, such as `jax.jit` will always be staged into the trace.
+
+This change may break code that depends on the current (undocumented and unintentional) behavior of `jnp.array()` to perform shape or index calculations that must be known statically (at trace time). The workaround for such cases is to use classic NumPy to perform shape/index calculations.
+
+PiperOrigin-RevId: 398008511
+Turn jnp.ndarray into a true abstract base class.
+
+Make all JAX array types instances of jnp.ndarray.
+Remove np.ndarray from jnp.ndarray.
+Remove a stale comment.
+[sparse]: fix fromdense JIT code path
+mark custom derivative calls as API boundaries for stack trace filtering
+[jax2tf] Minor updates to the jax2tf examples documentation
+Apply review suggestions
+Reenable indexing TPU tests that pass at HEAD.
+Merge static indexing forward and gradient test cases.
+
+I'm not entirely clear why these were separate in the first place, and everything seems to work fine if we merge them. Possibly the two were separate because of unimplemented cases that have subsequently been implemented.
+Add traceback to Graph Tensor runtime error and update error message.
+
+PiperOrigin-RevId: 398256308
+Fix wrong dtype output from indexing with an empty slice.
+
+Fix test failures in lax_numpy_indexing_test for complex64 pow() scatters.
+
+The existing tests actually catch both of these bugs, but only when run with a sufficiently high number of test cases.
+Add atol and rtol arguments to jtu._CheckAgainstNumpy().
+
+Prefer atol and rtol if they are provided.
+Use traced identity in jacobian std_basis
+disable pytype on custom derivative calls
+
+Method decorator seems to interfere with pytype relating the typevar
+in the return value annotation to its appearance in the enclosing
+class.
+Move contents of jax.lib to jax._src.lib.
+
+Add shim libraries for functions exported from jax.lib that other code seems to use in practice.
+
+PiperOrigin-RevId: 398471863
+[jax2tf] Ensure that shared constants in JAX are shared also in the converted function
+
+Fixes:
+Create 0.2.21 jax release
+
+PiperOrigin-RevId: 398528427","New features:
+Added jax.numpy.insert implementation ( ).
+Breaking Changes
+jax.api has been removed. Functions that were available as jax.api.*
+were aliases for functions in jax.*; please use the functions in
+jax.* instead.
+jax.partial, jax.lax.partial, and jax.util.partial were accidental
+exports that have now been removed. Use functools.partial from the Python
+standard library instead.
+Boolean scalar indices now raise a TypeError; previously this silently
+returned wrong results ( ).
+Many more jax.numpy functions now require array-like inputs, and will error
+if passed a list ( ).
+See  for a discussion of the rationale behind this change.
+When inside a transformation such as jax.jit, jax.numpy.array always
+stages the array it produces into the traced computation. Previously
+jax.numpy.array would sometimes produce a on-device array, even under
+a jax.jit decorator. This change may break code that used JAX arrays to
+perform shape or index computations that must be known statically; the
+workaround is to perform such computations using classic NumPy arrays
+instead.
+jnp.ndarray is now a true base-class for JAX arrays. In particular, this
+means that for a standard numpy array x, isinstance(x, jnp.ndarray) will
+now return False ()."
+"update version and changelog for pypi
+support key array pickling
+
+Involves:
+* a weaker notion of equality on key element types
+* avoiding jitted functions as PRNG impl fields
+Throw error when 64-bit dtypes used incorrectly in `jax.pure_callback`
+Add `__hash__` and `__eq__` to PmapSharding
+
+PiperOrigin-RevId: 471356052
+[jax2tf] add a new test for jax2tf gda test.
+
+Now it cover the test using gda as jax function input.
+
+PiperOrigin-RevId: 471365834
+Add fast path args to Array similar to GDA to speed up initialization and other operations like calculating indices and addressable_device_assignment.
+
+This is important because looping over 1000s of devices is extremely expensive during runtime and throttles the performance (all these optimizations were applied to GDA when integrating it into PAX and are applicable to Array as well). This will also be helpful for single-controller environments.
+
+Also even hashing and __eq__ checks when you have 1000s of devices is going to be slow and will show up in xprof as a slowdown (I have seen this before).
+
+PiperOrigin-RevId: 471366295
+Add support to handle arbitrary shardings to KeyArray. Resolve all the TODOs that were created before.
+
+Co-authored-by: Roy Frostig <frostig@google.com>
+PiperOrigin-RevId: 471443690
+require scalar key arrays when seeding, splitting, and folding
+
+Recent changes to RNG internals actually make it easier for us to
+render these operations batch-polymorphic. However, any existing use
+of these in a non-scalar way suggests incorrect usage, since they were
+scalar-only before (albeit imperfectly guarded as such).
+[sparse] add sparse support for dynamic_slice
+Use lowering as impl rule for `pure_callback`
+Enable cuBLASLt by default in XLA for most matmuls
+
+Enable cuBLASLt by default in XLA with two exceptions. First, the current XLA implementation using cublasLt does not yet support int8 gemms. Second, the cublasLt api does not support a certain dimension size larger than a specific value; in this case we fallback to legacy cublas. This change makes a modification so that we prefer to do the cublaslt gemm operation in place when fusing with a bias add. Updated JAX test precision for new matmul results.
+
+PiperOrigin-RevId: 471661566
+docstring for `jax.stages.Wrapped`
+write and generate package API documentation for `jax.stages`
+Make `__iter__` of `Array` behave like DA when there is a SingleDeviceSharding and like SDA when there is a non-trivial sharding.
+
+This is important because when `Array` contains more than 1 shard, each shard can be on a different device and those things need to be preserved when iterating over `Array`.
+
+PiperOrigin-RevId: 471695841
+Improves quickdraw example in jax2tf
+Rolling back due to breaking tests
+
+PiperOrigin-RevId: 471847099
+write in-process AOT walkthrough doc
+mention AOT readiness in changelog
+Add benchmarks for jax.Array
+
+PiperOrigin-RevId: 471889808
+Allow get_aval to work on ShapeDtypeStruct
+
+This is necessary to be able to call jit(f).lower(ShapeDtypeStruct(...) when
+--jax_dynamic_shapes is on. The code in partial_eval.infer_lambda_input_type
+calls get_aval.
+Show link to GitHub repo in navbar
+[jax2tf] Refactor top-level jax2tf.convert
+
+There are several goals for this refactoring:
+  * improve the readability of the code: more helper functions, move big
+    nested functions to top-level make make it obvious what are the
+    data dependencies
+  * try to be more systematic about naming: JAX entities end with _jax
+    and TF entities with _tf. This is helpful because in several cases
+    one function has to operate with both kinds of entities.
+  * the main goal is to enable fixing the experimental_native_lowering
+    for pjit. For that (future) work, we want to pass JAX callables
+    to _interpret_fun_jax, rather than linear_util.WrappedFun. Then
+    we can use the standard AOT APIs.
+Update jax/experimental/jax2tf/jax2tf.py
+
+Co-authored-by: Marc van Zee <marcvanzee@gmail.com>
+Internal change
+
+PiperOrigin-RevId: 472301936
+Fix NaNs in the gradient of jnp.interp when the spline being interpolated into contains the same knot coordinate twice.
+
+PiperOrigin-RevId: 472333594
+[jax2tf] Rewrites `converters_eval` framework.
+
+Resulting table: https://github.com/google/jax/blob/ebdfb60ee89f53736c9a83147e358d750da96f98/jax/experimental/jax2tf/g3doc/convert_models_results.md
+
+* Makes testing models more similar to testing primitives: Moves the framework into `jax2tf/tests`, the main file to call now is `model_test.py` and the models themselves are now in `model_harness.py`.
+
+* Moves the g3doc to `jax2tf/g3doc`
+
+* Simplifies conversion and testing logic.
+
+* Adds more converters and improves the output in the g3doc.
+
+* Fixes various bugs in the conversion. The errors shown now are all problems with the actual converters.
+
+PiperOrigin-RevId: 472437502
+[jax2tf] Refactor top-level jax2tf.convert
+
+There are several goals for this refactoring:
+  * improve the readability of the code: more helper functions, move big
+    nested functions to top-level to make make it obvious what are the
+    data dependencies
+  * try to be more systematic about naming: JAX entities end with _jax
+    and TF entities with _tf. This is helpful because in several cases
+    one function has to operate with both kinds of entities.
+  * the main goal is to enable fixing the experimental_native_lowering
+    for pjit. For that (future) work, we want to pass JAX callables
+    to _interpret_fun_jax, rather than linear_util.WrappedFun. Then
+    we can use the standard AOT APIs.
+
+This was initially reviewed and submitted as,
+but was rolled back due to test failures.
+Fix some cases where deserialization hangs:
+
+* Make sure to release the semaphore in the dtype!=None case.
+* If chunks are too large to _ever_ acquire the semaphore, immediately raise an
+  error.
+
+PiperOrigin-RevId: 472496109
+Use reduce_window for faster cumulative reductions on small inputs on GPU.
+
+On GPU, reduce_window is executed in a single fusion and associative_scan
+is split into multiple to materialize intermediate calculations.
+On small inputs reduce_window is faster being a single fusion,
+but on larger ones is slower because of O(n^2) complexity.
+The conservative value of the threshold to choose between the two algorithms was obtained by benchmarking.
+cumred_tpu_impl was renamed into cumred_reduce_window_impl to reflect that it is useful not only on TPUs.
+
+PiperOrigin-RevId: 472504553
+Add partial_eval_custom rule for `for_loop`
+Fix NaNs in the gradient of jnp.interp when the spline being interpolated into contains knots that are small and nearby.
+
+PiperOrigin-RevId: 472511203
+Add pytest marker inside the test only if pytest is present in the env
+DCE jaxpr and trivial_jaxpr support for lower_sharding_computation
+
+Co-authored-by: Matthew Johnson <mattjj@google.com>
+PiperOrigin-RevId: 471274989
+Avoid direct references to jax._src.
+
+jax._src will be removed from the JAX namespace shortly.
+
+PiperOrigin-RevId: 472566026
+fix bugs, infeed/outfeed must be considered effectful
+
+Co-authored-by: Yash Katariya <yashkatariya@google.com>
+Co-authored-by: Sharad Vikram <sharad.vikram@gmail.com>
+[jax2tf] Refactor the experimental_native_lowering path in jax2tf
+
+This is part of a suite of refactorings aimed towards supporting
+pjit by jax2tf experimental_native_lowering. The goal here is
+to remove many references to internal JAX core APIs, and instead
