@@ -22,7 +22,7 @@ def generate_all_commit_urls(processed_file_path, output_file_path):
             curr_tag = tags[i]
             prev_version = extract_version(prev_tag)
             curr_version = extract_version(curr_tag)
-            # 只保留严格连续的tag对
+            # Only keep strictly consecutive tag pairs
             if (curr_version and prev_version and
                 curr_version[0] == prev_version[0] and
                 curr_version[1] == prev_version[1] and
@@ -30,16 +30,14 @@ def generate_all_commit_urls(processed_file_path, output_file_path):
                 commit_url = f"{repo_url}/compare/{prev_tag}...{curr_tag}"
                 commit_urls.append({
                     "repo": repo_url,
-                    "from_tag": prev_tag,
-                    "to_tag": curr_tag,
                     "commit_url": commit_url
                 })
     with open(output_file_path, 'w') as f:
         json.dump(commit_urls, f, indent=4, ensure_ascii=False)
-    print(f"已输出所有连续tag对的commit_url到 {output_file_path}")
+    print(f"All consecutive tag pair commit_urls have been saved to {output_file_path}")
 
 if __name__ == '__main__':
-    processed_file_path = 'processed_repo_tags.json'  # 只用get_tags.py输出
+    processed_file_path = 'processed_repo_tags.json'  # Output from get_tags.py
     output_file_path = 'commit_urls.json'
     generate_all_commit_urls(processed_file_path, output_file_path)
 

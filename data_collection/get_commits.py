@@ -124,7 +124,7 @@ def get_repo(repo_url, entries, repo_cache, max_workers=5):
     
     with ThreadPoolExecutor(max_workers=max_workers) as executor:
         futures = {
-            executor.submit(get_commit, entry['commit_url'], entry['release_note'], current_repo_path): entry['commit_url'] 
+            executor.submit(get_commit, entry['commit_url'], entry.get('release_note', ''), current_repo_path): entry['commit_url'] 
             for entry in entries
         }
 
@@ -166,16 +166,6 @@ def load_log(progress_file):
         processed_repos = set(line.strip() for line in pf)
     return processed_repos
 
-def load_repos_from_txt(repo_file):
-    """Load repository URLs from a text file."""
-    repo_urls = []
-    with open(repo_file, 'r') as f:
-        for line in f:
-            repo_url = line.strip()
-            if repo_url:
-                repo_urls.append(repo_url)
-    return repo_urls
-
 def load_commits_from_json(json_file):
     """Load commit URLs and related info from updated_rn_commits.json."""
     with open(json_file, 'r') as f:
@@ -191,12 +181,9 @@ def load_commits_from_json(json_file):
     
     return repo_commit_map
 
-def get_notes_from_repo_file(repo_file, json_file, output_file, progress_file, max_workers=10, batch_size=100):  # Increased batch size
+def get_notes_from_commit_urls(json_file, output_file, progress_file, max_workers=10, batch_size=100):  # Increased batch size
     """Process all entries from the repo.txt and updated_rn_commits.json using multi-threading."""
     # Load repos from repo.txt
-    repo_urls = load_repos_from_txt(repo_file)
-
-    # Load commit data from updated_rn_commits.json
     repo_commit_map = load_commits_from_json(json_file)
 
     processed_repos = load_log(progress_file)
@@ -205,15 +192,11 @@ def get_notes_from_repo_file(repo_file, json_file, output_file, progress_file, m
 
     with ThreadPoolExecutor(max_workers=max_workers) as executor:
         futures = {}
-        for repo_url in repo_urls:
+        for repo_url, entries in repo_commit_map.items():
             if repo_url in processed_repos:
                 continue
 
-            if repo_url in repo_commit_map:
-                entries = repo_commit_map[repo_url]
-                futures[executor.submit(get_repo, repo_url, entries, repo_cache)] = repo_url
-            else:
-                print(f"No commit data found for {repo_url}")
+            futures[executor.submit(get_repo, repo_url, entries, repo_cache)] = repo_url
 
         for future in tqdm(as_completed(futures), total=len(futures), desc="Processing repositories"):
             try:
@@ -233,10 +216,9 @@ def get_notes_from_repo_file(repo_file, json_file, output_file, progress_file, m
     if results:
         save_progress(output_file, results)
 
-# Example call to process release notes and save progress in real-time
-repo_file = 'repo.txt'  # Path to repo.txt, containing only repo URLs
-json_file = 'commit_urls.json'
-output_file = 'rn_commits.json'  # Path to save the output
+# Example call to process commit_urls.json and save progress in real-time
+json_file = 'commit_urls.json'  # Only input file
+output_file = 'commits.json'  # Path to save the output
 progress_file = 'progress_log.txt'  # Progress log
 
-get_notes_from_repo_file(repo_file, json_file, output_file, progress_file, max_workers=7, batch_size=10)  # Increased max_workers and batch size
+get_notes_from_commit_urls(json_file, output_file, progress_file, max_workers=7, batch_size=10)  # Increased max_workers and batch size
