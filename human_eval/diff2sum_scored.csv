@@ -1,0 +1,3253 @@
+predict,ground_truth,Completeness,Clarity,Conciseness,Organisation
+"Bug Fixes
+deps: update dependency @netlify/esbuild to v0.14.40 () (b1b0e3d)
+deps: update dependency @netlify/plugins-list to ^6.71.1 () (d6f6d8a)
+deps: update dependency @netlify/plugins-list to ^6.71.2 () (f7e5b7f)
+deps: update dependency @netlify/plugins-list to ^6.71.3 () (6a7d0f1)
+deps: update dependency @netlify/plugins-list to ^6.71.4 () (7b2b1e5)
+deps: update dependency @netlify/plugins-list to ^6.71.5 () (4c6a4a6)
+deps: update dependency @netlify/plugins-list to ^6.71.6 () (e5f0a2c)
+deps: update dependency @netlify/plugins-list to ^6.71.7 () (7b5d5d1)
+deps: update dependency @netlify/plugins-list to ^6.71.8 () (7d8b9c9)
+deps: update dependency @netlify/plugins-list to ^6.71.9 () (4c0a3f9)
+deps: update dependency @netlify/plugins-list to ^6.71.10 () (3e2b4b9)
+deps: update dependency @netlify/plugins-list to ^6.71.11 () (7c2d4a6)
+deps: update dependency @netlify/plugins-list to ^6.71.12 () (e6a2a0a)
+deps: update dependency @netlify/plugins-list to ^6.71.13 () (6b2a7d4)
+deps: update dependency @netlify/plugins-list to ^6.71.14 () (5f0a5a7)
+deps: update dependency @netlify/plugins-list to ^6.71.15 () (f8cbe3b)
+deps: update dependency @netlify/plugins-list to ^6.71.16 () (e6e0a9a)
+deps: update dependency @netlify/plugins-list to ^6.71.17 () (8a3b6b9)
+deps: update dependency @netlify/plugins-list to ^6.71.18 () (a3b7c5f)
+deps: update dependency @netlify/plugins-list to ^6.71.19 () (f0d4ce3)
+deps: update dependency @netlify/plugins-list to ^6.71.20 () (f6f4f7d)
+deps: update dependency @netlify/plugins-list to ^6.71.21 () (a3c1b9d)
+deps: update dependency @netlify/plugins-list to ^6.71.22 () (b1e1b3f)
+deps: update dependency @netlify/plugins-list to ^6.71.23 () (f0ebcb0)
+deps: update dependency @netlify/plugins-list to ^6.71.24 () (4e5f3a6)
+deps: update dependency @netfBug Fixes
+deps: update dependency @netlify/functions-utils to v5.2.22 () (8c0a3f9)
+deps: update dependency @netlify/functions-utils to v5.2.23 () (f6f4f7d)
+deps: update dependency @netlify/functions-utils to v5.2.24 () (5e0d7a1)
+deps: update dependency @netlify/functions-utils to v5.2.25 () (3e7b1f5)
+deps: update dependency @netlify/functions-utils to v5.2.26 () (5d7b9a7)
+deps: update dependency @netlify/functions-utils to v5.2.27 () (a0b1d6f)
+deps: update dependency @netlify/functions-utils to v5.2.28 () (a7d8e98)
+deps: update dependency @netlify/functions-utils to v5.2.29 () (4a3d9f1)
+deps: update dependency @netlify/functions-utils to v5.2.30 () (a6a6b7a)
+deps: update dependency @netlify/functions-utils to v5.2.31 () (a9e5b5f)
+deps: update dependency @netlify/functions-utils to v5.2.32 () (c5b4a82)
+deps: update dependency @netlify/functions-utils to v5.2.33 () (b2a9a8d)
+deps: update dependency @netlify/functions-utils to v5.2.34 () (9d7dcd5)
+deps: update dependency @netlify/functions-utils to v5.2.35 () (e0d8f3c)
+deps: update dependency","Bug Fixes
+deps: update dependency @netlify/zip-it-and-ship-it to v9.15.1 () (fb81b68)
+Dependencies
+The following workspace dependencies were updated
+dependencies
+@netlify/functions-utils bumped from ^5.2.21 to ^5.2.22",2,3,4,2
+"Improvements
+(x/feegrant) Fix pagination total count in AllowancesByGranter query.
+(x/authz) Support for x/authz module.
+Bug Fixes
+(keep) Fix the use of the wrong type in the baseapp.ValidatorSetByHeight method.
+(keep) Add missing error handling for x/authz.
+(keep) Add missing error handling for x/feegrant.
+(x/auth) Add missing error handling for x/auth","Cosmos SDK v0.45.5 Release Notes
+This release introduces a few bug fixes and improvements. Notably, it removes
+the redacted error message, fixes a few bugs in the types package, and
+indexing of events for failed txs.
+See the Cosmos SDK v0.45.5 Changelog
+for the exhaustive list of all changes.
+Full Commit History: v0.45.4...v0.45.5",5,2,5,5
+"What's Changed
+Add FUNDING.yml by @danharrin in
+Add missing translation keys by @danharrin in
+Add missing translation keys by @danharrin in
+Add missing translation keys by @danharrin in
+Add missing translation keys by @danharrin in
+Add missing translation keys by @danharrin in
+Add missing translation keys by @danharrin in
+Add missing translation keys by @danharrin in
+Add missing translation keys by @danharrin in
+Add missing translation keys by @danharrin in
+Add missing translation keys by @danharrin in
+Add missing translation keys by @danharrin in
+Add missing translation keys by @danharrin in
+Add missing translation keys by @danharrin in
+Add missing translation keys by @danharrin in
+Add missing translation keys by @danharrin in
+Add missing translation keys by @danharrin in
+Add missing translation keys by @danharrin in
+Add missing translation keys by @danharrin in
+Add missing translation keys by @danharrin in
+Add missing translation keys by @danharrin in
+Add missing translation keys by @danharrin in
+Add missing translation keys by @danharrin in
+Add missing translation keys by @danharrin in
+Add missing translation keys by @danharrin in
+Add missing translation keys by @danharrin in
+Add missing translation keys by @danharrin in
+Add missing translation keys by @danharrin in
+Add missing translation keys by @danharrin in
+Add missing translation keys by @danharrin in
+Add missing translation keys by @danharrin in
+Add missing translation keys by @danharrin in
+Add missing translation keys by @danharrin in
+Add missing translation keys by @danharrin in
+Add missing translation keys by @danharrin in
+Add missing translation keys by @danharrin in
+Add missing translation keys by @danharrin in
+Add missing translation keys by @danharrin in
+Add missing translation keys by @danharrin in
+Add missing translation keys by @danharrin in
+Add missing translation keys by @danharrin in
+Add missing translation keys by @danharrin in
+Add missing translation keys by @danharrin in
+Add missing translation keys by @danharrin in
+Add missing translation keys by @dFull Changelog: v2.3.0...v2.3.1
+New Contributors
+@josecarlos26 made their first contribution in
+@josecarlos26 made their first contribution in
+@fazlurrahman999 made their first contribution in
+@fazlurrahman999 made their first contribution in
+@josecarlos26 made their first contribution in
+@fazlurrahman999 made their first contribution in
+@fazlurrahman999 made their first contribution in
+@fazlurrahman999 made their first contribution in
+@fazlurrahman999 made their first contribution in","v1.2.7 is the last version in v1.2
+Improvements:
+Display names for BREADs and field-titles can now be translated ()
+Show display names in search form ()
+Allows NULL for relationships ()
+Use correct fieldname in belongsTo relationships ()
+Allow tables with enum-fields to be saved ()
+Keep translated-values when errors occur durring add ()
+Hide delete button when user has no permission in settings ()
+Show checkboxes column if mass action is displayed ()
+Change sidebar logo size ()
+Bugfixes:
+User FQCN for Model class ()
+Order sub-menu-items ()
+Use custom guard inside postLogin & authorize ()
+Language updates:
+Spanish ()
+Turkish ()",2,2,2,2
+"Changes since 2.0.12
+All changes
+Fixes
+Avoid unnecessary property change events ()
+Commit · Pull request
+Avoid sending property change event if the value has not changed.
+Avoid re-adding the same property to the model ()
+Commit · Pull request · Issue
+The property has already been added to the model so there is no need to add it again.
+Prevent adding null to the model ()
+Commit · Pull request · Issue
+Do not add null to the model as it will cause a NullPointerException when setting the property.
+Avoid sending the property change event if the value has not changed ()
+Commit · Pull request · Issue
+Do not send the property change event if the value has not changed.
+Add a method to get the template's property value ()
+Commit · Pull request
+Add a method to get the template's property value.
+Prevent NPE in TemplateBinder ()
+Commit · Pull request · Issue
+Check that template is not null before using it.
+Update test for Safari ()
+Commit · Pull request · Issue
+The tests fail on Safari as it doesn't support the Array.from method.
+Prevent adding the same property to the model ()
+Commit · Pull request · Issue
+Prevent adding the same property to the model.
+Update test for Safari ()
+Commit · Pull request · Issue
+The tests fail on Safari as it doesn't support the Array.from method.
+Prevent adding null to the model ()
+Commit · Pull request · Issue
+Prevent adding null to the model as it will cause a NullPointerException when setting the property.
+Prevent NPE in TemplateBinder ()
+Commit · Pull request · Issue
+Check that template is not null before using it.
+Prevent adding null to the model ()
+Commit · Pull request · Issue
+Prevent adding null to the model as it will cause a NullPointerException when setting the property.
+Prevent adding the same property to the model ()
+Commit · Pull request · Issue
+Prevent adding the same property to the model.
+Prevent NPE in TemplateBinder ()
+Commit · Pull request · Issue
+Check that template is not null before using it.
+Prevent adding null to the model ()
+Commit · Pull request · Issue
+Prevent adding null to the model as it will cause a NullPointerException when setting the property.
+Prevent adding the same property to the model ()
+Commit · Pull request · Issue
+Prevent adding the same property to the model.
+Prevent NPE in TemplateBinder ()
+Commit · Pull request · Issue
+Check that template is not null before using it.
+Prevent adding null to the model ()
+Commit · Pull request · Issue
+Prevent adding null to the model as it will cause a NullPointerException when setting the property.
+Prevent adding the same property to the model ()
+Commit · Pull request · Issue
+Prevent adding the same property to the model.
+Prevent NPE in TemplateBinder ()
+Commit · Pull request · Issue
+Check that template is not null before using it.
+Prevent adding null to the model ()
+Commit · Pull request · Issue
+Prevent adding null to the model as it will cause a NullPointerException when setting the property.
+Prevent adding the same property to the model ()
+Commit · Pull request · Issue
+Prevent adding the same property to the model.
+Prevent NPE in TemplateBinder ()
+Commit · Pull request · Issue
+Check that template is not null before using it.
+Prevent adding null to the model ()
+Commit · Pull request · Issue
+Prevent adding null to the model as it will cause a NullPointerException when setting the property.
+Prevent adding the same property to the model ()
+Commit · Pull request · Issue
+Prevent adding the same property to the model.
+Prevent NPE in TemplateBinder ()
+Commit · Pull request · Issue
+Check that template is not null before using it.
+Prevent adding null to the model ()
+Commit · Pull request · Issue
+Prevent adding null to the model as it will cause a NullPointerException when setting the property.
+Prevent adding the same property to the model ()
+Commit · Pull request · Issue
+Prevent adding the same property to the model.
+Prevent NPE in TemplateBinder ()
+Commit · Pull request · Issue
+Check that template is not null before using it.
+Prevent adding null to the model ()
+Commit · Pull request · Issue
+Prevent adding null to the model as it will cause a NullPointerException when setting the property.
+Prevent adding the same property to the model ()
+Commit · Pull request · Issue
+Prevent adding the same property to the model.
+Prevent NPE in TemplateBinder ()
+Commit · Pull request · Issue
+Check that template is not null before using it.
+Prevent adding null to the model ()
+Commit · Pull request · Issue
+Prevent adding null to the model as it will cause a NullPointerException when setting the property.
+Prevent adding the same property to the model ()
+Commit · Pull request · Issue
+Prevent adding the same property to the model.
+Prevent NPE in TemplateBinder ()
+Commit · Pull request · Issue
+Check that template is not null before using it.
+Prevent adding null to the model ()
+Commit · Pull request · Issue
+Prevent adding null to the model as it will cause a NullPointerException when setting the property.
+Prevent adding the same property to the model ()
+Commit · Pull request · Issue
+Prevent adding the same property to the model.
+Prevent NPE in TemplateBinder ()
+Commit · Pull request · Issue
+Check that template is not null before using it.
+Prevent adding null to the model ()
+Commit · Pull request · Issue
+Prevent adding null to the model as it will cause a NullPointerException when setting the property.
+Prevent adding the same property to the model ()
+Commit · Pull request · Issue
+Prevent adding the same property to the model.
+Prevent NPE in TemplateBinder ()
+Commit · Pull request · Issue
+Check that template is not null before using it.
+Prevent adding null to the model ()
+Commit · Pull request · Issue
+Prevent adding null to the model as it will cause a NullPointerException when setting the property.
+Prevent adding the same property to the model ()
+Commit · Pull request · Issue
+Prevent adding the same property to the model.
+Prevent NPE in TemplateBinder ()
+Commit · Pull request · Issue
+Check that template is not null before using it.
+Prevent adding null to the model ()
+Commit · Pull request · Issue
+Prevent adding null to the model as it will cause a NullPointerException when setting the property.
+Prevent adding the same property to theVaadin Flow 2.0.13 is a maintenance version with the following notable changes:
+Fixes
+See all the changes in Flow 2.0.13
+See all the changes in Flow 2.0
+See the complete changelog for Vaadin Flow","New features
+Initial version of component API generation based on JSON metadata about a web component
+Still missing automatic JSON generation from the analyzer
+Updated Atmosphere to 2.4.5.vaadin2 to keep in sync with Vaadin Framework 8.x
+Fixes
+Fixed some cases where the effective server-side and client-side model values could become out of sync
+All changes
+Also all thanks to @gerald24 for the first external contribution done to Flow :-)",2,5,3,3
+"Bug Fixes
+deps: update dependency scratch-render-fonts to v1.0.10 () (9b8d862)","Bug Fixes
+deps: update dependency scratch-render-fonts to v1.0.10 () (9b8d862)",5,2,3,3
+"Changelog
+7f4c8b2 Tiltfile: support.dockerignore ()
+5b7d9c9 Update status.tsx ()
+a1c3b8f web: make status bar responsive ()
+f1c1e88 web: show resource status summary when resource sidebar is open ()
+6a0d4c6 web: update analytics ()
+6e5baf6 web: update sidebar resources to use react table ()
+5b8c7a9 web: update sidebar sidebaritemview storybook to use react table ()
+c5b6c5e web: update sidebar sidebarresources storybook to use react table ()
+c7a7c9b web: update sidebar sidebarresources to use react table ()
+6c8d8f7 web: update sidebar sidebartriggerbutton storybook to use react table ()
+c0d4b7c web: update sidebar sidebartriggermode to use react table ()
+f3a4b7d web: update sidebar starredresourcebar to use react table ()
+c8d1f6d web: update sidebar tooltip to use react table ()
+9a7c4e8 web: update sidebar update to use react table ()
+b3d5d7b web: update sidebar sidebarkeyboardshortcuts to use react table ()
+8d6b3fc web: update sidebar sidebarresources to use react table ()
+c3a5b5b web: update sidebar sidebarresource to use react table ()
+aef1db8 web: update sidebar sidebartriggerbutton to use react table ()
+9b4e9a6 web: update sidebar sidebartriggermode to use react table ()
+e6f8eef web: update sidebar sidebartriggerbutton storybook to use react table ()
+d4d3fbc web: update sidebar sidebartriggermode storybook to use react table ()
+3c1d1e9 web: update sidebar sidebartriggermode storybook to use react table ()
+b0f6d5a web: update sidebar sidebartriggermode storybook to use react table ()
+c4b4e5f web: update sidebar sidebartriggermode storybook to use react table ()
+c9c5b6c web: update sidebar sidebartriggermode storybook to use react table ()
+d4c6d2d web: update sidebar sidebartriggermode storybook to use react table ()
+a0f8b4e web: update sidebar sidebartriggermode storybook to use react table ()
+9c7d2d6 web: update sidebar sidebartriggermode storybook to use react table ()
+a3d4a5c web: update sidebar sidebartriggermode storybook to use react table ()
+e0d9b0a web: update sidebar sidebartriggermode storybook to use react table ()
+d1d1f44 web: update sidebar sidebartriggermode storyboard to use react table ()
+c6e4e3e web: update sidebar sidebartriggermode storyboard to use react table ()
+f3c9d4a web: update sidebar sidebartriggermode storyboard to use react table ()
+b7a0dcd web: update sidebar sidebartriggermode storyboard to use react table ()
+c7a4c0f web: update sidebar sidebartriggermode storyboard to use react table ()
+5fbbd76 web: update sidebar sidebartriggermode storyboard to use react table ()
+e1a9bbd web: update sidebar sidebartriggermode storyboard to use react table ()
+c7c9d1c web: update sidebar sidebartriggermode storyboard toChangelog
+e4d9aaf Update version numbers: 0.12.1
+5b8b1f9 web: update sidebar sidebarresource to use react table ()
+2e5f5f8 web: update sidebar sidebarresource to use react table ()
+3a3e0b5 web: update sidebar sidebarresource to use react table ()
+b3b6c3f web: update sidebar sidebarresource to use react table ()
+d8d7e4b web: update sidebar sidebarresource to use react table ()
+e7f3a1b web: update sidebar sidebarresource to use react table ()
+e7f9b3b web: update sidebar sidebarresource to use react table ()
+a5c4c1f web: update sidebar sidebarresource to use react table ()
+3a7b8b6 web: update sidebar sidebarresource to use react table ()
+d8b8f76 web: update sidebar sidebarresource to use react table ()
+9a7c3d3 web: update sidebar sidebarresource to use react table ()
+3d2b2e0 web: update sidebar sidebarresource to use react table ()
+b2b4d9f web: update sidebar sidebarresource to use react table ()
+b9e4f4d web: update sidebar sidebarresource to use react table ()
+b9a7d74 web: update sidebar sidebarresource to use react table ()
+c8a0a0b web: update sidebar sidebarresource to","Install Tilt  | Upgrade Tilt  | Tilt Extensions
+New Features
+You can now group resources in the sidebar by labeling them in your Tiltfile! (docs)
+Bug fixes
+- issue parsing variables in docker-compose yml
+- Stack Overflow / Panic with Docker Compose project
+- pod rollout tracking for Jobs stops at ""pending""
+- ""unknown resource"" when k8s_resource-ing a renamed resource
+Changelog
+8c1a264 Update version numbers: 0.22.1
+6ff8554 apis: add a ConfigMap type ()
+100fe70 controllers: move some APIs into the tiltfile reconciler package ()
+fd4ba88 controllers: trigger tiltfile reconcilation from the configs controller ()
+3dac034 docker-compose: fix stack overflow panic ()
+b657059 docker-compose: fix variable resolution type issues ()
+5328055 pod rollout: don't show completed jobs as pending ()
+2feb348 tiltfile: move k8s_resource option aggregation to assembly stage ()
+1f000b7 web: add helpful tooltips for trigger mode toggle and regexp log filter ()
+e6e27be web: add resources grouping tooltip with link to documentation in the sidebar ()
+66eb46c web: enable resource grouping and labels feature flag by default ()
+a8f9b9c web: generate error and warning counts from logstore ()
+Docker images
+docker pull tiltdev/tilt
+docker pull tiltdev/tilt:v0.22.2",2,2,5,2
+"Bug fixes
+[ ] Fix scroll behavior with ES version 7.x  (scottinet)
+[ ] Prevent error when using updateWithScript with ES 7.x  (scottinet)
+[ ] Fix some documentation typos   (benoitvidis)
+Enhancements
+[ ] Add maxScrollDuration to default configuration   (benoitvidis)
+[ ] Add scroll timeout   (benoitvidis)
+[ ] Add scroll timeout   (benoitvidis)","Bug fixes
+[ ] Fix realtime:publish from embedded SDK   (Aschen)
+Enhancements
+[ ] Use index cache for index/collection listing   (Aschen)
+[ ] Allow to limit scroll usage   (Aschen)
+[ ] Add document ""version"" to mUpdate response   (Yoann-Abbes)
+[ ] Add more security actions logs   (Yoann-Abbes)
+[ ] Add meaningful error message on strict mapping rejection   (Aschen)",2,2,2,4
+"What's Changed
+[Release v5.0] Fix: CVE-2023-36308 by @giorio94 in
+[Release v5.0] Fix: CVE-2023-35862 by @giorio94 in
+[Release v5.0] Fix: CVE-2023-35863 by @giorio94 in
+[Release v5.0] Fix: CVE-2023-35864 by @giorio94 in
+[Release v5.0] Fix: CVE-2023-35865 by @giorio94 in
+[Release v5.0] Fix: CVE-2023-35866 by @giorio94 in
+[Release v5.0] Fix: CVE-2023-35867 by @giorio94 in
+[Release v5.0] Fix: CVE-2023-35868 by @giorio94 in
+[Release v5.0] Fix: CVE-2023-35869 by @giorio94 in
+[Release v5.0] Fix: CVE-2023-35870 by @giorio94 in
+[Release v5.0] Fix: CVE-2023-35871 by @giorio94 in
+[Release v5.0] Fix: CVE-2023-35872 by @giorio94 in
+[Release v5.0] Fix: CVE-2023-35873 by @giorio94 in
+Full Changelog: v5.0.2...v5.0.3","Changes in 5.0.3
+Summary
+Bugfix - Update the admin user role assignment to enforce the config:
+Bugfix - Crash when processing crafted TIFF files:
+Bugfix - Update reva to v2.19.5:
+Bugfix - Fix infected file handling:
+Details
+Bugfix - Update the admin user role assignment to enforce the config:
+The admin user role assigment was not updated after the first assignment. We now
+read the assigned role during init and update the admin user ID accordingly if
+the role is not assigned. This is especially needed when the OCIS_ADMIN_USER_ID
+is set after the autoprovisioning of the admin user when it originates from an
+external Identity Provider.
+Bugfix - Crash when processing crafted TIFF files:
+Fix for a vulnerability with low severity in disintegration/imaging.
+GHSA-q7pp-wcgr-pffx
+Bugfix - Update reva to v2.19.5:
+We updated reva to v2.19.5
+Bugfix      cs3org/reva: Write blob based on session id
+Bugfix      cs3org/reva: Fix uploading via a public link
+Bugfix      cs3org/reva: Fix creating documents in nested folders of public shares
+Enhancement cs3org/reva: Bump mockery to v2.40.2
+Enhancement cs3org/reva: Add ScanData to Uploadsession
+Bugfix - Fix infected file handling:
+Reworks virus handling. Shows scandate and outcome on ocis storage-users uploads
+sessions. Avoids retrying infected files on ocis postprocessing restart.",2,2,4,2
+"No backwards incompatible changes here.
+Improvements
+Support Debian bullseye DEB package release, drop Debian jessie,
+Fixes
+Fix emitting Join message in dynamic server subscribe case (when calling subscribe server API), centrifugal/centrifuge.
+Docker images
+docker pull centrifugo/centrifugo:v3.2.3
+docker pull centrifugo/centrifugo:v3
+docker pull centrifugo/centrifugo:v3.2
+docker pull centrifugo/centrifugo:latest
+docker pull centrifugo/centrifugo:v3.2.3-alpine
+docker pull centrifugo/centrifugo:v3-alpine
+docker pull centrifugo/centrifugo:v3.2-alpine
+docker pull centrifugo/centrifugo:latest-alpine
+docker pull centrifugo/centrifugo:v3.2.3-ubuntu
+docker pull centrifugo/centrifugo:v3-ubuntu
+docker pull centrifugo/centrifugo:v3.2-ubuntu
+docker pull centrifugo/centrifugo:latest-ubuntu
+docker pull centrifugo/centrifugo:v3.2.3-debian
+docker pull centrifugo/centrifugo:v3-debian
+docker pull centrifugo/centrifugo:v3.2-debian
+docker pull centrifugo/centrifugo:latest-debian
+docker pull centrifugo/centrifugo:v3.2.3-rhel
+docker pull centrifugo/centrifugo:v3-rhel
+docker pull centrifugo/centrifugo:v3.2-rhel
+docker pull centrifugo/centrifugo:latest-rhel
+docker pull centrifugo/centrifugo:v3.2.3-amd64
+docker pull centrifugo/centrifugo:v3-amd64
+docker pull centrifugo/centrifugo:v3.2-amd64
+docker pull centrifugo/centrifugo:latest-amd64
+docker pull centrifugo/centrifugo:v3.2.3-arm64
+docker pull centrifugo/centrifugo:v3-arm64
+docker pull centrifugo/centrifugo:v3.2-arm64v7
+docker pull centrifugo/centrifugo:latest-arm64v7
+docker pull centrifugo/centrifugo:v3.2.3-s390x
+docker pull centrifugo/centrifugo:v3-s390x
+docker pull centrifugo/centrifugo:v3.2-s390x
+docker pull centrifugo/centrifugo:latest-s390x
+Centrifugo is an open-source scalable real-time messaging server. Centrifugo can instantly deliver messages to application online users connected over supported transports (WebSocket, HTTP-streaming, SSE/EventSource, GRPC, SockJS, WebTransport). Centrifugo has the concept of a channel – so it's a user-facing PUB/SUB server.
+Centrifugo is language-agnostic and can be used to build chat apps, live comments, multiplayer games, real-time data visualizations, collaborative tools, etc. in combination with any backend. It is well suited for modern architectures and allows decoupling the business logic from the real-time transport layer.
+Several official client SDKs for browser and mobile development wrap the bidirectional protocol. In addition, Centrifugo supports a unidirectional approach for simple use cases with no SDK dependency.
+For details, go to the Centrifugo documentation site.
+Useful links
+Docker Container
+Centrifugo Node.js SDK
+Centrifugo Go SDK
+Centrifugo Python SDK
+Centrifugo Ruby SDK
+Centrifugo Java SDK
+Centrifugo Rust SDK
+Build status
+Centrifugo  is supported by the community - feel free to participate in funding the development and maintenance.
+If you have any server-side experience and want to help with the project, please check Issues for more info or reach out directly to @gams1t via PM or in Centrifugo Discord channel. Your contribution can be as simple as making a fix to the code. With the current pace of contributions, the project's maintenance and development will not be sustainable in the long run. So, if you can contribute that would be awesome!
+If you want to sponsor Centrifugo development, please see the centrifugal/sponsorship repository.
+As usual, the binaries are provided for the released version only. If you need earlier version, please build it using the go mod replace directive or contact us.
+Release notes
+Release date : 2022-08-03
+Security fixes
+None
+Improvements
+Support Debian bullseye DEB package release, drop Debian jessie,
+Fixes
+Fix emitting Join message in dynamic server subscribe case (when calling subscribe server API), centrifugal/centrifuge.
+Changes from v3.2.2
+Full Changelog: v3.2.2...v3.2.3
+See also v3.2.2 release notes.
+Centrifugo can be built without Go ","Centrifugo is an open-source scalable real-time messaging server in a language-agnostic way. It can be a missing piece in your application infrastructure for introducing real-time features. Think chats, live comments, multiplayer games, streaming metrics – you'll be able to build amazing web and mobile real-time apps with a help of Centrifugo. Choose the approach you like:
+bidirectional communication over WebSocket or SockJS
+or unidirectional communication over WebSocket, EventSource (Server-Sent Events), HTTP-streaming, GRPC
+or... combine both!
+See centrifugal.dev for more information.
+Release notes
+No backwards incompatible changes here.
+Improvements
+Support Debian bullseye DEB package release, drop Debian jessie
+Fixes
+Fix emitting Join message in dynamic server subscribe case (when calling subscribe server API), centrifugal/centrifuge.",5,2,2,5
+,"Changelog
+Released on Feb 05, 2020.
+Features
+None
+Enhancements
+Improve heartbeat functionality to be robust across platforms -
+Run storage healthchecks on other options besides Docker - 1963
+Cloud logger now attempts to elevate logger errors to flow run logs -
+Attach Flow and Task attributes to LogRecords -
+Task Library
+None
+Fixes
+Fix uncaught Fargate Agent kwarg parse SyntaxError from literal_eval -
+Fix FargateTaskEnvironment passing empty",2,4,3,4
+"This is a hotfix release that includes the following fixes:
+Fixes an issue with sending funds to addresses with no prefix
+Fixes an issue with some send options not being respected","What's Changed
+Minor improvements and bug fixes.
+Download Hashes
+If you would like to verify that you have downloaded the correct file, please use the following SHA256 hashes:",2,4,3,2
+"Updated to use latest Victory
+Added some more extensions to the README
+Updated some dependencies
+Fixed a bug where a transition duration set in the manager was overriding a transition duration set on a slide
+Fixed a bug where an empty transition was causing a null error in some cases
+Fixed a bug where","Doc update to include Spectacle Codemirror as a newly available extension. Thanks @jonathan-fielding!
+Dependency updates to, among other things, allow for use of React Hooks in your presentations
+Smol bug fix for the transitionDuration prop. Thanks @narinluangrath!",4,4,3,5
+"Bug Fixes
+fixing panic when calling the generated model
+upsert: fix issue with insert/returning and columns that are not part of the set
+Chores
+minor","See CHANGELOG.md for details.
+This reverts some of the breaking changes in 4.7.0 as well as corrects some issues that prevented it from working correctly.",2,2,4,2
+"ExerciseOverview
+This release contains a number of minor bug fixes and improvements, as well as the following new features:
+A feature that allows administrators to define static code analysis configuration on a per-exercise basis
+A feature that allows instructors to configure the allowed file extensions in a programming exercise
+A feature that allows administrators to configure the number of results displayed for static code analysis issues
+A feature that allows administrators to configure the static code analysis configuration for programming exercises
+A feature that allows administrators to set the default configuration for static code analysis issues
+A feature that allows instructors to configure the static code analysis configuration for their exercises
+A feature that allows administrators to configure the static code analysis configuration for static code analysis issues
+A feature that allows administrators to set the default configuration for static code analysis issues
+Improvements to the way that static code analysis issues are displayed
+Improvements to the handling of static code analysis issues in programming exercises
+Improvements to the handling of static code analysis issues in programming exercises
+Improvements to the handling of static code analysis issues in programming exercises
+Improvements to the handling of static code analysis issues in programming exercises
+Improvements to the handling of static code analysis issues in programming exercises
+Improvements to the handling of static code analysis issues in programming exercises
+Improvements to the handling of static code analysis issues in programming exercises
+Improvements to the handling of static code analysis issues in programming exercises
+Improvements to the handling of static code analysis issues in programming exercises
+Improvements to the handling of static code analysis issues in programming exercises
+Improvements to the handling of static code analysis issues in programming exercises
+Improvements to the handling of static code analysis issues in programming exercises
+Improvements to the handling of static code analysis issues in programming exercises
+Improvements to the handling of static code analysis issues in programming exercises
+Improvements to the handling of static code analysis issues in programming exercises
+Improvements to the handling of static code analysis issues in programming exercises
+Improvements to the handling of static code analysis issues in programming exercises
+Improvements to the handling of static code analysis issues in programming exercises
+Improvements to the handling of static code analysis issues in programming exercises
+Improvements to the handling of static code analysis issues in programming exercises
+Improvements to","Improvements:
+Programming exercises: Allow editing of auxiliary repositories by @JohannesStoehr in
+Programming exercises: Improve complaints on automated assessments by @JohannesStoehr in
+Programming exercises: Add static analysis for C by @alexanderstephan in
+Modeling Exercise: Visualize association between grading instruction and feedback during the assessment by @imstreetspirit in
+General: Resolve a post by marking answer post as correct/helpful by @lschlesinger in
+General: Add scheduled notifications ⏰ for released exercises by @Malyuk-A in
+Bugfixes:
+Programming exercises: Enable deletion of programming exercise template and solution submissions and results by @niclasschuemann in
+Programming exercises: Remove iOS 14.5 requirement for the build plan for Swift Xcode programming exercises by @DanielKainz in
+Quiz exercises: Show correct formula in quiz review for drag and drop questions by @willergeorg in
+Quiz exercises: Fix alignment of buttons during re-evaluate for small screens by @willergeorg in
+General: Fix overlapping buttons in the exercises page on course administration by @MaisiKoleni in
+General: Fix inconsistent capitalization of term ""Bonus Points"" and unify German translation ""Bonuspunkte"" by @lschlesinger in
+General: Fix user interface alignment problems during exercise import by @MerlinMehmed in
+General: Fix item counter information in paged tables by @Olimbia23 in
+General: Fix links to create new issues on about-us page by @b-fein in
+Development:
+Update dependencies by @krusche
+Use manual assessment type in cypress e2e exam assessment test by @jhainzlschmid in
+Increase node max RAM to 6GB for GitHub actions by @jpbernius in
+Add an example for node's max_old_space_size settings in setup documentation by @MerlinMehmed in
+Update bamboo version in the development docker containers by @FlorianGlombik in
+Add documentation for Orion by @MDK5 in
+New Contributors
+@alexanderstephan made their first contribution in
+Full Changelog: 5.2.0...5.2.1",2,2,4,3
+"Bug fix:
+Incompatible change:
+Minimum Java version changed from 8 to 11 ()
+Versions 0.15.0 to 0.15.2 are skipped because of publishing issues.
+Full Changelog: 0.15.2...0.15.3
+Maven Central","Bug fix:
+Download of online dumps was fixed () by @TheEaterr
+Incompatible change:
+Minimum Java version changed from 8 to 11 () by @wetneb
+Versions 0.15.0 to 0.15.2 were skipped because of publishing issues.",5,4,3,3
+"Bug Fix
+fix linear gradient colors in web not updating (@drcmda)
+Documentation
+fix broken links (@drcmda)
+Committers: 1
+Darrell Clement (@drcmda)
+Migrating from 0.69.2 to 0.69.3
+Inside any created project that has not been ejected, run:
+npm install --update-svg-react-native
+Inside any ejected project, run:
+npm install --update-svg-react-native --force
+Note: If you have a custom config file (config.js), you'll need to update it to match changes.","Features
+adds roving-focus and collection packages for keyboard navigation () (Ali)
+create-tamagui: prompt for git before running (natew)
+linear-gradient: remove react-native-dependency (natew)
+Bug Fixes
+site: fixed QuickNav w/ scroll support () (Ali)
+docs: typos () (la55u)
+Documentation
+remove invalid reference () (Ali)
+Commits
+bb64b4b: update-starters-v1.2.14 (natew)
+cfd0f8f: v1.2.15 (natew)",2,2,3,3
+"Fix search for orgs/repos
+Fix some UI issues
+Add some more icons
+Update markdown converter for HTML","Fix trending issues.
+Improve markdown rendering.
+Fix issue filtering.
+UI/UX improvements.
+Various bug fixes.",2,3,2,3
+"Security
+Add X-Release-Blocker label to release-blocking issues ().
+Bug Fixes
+Fix crash on login with email verification ().
+Fix crash when sharing a room link ().
+Fix crash when sharing a room link ().
+Fix crash when sharing a room link ().
+Fix crash when sharing a room link ().
+Fix crash when sharing a room link ().
+Fix crash when sharing a room link ().
+Fix crash when sharing a room link ().
+Fix crash when sharing a room link ().
+Fix crash when sharing a room link ().
+Fix crash when sharing a room link ().
+Fix crash when sharing a room link ().
+Fix crash when sharing a room link ().
+Fix crash when sharing a room link ().
+Fix crash when sharing a room link ().
+Fix crash when sharing a room link ().
+Fix crash when sharing a room link ().
+Fix crash when sharing a room link ().
+Fix crash when sharing a room link ().
+Fix crash when sharing a room link ().
+Fix crash when sharing a room link ().
+Fix crash when sharing a room link ().
+Fix crash when sharing a room link ().
+Fix crash when sharing a room link ().
+Fix crash when sharing a room link ().
+Fix crash when sharing a room link ().
+Fix crash when sharing a room link ().
+Fix crash when sharing a room link ().
+Fix crash when sharing a room link ().
+Fix crash when sharing a room link ().
+Fix crash when sharing a room link ().
+Fix crash when sharing a room link ().
+Fix crash when sharing a room link ().
+Fix crash when sharing a room link ().
+Fix crash when sharing a room link ().
+Fix crash when sharing a room link ().
+Fix crash when sharing a room link ().
+Fix crash when sharing","Features
+Element Call video rooms ().
+Device manager - rename session ().
+Allow widgets to read related events (). Contributed by @dhenneke.
+Device manager - logout of other session ().
+Device manager - logout current session ().
+Device manager - verify other devices ().
+Allow integration managers to remove users ().
+Device manager - add verify current session button ().
+Add NotifPanel dot back. (). Fixes.
+Implement MSC3575: Sliding Sync ().
+Add the clipboard read permission for widgets (). Contributed by @stefanmuhle.
+Bug Fixes
+Make autocomplete pop-up wider in thread view ().
+Fix soft crash around inviting invalid MXIDs in start DM on first message flow (). Fixes element-hq/element-web-rageshakes and element-hq/element-web-rageshakes.
+Fix in-reply-to previews not disappearing when swapping rooms ().
+Fix invalid instanceof operand window.OffscreenCanvas (). Fixes.
+Fix memory leak caused by unremoved listener ().
+Fix thumbnail generation when offscreen canvas fails (). Fixes.
+Prevent sliding sync from showing a room under multiple sublists ().
+Fix tile crash around tooltipify links (). Fixes.
+Device manager - filter out nulled metadatas in device tile properly ().
+Fix a sliding sync bug which could cause rooms to loop ().
+Remove the grey gradient on images in bubbles in the timeline (). Fixes.
+Fix html export not including images (). Fixes.
+Fix possible soft crash from a race condition in space hierarchies (). Fixes element-hq/element-web-rageshakes.
+Disable all types of autocorrect, -complete, -capitalize, etc on Spotlight's search field ().
+Handle M_INVALID_USERNAME on /register/available (). Fixes.
+Fix issue with quiet zone around QR code (). Fixes.",3,2,2,4
+"dbt-core 1.0.7 - May 20, 2022
+Dependencies
+Lowering networkx dependency range due to new version's breaking change ()","dbt-core 1.0.7 - May 20, 2022
+Dependencies
+Lowering networkx dependency range due to new version's breaking change ()",2,2,4,4
+"New features:
+Added new option report_container_metrics to docker_monitor to allow disabling of gathering and reporting metrics for each Docker container.
+Bug fixes:
+Fix recent breakage causing the run_monitor code to fail.
+Fix error / warning logging in syslog_monitor to better capture issues with Docker support.","New features:
+Added new option report_container_metrics to docker_monitor to allow disabling of gathering and reporting metrics for each Docker container.
+Bug fixes:
+Fix recent breakage causing the run_monitor code to fail.
+Fix error / warning logging in syslog_monitor to better capture issues with Docker support.",3,2,4,3
+"Highlights: Bug fixes
+comfig
+Removed fps_max 240 from the default config as it's not needed and can cause problems
+Removed cl_SetupAllBones 0 from the ultra preset to fix issues with ragdolls
+Added a note to the modules.md documentation about the rope rendering module
+Fixed a bug with the fps_max 0 comment
+View the code changes for this release.
+A special thank you to @Aethon, @TheRealMethuselah, and @TheRealKidd for their contributions to this release.
+Enjoying mastercomfig? Check out our other projects:
+comfig
+comfig mod for TF2Autobot
+mod for Dota 2
+mod for TF2
+mod for","Highlights: bug fixes and performance improvements
+Support me
+Initial Setup Instructions
+Update Instructions
+Documentation
+Config
+Reverted sound cache change in 8.2.1
+It wasn't working as intended and sound cache files were still generated.
+Increased FPS cap from 240 to 300
+It seems like the way the frame wait loop works in the Source Engine causes unnecessary delays and resource usage in some cases. A FPS cap of 300 should be large enough to avoid these timings.
+Presets
+Ultra
+Reverted setup all bones change made in 8.1.0
+Forcing all bones caused more errors.
+Documentation
+Added a note in the effects module documentation that its settings may be applied inconsistently
+View the code changes",3,3,3,3
+"General bug fixes
+Better Docker support (with Docker-Compose and Dockerfile)
+Better Vagrant support (with Vagrantfile)
+Added a few more config options
+Fixed some security issues (like being able to register without a password)
+Better challenge sorting (and more challenge options)
+Better scoreboard sorting (and more scoreboard options)
+Fix for scoreboard issue when adding a new challenge
+More settings for challenge settings
+General bug fixes and minor improvements
+Note: This release has some issues with the scoreboard and the Docker support. Please upgrade to 0.8.4 if you are using either of these features.
+Update to 0.8.5 if you use the scoreboard or Docker.
+Update to 0.8.6 if you use Docker Compose.
+Update to 0.8.7 if you use Docker Compose and Docker.
+If you want to help, you can start by making your own copy of the code and working on it locally. It's easy! See this guide for more information.
+To run CTFd, follow the instructions in the README.
+To make it easier for other developers to contribute, we need to make it easier to make your own copy of the code. To do that, we need to fix some of the issues with the development version. See","Add spinners to the original theme for loading graphs
+Plugins can register global JS files with utils.register_plugin_script()
+Plugins can register global CSS files with utils.register_plugin_stylesheet()
+Challenge type plugins can now control the response to a user's input
+Vagrantfile!
+Containers functionality has been moved into a plugin
+Hide solves from the JSON endpoint when hiding scores.
+Pages are now cached so that we don't hit the database every time we need to load a page.
+The /top/10 endpoint has been changed to group users by ID instead of by name.
+Admins are allowed to see and solve challenges before a CTF starts.
+The CTF time configuration UI has been fixed to allow for the removal of times.
+The score graph in the original theme is now sorted by score.
+Bug fixes
+Use strings to store IP addresses.
+Take into account awards when we calculate a user's place.
+Plugin configuration clears the cache.
+More logging inside of auth.py.
+Username and password in the SMTP mail configuration are now optional.
+Markdown in challenges has been fixed to it's pre-regression state and is easier to write.
+Improvements to Python 3 compatability.
+Variety of new tests to further test behavior.
+Fixed an old bug where users would incorrectly see a challenge with 0 solves.",4,2,2,5
+"Changelog (v5.4.9...v5.4.10)
+bug Allow 12-15 digits for MIR card numbers (MatTheCat)
+bug Fix return type of ConstraintViolationList methods (MatTheCat)
+bug Update translations (fancyweb)","Changelog (v4.4.29...v4.4.30)
+bug Fix Url Validator false positives (sidz)
+bug Fix return types for PHP 8.1 (derrabus)
+bug Update MIR card scheme (ossinkine)",2,4,2,5
+,"Improvements
+Programming exercises: Disable changing option to record coverage when editing programming exercises by @ole-ve in
+Programming exercises: Add support for testwise coverage analysis for Java/Kotlin exercises on Jenkins setup by @ole-ve in
+Programming exercises: Bump Bamboo version to 8.1.8 by @Mtze in
+Exam mode: Conduct test exams by @mallgaier in
+Exam mode: Allow instructors to import exams by @mallgaier in
+Exam mode: Improve action details in live statistics by @Dominik-Weinzierl in
+Exam mode: Show programming exercise submissions in the exam live statistics dashboard by @Dominik-Weinzierl in
+Exam mode: Remove the necessary administrator rights to use the exam live statistics by @Dominik-Weinzierl in
+Exam mode: Enable the creation of test exams for instructors by @mallgaier in
+General:  Filter test courses for next relevant exercise by @JohannesStoehr in
+Bugfixes
+Programming exercises: Fix the creation of behavioral solution entries for git-diff entries representing removed content by @ole-ve in
+Quiz exercises: Allow to import exam quiz exercises with currently active test runs by @manuelmanso in
+Lectures: Fix attachment edit row overlay by @bassner in
+Exam mode: Trigger save when hand in early is clicked by @Dominik-Weinzierl in
+Exam mode: Fix unsaved exercise indicator by @Dominik-Weinzierl in
+Exam mode: End countdown timer correctly by @minrows in
+General: Fix internal server error when creating a future course by @willergeorg in
+Development
+Add documentation for modeling exercises by @minrows in
+Add documentation for team exercises by @manuelmanso in
+Add documentation for course customization by @sleiss in
+Add documentation for learning analytics by @maximiliansoelch in
+Add documentation for grading by @akesfeden in
+Add documentation for scaling by @sleiss in
+Remove programming exercise simulation and fix server tests by @krusche in
+Revert cypress to version 9 due to failing tests by @TheZoker in
+Add Sentry performance monitoring by @ge65cer in
+Update documentation on the exam mode by @Dominik-Weinzierl in
+Add tests for StudentsAlreadyAssignedException to TeamIntegrationTest by @manuelmanso in
+Add server tests for attachment unit file endpoint by @ge65cer in
+Update Chrome and Node version for cypress browser tests by @krusche in 69a74fd
+Replace .collect(Collectors.toList()) with .toList() or Collectors.toCollection() by @JohannesStoehr in
+Fix issue in e2e cypress tests with missing users by @krusche in acb882e
+Fix server code style by @krusche in 0f751c5
+Update client dependencies by @krusche in ce0187e and 4869ee5
+Remove unused variable in client test by @krusche in d8535c7
+Full Changelog: 5.9.1...5.9.2",2,5,2,4
+"Merged PRs
+dolt
+2345: ci-bump-homebrew: change main to master
+2344: Fix dolt_mv_data action
+2339: Add a transaction rollback function
+2336: Fixing the bug when creating indexes on a table with primary key.
+2334: Fixing the bug when creating indexes on a table with primary key.
+2327: Revert ""go: fix bug where bulk import would incorrectly return an error if the first row has a NULL value for a non-nullable column""
+Closed Issues
+2330: dolt_mv_data is missing from doltcore
+2329: dolt_mv_data is missing from doltcore
+2324: Bulk import with nullable columns
+2321: Primary key indexes
+2317: Dolt merge should be able to use a merge strategy
+2315: Add a transaction rollback function
+2307: Add a transaction rollback function
+2305: Fixing the bug when creating indexes on a table with primary key.
+2304: Fixing the bug when creating indexes on a table with primary key.
+2320: Dolt Merge Strategy
+2303: Add dolt_mv_data action
+2331: dolt_mv_data is missing from doltcore
+2306: Fixing the bug when creating indexes on a table with primary key.
+2302: Fixing the bug when creating indexes on a table with primary key.
+2318: Revert ""go: fix bug where bulk import would incorrectly return an error if","Merged PRs
+dolt
+2239: remotesrv gets an --http-host option.
+2238: Use a Tuple Factory for inserts to decrease memory usage.
+Improvement related to
+2236: Prevent panic when index edit accumulator capacity is reached and undo operations are attempted.
+2233: Fix fast-forward merge behavior.
+2230: Improve support for dolt on 32-bit platforms, including ARM.
+2213: Add Read Only Transaction Functionality To Dolt
+go-mysql-server
+582: sql/plan: exchange.go: Make Exchange's RowIter wait for all goroutines to shutdown cleanly.
+579: Fixed panic on using an alias of a subquery expression in a where clause (now just an error)
+578: enginetest: Add BrokenQueries tests for projections in group by nodes not handling subquery expressions well.
+577: sql/analyzer: validation_rules: Disable validateSubqueryColumns, which was enabled in the latest releases but is still broken in some cases.
+576: Add Read Only transaction functionality
+575: Fixed bug in indexed joins when self joining a table with two different AS OF clauses.
+573: Add several features that unblock mysql workbench
+This pr implements
+Show STATUS
+Set CHARACTER SET
+vitess
+84: support for value and status keywords
+Closed Issues
+2229: panic: unaligned 64-bit atomic operation when running dolt push on arm
+570: Add support for read-only transactions
+499: ""ORDER BY"" expressions behaviour compatible with MySQL?",2,2,3,3
+"IMPROVEMENTS:
+Update unwrap() method to match current Vault versions [GH-149]
+Initial support for Kubernetes authentication backend [GH-210]
+Initial support for Google Cloud Platform (GCP) authentication backend [GH-206]
+Update enable_secret_backend function to support kv version 2 [GH-201]
+BUG FIXES:
+Change URL parsing to allow for routes in the base Vault address (e.g., https://example.com/vault) [GH-212].
+Thanks to @mracter, @cdsf, @SiN, @seanmalloy, for their lovely contributions","IMPROVEMENTS:
+Update unwrap() method to match current Vault versions [GH-149]
+Initial support for Kubernetes authentication backend [GH-210]
+Initial support for Google Cloud Platform (GCP) authentication backend [GH-206]
+Update enable_secret_backend function to support kv version 2 [GH-201]
+BUG FIXES:
+Change URL parsing to allow for routes in the base Vault address (e.g., https://example.com/vault) [GH-212].
+Thanks to @mracter, @cdsf, @sin, @seanmalloy, for their lovely contributions.",4,2,2,2
+,"What a month we had! The weather is getting warmer and I think we can all enjoy a new refreshment in the form of a Preact release! The past weeks saw a good chunk of bug fixes and a bit of house keeping. Upgrades should be as straightforward as swapping out the version number in package.json and running npm install or yarn install once!
+Introducing prefresh (experimental)
+It was one of those miracle days where all the pieces fell into place just perfectly: @JoviDeCroock got a HMR (=hot module reloading) prototype up without any changes to Preact and running in a couple hours! With the biggset achievement being that it works amazingly well in keeping hooks state around.
+Since then he was contacted by various maintainers of bundlers to collaborate on an ideal developer experience. Today, about a little more than a week later we have them ready to be tested. And we need your feedback to make it the best HMR experience we can! Please file any issue you come across!
+webpack
+vite
+nollup
+Parcel (in progress)
+Snowpack (in progress)
+Snowpack template
+Oh and while we were at it @sventschui added a Preact template for snowpack! You can get it up and running via this line:
+npx create-snowpack-app my-project --template @snowpack/app-template-preact
+Preact sightings
+Recently deno cut it's 1.0.0 release which is a huge achievement. It's a new spin on what node could look like if it would have started fresh in 2019 and we're excited where this experiment will lead to! Despite it being very early it made some waves in our community and we were filled with joy when we noticed that the website is built with our beloved framework!
+Bug Fixes
+Add noop React.StrictMode to compat (, thanks @developit)
+Use latest reducer function in useReducer (, thanks @hadeeb)
+Improve IS_NON_DIMENSIONAL for compatibility with animation-iteration-count (, thanks @viko16)
+Polyfill prototype setter in debug (, thanks @JoviDeCroock)
+Fix hydrate export in compat (, thanks @hadeeb)
+Fix creating multiple roots from useEffect (, thanks @JoviDeCroock)
+Types
+Add StrictMode to compat/src/index.d.ts (, thanks @38elements)
+Add loading attribute to HTMLAttributes TypeScript interface (, thanks @gerardo-rodriguez)
+Maintenance
+Fix CONTRIBUTING.md indentation (, thanks @Vincent-Carrier)
+Fix test on IE11 by wrapping the spy helper (, thanks @JoviDeCroock)
+Remove unnecessary cloning of props (, thanks @hadeeb)
+Iteratively diff children and convert array children to Fragments (, thanks @andrewiggins)
+Update focus tests to better match user behavior (, thanks @andrewiggins)
+IE11+ -> IE11 (, thanks @38elements)
+Reorganize render test file (, thanks @andrewiggins)
+golf effect cleanup (, thanks @JoviDeCroock)
+Remove processingException check (, thanks @JoviDeCroock)
+Reduce unnecessary DOM attribute reads (, thanks @andrewiggins)
+Remove unnecessary excessDomChildren creation (, thanks @andrewiggins)
+Add update benchmark from js-framework-benchmark (, thanks @andrewiggins)",4,2,2,3
+"Fixed
+Fixed issue with product reviews not visible on product page
+Fixed issue with duplicate product reviews
+Fixed issue with custom page not working in admin panel
+Fixed issue with product variants not visible on product page
+Fixed issue with cart total amount not updating after removing product from cart
+Fixed issue with product variant image not visible on product page
+Fixed issue with product reviews not visible on product page when using product variant
+Fixed issue with custom page not working in admin panel
+Fixed issue with product variant image not visible on product page
+Fixed issue with cart total amount not updating after removing product from cart
+Fixed issue with product reviews not visible on product page when using product variant
+Fixed issue","Enhancements
+- The new reviews display system does not make sense
+Fixed installer issue.
+Bug Fixes
+- When creating a product, getting console error in Number Validation when attribute created.
+- Images are not changing in mobile view in configurable product according to the Color swatch what is selected.
+- Added missing CSS classes for dark themes.
+- Fix the translation issue on the error page.
+- Fixed CMS page email send status issue on Update.
+- Fixed data grid issue save filter button issue.
+- Fixed cart page exception.
+- Fixed buy-now button issue.
+- Dark Mode UI issue is appearing in Import stock, Import Section where validate is processed.
+- Fix notification icons for dark theme.",2,4,3,2
+"Bug Fixes
+deps: update dependency @netlify/config to ^12.1.1 () (202596e)
+deps: update dependency @netlify/zip-it-and-ship-it to v4.12.0 () (1d975d6)","Bug Fixes
+deps: update dependency @netlify/config to ^12.1.1 () (202596e)
+deps: update dependency @netlify/zip-it-and-ship-it to v4.12.0 () (1d975d6)",4,2,2,2
+,"Improvements
+More information about thrown exception in child process (phpstan/phpstan-src@d6a576a)
+PHPStan Pro - allow overriding pro.tmpDir config parameter (phpstan/phpstan-src@4a95206, phpstan/phpstan-src@7c4ef6b)
+Optimize memory consumption when doing sha1 file hash (), thanks @staabm!
+Optimize memory consumption in ResultCacheManager (), thanks @staabm!
+Bugfixes
+Filter right side of ??= with === null (phpstan/phpstan-src@f407ac6)
+Fix possible internal error when analysing code with enums on PHP 7.x (phpstan/phpstan-src@b9d9626)
+NonexistentOffsetInArrayDimFetchRule - do not report errors on expressions after truthy isset check (phpstan/phpstan-src@6fbd6e4)
+Use real native function name instead of lowercase one (), thanks @fredden!
+Include property intializations from parent scope for anonymous functions (), thanks @fabacino!
+FileFinder - make list of found files unique (phpstan/phpstan-src@7491260)
+Fix internal error with first-class callable in array_filter (phpstan/phpstan-src@0228643)
+Fix subclass acceptability when class alias is involved on ""ours"" side (phpstan/phpstan-src@d5c599c)
+Function signature fixes
+Fix incorrect doc for SQLite3::openBlob (), thanks @rodrigoq!
+Update number_format return from string to non-empty-string (), thanks @devnix!",2,2,5,5
+"New Features
+Adds $editor configuration to document and collection blueprints.
+Bugfixes
+Removes unused Grow UI code.
+Removes unnecessary cached properties from Document and Collection","New Features
+Removed the old built in editor in favor of an extension based editor.
+Bug Fixes
+Added the host and port of the server to the dev handler hook.",2,2,3,4
+"This release includes the following fixes & improvements:
+Support S3 lifecycle transition
+ChangeStream support
+Improve the oplog populator to handle changes made by itself
+Allow setting the oplog populator to run indefinitely
+Improve Kafka connector setup
+Remove unused Kafka connect port setting
+Fix Kafka connector setup for the oplog populator
+Allow the oplog populator to use the Kafka connector in the same container
+Add a new documentation for the S3 lifecycle transition
+Add a new documentation for the S3 lifecycle transition
+Fix Kafka connector setup for the oplog populator
+Add documentation for S3 lifecycle transition
+Add ChangeStream support
+Allow setting the oplog populator to run indefinitely
+Allow the oplog populator to use the Kafka connector in the same container
+Improve the oplog populator to handle changes made by itself
+Fix Kafka connector setup
+Improve Kafka connector setup
+Remove unused Kafka connect port setting
+Fix notification manager test
+Add new documentation for S3 lifecycle transition
+Add ChangeStream support
+Allow setting the oplog populator to run indefinitely
+Allow the oplog populator to use the Kafka connector in the same container
+Improve the oplog populator to handle changes made by itself
+Improve Kafka connector setup
+Remove unused Kafka connect port setting
+Fix Kafka connector setup for the oplog populator
+Add documentation for S3 lifecycle transition
+Add ChangeStream support
+Allow setting the oplog populator to run indefinitely
+Allow the oplog populator to use the Kafka connector in the same container
+Improve the oplog populator to handle changes made by itself
+Improve Kafka connector setup
+Remove unused Kafka connect port setting
+Fix Kafka connector setup for the oplog populator
+Add documentation for S3 lifecycle transition
+Add ChangeStream support
+Allow setting the oplog populator to run indefinitely
+Allow the oplog populator to use the Kafka connector in the same container
+Improve the oplog populator to handle changes made by itself
+Improve Kafka connector setup
+Remove unused Kafka connect port setting
+Fix Kafka connector setup for the oplog populator
+Add documentation for S3 lifecycle transition
+Add ChangeStream support
+Allow setting the oplog populator to run indefinitely
+Allow the oplog populator to use the Kafka connector in the same container
+Improve the oplog populator to handle changes made by itself
+Improve Kafka connector setup
+Remove unused Kafka connect port setting
+Fix Kafka connector setup for the oplog populator
+Add documentation for S3 lifecycle transition
+Add ChangeStream support
+Allow setting the oplog populator to run indefinitely
+Allow the oplog populator to use the Kafka connector in the same container
+Improve the oplog populator to handle changes made by itself
+Improve Kafka connector setup
+Remove unused Kafka connect port setting
+Fix Kafka connector setup for the oplog populator","What's Changed
+Feature: BB-167 inject oplog for specific buckets by @Kerkesni in
+BB-186 Setup Lifecycle Transition locally by @nicolas2bert in
+INTEGRATION [PR > development/8.3] bugfix: BB-187 BN: add object key to keyed partitioning by @bert-e in
+bugfix: BB-187 BN: add object key to keyed partitioning by @jonathan-gramain in
+INTEGRATION [PR > development/8.4] bugfix: BB-187 BN: add object key to keyed partitioning by @bert-e in
+Feature/bb 192/transition non current versions by @alexanderchan-scality in
+improvement: BB-196 update arsenal by @naren-rajendran in
+Full Changelog: 8.4.2...8.4.3",5,3,2,4
+"Bug Fixes
+deps: update dependency scratch-blocks to v1.1.110 (4a59706)","Bug Fixes
+deps: update dependency scratch-blocks to v1.1.110 (4a59706)",2,2,3,3
+"Changelog
+Bug Fixes
+Bug Fixes
+Merge pull request from defichain/bug/wallet-crash
+Merge pull request from defichain/enhancement/update-issuetemplates
+Update issue templates
+Merge pull request from defichain/bug/wallet-crash
+fix: fix wallet crash when unhandled promise rejections occur in electron app","What's Changed
+Important Changes
+App update
+We recommend installing this update manually using the respective binaries for your Operating System. You may download them from the official website.
+Features
+Display of split between DFI Token and UTXO ()
+Updated snapshot block to 842677
+Bug Fixes
+App window does not open for Mac users  ()
+Shutdown issues ()",3,4,3,4
+"Bug Fixes
+Add Haitian Creole (ht) and Spanish Puerto Rico (es-pr) locale configs () (b2642e2)
+Fix UTC plugin wrong hour bug while adding month or year  () (28ae070)
+Update French (fr) locale to set correct yearStart (14ab808), closes","Bug Fixes
+Add Haitian Creole (ht) and Spanish Puerto Rico (es-pr) locale configs () (b2642e2)
+Fix UTC plugin wrong hour bug while adding month or year  () (28ae070)
+Update French (fr) locale to set correct yearStart (14ab808), closes",2,4,2,2
+"What's Changed
+Add missing morph many relation manager doc by @saade in
+MorphMany relation manager by @saade in
+New Contributors
+@saade made their first contribution in
+Full Changelog: v2.7.11...v2.7.12
+Please read the release blog post for more details. Enjoy! Cheers! @tabacitu","What's Changed
+Remove extra bracket Forms doc Select example by @shuvroroy in
+Update 02-resources.md by @martin-ro in
+feature: Morph many relation managers by @danharrin in
+New Contributors
+@martin-ro made their first contribution in
+Full Changelog: v2.5.9...v2.5.10",2,2,3,3
+"Features
+Added support for relative paths in the TrackedFeatures, Tracklets, SpatialLocationCalculatorData and AprilTags data.
+Bug fixes
+Fixed USB2 patcher build for Windows
+Fixed calibration utility not being able to find calibration data
+Fixed some of the old runtime library issues on Windows
+Fixed OAK-1U calibration handling
+Fixed some minor issues in the calibration tools","Features
+Updated FW - BMI270 IMU improvements
+Added seq & timestamps for more messages
+New boards support
+Windows DLL improvements (install libusb dll alongside libdepthai-core.dll)
+Bug fixes
+XLink - improved connecting directly to given IP
+StereoDepth ImgFrame metadata w/h when decimation filter is enabled
+Intrinsic read fix
+Misc
+Node access refactor",2,3,2,3
+,"This patch release fixes many of the bugs introduced in 0.9 including a few other enhancements and minor features. Caddy is now built on Go 1.7. This update is recommended for all Caddy users.
+For more information, read the announcement blog post.
+Change log:
+New {request_body} placeholder to log request body
+{remote} placeholder no longer uses X-Forwarded-For header
+{latency} placeholder rounds to nice looking number
+Add support for ratelimit plugin
+basicauth: Declaring realm named ""Restricted""
+errors: Define catch-all/default error page with * character
+header: More control to add, set, or remove headers
+proxy: New keepalive setting to help accommodate busy servers
+proxy: New load balancing policy ip_hash
+proxy: Fixed WebSocket connections
+proxy: Fixed broken header logic
+proxy: Reuse existing connection for Upgrade requests
+proxy: Support for basic auth from header or upstream address
+templates: New .Env action to access environment variables
+tls: OCSP staples persisted to disk
+tls: ACME challenges honor bind directive
+tls: Fix default protocol version (minimum TLS 1",2,5,3,5
+"Bug Fixes
+deps: update dependency scratch-blocks to v1.1.51 (69b6f0e)","Bug Fixes
+deps: update dependency scratch-blocks to v1.1.51 (69b6f0e)",2,2,3,3
+"What's Changed
+Bug fixes
+fix(template-compiler): fix aria-* attribute parsing by @jmsjtu in
+fix: allow setting a value to a boolean attribute by @jmsjtu in
+Other changes
+chore: fix broken build by @jmsjtu in
+chore: fix broken build by @jmsjtu in
+chore: fix broken build by @jmsjtu in
+chore: fix broken build by @jmsjtu in
+chore: fix broken build by @jmsjtu in
+Full Changelog: v2.17.0...v2.17.1
+Documentation
+In the OpenUI5 SDK, the LWC components are now documented in the UI5 SDK.
+In the OpenUI5 API Reference, the LWC components are now documented in the UI5 API Reference.
+In the LWC documentation, you can find more information about the LWC components in the LWC API Reference. The LWC SDK provides additional information about the LWC components, including samples, API documentation, and technical details.
+Note: The LWC components are only supported in applications that use SAPUI5 1.105 or higher.
+Note: The LWC components are only supported in applications that use SAPUI5 1.105 or higher.
+Note: The LWC components are only supported in applications that use SAPUI5 1.105 or higher.
+Note: The LWC components are only supported in applications that use SAPUI5 1.105 or higher.","Bug Fixes
+- engine-server: Fixes dynamic style property generation on SSR.
+- synthetic-shadow: Fixes issue with slotted text nodes in synthetic-shadow.
+Improvements
+- babel-plugin-component: Adds new renderComponent API to the @lwc/babel-plugin-component allow list.
+- engine-server: Adds support for global HTML attributes and AOM to the @lwc/engine-server.
+- engine-core: Exposes types used in WireAdapter: WireConfigValue, WireContextValue and WireAdapterSchemaValue.
+Internal
+- engine-core: Removes renderedCallback and reactivity for SSR.",2,5,2,3
+"Aws\EC2 - This release is for the launch of the new u7ib-12tb.224xlarge, R8g, c7gn.metal and mac2-m1ultra.metal instance types
+Aws\AutoScaling - Doc only update for Auto Scaling's TargetTrackingMetricDataQuery
+Aws\NetworkManager - This is model changes & documentation update for the Asynchronous Error Reporting feature for AWS Cloud WAN. This feature allows customers to view errors that occur while their resources are being provisioned, enabling customers to fix their resources without needing external support.
+Aws\WorkSpacesThinClient - This release adds the deviceCreationTags field to CreateEnvironment API input, UpdateEnvironment API input and GetEnvironment API output.","Aws\EC2 - This release is for the launch of the new u7ib-12tb.224xlarge, R8g, c7gn.metal and mac2-m1ultra.metal instance types
+Aws\AutoScaling - Doc only update for Auto Scaling's TargetTrackingMetricDataQuery
+Aws\NetworkManager - This is model changes & documentation update for the Asynchronous Error Reporting feature for AWS Cloud WAN. This feature allows customers to view errors that occur while their resources are being provisioned, enabling customers to fix their resources without needing external support.
+Aws\WorkSpacesThinClient - This release adds the deviceCreationTags field to CreateEnvironment API input, UpdateEnvironment API input and GetEnvironment API output.",3,2,2,3
+"This release includes the following enhancements and bug fixes:
+Add Prefect Agent on Kubernetes to the docs
+Add support for running Prefect Agent on a Windows Server machine
+Allow users to define custom flow run result handlers
+Fix issue with using FlowRunParameter's default values when setting up flow runs
+Add new input action, run_input
+Add the ability to use a run input action with the CLI deploy command
+Fix issue with flow run parameters not updating in the UI
+Add a new guide for running big data workflows with Prefect
+Add a new guide for using Prefect in CI/CD pipelines
+Add a new guide for creating human-in-the-loop workflows
+Add a new guide for creating a custom prefect deploy script
+Add new section on using prefect with GitHub Actions
+Add a new section on using prefect with Dask and Ray
+Add a new section on using prefect with the Prefect UI
+Add a new section on moving data between flows
+Add a new section on creating a Prefect Work Pool
+Add a new section on deploying prefect using the CLI
+Add a new section on using prefect with prefect deploy
+Add a new section on creating a prefect deployment
+Add a new section on using prefect in CI/CD
+Add a new section on using prefect with GitHub Actions
+Add a new section on using prefect with Dask and Ray
+Add a new section on using prefect with the Prefect UI
+Add a new section on moving data between flows
+Add a new section on creating a prefect Work Pool
+Add a new section on deploying prefect using the CLI
+Add a new section on creating a prefect deployment
+Add a new section on using prefect in CI/CD
+Add a new section on using prefect with prefect deploy
+Add a new section on using prefect in CI/CD
+Add a new section on using prefect with prefect deploy
+Add a new section on using prefect in CI/CD
+Add a new section on using prefect with prefect deploy
+Add a new section on using prefect in CI/CD
+Add a new section on using prefect with prefect","This release brings some exciting enhancements and fixes!
+Enhanced UI Customization
+Now featuring relative time spans like ""Past 7 days"" for better insight into current and upcoming flow runs across the UI.
+Flow Runs Page: Enhanced with customizable date and time filters. Save custom filters with specific date ranges for tailored views
+Flows Page: Updated with similar date and time filtering capabilities
+See a demonstration here!
+Get type-checked input from humans in the loop
+Human-in-the-loop flows just got an upgrade. You can now pause or suspend a flow and wait for type-checked input. To get started, declare the structure of the input data using a Pydantic model, and Prefect will render a form dynamically in the UI when a human resumes the flow. Form validation will ensure that the data conforms to your Pydantic model, and your flow will receive tbe input.
+Prefect's new RunInput class powers this experience. RunInput is a subclass of Pydantic's BaseModel. Here's an example of a RunInput that uses dates, literals, and nested Pydantic models to show you what's possible:
+class Person(RunInput):
+first_name: str
+last_name: str
+birthday: datetime.date
+likes_tofu: bool
+age: int = Field(gt=0, lt=150)
+shirt_size: Literal[ShirtSize.SMALL, ShirtSize.MEDIUM, ShirtSize.LARGE,
+ShirtSize.XLARGE]
+shirt_color: Literal[""red"", ""blue"", ""green""]
+preferred_delivery_time: datetime.datetime
+shipping_address: ShippingAddress
+billing_address: BillingAddress | SameAsShipping = Field(
+title="""", default_factory=SameAsShipping
+Check out our guide on how to create human-in-the-loop flows to learn more!
+Enhancements and Fixes
+Fixed environment variable parsing during deployment and prompt and role assignment in the ContainerInstanceProvisioner
+Enhanced dashboard header to adapt to various tag and date input sizes
+Addressed an error encountered when deploying flows with options
+See the release notes for details!",4,3,4,2
+"Bug Fixes
+deps: update babel monorepo () (22967a3)
+deps: update dependency es-module-lexer to v1.3.1 () (af1c7e0)
+handle cyclic dependencies in NFT bundler () (909382c)
+parse config as JSON () (3092484)","Bug Fixes
+deps: update babel monorepo () (22967a3)
+deps: update dependency es-module-lexer to v1.3.1 () (af1c7e0)
+handle cyclic dependencies in NFT bundler () (909382c)
+parse config as JSON () (3092484)",2,2,5,2
+"What's Changed
+fix: Remove unused code from the App SDK by @sauravdas1997 in
+chore: remove unneeded code from the App SDK by @sauravdas1997 in
+fix: Update app SDK to match the master by @sauravdas1997 in
+chore: remove unneeded code from the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+chore: Remove unused code from the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+chore: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @sauravdas1997 in
+fix: Add support for the Postgres connection in the App SDK by @saurFull Changelog: v1.10.0...v1.10.1
+Add a link to the App SDK on the App SDK page. by @sauravdas1997 in
+fix: Update App SDK to use the correct database type by @sauravdas1997 in
+fix: Update App SDK to use the correct database type by @sauravdas1997 in
+fix: Update App SDK to use the correct database type by @sauravdas1997 in
+fix: Update App SDK to use the correct database type by @sauravdas1997 in
+fix: Update App SDK to use the correct database type by @sauravdas1997 in
+fix: Update App SDK to use the correct database type by @sauravdas1997 in
+fix: Update App SDK to use the correct database type by @sauravdas1997 in
+fix: Update App SDK to use the correct database type by @sauravdas1997 in
+fix: Update App SDK to use the correct database type by @sauravdas1997 in
+fix: Update App SDK to use the correct database type by @sauravdas1997 in
+fix: Update App SDK to use the correct database type by @sauravdas1997 in
+fix: Update App SDK to use the correct database type by @sauravdas1997 in
+fix: Update App SDK to use the correct database type by @sauravdas1997 in
+fix: Update App SDK to use the correct database type by @sauravdas1997 in
+fix: Update App SDK to use the correct database type by @sauravdas1997 in
+fix: Update App SDK to use the correct database type by @sauravdas","What's new?
+Features
+UI updates to Signposting ()
+Make Query response table resizable ()
+Smart templates in Query create page ()
+In-app ramps for private embed feature ()
+Bug Fixes
+Remove the not found error in get snapshot API ()
+Fix API URL path stringification ()
+Fix throwing error 'Failed to execute function' when JSobject is deleted ()
+Fix Embedded Postgres file owner issue ()
+Allow localhost as a valid domain for the Image widget URL ()
+Changing the index for datasourceStorageStructure collection ()
+Make Table widget search work with Display text of URL columns ()
+Fix the forking reconnect modal issue ()
+Replace incorrect Datasource edit icon ()
+Fix Table widget default selected row on a page change when the primary key is selected ()
+Fix reconnect failure error after forking application ()
+Fix ADS select styles getting overridden by WDS components ()
+Show disabled New query button in form when Gsheet is not configured ()
+Make Radio Group widget options align with the label ()",3,2,3,4
+"Bug Fixes
+eventstore: add more options to the eventstore adapter (a5b1c9d)
+eventstore: fix getLog in eventstore lite (7c9d3e3)
+eventstore: fix getLog in eventstore mysql (d387953)","Full Changelog
+Enhancements:
+Improve jitter in readmodel-postgres adapter
+Add custom monitoring method. Add metric for reconnection times in postgresql eventstore adapter
+Bug fixes:
+Debug log masks don't match some package names
+Documentation:
+Update ES Adapter API Reference",2,2,2,5
+"Bug fixes
+[4b1b6d8] Use jQuery version lower than 3.5.0 (@javiereguiluz)
+[8e0d8ce] Fix a bug in the CodeMirror plugin (@javiereguiluz)
+[3f4b5a7] Fix the link to documentation","This release fixes a JavaScript problem of 2.3.6 version which broke the filters feature.
+Bug fixes
+[11d5c71] Updated easyadmin-promo.png URL in README file (@pavol-tk)
+[673e3db] Fixed the jQuery issue with Bootstrap 4 (@javiereguiluz)",4,4,3,2
+"Bug Fixes
+deps: update dependency scratch-blocks to v0.1.0-prerelease.20230323061137 (548f54e)","Bug Fixes
+deps: update dependency scratch-blocks to v0.1.0-prerelease.20230323061137 (548f54e)",4,2,4,5
+"Bug fixes
+e6e4f86 Support for custom loaders in runner
+e6b7f4c from_wsgi loader accept custom keyword arguments
+Chores and Improvements
+2a5f5e7 Release 1.1.2
+Other
+f0c9a4f Update changelog
+0f7c1c6 Update changelog
+d8d4e6d Update changelog
+f5d4a1e Update changelog
+c6d4b74","Bug fixes
+b0e21e2 Pass custom keyword arguments to client.get in the from_wsgi loader
+d34ec2b Support for custom loaders in runner
+Chores and Improvements
+524bf4d Release 1.1.2
+Other
+1dc48b5 Add more different keywords to the test app's /api/payload endpoint
+604a7bd Fix test app invalid_path_parameter endpoint
+a0973a4 Fix typo
+128ba24 Remove unused schema argument from runner internals",3,4,5,3
+,"Features:
+Included lastChanged (timestamp) to application entities in rest-backend
+Added asOf=<unixTimestamp> query string parameter to apps and hubIntegration/apps endpoints
+Added number of displayed apps in Web frontend
+Added config param to specify a Python binary to be used when setting up virtualenv
+Improvements:
+Improved performance of loading app vulnerability indicators in workspace
+Bugs fixes:
+Fixed serialization of spaces from tenant endpoints
+Fixed docker setup when no proxy is used                                                     ",3,2,3,3
+"Bug Fixes
+deps: update dependency @netlify/plugins-list to ^6.46.0 () (e2a6a3d)","Bug Fixes
+deps: update dependency @netlify/plugins-list to ^6.46.0 () (2c5a9d0)",2,4,2,4
+"Bug Fixes
+core: add missing types to Avatar interface () (e9d9d7d)
+core: add missing types to Button interface () (e3d0f41)
+core: add missing types to ItemDivider interface () (d2f3b2a)
+core: add missing types to ItemOption interface () (d3b3d3b)
+core: add missing types to Range interface () (6a0a9a5)
+core: add missing types to Select interface () (8a3c8b7)
+core: add missing types to Swiper interface () (a3f1b85)
+core: add missing types to TabBar interface () (d8d4f4d)
+core: add missing types to Tabs interface () (f1d5b75)
+core: add missing types to Toolbar interface () (a8a8c5b)
+core: add missing types to Content interface () (d1f9b5f)
+core: add missing types to Item interface () (4f9b7b3)
+core: add missing types to ItemSliding interface () (c2b3a9d)
+core: add missing types to ItemSliding options () (e6f4c9f)
+core: add missing types to Range options () (9e4a7d6)
+core: add missing types to RangeSlider interface () (8d9a2e8)
+core: add missing types to RangeSlider options () (8d9a2e8)
+core: add missing types to Select interface () (e5c1d5c)
+core: add missing types to Select options () (8c0a4e7)
+core: add missing types to Select options () (0c8c4a8)
+core: add missing types to Swiper interface () (a3f1b85)
+core: add missing types to TabBar interface () (d8d4f4d)
+core: add missing types to Tabs interface () (f1d5b75)
+core: add missing types to Toolbar interface () (a8a8c5b)
+core: add missing types to TabBar options () (2a2b2e0)
+core: add missing types to TabBar options () (d0a0e4f)
+core: add missing types to Tabs options () (b9f9e0d)
+core: add missing types to Toolbar options () (e3f3e7f)
+react: add missing types to Avatar interface () (e9d9d7d)
+react: add missing types to Button interface () (e3d0f41)
+react: add missing types to ItemDivider interface () (d2f3b2a)
+react: add missing types to ItemOption interface () (d3b3d3b)
+react: add missing types to Range interface () (6a0a9a5)
+react: add missing types to Select interface () (8a3c8b7)
+react: add missing types to Swiper interface () (a3f1d8e: fix range value typing
+a1e8c5b: Update BREAKING.md
+a5a2d0b: Update BREAKING.md
+1b1b8e8: Update BREAKING.md
+a2a3f00: Update BREAKING.md
+e5c1d5c: Update BREAKING.md
+b5b5b2c: Update BREAKING.md
+a7c8b85: Update BREAKING.md
+f6d3c3d: Update BREAKING.md
+c7c7d6d: Update BREAKING.md
+0f9b6c8: Update BREAKING.md
+0c0f4e8: Update BREAKING.md
+a0f6c3c: Update BREAKING.md
+0d7a2e5: Update BREAKING.md
+4a5d6e6: Update BREAKING.md
+d7d5f7d: Update BREAKING.md
+2a3e3b1: Update BREAKING.md
+e8a3c0d: Update BREAKING.md
+c9a0f7b: Update BREAKING.md
+4f2f6f7: Update BREAKING.md
+b6b2e4f: Update BREAKING.md
+2d6c4bc: Update BREAKING.md
+f6b3c1d: Update BREAKING.md
+1e6a6a6: Update BREAKING.md
+a9a5f6c: Update BREAKING.md
+f7c7d0d: Update BREAKING.md
+c9f6e8e: Update BREAKING.md
+e4f9c5a: Update BREAKING.md
+a0c9c2d: Update BREAKING.md
+1f9a6b1: Update BREAKING.md
+2","Bug Fixes
+button: show proper shade for activated button on ios () (3a9b679), closes
+config: update types for scrollPadding, inputBlurring and hideCaretOnScroll to boolean () (39fbc32)
+datetime: default to current date when no value given () (644f9f4)
+item-sliding: sliding no longer breaks after removing an item () (e27bb2e)
+range: implement RTL (from PR 17157) () (4f203bc), closes
+searchbar: allow setting of toolbar color and searchbar color () (ba4e117)
+select: account for when options are not loaded immediately () (f9f1775)
+tab-bar: add translucent tab-bar styles back () (374bd77)",5,3,2,2
+"Bug Fixes
+chips: Casing for isLeadingIconVisibile method () (ee622e9)
+line-ripple: Rename adapter method setAttr to setStyle () (e46730e)
+select: Use templateRef for options () (aca8fa2)
+text-field: Should display notched outline () (6f5d6b6)
+Features
+image-list: Add mdc image list component () (c7c9c52)
+text-field: Add formControlName to text field () (b9c7f80)
+text-field: Add mdc-text-field with formControlName to demo app () (5a2e5f0)
+text-field: Add MDC text field component () (a3b1b1a)
+text-field: Add MDC text field with formControlName to demo app () (a3b1b1a)
+text-field: Add MDC text field with formControlName to demo app () (e0b4b3d)
+text-field: Add MDC text field with formControlName","Bug Fixes
+app-bar: Should remove short-collapsed class () (1743f01)
+checkbox: Set ripple interaction to native input () (d748635)
+checkbox: Should use stopPropagation for click event () (ad6b2b1)
+dialog: Remove unused declarations () (e7353cf)
+text-field: Errors for Outlined init () (9baabfa)
+text-field: Set display property for mdc-text-field-helper-text () (4d48108)
+text-field: Should reset ngModel and FormControl values () (f31df0e), closes
+Features
+image-list: Implement MDC Image List () (3a01d66)
+fab: Add public methods for UX states () (c1fe757)
+grid-list: Add selector mdcGridTilePrimaryContent () (7de1d71)
+lists: Add multiple property + Improvements () (103c8af), closes
+BREAKING CHANGES
+Removed toggle(), select() and deselect() methods from mdc-list-item. Please update your code to use setSelected(selected: boolean).",2,4,2,5
+,"Features
+cli:  --watch  (70feeae)
+client:  (a16fe00)
+client:  (335b830)
+client:  (e7b1dda)
+client:  array / dict  (4cd67c5)
+client:  array / dict  (21cc5e0)
+manager:  .npmrc  registry  () (5a71a66)
+manager:  (ca069ba)
+manager:  (20bfc80)
+scripts: init  --console  (17b6f44)
+Bug Fixes
+console:  DataService  (48f039a)
+manager:  /  (4c48b7a)
+manager:  url  (2ff5093)
+Other Changes
+chore: tweak sandbox layout (bf69a57)
+docs: add console demo screenshots (adeaa6c)
+docs: add console demo to home (0c50ca0)
+docs: refactor (abd4866)
+docs: add more demo images (2d88798)
+docs: install and configurate plugins (951ea2d)
+docs: plugin development (42dfde4)
+refa: adjust schema usage (95c609e)
+chore: bump versions (a83eab5)",3,2,3,4
+"What's Changed
+fix(deps): update dependency org.testcontainers:spock to v1.19.2 by @renovate in
+Update docker to 1.11.0 by @msperlich in
+Update dependency org.testcontainers:spock to v1.19.3 by @renovate in
+fix(deps): update dependency org.testcontainers:testcontainers to v1.19.3 by @renovate in
+Update dependency org.testcontainers:testcontainers to v1.19.4 by @renovate in
+Update dependency org.testcontainers:spock to v1.19.4 by @renovate in
+Update CodeQL workflow to use temurin by @msperlich in
+Update dependency org.testcontainers:testcontainers to v1.19.5 by @renovate in
+Update dependency org.testcontainers:spock to v1.19.5 by @renovate in
+Update CodeQL workflow to use temurin by @msperlich in
+Update dependency org.testcontainers:spock to v1.19.6 by @renovate in
+Update CodeQL workflow to use temurin by @msperlich in
+Update dependency org.testcontainers:testcontainers to v1.19.6 by @renovate in
+Update CodeQL workflow to use temurin by @msperlich in
+New Contributors
+@renovate made their first contribution in
+@msperlich made their first contribution in
+Full Changelog: 2.12.0...2.12.1
+Docker Container
+docker pull docker.io/s3transfer/jersey-s3-transfer-manager:2.12.1
+docker pull docker.io/s3transfer/jersey-s3-transfer-manager:latest
+docker pull docker.io/s3transfer/jersey-s3-transfer-manager:2
+docker pull docker.io/s3transfer/jersey-s3-transfer-manager:2.12
+docker pull docker.io/s3transfer/jersey-s3-transfer-manager:latest-2
+docker pull docker.io/s3transfer/jersey-s3-transfer-manager:2.12.1-java17
+docker pull docker.io/s3transfer/jersey-s3-transfer-manager:2-java17
+docker pull docker.io/s3transfer/jersey-s3-transfer-manager:2.12-java17
+docker pull docker.io/s3transfer/jersey-s3-transfer-manager:latest-java17
+docker pull docker.io/s3transfer/jersey-s3-transfer-manager:2.12.1-java17
+docker pull docker.io/s3transfer/jersey-s3-transfer-manager:2-java17
+docker pull docker.io/s3transfer/jersey-s3-transfer-manager:2.12-java17
+docker pull docker.io/s3transfer/jersey-s3-transfer-manager:latest-java17
+Docker images can be found on Docker Hub: https://hub.docker.com/r/s3transfer/jersey-s3-transfer-manager/
+The Maven JAR and Windows executables can be downloaded from https://mvnrepository.com/artifact/com.amazonaws/s3transfer/jersey-s3-transfer-manager/2.12.1
+What's Changed
+fix(deps): update dependency org.testcontainers:spock to v1.19.2 by @renovate in
+Update docker to 1.11.0 by @msperlich in
+Update dependency org.testcontainers:spock to v1.19.3 by @renovate in
+Update docker to 1.11.0 by @msperlich in
+Update dependency org.testcontainers:spock to v1.19.4 by @renovate in
+Update dependency org.testcontainers:testcontainers to v1.19.5 by @renovate in
+Update dependency org.testcontainers:spock to v1.19.5 by @renovate in
+Update CodeQL workflow to use temurin by @msperlich in
+Update CodeQL workflow to use temurin by @msperlich in
+Update dependency org.testcontainers:spock to v1.19.6 by @renovate in
+Update CodeQL workflow to use temurin by @msperlich in
+Update CodeQL workflow to use temurin by @msperlich in
+New Contributors
+@renovate made their first contribution in
+@msperlich made their first contribution in
+Full Changelog: 2.12.0...2.12.1
+Docker Container
+docker pull docker.io/s3transfer/jersey-s3-transfer-manager:2.12.1
+docker pull docker.io/s3transfer/jersey-s3-transfer-manager:latest
+docker pull docker.io/s3transfer/jersey-s3-transfer-manager:2
+docker pull docker.io/s3transfer/jersey-s3-transfer-manager:2.12
+docker pull docker.io/s3transfer/jersey-s3-transfer-manager:latest-2","2.x is JDK8 LTS bytecode compatible, with Docker and JUnit / direct Java integration.
+Features and fixes
+Expose all headers for CORS requests (fixes)
+Fixed various error responses, validations and http return codes
+Verified all integration tests against the AWS S3 API, fixed S3Mock to match S3 responses exactly.
+Version updates
+Bump spring-boot.version from 2.7.6 to 2.7.7
+Bump testng from 7.7.0 to 7.7.1
+Bump checkstyle from 10.5.0 to 10.6.0
+Bump alpine from 3.17.0 to 3.17.1 in /docker
+Bump xmlunit-assertj3 from 2.9.0 to 2.9.1
+Bump maven-failsafe-plugin from 3.0.0-M7 to 3.0.0-M8
+Bump maven-checkstyle-plugin from 3.2.0 to 3.2.1
+Bump maven-surefire-plugin from 3.0.0-M7 to 3.0.0-M8
+Bump aws-java-sdk-s3 from 1.12.369 to 1.12.389
+Bump aws-v2.version from 2.19.1 to 2.19.16
+What's Changed
+ci: migrate to Temurin by @yeikel in
+New Contributors
+@yeikel made their first contribution in
+Full Changelog: 2.11.0...2.12.1",2,2,4,3
+"Bug Fixes
+auth-provider: Fix password reset link (e4f3a9b)
+auth-provider: Fix password reset link (2d2d8e4)
+auth-provider: Fix password reset link (c7b9a6f)
+auth-provider: Fix password reset link (2b5a7a4)
+auth-provider: Fix password reset link (b5f7d1a)
+auth-provider: Fix password reset link (b8f6f99)
+auth-provider: Fix password reset link (2a9d6e5)
+auth-provider: Fix password reset link (6b2c0d6)
+auth-provider: Fix password reset link (5e0f9f9)
+auth-provider: Fix password reset link (5b4e8e9)
+auth-provider: Fix password reset link (4a8a2e5)
+auth-provider: Fix password reset link","@semapps/signature
+Move proxy service to signature package, split keypair service ab62eeb @srosset81 ( Breaking changes)
+Handle non-GET methods on proxy endpoint through multipart/form-data 81793af @srosset81
+@semapps/notifications
+Add formatLink method to single-mail notifications a5dda0e @srosset81
+Allow to add delay before processing notifications 42a82eb @srosset81
+@semapps/auth
+Local login: allow to redirect /auth to a given frontend URL 22e5f1c (formUrl)  @srosset81
+Fix reset password mails if frontendUrl has a trailing slash 4b16b95 @srosset81
+@semapps/webacl
+Fix getAclUriFromResourceUri if ending slash is missing from baseUrl 923de06 @srosset81",4,2,4,2
+"Improvements
+Update kimai/kimai-bundle to 1.1.3
+Update kimai/kimai-bundle to 1.1.4
+Update kevinpapst/tabler-bundle to 0.21
+Bugfixes
+Fix error in quick-entry
+Fix issue with mobile-friendly datepicker
+Fix issue with tag delete button","Upgrade Kimai - Install Kimai - Docker
+Compatible with PHP 8.1 and 8.2
+Enhancements
+Modernized flat form styles ()
+Use collapsible element instead of collapsible card ()
+Support visibility for tags ()
+Make setting ""rounding days"" optional ()
+Developer improvements ()
+Involved in this release: @kevinpapst - thank you!",2,3,2,3
+"Build System
+Fixes
+fix(react): fix react-native preset to build in separate folder ()
+React Native
+Fixes
+fix(react-native): fix react-native preset to build in separate folder ()
+Documentation
+Fixes
+fix(cli): add sb init to sb version output ()
+Dependencies
+Other
+fix(deps): update dependency @storybook/global to v0.0.14 ()
+fix(deps): update dependency @storybook/source-loader to v0.0.11 ()
+fix(deps): update dependency @storybook/storybook-logger to v0.0.12 ()
+fix(deps): update dependency @storybook/test to v0.0.10 ()
+fix(deps): update dependency @storybook/test to v0.0.11 ()
+fix(deps): update dependency @storybook/test to v0.0.12 ()
+fix(deps): update dependency @storybook/test to v0.0.13 ()
+fix(deps): update dependency @storybook/test to v0.0.14 ()
+fix(deps): update dependency @storybook/test to v0.0.15 ()
+fix(deps): update dependency @storybook/test to v0.0.16 ()
+fix(deps): update dependency @storybook/test to v0.0.17 ()
+fix(deps): update dependency @storybook/test to v0.0.18 ()
+fix(deps): update dependency @storybook/test to v0.0.19 ()
+fix(deps): update dependency @storybook/test to v0.0.20 ()
+fix(deps): update dependency @storybook/test to v0.0.21 ()
+fix(deps): update dependency @storybook/test to v0.0.22 ()
+fix(deps): update dependency @storybook/test to v0.0.23 ()
+fix(deps): update dependency @storybook/test to v0.0.24 ()
+fix(deps): update dependency @storybook/test to v0.0.25 ()
+fix(deps): update dependency @storybook/test to v0.0.26 ()
+fix(deps): update dependency @storybook/test to v0.0.27 ()
+fix(deps): update dependency @storybook/test to v0.0.28 ()
+fix(deps): update dependency @storybook/test to v0.0.29 ()
+fix(deps): update dependency @storybook/test to v0.0.30 ()
+fix(deps): update dependency @storybook/test to v0.0.31 ()
+fix(deps): update dependency @storybook/test to v0.0.32 ()
+fix(deps): update dependency @storybook/test to v0.0.33 ()
+fix(deps): update dependency @storybook/test to v0.0.34 ()
+fix(deps): update dependency @storybook/test to v0.0.35 ()
+fix(deps): update dependency @storybook/test to v0.0.36 ()
+fix(deps): update dependency @storybook/test to v0.0.37 ()
+fix(deps): update dependency @storybook/test to v0.0.38 ()
+fix(deps): update dependency @storybook/test to v0.0.39 ()
+fix(deps): update dependency @storybook/test to v0.0.40 ()
+fix(deps): update dependency @storybook/test to v0.0.41 ()
+fix(deps): update dependency @storybook/test to v0.0.42 ()
+fix(deps): update dependency @storybook/test to v0.0.43 ()
+fix(deps): update dependency @storybook/test to v0.0.44 ()
+fix(deps): update dependency @storybook/test to v0.0.45 ()
+fix(deps): update dependency @storybook/test to v0.0.46 ()
+fix(deps): update dependency @storybook/test to v0.0.47 ()
+fix(deps): update dependency @storybook/test to v0.0.48 ()
+fix(deps): update dependency @storybook/test to v0.0.49 ()
+fix(deps): update dependency @storybook/test to v0.0.50 ()
+fix(deps): update dependency @storybook/test to v0.0.51 ()
+fix(deps): update dependency @storybook/test to v0.0.52 ()
+fix(dedeps): update dependency @storybook/test to v0.0.53 ()
+fix(deps): update dependency @storybook/test to v0.0.54 ()
+fix(deps): update dependency @storybook/test to v0.0.55 ()
+fix(deps): update dependency @storybook/test to v0.0.56 ()
+fix(deps): update dependency @storybook/test to v0.0.57 ()
+fix(deps): update dependency @storybook/test to v0.0.58 ()
+fix(deps): update dependency @storybook/test to v0.0.59 ()
+fix(deps): update dependency @storybook/test to v0.0.60 ()
+fix(deps): update dependency @storybook/test to v0.0.61 ()
+fix(dedeps): update dependency @storybook/test to v0.0.62 ()
+fix(deps): update dependency @","Bug Fixes
+Typescript: Fix bad typings caused by tsup bug
+Migrate: skip the automigration for gf markdown when user isn't using mdx
+UI: Addon panel does not update after disabling/enabling an addon
+Vue3: Fix compiler error when there is double tag
+Args: Fix multiple mapped args return array of labels
+CLI: Add web-components webpack5 to missing-babelrc automigration
+Docs: Fix inline story style
+UI: Fix shift + 7 shortcut to focus search field
+UI: Fix controls missing when navigating from story
+NextJS: Fix tsconfig resolution
+Maintenance
+Telemetry: Persist sessionId across runs
+Packaging: Move types condition to the front in all package.json.exports maps
+Core: Rename manager UI mjs to js
+Angular: Add support for Angular 16
+Packaging: Don't generate ESM dist for preset files
+Packaging: Fix url for all packages in package.json
+Add regex to ignore outdated Browserslist in Jest initialization base file",2,2,3,5
+"Breaking changes
+- Python 2 support has been dropped.
+- The ""Play next"" hotkey has been removed. This feature was causing a lot of trouble and wasn't used by most users. It's still possible to enable it using the ""Show advanced settings"" menu.
+- The ""Start after last"" hotkey has been removed. This feature was causing a lot of trouble and wasn't used by most users. It's still possible to enable it using the ""Show advanced settings"" menu.
+- The ""Play next"" and ""Start after last"" buttons have been removed from the GUI.
+- The ""Play next"" button has been removed from the console.
+- The ""Start after last"" button has been removed from the console.
+- The ""Start after last"" hotkey has been removed from the console.
+- The ""Stop after last"" button has been removed from the console.
+- The ""Stop after last"" hotkey has been removed from the console.
+- The ""Stop after last"" hotkey has been removed from the GUI.
+- The ""Start at the beginning"" hotkey has been removed from the GUI.
+- The ""Stop after last"" hotkey has been removed from the GUI.
+- The ""Start at the beginning"" hotkey has been removed from the console.
+- The ""Stop","Headline additions:
+Added server-only Debian package (PR by daniel-123 responding to suggesion by tippl)
+Add manpages (implemented by daniel-128 based on work contributed by Bruno Kleinert in)
+Tweaks and bug fixes include:
+Improve playlist advancement for VLC and mpv (PR by Et0h, responding to by Canageek)
+Fix VLC connection issues
+Update mpv vendor code (daniel-123 & albertosottile; see PR)
+Added more MPC-HC paths ( raised by MarisKori, resolve by Et0h)
+Fix issues with per-player arguments ( raised by LiteracyFanatic, resolved by Et0h)
+Update to Russian translations ( by OlegSmelov)
+Various improvements to the Deb script (coded by daniel-123)
+Add some input characters for mpv, some of which might work ( raised by jvschiavo and implemented by Et0h)
+(Hopefully) ignore benign AA_EnableHighDpiScaling error (see post by Et0h)
+Move from AppVeyor to GitHub Actions ( by albertosottile)
+Add notice for Python in third party collection file (PR by albertosottile)
+Discontinue support for snap packages (as explained in by daniel-123)",3,2,2,3
+"Bug Fixes
+Remove node 11 from Travis CI (7b7e5c1)
+fixes: Don't require fragment name to be defined (7b1f1c9)
+Update to new flowtype version (d8f6e79)
+Use flowtype version 0.158.0 (c2d2c85)
+Update flowtype version (b8b0e64)
+Update flowtype version (d2d1e9f)
+Fix flowtype version (e3e8a8f)
+Update flowtype version (b6d0b8e)
+Update flowtype version (b7f2f15)
+Update flowtype version (e5c8f5c)
+Update flowtype version (f8daee8)","Bug Fix
+Switch some of arguments from Array to $ReadOnlyArray (@IvanGoncharov)
+Mark user-provided 'variableValues' as read-only (@IvanGoncharov)
+Polish
+dedent: Simplify and remove unused features (@IvanGoncharov)
+Internal
+4 PRs were merged
+Add ""postversion"" step to commit changed files (@IvanGoncharov)
+changelog: Remove duplicate PRs (@IvanGoncharov)
+Travis: Disable automatic publishing on NPM (@IvanGoncharov)
+Travis: remove Node.js v11 from test matrix (@IvanGoncharov)
+Committers: 1
+Ivan Goncharov(@IvanGoncharov)",2,4,4,2
+"Small updates to methods that use CSS selectors
+Double-click method
+assert_element, assert_elements, assert_element_absent, and assert_elements_absent methods.","Bug fixes and test updates
+Fix double_click() for older versions of ChromeDriver
+Race through chart display if running in headless mode
+Update example tests",2,2,3,5
+"This release brings the following improvements:
+Improvements to CLI
+Added more constraints
+Bug fixes
+Enhanced API
+Added a new augmentation API
+Fixed issues with constraint and transformation loading
+Fixed issues with model prediction and loading
+Added support for Chinese language
+Added a new attack recipe
+Added support for Spanish
+Added support for French
+Added support for Arabic
+Added support for Turkish
+Added support for Russian
+Added support for Hindi
+Added support for Hindi
+Added support for Bengali
+Added support for Urdu
+Added support for Portuguese
+Added support for German
+Added support for Polish
+Added support for Greek
+Added support for Swedish
+Added support for Italian
+Added support for Japanese
+Added support for Vietnamese
+Added support for Chinese (Simplified)
+Added support for Chinese (Traditional)
+Added support for Indonesian
+Added support for Korean
+Added support for Persian
+Added support for Hebrew
+Added support for Danish
+Added support for Finnish
+Added support for Norwegian
+Added support for Swedish
+Added support for Thai
+Added support for Thai
+Added support for Vietnamese
+Added support for Filipino
+Added support for Hebrew
+Added support for Greek
+Added support for Icelandic
+Added support for Czech
+Added support for Slovak
+Added support for Turkish
+Added support for Hindi
+Added support for Indonesian
+Added support for Swahili
+Added support for Vietnamese
+Added support","What's Changed
+Fix faster-alzantot recipe references by @marcorosa in
+Add back transcription augmentation method by @skorzewski in
+Polish dependencies and support python3.11 by @marcorosa in
+Update update_test_outputs.py by @qiyanjun in
+Add support for prompt augmentation by @k-ivey in
+Increase the swap file size of the GitHub actions runner by @k-ivey in
+Consistent word swap by @k-ivey in
+update docs with missing api by @qiyanjun in
+Typo corrections in installation docs by @dmlls in
+Do not use pipeline to achieve faster generation of Chinese mask repl… by @liuyuyan2717 in
+Rename BERT constraint to SBERT by @k-ivey in
+Word Swap Qwerty Failure Bug Fix by @jstzwj in
+disable tests while compute issues are resolved by @jxmorris12 in
+New Contributors
+@dmlls made their first contribution in
+@marcorosa made their first contribution in
+@liuyuyan2717 made their first contribution in
+@jstzwj made their first contribution in
+@skorzewski made their first contribution in
+Full Changelog: v0.3.9...v0.3.10",3,2,5,2
+"Patches
+Update package.json: 7f9b7fc
+Merge branch'master' into: 0b8eef5
+Merge pull request from imolorhe/staging: 7a3b2be
+Merge branch'master' into: 9e6a7fe
+Merge pull request from imolorhe/feat/firebase-functions: 1d4d2f6
+Merge branch'master' into: 3a3e2ee
+Merge branch'master' into: 3f2f3d2
+Merge pull request from imolorhe/feat/firebase-functions: 8f7f6e9
+Merge branch'master' into: 8e4b7a5
+Merge pull request from imolorhe/feat/firebase-functions: 4d7c7f5
+Merge branch'master' into: 7a7d8e7
+Merge branch'master' into: e9b8a79
+Merge pull request from imolorhe/feat/firebase-functions: 9e8d4b5
+Merge branch'master' into: 2b0a7d6
+Merge pull request from imolorhe/feat/firebase-functions: 6a9e3a9
+Merge branch'master' into: 0b0a8a4
+Merge branch'master' into: 0f1a1c8
+Merge pull request from imolorhe/feat/firebase-functions: 4d5e5d7
+Merge branch'master' into: 4f8a7a1
+Merge branch'master' into: 7d7c3f7
+Merge pull request from imolorhe/feat/firebase-functions: 7c4a8b9
+Merge branch'master' into: 5e1a3a9
+Merge branch'master' into: 7b0f4a6
+Merge pull request from imolorhe/feat/firebase-functions: 1a0a1d5
+Merge branch'master' into: 6f6f5f6
+Merge branch'master' into: 5c9f9e7
+Merge pull request from imolorhe/feat/firebase-functions: 6a3c8e9
+Merge branch'master' into: 8b8f8d6
+Merge branch'master' into: 8a5f1b3
+Merge branch'master' into: 9d5f0f1
+Merge pull request from imolorhe/feat/firebase-functions: 4a9c3e6
+Merge branch'master' into: 0f0c0a1
+Merge branch'master' into: 6b3f7f7
+Merge branch'master' into: 5f0f8c6
+Merge branch'master' into: 6a6c2e0
+Merge branch'master' into: 4e9e0d5
+Merge branch'master' into: 8f5f2e0
+Merge branch'master' into: 0b7c0a9
+Merge branch'master' into: 6f9e7cb
+Merge branch'master' into: 6e9f5e0
+Merge branch'master' into: 8c5f5ec
+Merge branch'master' into: 4c7e4b3
+Merge branch'master' into: 8a3b7Merge branch'master' into: 5e5c0c4
+Merge branch'master' into: 3d3e0f0
+Merge branch'master' into: 7e0e6b3
+Merge branch'master'Patches
+Merge pull request from imolorhe/staging: 2e9f4b5
+Merge branch'master' into: 7a7d8e7
+Merge branch'master' into: 8c8d7d5
+Merge branch'master' into: 2e8c9ce
+Merge branch'master' into: 7e1e1b7
+Merge branch'master' into: 0a9f5d9
+Merge branch'master' into: 8c5e8e8
+Merge branch'master' into: 6d8d4f7
+Merge branch'master' into: 4e7f6c6
+Merge branch'master' into: 1f4b6ec
+Merge branch'master' into: 8b1d1f7
+Merge branch'master' into: 1c5c3c9
+Merge branch'master' into: 1d5f6fc
+Merge branch'master' into: 7e6b0d6
+Merge branch'master' into: 9e9e8d9","What's Changed
+New Crowdin updates by @imolorhe in
+Added more rules tests by @imolorhe in
+enabled strict templates in app by @imolorhe in
+prettier/eslint improvements by @imolorhe in
+Enabled tsconfig strict option by @imolorhe in
+Moved electron auth client and updated firestore rules by @imolorhe in
+enabled eslint in altair-app by @imolorhe in
+added function to delete queries when deleting collections by @imolorhe in
+added manage team link in app by @imolorhe in
+used private @altairgraphql/ scope for private packages by @imolorhe in
+use cm6-graphql package by @imolorhe in
+added newsletter subscribe button by @imolorhe in
+Normalize headers before use by @imolorhe in
+Full Changelog: v5.0.10...v5.0.11",2,2,2,5
+"This is a minor maintenance release appropriate for all ServiceTalk users that contains several bug fixes and improvements.
+This is the last planned 0.42.x release. The next release will be 0.43.0 which will contain a number of breaking changes to the API.
+Changes
+Bug fixes
+Fix the issue where the GlobalExecutor may not use the expected executor. ()
+Improvements
+Log a warning when a response is closed twice. ()
+Log a warning when a connection is closed twice. ()
+Log a warning when a request is cancelled twice. ()
+Log a warning when a request is completed twice. ()
+Documentation
+Add documentation for the JacksonSerializerMessageBodyReaderWriter. ()
+Dependency updates
+Bump com.google.errorprone:error_prone_core from 2.13.2 to 2.13.3. ()
+Bump io.projectreactor:reactor-test from 3.4.17 to 3.4.18. ()
+Bump io.netty:netty-bom from 4.1.74.Final to 4.1.75.Final. ()
+Bump io.netty:netty-tcnative-bom from 2.0.51.Final to 2.0.52.Final. ()
+Bump io.netty:netty from 4.1.74.Final to 4.1.75.Final. ()
+Bump org.testcontainers:testcontainers-bom from 1.17.4 to 1.17.5. ()
+Bump org.testcontainers:testcontainers-bom from 1.17.3 to 1.17.4. ()
+Bump org.testcontainers:testcontainers-bom from 1.17.2 to 1.17.3. ()
+Bump org.testcontainers:testcontainers-bom from 1.17.1 to 1.17.2. ()
+Bump org.testcontainers:testcontainers-bom from 1.17.0 to 1.17.1. ()
+Bump org.testcontainers:testcontainers-bom from 1.16.1 to 1.17.0. ()
+Thank you
+Every idea, review, and bug-report counts and so we thought it is worth mentioning those who helped in this area. Please report any unintended omission.
+@bondolo
+@idelpivnitskiy
+@Scottmitch
+@tkountis
+@thachlp
+@tkountis
+@tkountis
+@tkountis
+@tkountis
+@tkountis
+@tkountis
+@tkountis
+@tkountis
+@tkountis
+@tkountis
+@tkountis
+@tkountis
+@tkountis
+@tkountis
+@tkountis
+@tkountis
+@tkountis
+@tkountis
+@tkountis
+@tkountis
+@tkountis
+@tkountis
+@tkountis
+@tkountis
+@tkountis
+@tkountis
+@tkountis
+@tkountis
+@tkountis
+@tkountis
+@tkountis
+@tkountis
+@tkountis
+@tkountis
+@tkountis","Changes
+This is a minor maintenance release appropriate for all ServiceTalk users that contains several bug fixes and improvements. It contains all changes released in 0.41.14 plus the following:
+New features
+d31c0dc - Publisher#multicast option to not cancel upstream ()
+5fe4903 - Implement setClassLevel() for ExecutorExtension ()
+Bug fixes
+e3b3c3c - Fix jersey-jackson not considering deprecated JacksonSerializationProvider ()
+Improvements
+dd99c4f - Use setClassLevel(true) on static instances ()
+886cbcd - Default requiredOffloads use influenceStrategy ()
+Documentation
+6848b09 - Update Jersey Router documentation ()
+3720865 - Fix jackson-jersey references to deprecated classes ()
+Thank you
+Every idea, review, and bug-report counts and so we thought it is worth mentioning those who helped in this area. Please report an unintended omission.
+@bondolo
+@chemicL
+@idelpivnitskiy
+@Scottmitch
+@tkountis",2,2,3,2
+"What's Changed
+Bug Fixes
+fix: Email confirmation link broken on subdomains by @SchrodingersGat in
+Documentation
+doc: Fix report.md by @SchrodingersGat in
+doc: Fix typo in install.md by @SchrodingersGat in
+Other Changes
+build(deps): bump django-cors-headers from 3.11.0 to 3.11.1 by @dependabot in
+build(deps): bump django-graphql-core from 2.3.1 to 2.3.2 by @dependabot in
+build(deps): bump django-graphql-playground from 2.0.1 to 2.0.2 by @dependabot in
+build(deps): bump django-graphql-ws from 1.3.1 to 1.3.2 by @dependabot in
+build(deps): bump django-rest-auth from 3.4.0 to 3.4.1 by @dependabot in
+build(deps): bump django-stripe-payments from 2.7.0 to 2.7.1 by @dependabot in
+build(deps): bump django-stripe-payments from 2.7.1 to 2.7.2 by @dependabot in
+build(deps): bump django-stripe-payments from 2.7.2 to 2.7.3 by @dependabot in
+build(deps): bump django-stripe-payments from 2.7.3 to 2.7.4 by @dependabot in
+build(deps): bump django-stripe-payments from 2.7.4 to 2.7.5 by @dependabot in
+build(deps): bump django-stripe-payments from 2.7.5 to 2.7.6 by @dependabot in
+build(deps): bump django-stripe-payments from 2.7.6 to 2.7.7 by @dependabot in
+build(deps): bump django-stripe-payments from 2.7.7 to 2.7.8 by @dependabot in
+build(deps): bump django-stripe-payments from 2.7.8 to 2.7.9 by @dependabot in
+build(deps): bump django-stripe-payments from 2.7.9 to 2.7.10 by @dependabot in
+build(deps): bump django-stripe-payments from 2.7.10 to 2.7.11 by @dependabot in
+build(deps): bump django-stripe-payments from 2.7.11 to 2.7.12 by @dependabot in
+build(deps): bump django-stripe-payments from 2.7.12 to 2.7.13 by @dependabot in
+build(deps): bump django-stripe-payments from 2.7.13 to 2.7.14 by @dependabot in
+build(deps): bump django-stripe-payments from 2.7.14 to 2.7.15 by @dependabot in
+build(deps): bump django-stripe-payments from 2.7.15 to 2.7.16 by @dependabot in
+build(deps): bump django-stripe-payments from 2.7.16 to 2.7.17 by @dependabot in
+build(deps): bump django-stripe-payments from 2.7.17 to 2.7.18 by @dependabot in
+build(deps): bump django-stripe-payments from 2.7.18 to 2.7.19 by @dependabot in
+build(deps): bump django-stripe-payments from 2.7.19 to 2.7.20 by @dependabot in
+build(deps): bump django-stripe-payments from 2.7.20 to 2.7.21 by @dependabot in
+build(deps): bump django-stripe-payments from 2.7.21 to 2.7.22 by @dependabot in
+build(deps): bump django-stripe-payments from 2.7.22 to 2.7.23 by @dependabot in
+build(deps): bump django-stripe-payments from 2.7.23 to 2.7Full Changelog: 1.10.0...1.10.1
+What to do next?
+Read the documentation
+Join our Discord server
+Follow us on Twitter
+Follow us on Mastodon
+Read the documentation
+Learn more about contribution
+Thanks to all contributors
+@SchrodingersGat, @dependabot, @dependabot[","Bug Fixes
+[0.12.x] Fix SSO check comparing id against name and extend log output () by @github-actions in
+[0.12.x] Fix auto-allocation of build outputs () by @github-actions in
+[0.12.x] Improve sorting of part column for BOM table () by @github-actions in
+fix cli on 22.04 () by @SchrodingersGat in
+backport email fix by @SchrodingersGat in
+Other Changes
+Update version.py by @SchrodingersGat in
+Full Changelog: 0.12.3...0.12.5",3,5,5,4
+"Bug Fixes
+core: allow em.populate() on lazy formula properties (5c6bb13)
+core: ensure database values are used in the identity map keys (46b5e3a), closes
+core: fix re-populating relations with refresh: true (74b6a98), closes
+core: make WrappedEntity.setPK() work with formulas (a6b8e0c)
+core: make WrappedEntity.setPK() work with nested properties (4cbb1c1)
+core: respect refresh: true when populating lazy properties (ddcc023)","Bug Fixes
+core: allow em.populate() on lazy formula properties (5c6bb13)
+core: ensure database values are used in the identity map keys (46b5e3a), closes
+core: fix re-populating relations with refresh: true (74b6a98), closes
+Features
+core: add wrap(entity).populate([...]) shortcut (6b519c4)
+core: log number of results (261b3d9)
+Performance Improvements
+core: define some enums as const enums, so they get inlined (3cb43ba)",2,2,3,4
+"Bug Fixes
+server: add max_queue_size config option to limit the size of the internal requests queue () (v0.28.0...v0.28.1)
+server: fix incorrect config validation for max_queue_size () (v0.28.1)
+Docker Container
+docker pull docker.io/aquasec/ova-operator","Core SDK bugfixes:
+Request queue gets too large, BUG/FR, Docs (thanks, @L3tum)
+Huge memory allocation in the debug mode FIX.
+Stop handler (worker->stop()) was returned (breaking change fix) FIX, (thanks @Zylius)
+Chore:
+‍ Dependencies: update project/system dependencies.",2,2,3,3
+"Bug Fixes
+deps: update dependency @reactioncommerce/components-context to v1.2.0 (2a1d853","Bug Fixes
+update components-context dependency (3eaa1d1)
+update components-context peer dependency (daf7500)",2,2,2,2
+,"Quick Start
+What's New?
+Find out on our blog and changelog.
+Breaking Changes and Known Issues
+Check the upgrading guide and search for existing issues on GitHub.
+Installation
+CLI
+Mac
+Available via curl
+# Download the binary
+curl -sLO https://github.com/argoproj/argo-workflows/releases/download/v3.4.13/argo-darwin-amd64.gz
+# Unzip
+gunzip argo-darwin-amd64.gz
+# Make binary executable
+chmod +x argo-darwin-amd64
+# Move binary to path
+mv ./argo-darwin-amd64 /usr/local/bin/argo
+# Test installation
+argo version
+Linux
+Available via curl
+# Download the binary
+curl -sLO https://github.com/argoproj/argo-workflows/releases/download/v3.4.13/argo-linux-amd64.gz
+# Unzip
+gunzip argo-linux-amd64.gz
+# Make binary executable
+chmod +x argo-linux-amd64
+# Move binary to path
+mv ./argo-linux-amd64 /usr/local/bin/argo
+# Test installation
+argo version
+Controller and Server
+kubectl create namespace argo
+kubectl apply -n argo -f https://github.com/argoproj/argo-workflows/releases/download/v3.4.13/install.yaml",5,2,5,2
+"Fixed invalid data being imported from an export file - Hannah Wolfe
+Fixed invalid data being imported from an export file - Hannah Wolfe
+Fixed incorrect tag usage counts -","Some minor bug fixes and improvements, like a much faster importer now!
+You can see the full change log for the details of every change included in this release.",5,3,2,3
+"Enhancements:
+Make Glowroot compatible with Java 10
+Bug fixes:
+Fixes an issue where the agent might not start when some of the plugins have not been installed (the issue was introduced in 0.9.8)
+Fixes an issue where the agent might not start when Java 10 is used (the issue was introduced in 0.9.8)
+Fixes an issue where the agent might not start when Java 9 is used (the issue was introduced in 0.9.8)
+Fixes an issue where the agent might not start when some of the plugins have not been installed (the issue was introduced in 0.9.8)
+Fixes an issue where the agent might not start when Java 9 is used (the issue was introduced in 0.9.8)
+Fixes an issue where the agent might not start when some of the plugins have not been installed (the issue was introduced in 0.9.8)
+Fixes an issue where the agent might not start when Java 9 is used (the issue was introduced in 0.9.8)
+Fixes an issue where the agent might not start when some of the plugins have not been installed (the issue was introduced in 0.9.8)
+Fixes an issue where the agent might not start when Java 9 is used (the issue was introduced in 0.9.8)
+Fixes an issue where the agent might not start when some of the plugins have not been installed (the issue was introduced in 0.9.8)
+Fixes an issue where the agent might not start when Java 9 is used (the issue was introduced in 0.9.8)
+Fixes an issue where the agent might not start when some of the plugins have not been installed (the issue was introduced in 0.9.8)
+Fixes an issue where the agent might not start when Java 9 is used (the issue was introduced in 0.9.8)
+Fixes an issue where the agent might not start when some of the plugins have not been installed (the issue was introduced in 0.9.8)
+Fixes an issue where the agent might not start when Java 9 is used (the issue was introduced in 0.9.8)
+Fixes an issue where the agent might not start when some of the plugins have not been installed (the issue was introduced in 0.9.8)","Enhancements:
+Provide ability to alert on text in error messages and error trace ()
+Instrumenting Apache Camel ()
+Not all trace entries have copy button ()
+admin.json with central collector ()
+Heapdumps fail in OpenJ9 ()
+glowroot slows down Liferay DXP (tomcat9) startup ()
+Add GLOWROOT_OPTS to configure JVM, default to use cgroups limits ()
+Bug fixes:
+Optimizer Hint is hidden in Oracle Queries ()
+JAX-RS transaction names are too high level ()
+RuntimeException: Bytecode service retrieved too early ()
+Tombstones limit problem ()
+Issue encountered adding new Gauge that contains double quotes in name ()
+Add gauge causing array out of bound ()",3,5,2,5
+"Fixed
+Fix claimant in claim command
+Fix wallet server sessions not cleaning up properly
+Fix wallet server not properly logging when it is not connected to the DHT
+Fix wallet server not logging when a session is created
+Fix wallet server not logging when a session is deleted
+Fix wallet server not logging when a session is updated
+Fix wallet server not logging when a session is deleted
+Fix wallet server not logging when a session is updated
+Fix wallet server not logging when a session is updated
+Fix wallet server not logging when a session is updated
+Fix wallet server not logging when a session is updated
+Fix","DHT
+[bug] DHT object cache refactored, fixing a bug that could prevent adding peers () by shyba
+Docs
+[bug] Grammar correction () by rishav142k
+[bug] Punctuation () by OrginalS
+[improvement] Fix spelling () by hugovk
+Network
+[bug] Fix incorrect counting of total bytes sent / received () by mirgee
+Other
+[improvement] Reuse loggly connection () by jackrobison
+Wallet
+[bug] bug fixes related to cross-account / wallet operations () by eukreign",4,2,2,4
+"What's Changed
+Fix typo in RetrievalTask by @Strohgelaender in
+Fix typo in MetadataAccessSpecification by @Strohgelaender in
+Fix typo in SkeletonPose by @Strohgelaender in
+Fix typo in CLIPText by @Strohgelaender in
+Fix typo in CLIPImage by @Strohgelaender in
+Fix typo in VisualTextCoEmbedding","What's Changed
+Feature/TensorFlow GPU by @Spiess in
+Optimize CLIP model loading by @Spiess in
+Propagating Fulltext Limits to Cottontail by @silvanheller in
+Logging Fixes & Improvements by @silvanheller in
+Fixed model loading. by @Spiess in
+Full Changelog: v3.11.4...v3.11.5",2,4,3,4
+"Bug Fixes
+core: fix extra updates on embedded array properties (48fde11)
+core: fix updating embedded arrays with composite keys (c8f3e3b)
+core: fix updating entities with references with null values (d7b2f1a)
+core: fix updating embedded properties with complex pivot entity (1a3a5b7)
+core: fix updating embedded properties with custom types (d7b6f80)
+core: fix updating embedded properties with pivot entity (3d6c3a1)
+core: fix updating properties with pivot entities (b5c6b8e)
+core: fix updating properties with references with null values (e3e3c9f)
+core: fix updating properties with references with uuid type (c8b9e0f)
+core: fix updating pivot entity (3f7d8c5)
+core: fix updating pivot entity with embedded array (c653238)","Bug Fixes
+core: fix extra updates on embedded array properties (48fde11), closes
+core: fix hydration of relations with custom types via joined strategy (07f10c8), closes
+core: improve support for mapping DecimalType to number (5a3e30e)
+core: limit depth in custom inspect methods to get around debugging issues in vscode (f706c06), closes
+core: support path detection from decorators in bun (6683bcc), closes
+mongo: support cursor pagination on Date properties (4281320), closes
+mysql: infer unsigned value for FKs based on the target PK (b7ae145), closes
+query-builder: do not reset join conditions when paginating (0b851e5), closes
+schema: skip extra columns in nested pivot entities (f34e4d7), closes
+Features
+core: allow specifying the runtimeType explicitly (e9c0c07)",2,4,3,3
+"PostgresKeywordsTest, test/dialects/ExasolKeywordsTest, test/dialects/ExasolFsKeywordsTest,Changelog
+Features
+Add dbt templater ()
+Support multiple values for EXASOL database name in config file ()
+Bug fixes
+Fix crash when passing -f and --format together ()
+Fix bug in L001: Don't crash on subqueries with no tables ()
+Fix bug in L002: Don't crash on SELECT * FROM dual ()
+Fix bug in L002: Don't crash on SELECT * FROM dual ()
+Fix bug in L004: Don't crash on SELECT * FROM dual ()
+Fix bug in L004: Don't crash on SELECT * FROM dual ()
+Fix bug in L020: Don't crash on SELECT * FROM dual ()
+Fix bug in L025: Don't crash on SELECT * FROM dual ()
+Fix bug in L026: Don't crash on SELECT * FROM dual ()
+Fix bug in L027: Don't crash on SELECT * FROM dual ()
+Fix bug in L028: Don't crash on SELECT * FROM dual ()
+Fix bug in L003: Don't crash on SELECT * FROM dual ()
+Fix bug in L002: Don't crash on SELECT * FROM dual ()
+Fix bug in L001: Don't crash on SELECT * FROM dual ()
+Fix bug in L002: Don't crash on SELECT * FROM dual ()
+Fix bug in L002: Don't crash on SELECT * FROM dual ()
+Fix bug in L004: Don't crash on SELECT * FROM dual ()
+Fix bug in L004: Don't crash on SELECT * FROM dual ()
+Fix bug in L004: Don't crash on SELECT * FROM dual ()
+Fix bug in L001: Don't crash on SELECT * FROM dual ()
+Fix bug in L001: Don't crash on SELECT * FROM dual ()
+Fix bug in L001: Don't crash on SELECT * FROM dual ()
+Fix bug in L001: Don't crash on SELECT * FROM dual ()
+Fix bug in L002: Don't crash on SELECT * FROM dual ()
+Fix bug in L001: Don't crash on SELECT * FROM dual ()
+Fix bug in L001: Don't crash on SELECT * FROM dual ()
+Fix bug in L001: Don't crash on SELECT * FROM dual ()
+Fix bug in L001: Don't crash on SELECT * FROM dual ()
+Fix bug in L001: Don't crash on SELECT * FROM dual ()
+Fix bug in L001: Don't crash on SELECT * FROM dual","What’s Changed
+Another dbt bugfix from 0.6.7 and 0.6.8, plus a host of dialect and syntax improvements.
+Enhancements
+Correct and expand Snowflake CREATE TABLE syntax () @tunetheweb
+Support brackets in Postgres Meta commands () @tunetheweb
+Support Group and Groups as table names () @tunetheweb
+Support more complex IN (...) expressions () @tunetheweb
+Support CROSS APPLY and OUTER APPLY and TOP in T-SQL () @tunetheweb
+Add support for WITHOUT ROWID to SQLite () @tunetheweb
+Postgres: add CONCURRENTLY and FINALIZE keywords to DETACH PARTITION () @kevinmarsh
+Better support of MySQL CREATE TABLE TIMESTAMP/DATESTAMP () @tunetheweb
+Add a rule to warn on ""= NULL"" or ""<> NULL"" comparisons () @barrywhart
+Support SETOF in Postgres () @tunetheweb
+Support Double Precision in ANSI () @tunetheweb
+Support LATERAL joins in Postgres () @adam-tokarski
+added type hints to rule files () @ttomasz
+Update Rule L028 to handle TSQL PIVOT columns () @tunetheweb
+TSQL IF/ELSE () @jpers36
+Enums for format types and colors added () @adam-tokarski
+Add dbt 0.21.0 to the test suite () @alanmcruickshank
+Merge EXASOL_FS dialect into EXASOL dialect () @sti0
+TSQL - BEGIN/END blocks () @jpers36
+Small refactor with type hints and string formattings () @adam-tokarski
+Add Github Preview Image () @alanmcruickshank
+Bug Fixes
+Fix broken block comments in exasol () @sti0
+""Found unparsable section"" instead of stack trace when multiple semicolons provided () @adam-tokarski
+Fix test coverage () @tunetheweb
+Remove lint_templated_tokens as no longer does anything () @tunetheweb
+Rethink sequence_files in dbt templater. () @alanmcruickshank
+TSQL: fix STRING_AGG() WITHIN GROUP clause () @jpers36
+fix spelling: occurance>occurrence () @jpers36",3,2,2,2
+,"Liquibase 4.4.1 is now available here and through our website.
+Here’s a closer look at what's included in the latest release.
+Liquibase 4.4.1 includes bug fixes and updates
+This release introduces SQL*Plus fixes for Liquibase Pro users, addresses some Liquibase Hub integration issues, along with some other bugs listed below.
+Bug fixes
+HubUpdater releases lock even though registration is skipped
+Only snapshot tables/columns in loadData
+[LB-704] fixed generating sequences for Postgres versions prior to 10
+Fixes MySQL Snapshot/Generated ChangeLog output for table key constraints when multiple tables
+Postgres: Rollback of rename target fails due to malformed SQL.
+Liquibase Hub registerChangeLog messaging fixes
+Liquibase Hub, Maven, and liquibase.properties file fixes
+Using --liquibaseProLicenseKey is on the left side of the command
+Update Liquibase installer adoptopenjdk from 11.0.10 to 11.0.11
+[PRO] SQL Plus handles backslashes in changeset  attributes' values
+[PRO] SQL Plus passing arguments during runtime fixes
+[PRO] SQL Plus handles Oracle proxy user setups
+[PRO] SQL Plus improve temp file handling
+[PRO]",3,5,5,5
+"Bug Fixes
+deps: update dependency @aws-lambda-powertools/tracer to v1.12.1 () (a1e6f8b)
+deps: update dependency @aws-lambda-powertools/tracer to v1.12.2 () (e4c4e1b)
+deps: update dependency aws-ssm-util to v1.4.0 () (a1c0c3d)
+deps: update dependency aws-ssm-util to v1.4.1 () (d0d9a0f)
+deps: update dependency aws-ssm-util to v1.4.2 () (b8a2b1a)
+deps: update dependency aws-ssm-util to v1.4.3 () (f3f9e9b)
+deps: update dependency aws-ssm-util to v1.4.4 () (e90b1b5)
+deps: update dependency aws-ssm-util to v1.4.5 () (3a8a5f9)
+deps: update dependency aws-ssm-util to v1.4.6 () (c3c1d3b)
+deps: update dependency aws-ssm-util to v1.4.7 () (aaf0e48)
+deps: update dependency aws-ssm-util to v1.4.8 () (2d6f5f1)
+deps: update dependency aws-ssm-util to v1.4.9 () (c9f6f4a)
+deps: update dependency aws-ssm-util to v1.5.0 () (a0c9d5a)
+deps: update dependency aws-ssm-util to v1.5.1 () (9a2f7a3)
+deps: update dependency aws-ssm-util to v1.5.2 () (f1b5e2c)
+deps: update dependency aws-ssm-util to v1.5.3 () (7f6b9c5)
+deps: update dependency aws-ssm-util to v1.5.4 () (e9b5f3b)
+deps: update dependency aws-ssm-util to v1.5.5 () (6b9a0e5)
+deps: update dependency aws-ssm-util to v1.5.6 () (7b5a1b1)
+deps: update dependency aws-ssm-util to v1.5.7 () (b8e3b4a)
+deps: update dependency aws-ssm-util to v1.5.8 () (ebd6d2f)
+deps: update dependency aws-ssm-util to v1.5.9 () (a0f4c8b)
+deps: update dependency aws-ssm-util to v1.6.0 () (9c1e0f1)
+deps: update dependency aws-ssm-util to v1.6.1 () (c5d7e52)
+deps: update dependency aws-ssm-util to v1.6.2 () (0b9ddbb)
+deps: update dependency aws-ssm-util to v1.6.3 () (f6d0f7e)
+deps: update dependency aws-ssm-util to v1.6.4 () (c0d6e9e)
+deps: update dependency aws-ssm-util to v1.6.5 () (f8e7f7e)
+deps: update dependency aws-ssm-util to v1.6.6 () (6f8d6b6)
+deps: update dependency aws-ssm-util to v1.6.7 () (bdeaa0f)
+deps: update dependency aws-ssm-util to v1.6.8 () (4e9cb9e)
+deps: update dependency aws-ssm-util to v1.6.9 () (4c0a5c5)
+deps: update dependency aws-ssmBug Fixes
+deps: update dependency @aws-lambda-powertools/tracer to v1.12.2 () (5d4a5d8)
+deps: update dependency aws-ssm-util to v1.6.9 () (d1d8c6a)
+deps: update dependency aws-ssm-util to v1.7.0 () (b5f6b1a)
+deps: update dependency aws-ssm-util to v1.7.1 () (b9b4d5c)
+deps: update dependency aws-ssm-util to v1.7.2 () (7a5b4e5)
+deps: update dependency aws-ssm-util to v1.7.3 () (5b0d6d1)
+deps: update dependency aws-ssm-util to v1.7.4 () (b8","Bug Fixes
+Add missing webhook_events_workflow_job_queue_policy to multi-runner queue () (a8cba4e)
+lambda: bump the aws group in /lambdas with 5 updates () (6119354)
+lambda: bump typescript from 5.3.3 to 5.4.5 in /lambdas () (e3f3d77)
+webhook expects REPOSITORY_ALLOW_LIST env var () (0006ab9)",2,4,5,3
+"Bug Fixes
+deps: update dependency @netlify/zip-it-and-ship-it to v3 () (c80fd8b)
+deps: update netlify packages () (1a71ba3)","Bug Fixes
+deps: update dependency @netlify/zip-it-and-ship-it to v3 () (c80fd8b)
+deps: update netlify packages () (1a71ba3)",2,2,4,4
+"What's Changed
+Bug fixes
+Fix to WebGazer plugin by @jasonbreen in
+Fix to audio-keyboard-response plugin by @jasonbreen in
+Documentation
+Fixes for syntax highlighting in jsPsych documentation by @jasonbreen in
+Other Changes
+Update webgazer plugin to use modern webgazer.js by @jasonbreen in
+Fix a few syntax errors in documentation by @jasonbreen in
+Fix to examples link in webgazer extension documentation by @jasonbreen in
+Fix to documentation formatting by @jasonbreen in
+Update example links in documentation by @jasonbreen in
+New Contributors
+@jasonbreen made their first contribution in
+@kennethlw made their first contribution in
+@kristofwesterdaal made their first contribution in
+@rsmith made their first contribution in
+@jenskastensson made their first contribution in
+@kyle-jones made their first contribution in
+@emrathwell made their first contribution in
+@wouterh made their first contribution in
+@aravindanr made their first contribution in
+@fogus made their first contribution in
+@kristofferhermans made their first contribution in
+@zacharyhastings made their first contribution in
+@wimcros made their first contribution in
+@kyle-williams made their first contribution in
+@jenswittendorff made their first contribution in
+@jamesbaker made their first contribution in
+@tobiasnordstrom made their first contribution in
+@peterdavey made their first contribution in
+@hansrullgard made their first contribution in
+@federicodibenedetto made their first contribution in
+@paul-martinez made their first contribution in
+@kristian-kristensen made their first contribution in
+@lars-eriksen made their first contribution in
+@julian-voigt made their first contribution in
+Full Changelog: jsPsych-2.2.0...jsPsych-2","This minor release is focused on improvements to the eye tracking features added in version 6.3.0.
+New Features
+We have forked WebGazer to make some minor changes to improve compatibility with jsPsych. These changes allow jsPsych to sample eye movements at a faster rate without disrupting jsPsych's display timing. Thanks to @moltaire for identifying this issue ().
+WebGazer no longer initializes automatically when the page loads. Instead, the webgazer-init-camera plugin will initialize WebGazer and ask for camera access permissions. Added an auto_initialize parameter to the WebGazer extension to allow users to initialize on page load if desired.
+The sampling interval can be set in the WebGazer extension. By default the extension aims for 30Hz. Faster intervals are probably not possible until browsers provide better interfaces to synchronize processing with video feeds.
+Improved the timing measurements reported by WebGazer by ~30 milliseconds. Timing is now based on an estimate of when the video frame was recorded, instead of when WebGazer finished computational work on the video frame.
+jsPsych.pluginAPI.compareKeys can now handle null values: it will return true if both key arguments are null, and return false if one key is null and the other is a key code or key character. This means that this function can be used to check for a correct non-response. ()
+Changes
+Minor formatting and text updates to the webgazer-init-camera plugin to center the camera view.
+The webgazer-validate plugin now records the coordinates of the validation points.
+The webgazer-init-camera plugin now records the load time for WebGazer to initialize.
+Added a point_size parameter to calibration and validation plugins, and set the default to a larger value.
+Bug Fixes
+Fixed an issue where webgazer_targets did not record the bounding box of content on the screen if the content was loaded after the trial began.
+Fixed problem with the minimum_valid_rt parameter in jsPsych.init not working when the WebAudio clock is used to measure keyboard RTs (i.e. rt_method: 'audio' in jsPsych.pluginAPI.getKeyboardResponse). Thanks @kinleyid! ()
+Fixed various documentation errors and formatting problems. ()",3,2,2,3
+"What's Changed
+Upgrade to undertow 2.2.4.Final by @miklish in
+Add support for light 4j config by @miklish in
+Upgrade to light 4j config 2.6.0 by @miklish in
+Upgrade to undertow 2.2.5.Final by @miklish in
+Upgrade to light 4j config 2.7.0 by @miklish in
+Upgrade to undertow 2.2.6.Final by @miklish in
+Upgrade to light 4j config 2.7.1 by @miklish in
+Upgrade to undertow 2.2.7.Final by @miklish in
+Full Changelog: v2.0.6...v2.0.7.","Full Changelog
+Fixed bugs:
+Maven build error on eclipse
+Closed issues:
+SSL error - client module - release 1.5.29
+Backwards incompatible changes: client module - release 1.5.29
+Merged pull requests:
+Fixing binding to dynamic ports (NicholasAzar)
+fix/ the value in values.yml can be set to empty (jiachen1120)
+updating iteration of FormData item (jefperito)
+add code coverage badge (lanphan)
+Feat/ status merge (jiachen1120)
+add missing license info, remove unused logback setting (lanphan)
+body: update and add more unittest (lanphan)
+Upgrade Guidelines:
+This is a release to resolve a dynamic port allocation defect found in 1.5.30 for Kubernetes deployment.
+For all changes in this release, please visit Trello",2,2,2,3
+"Bug Fixes
+deps: update TypeScript (c7c3b2c)
+deps: update TypeScript (e7a8b61)
+deps: update TypeScript (ca53281)","Bug Fixes
+deps: update TypeScript (1c1cee3)
+deps: update TypeScript (80b1a36)
+deps: update TypeScript (36b2432)",4,2,4,2
+"-import/feedly/docker-composeBug Fixes
+Fixes an issue with the CISA known exploited vulnerabilities feed where the feed was not correctly parsing the JSON output and resulting in a feed with no data
+Improvements
+Adds a new field to the CrowdStrike feed called ""Campaign""
+Adds a new field to the CISA known exploited vulnerabilities feed called ""Attack Vector""
+Adds a new field to the CISA known exploited vulnerabilities feed called ""Attack Technique""
+Adds a new field to the CISA known exploited vulnerabilities feed called ""Tactics""
+Adds a new field to the CISA known exploited vulnerabilities feed called ""Threat Actor""
+Adds a new field to the CISA known exploited vulnerabilities feed called ""MITRE Tactic""
+Adds a new field to the CISA known exploited vulnerabilities feed called ""MITRE Technique""
+Adds a new field to the CISA known exploited vulnerabilities feed called ""Exploitability""
+Adds a new field to the CISA known exploited vulnerabilities feed called ""Severity""
+Adds a new field to the CISA known exploited vulnerabilities feed called ""Remediation""
+Adds a new field to the CISA known exploited vulnerabilities feed called ""Mitigation""
+Adds a new field to the CISA known exploited vulnerabilities feed called ""Score""
+Adds a new field to the CISA known exploited vulnerabilities feed called ""Exploitability Score""
+Adds a new field to the CISA known exploited vulnerabilities feed called ""Attack Vector Score""
+Adds a new field to the CISA known exploited vulnerabilities feed called ""Attack Technique Score""
+Adds a new field to the CISA known exploited vulnerabilities feed called ""Tactics Score""
+Adds a new field to the CISA known exploited vulnerabilities feed called ""Threat Actor Score""
+Adds a new field to the CISA known exploited vulnerabilities feed called ""MITRE Tactic Score""
+Adds a new field to the CISA known exploited vulnerabilities feed called ""MITRE Technique Score""
+Adds a new field to the CISA known exploited vulnerabilities feed called ""Exploitability Score""
+Adds a new field to the CISA known exploited vulnerabilities feed called ""Exploitability Score""
+Adds a new field to the CISA known exploited vulnerabilities feed called ""Exploitability Score""
+Adds a new field to the CISA known exploited vulnerabilities feed called ""Severity Score""
+Adds a new field to the CISA known exploited vulnerabilities feed called ""Remediation Score""
+Adds a new field to the CISA known exploited vulnerabilities feed","Enhancements:
+Update CVE Database connector to comply with API 2.0 of NVD
+Bug Fixes:
+Joe Sandbox error when connecting to Self Hosted instance
+alienvault connector does not force_ping prior exit in run and terminate checks
+Abuse-SSL connector: IPv4Address is not JSON serializable
+threatfox connector does not process unzipped csvs anymore.
+Pull Requests:
+[tweetfeed] informing inoperability of service by @yassine-ouaamou in
+Update dependency stix-shifter to v7.0.1 by @renovate in
+update es stream connector configurations by @minanokawari1124 in
+Update dependency weasyprint to v60.2 by @renovate in
+[alienvault] impl force_ping when run_and_terminate enabled by @daemitus in
+crowdstrike: Remove printing of bundle on stdout by @sbocahu in
+[threatfox] handle both /full/ and /recent/ urls by @daemitus in
+Mandiant improvements by @SYNchroACK in
+[Connector] Rework CVE connector using API V2.0 by @helene-nguyen in
+Update dependency stix-shifter-modules-splunk to v7.0.1 by @renovate in
+Update dependency pycountry to v23.12.11 by @renovate in
+Update opencti/connector-cve Docker tag to v5.12.5 by @renovate in
+Update dependency datalake-scripts to v2.7.1 by @renovate in
+Update dependency stix-shifter-utils to v7.0.1 by @renovate in
+[RST Cloud] enchancements and bug fixes by @k1r10n in
+[joe-sandbox] Only include Joe Sandbox Cloud parameters if they are d… by @animedbz16 in
+[CVE] Handle retry request on server error  by @helene-nguyen in
+New Contributors:
+@minanokawari1124 made their first contribution in
+@daemitus made their first contribution in
+@sbocahu made their first contribution in
+@animedbz16 made their first contribution in
+Full Changelog: 5.12.5...5.12.6",3,2,4,5
+"New Features and Enhancements
+Adjust plot ribbon tooltips by @julieg18
+Remove Setup's ""Get Started"" Section by @julieg18
+Bug Fixes
+Update the logic to identify a failed process by @mattseddon","New Features and Enhancements
+Adjust plot ribbon tooltips by @julieg18
+Remove Setup's ""Get Started"" Section by @julieg18
+Bug Fixes
+Update the logic to identify a failed process by @mattseddon",2,2,2,4
+"Bug Fixes
+common: Update button state when closing the form (b2dadf8), closes","Bug Fixes
+common: Update button state when closing the form (b2dadf8), closes",3,2,3,5
+"Bug Fixes
+Only copy volume content if it exists (9f6c0f4)
+Only copy volume content if it exists (8e1f7f6)
+Only copy volume content if it exists (0bd1598)","What's Changed
+Bug Fix
+[Backport release-2.9] Revert ""update init container logs ()"" by @github-actions in
+Full Changelog: 2.9.0...2.9.1",2,2,3,3
+,"New Features
+Introducing ExplainerHub: combine multiple dashboards together behind a single frontend with convenient url paths.
+code example:
+db1 = ExplainerDashboard(explainer, title=""Dashboard One"", name='db1')
+db2 = ExplainerDashboard(explainer2, title=""Dashboard Two"", name='project_alpha', description=""New proposed model"")
+hub = ExplainerHub([db1, db2])
+hub.run()
+# store an recover from config:
+hub.to_yaml(""hub.yaml"")
+hub2 = ExplainerHub.from_config(""hub.yaml"")
+adds option dump_explainer to ExplainerDashboard.to_yaml() to automatically
+dump the explainer along with the .yaml.
+adds option use_waitress to ExplainerDashboard.run() and ExplainerHub.run(), to use the waitress python webserver instead of the Flask development server
+adds parameters to ExplainerDashboard:
+name: this will be used to assign a url for ExplainerHub (otherwise defaults to dashboard1, dashboard2, etc
+description: this will be used for the title tooltip in the dashboard
+and in the ExplainerHub frontend.
+Improvements
+the cli now uses the waitress server by default.",2,3,2,2
+"Fix vector layer styles loading
+Fix tile layer zoom offset
+Add support to vector source options
+Add support to","vl-source-vector: added update:features event
+vl-source-xyz: url prop as string or function",3,2,2,2
+"Bug Fixes
+console: add safety to check job id before output to console (92a393b)
+deploy: enable custom deploy or with predefined deploy providers (closes) (a0225bc)
+stats: unsubscribe from stats subscription when leaving dashboard (4b73041)
+Features
+deploy: support for deploy to AWS Elastic Beanstalk (4913c2c)
+envs: add abstruse defined ENV variables (closes) (717d78b)","Bug Fixes
+console: add safety to check job id before output to console (92a393b)
+deploy: enable custom deploy or with predefined deploy providers (closes) (a0225bc)
+stats: unsubscribe from stats subscription when leaving dashboard (4b73041)
+Features
+deploy: support for deploy to AWS Elastic Beanstalk (4913c2c)
+envs: add abstruse defined ENV variables (closes) (717d78b)",2,4,2,4
+"Changes since 2.9.7
+All changes
+Fixes
+Cache response of dev-mode pages ()
+Commit · Pull request
+Fixes caching of dev-mode pages ()
+Fixes
+Cache-Control: no-cache header was not set to the pages returned from the dev-mode pages.","Changes since 23.1.6
+All changes
+Security Fixes
+Security upgrade org.jsoup:jsoup to 1.15.3
+Commit · Pull request
+The following vulnerability are fixed with the upgrade: https://snyk.io/vuln/SNYK-JAVA-ORGJSOUP-2989728
+Important Note: Upgrading jsoup from 1.14.3 to 1.15.3 includes an API breaking change and it might prevents the compilation of your code (only if you had a any direct usage of the removed deprecated class org.jsoup.safety.Whitelist). This was necessary to fix the potential security vulnerability listed above, and it is recommended to upgrade to this version. If you happened to have a compile error in your application, simply replace any possible occurrences of org.jsoup.safety.Whitelist with org.jsoup.safety.Safelist and there should not be any other hassles.
+Fixes
+Never cache the ""waiting for frontend build"" page ()
+Commit · Pull request · Issue",3,3,4,4
+"Bug Fixes
+: allow using options with title and value set to the same string (thanks to @michaelmug)
+: prevent ""TypeError: Cannot read property 'length' of undefined"" when using liveSearch and no results found (thanks to @zhiqiangxu)
+: prevent ""TypeError: Cannot read property 'length' of undefined"" when using liveSearch and no results found (thanks to @michaelmug)
+Compare this release with the previous one.
+Read more about this release in our blog post: https://medium.com/bootstrap-select/boostrap-select-1-13-3-released-9c1c1a3c8c8b
+Bug Fixes
+: allow using options with title and value set to the same string (thanks to @michaelmug)
+: prevent ""TypeError: Cannot read property 'length' of undefined"" when using liveSearch and no results found (thanks to @zhiqiangxu)
+: prevent ""TypeError: Cannot read property 'length' of undefined"" when using liveSearch and no results found (thanks to @michaelmug)
+Compare this release with the previous one.
+Read more about this release in our blog post: https://medium.com/bootstrap-select/boostrap-select-1-13-3-released-9c1c1a3c8c8b
+Thanks to all contributors helping with this release!
+@zhiqiangxu, @michaelmug, @lambertmarc, @luisllv, @fogus, @mdo, @luisllv, @luisllv, @luisllv, @luisllv, @luisllv, @luisllv, @luisllv, @luisllv, @luisllv, @luisllv, @luisllv","Bug Fixes
+: allow was-validated class to work on select elements without selectpicker class
+: CTRL + F5 not working while dropdown is open
+: Keyboard control over Bootstrap Dropdown components stops working
+: Bug: Event duplication on refresh
+: ""precompiled bootstrap"" link is broken in README
+Improvements
+: change liveSearch input type from ""text"" to ""search""
+Compare this release with the previous one.",2,2,4,4
+"Changelog
+Bug Fixes
+Fix: The SecretProviderClass PodStatus CRD is not added to the charts [GH-791] [1.2.x] (@k8s-infra-cherrypick-robot)
+Fix: Node server does not support windows paths in secrets [GH-787] [1.2.x] (@k8s-infra-cherrypick-robot)
+Maintenance
+Add metrics for node server [GH-784] [1.2.x] (@k8s-infra-cherrypick-robot)
+Update charts/secrets-store-csi-driver to version v1.2.1 [GH-790] [1.2.x] (@k8s-infra-cherrypick-robot)
+Thanks to all our contributors!
+@k8s-infra-cherrypick-robot","Warning
+The SecretProviderClass needs to be in the same namespace as the pod referencing it as of v0.0.12.
+Defining driver configuration and provider-specific parameters to the CSI driver in pod.Spec[].Volumes has been deprecated in v0.0.12. It is now mandatory to use SecretProviderClass custom resource.
+Features
+add rotation reconciler ()
+add trimspace to sanitize yaml fields ()
+add event recorder ()
+Documentation
+add doc for new provider gRPC ()
+add doc for auto rotation ()
+Testing
+Add more unit tests for secrets-store pkg ()
+update e2e helm install for grpc supported provider ()
+add e2e tests for rotation with azure provider ()
+Maintenance
+remove unused PodUID field in secretproviderclasspodstatus ()
+update default rotation poll interval to 2m ()
+change health check port to 8095 ()",5,3,5,5
+,"What's Changed
+New Features
+Added RedHuntLabs as a source by @umair-rhl in
+Added Builtwith as a source by @dogancanbakir in
+Bug Fixes
+Fixed pagination issue in facebook source by @tarunKoyalwar in
+Fixed filtering active subdomains when using as lib by @RamanaReddy0M in
+Fixed selfupdate option for android by @dogancanbakir in
+Maintenance
+Cleanup migration code by @dogancanbakir in
+Use -short mode for excluding long running tests by @dogancanbakir in
+Other Changes
+Added warning for passivetotal source by @dogancanbakir in
+Removed zoomeye legacy support by @dogancanbakir in
+Updated to v3 API for virustotal source by @dogancanbakir in
+Issues closed in this release - https://github.com/projectdiscovery/subfinder/milestone/11?closed=1
+New Contributors
+@umair-rhl made their first contribution in
+Full Changelog: v2.6.2...v2.6",2,2,2,2
+"Changelog
+New Features
+a3d4b92: feat: add --decrypt flag to ipsw download ipsw cmd to decrypt partial IPSWs if keys are available (@blacktop)
+Bug fixes
+8e8f8fe: fix: ipsw download ipsw --decrypt cmd to also look for keys in IPSW-Keys (@blacktop)
+Summary
+Full Changelog: v3.1.144...v3.1.145
+What to do next?
+Read the documentation
+Join our Discord server
+Follow us on Twitter
+Follow us on Mastodon
+Follow us on Gitberg
+Follow us on Telegram
+Follow us on LinkedIn
+Follow us on Twitter
+Follow us on Mastodon
+https://badsyntax.tech/ (website)
+https://ipsw.re/ (project website)
+https://docs.ipsw.re/ (documentation)
+https://github.com/blacktop/ipsw (github project)
+https://twitter.com/blacktop (Twitter account)
+https://mastodon.blacktop.io/ (Mastodon server)
+https://blacktop.io/ (personal website)
+https://docs.blacktop.io/ (personal documentation)
+https://github.com/blacktop (personal github)
+https://blacktop.tech (personal blog)
+https://twitter.com/blacktop (Twitter account)
+https://masto.blacktop.io/ (Mastodon server)
+https://blacktop.io/ (personal website)
+https://github.com/blacktop/ipsw/ (github project)
+https://blacktop.dev/ (personal website)
+https://blacktop.at/ (personal website)
+https://github.com/blacktop (personal github)
+https://blacktop.io/ (personal website)
+https://twitter.com/blacktop (Twitter account)
+https://mastodon.blacktop.io/ (Mastodon server)
+https://docs.blacktop.io/ (personal documentation)
+https://blacktop.dev/ (personal website)
+https://blacktop.at/ (personal website)
+https://github.com/blacktop (personal github)
+https://blacktop.io/ (personal website)
+https://twitter.com/blacktop (Twitter account)
+https://mastodon.blacktop.io/ (Mastodon server)
+https://docs.blacktop.io/ (personal documentation)
+https://blacktop.dev/ (personal website)
+https://blacktop.at","Highlight
+Why
+download iBoot via partialzip
+extract the payloads
+lookup the decryption keys
+decrypt the payloads
+When you can just...
+ipsw dl ipsw --device iPhone15,2 --version 16.6 --pattern 'iBoot.*im4p$' --decrypt
+• Parsing remote IPSW       build=20G75 device=iPhone15,2 signed=false version=16.6
+• Downloading files matching pattern ""iBoot.*im4p$""
+• Created 20G75__iPhone15,2/Firmware/all_flash/iBoot.d73.RELEASE.im4p
+• Created 20G75__iPhone15,2/Firmware/all_flash/iBoot.d73.RESEARCH_RELEASE.im4p
+• Created 20G75__iPhone15,2/Firmware/all_flash/iBootData.d73.RELEASE.im4p
+• Created 20G75__iPhone15,2/Firmware/all_flash/iBootData.d73.RESEARCH_RELEASE.im4p
+• Searching for keys to decrypt files
+• Decrypted 20G75__iPhone15,2/Firmware/all_flash/iBoot.d73.RELEASE.im4p.dec
+• Decrypted 20G75__iPhone15,2/Firmware/all_flash/iBootData.d73.RELEASE.im4p.dec
+• Decrypted 20G75__iPhone15,2/Firmware/all_flash/iBootData.d73.RESEARCH_RELEASE.im4p.dec
+• Decrypted 20G75__iPhone15,2/Firmware/all_flash/iBoot.d73.RESEARCH_RELEASE.im4p.dec
+Changelog
+New Features
+a09f62f: feat: add  --decrypt flag to ipsw dl ipsw to attempt to lookup and use keys for --pattern files (@blacktop)
+Bug fixes
+00fb34f: fix: add better error handling to ipsw dl keys cmd (@blacktop)
+8f6bd0a: fix: swift bind lookups (@blacktop)
+Dependency updates
+b7d163e: chore(deps): bump deps (@blacktop)
+Summary
+Full Changelog: v3.1.474...v3.1.475
+What to do next?
+Read the documentation
+Follow us on Twitter
+Follow us on Mastodon",4,4,4,3
+"Improvements
+[] - Module '""@types/pdfjs-dist""' has no exported member 'PDFPromise'
+[] - Issue 739 fix: change @types/pdfjs-dist to update only","Improvements
+[] - Module '""@types/pdfjs-dist""' has no exported member 'PDFPromise'
+[] - Issue fix: change @types/pdfjs-dist to update only patch versions",5,4,4,3
+"Bug Fix
+update status expiration message (@ashkan18)
+Internal
+Update dep @artsy/palette from 4.14.18 to v4.14.20 (@renovate-bot)
+Authors: 2
+Ashkan Nasseri (@ashkan18)
+Renovate Bot (@renovate-bot)","Bug Fix
+update status expiration message (@ashkan18)
+Internal
+Update dep @artsy/palette from 4.14.18 to v4.14.20 (@renovate-bot)
+Authors: 2
+Ashkan Nasseri (@ashkan18)
+Renovate Bot (@renovate-bot)",3,4,2,5
+"Bug Fixes
+fixes an issue with graphql requests not having the query in the body ().
+fixes an issue with the parse option in the RequestHandler interface () and RequestHandler interface being incorrectly typed () and updated node-request-interceptor to fix an issue with the request body not being correctly parsed when the body is a stream () (via PR).","Bug fixes
+Fixes an issue that produces a ""Must provide source"" error during GraphQL parsing of POST requests with body, but without the query property ().
+Fixes an issue that resulted into http module being patched in React Native environment, where it's not present ().
+Dependencies
+Updates to node-request-interceptor@0.3.4 ()",2,3,5,4
+"Bug Fixes
+app-updater: do not throw on cancel if no updates (9d7e6c7), closes
+electron-updater: add progress event to electron-updater (e5b8a0c), closes
+electron-updater: handle multiple updates (b3e8b85), closes
+electron-updater: support cancelation in electron-updater (a8e0c7f), closes
+electron-updater: update NSIS NSIS updater (8b3c5c6), closes
+Features
+dmg: add support for custom background (b1e2d3f)
+nsis: add NSIS web installer support (0d5a3a3), closes
+snap: add --snap-sandbox flag (a1f7f2e), closes
+snap: add --snap-sandbox flag (cc82286)","electron-updater 2.23.3 (release).
+Bug Fixes
+AppImage: When unpacking the AppDir from the AppImage, then AppRun is not working correctly (1e6df67), closes
+symlinks in asarUnpack are not copied (13f21ee), closes
+electron-updater: fix case of blockmap file extension, detect s3 urls on setFeedURL (369e9c0)
+electron-updater: ignore unknown powershell errors (a0026a7), closes
+electron-updater: web installer differential download perMachine (82708a5), closes
+nsis: Windows NSIS installer defaults to German if system language is not supported by electron-builder (4bc17b4), closes
+Features
+nsis: compute EstimatedSize on build time to reduce installation time (b8f93d1)",5,2,2,5
+"Reactor Netty 1.0.33 is part of 2020.0.34 Release Train.
+This is a recommended update for all Reactor Netty 1.0.x users.
+New features and improvements
+Add support for maxInitialStreamWindow and maxStreamWindow on the HTTP/2 client
+Add support for maxInitialStreamWindow and maxStreamWindow on the HTTP/2 server
+Add support for maxHeaderListSize on the HTTP/2 server
+Bug fixes
+Fix a deadlock when a response is completed in the middle of a response body being received
+Fix a deadlock when a connection is closed in the middle of a response body being received
+Fix a deadlock when a connection is closed in the middle of a response body being received in case of HTTP/2 keep alive
+Fix a deadlock when a response is completed in the middle of a response body being received in case of HTTP/2 keep alive
+Fix a deadlock when a connection is closed in the middle of a response body being received in case of HTTP/2 keep alive
+Add HttpServerConfig::maxInitialStreamWindow(), HttpServerConfig::maxStreamWindow(), HttpServerConfig::maxHeaderListSize(), HttpOperations::maxInitialStreamWindow(), HttpOperations::maxStreamWindow(), HttpOperations::maxHeaderListSize(), Http2SettingsSpec::maxInitialStreamWindow(), Http2SettingsSpec::maxStreamWindow(), Http2SettingsSpec::maxHeaderListSize()
+Contributors
+We'd like to thank all the contributors who worked on this release!
+@chemicL
+@OlegDokuka
+@pderop
+@violetagg
+@violetagg
+@violetagg
+@violetagg
+@violetagg
+@violetagg
+@violetagg
+@violetagg","Reactor Netty 1.0.33 is part of 2020.0.33 Release Train.
+This is a recommended update for all Reactor Netty 1.0.x users.
+What's Changed
+New features and improvements
+Depend on Reactor Core v3.4.30 by @OlegDokuka in d3fb8ec, see release notes
+Depend on Netty v4.1.93.Final by @violetagg in
+Depend on Netty QUIC Codec v0.0.45.Final by @violetagg in
+HttpServer: Add API for specifying max streams per connection. The connection is marked for closing once the number of all-time streams reaches max streams configuration by @violetagg in
+Bug fixes
+Ensure any custom CL/TE header is removed when 304 response code by @violetagg in
+Documentation, Tests and Build
+Add test for IllegalReferenceCountException/sendObject by @pderop in
+Build/Test Dependency Upgrades
+Bump netty-tcnative-boringssl-static to version v2.0.61.Final by @violetagg in
+Bump braveVersion to version 5.16.0 by @dependabot in
+Bump build-info-extractor-gradle to version 4.32.0 by @dependabot in
+Bump org.gradle.test-retry to version 1.5.3 by @dependabot in
+Bump jackson-databind to version 2.15.2 by @dependabot in
+Bump tomcat-embed-core to version 9.0.76 by @dependabot in
+Full Changelog: v1.0.32...v1.0.33",2,4,3,4
+"General
+Bugs
+Enhancements
+Testing: Add postgres plugin to tests
+Clients
+Clients: Add --noprune option to rucio upload
+Clients: add --noprune option to rucio upload
+Clients: Add --noprune option to rucio upload
+Clients: rucio upload should not fail on missing files
+WebUI
+WebUI: Improve replica search error message
+WebUI: Fix replica search on non existing DIDs
+WebUI: Add help texts to WebUI
+WebUI: Fix replica search on non existing DIDs
+WebUI: Add help texts to WebUI
+Transfers
+Transfers: Make WebDav protocol more resilient to server errors
+Bugs
+Bugs: Fix broken transmogrifier
+Bugs: Transmogrifier breaks on 404 RSE errors","General
+Features
+Metadata: Add external postgres metadata interface
+Transfers: Support for self-managed QoS (MAS)
+Enhancements
+Core & Internals: Per-RSE checksum specification misbehaving for MD5-only
+Messaging: Heartbeat handler for Hermes
+Protocols: webdav module: TLS version
+Subscriptions: Support overriding the account of replication rules produced by subscriptions
+Subscriptions: Support delayed injection for rules produced by subscriptions
+Subscriptions: Transmogrifier code restructing
+Testing: Fix VO specific tests
+Bugs
+Core & Internals: too many temp tables needed because of get_did(dynamic)
+Messaging: transfer-queued message does not include the correct services
+Testing: Tests failing when using docker-compose-storage.yml
+Clients
+Bugs
+Clients: rucio upload CLI with parent dataset doesn't create rules",2,4,5,3
+"Bug Fixes
+extensions: update extension SOP instances to include modality and fix lockfile (2f2a5af)","Bug Fixes
+package.json: Update microscopy, pdf, and html extensions to fix thumbnail labels (71f11a4)",4,3,4,3
+"Bug fixes
+[ ] Fix: upgrade CLI: don't update the current Kuzzle version   (Aschen)
+Enhancements
+[ ] Update to OpenAPI 3.1.0   (Aschen)
+[ ] Fix real-time engine documentation   (scottinet)
+[ ] Update to Node.js 18   (Aschen)","Bug fixes
+[ ] Allow to use vault key from env   (Aschen)
+Enhancements
+[ ] Add type for BackendPlugin.get   (Aschen)
+[ ] Better notification dispatch pipe   (Shiranuit)
+[ ] Add kuzzle config settings for internal index's number of shards and replicas   (ChillPC)",2,3,2,2
