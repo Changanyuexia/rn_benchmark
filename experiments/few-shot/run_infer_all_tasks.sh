@@ -12,17 +12,18 @@ export CUDA_VISIBLE_DEVICES=0,1,2,3
 
 MODELS=(
     "Qwen/Qwen2.5-7B-Instruct"
+    "mistralai/Ministral-8B-Instruct-2410"
+    "meta-llama/Llama-3.1-8B-Instruct"
     "mistralai/Mistral-Small-Instruct-2409"
     "Qwen/Qwen2.5-32B-Instruct"
     "meta-llama/Llama-3.3-70B-Instruct"
     "Qwen/Qwen2.5-72B-Instruct"
 )
-FEWSHOTS=(0 1 2 4)
 MAX_BATCHED_TOKENS=4096
 MAX_TOKENS=256
 TEMPERATURE=0.0
 TOP_P=1.0
-TEST_SIZE=1000
+TEST_SIZE=100
 
 mkdir -p log
 mkdir -p error_logs
