@@ -998,3 +998,3751 @@ would have been provided."
 |/| | | | | |   
 * | | | | | | bf351d1e9 Drop support for the deprecated StreamExecutor CPU backend.
 * | | | | | | 1158530fa Remove axis name from named_shape when unmapping avals
+* | | | | | |   b9cc31e35 Merge pull request #7852 from google:sparse-jaxpr-consts
+|\ \ \ \ \ \ \  
+| * | | | | | | 8bb8bf108 avoid constvar conversion when closing a sparse jaxpr
+| | |_|_|/ / /  
+| |/| | | | |   
+* | | | | | |   0412717c3 Merge pull request #7848 from google:sparse-eval-dropvar
+|\ \ \ \ \ \ \  
+| * | | | | | | bf4439879 handle dropped output values in the sparse interpreter
+| |/ / / / / /  
+* | | | | | |   83c51b0c0 Merge pull request #7846 from skye:colab_nightly
+|\ \ \ \ \ \ \  
+| |/ / / / / /  
+|/| | | | | |   
+| * | | | | | 706ba0eb7 Unpin the tpu_driver version used for Cloud TPU Colabs.
+|/ / / / / /  
+* | | | | |   aef6c8190 Merge pull request #7824 from khdlr:clip_signature
+|\ \ \ \ \ \  
+| |/ / / / /  
+|/| | | | |   
+| * | | | | cdbbefa00 Fix argument names for jnp.ndarray.clip and deprecate the old ones
+| | |_|/ /  
+| |/| | |   
+* | | | | 9c782e228 Move ShardedDeviceArray & PmapFunction to the raw C API and implement pickling/unpickling.
+* | | | | 0c03e9804 Don't cast out_axis_resources to a tuple automatically
+| |_|_|/  
+|/| | |   
+* | | |   053d7e9da Merge pull request #7747 from jakevdp:no-lists
+|\ \ \ \  
+| * | | | 3aa5eef54 lax.numpy: require arraylike inputs throughout
+| | |_|/  
+| |/| |   
+* | | | 0636f490f Ensure that named axes consistently refer to global axis sizes in xmap
+| |/ /  
+|/| |   
+* | |   0dee35502 Merge pull request #7802 from jakevdp:jnp-allclose-validation
+|\ \ \  
+| * | | 88b047012 jnp.isclose/jnp.allclose: require array inputs
+* | | | 50dd5e80d Use the raw C API for ShardedDeviceArray.
+* | | | e793c8856 Use the raw C API for ShardedDeviceArray.
+* | | |   07c4152b8 Merge pull request #7670 from wdphy16:complex_init
+|\ \ \ \  
+| * | | | b072ae543 Merge branch 'main' into complex_init
+| * | | | 5138743e8 Implement variance scaling initializers with complex dtype
+|  / / /  
+* | | |   a5151c71f Merge pull request #7813 from jakevdp:fix-bcoo-validation
+|\ \ \ \  
+| |_|/ /  
+|/| | |   
+| * | | b865ba945 [sparse]: fix corner case in BCOO validation
+|/ / /  
+* | |   8344f7e08 Merge pull request #7180 from jakevdp:dot-general-spmm
+|\ \ \  
+| |_|/  
+|/| |   
+| * | 7dd5143a5 [sparse] add support for sparse-sparse matrix products
+* | | c69eedd6f Delete Cuda 10.2 release and continuous builds.
+* | | b603b34d5 Update the readme to reflect that Cuda 10.1 and cuda 11.0 support is dropped.
+|/ /  
+* |   5303ea676 Merge pull request #7805 from jakevdp:bcoo-dedupe
+|\ \  
+| * | 4bb70183d [sparse] add BCOO._dedupe() method
+|/ /  
+* |   ca3135c3f Merge pull request #7790 from jakevdp:bcoo_unbatch
+|\ \  
+| |/  
+|/|   
+| * ca6bcb1f4 [sparse] add BCOO._unbatch() utility
+|/  
+* 94f97b920 Refactor JAX CPU kernels to make them usable from C++.","New features:
+Added jax.numpy.insert implementation ( ).
+Breaking Changes
+jax.api has been removed. Functions that were available as jax.api.*
+were aliases for functions in jax.*; please use the functions in
+jax.* instead.
+jax.partial, jax.lax.partial, and jax.util.partial were accidental
+exports that have now been removed. Use functools.partial from the Python
+standard library instead.
+Boolean scalar indices now raise a TypeError; previously this silently
+returned wrong results ( ).
+Many more jax.numpy functions now require array-like inputs, and will error
+if passed a list ( ).
+See  for a discussion of the rationale behind this change.
+When inside a transformation such as jax.jit, jax.numpy.array always
+stages the array it produces into the traced computation. Previously
+jax.numpy.array would sometimes produce a on-device array, even under
+a jax.jit decorator. This change may break code that used JAX arrays to
+perform shape or index computations that must be known statically; the
+workaround is to perform such computations using classic NumPy arrays
+instead.
+jnp.ndarray is now a true base-class for JAX arrays. In particular, this
+means that for a standard numpy array x, isinstance(x, jnp.ndarray) will
+now return False ()."
+"* 93ab5a0ea Suppress any exceptions which might pop up from closing jgit
+* cb7a7006d Ensure that non-fatal groovy parser warnings do not show up as parse failures
+* 15205902b enhancement: improve CompareEnumsWithEqualityOperator to support unwrap parentheses","What's Changed
+Ensure that non-fatal groovy parser warnings do not show up as parse failures by @sambsnyd in cb7a700
+Suppress any exceptions when closing jgit by @sambsnyd in 93ab5a0
+Improve CompareEnumsWithEqualityOperator to support unwrapping parentheses by @kunli2 in 1520590
+Full Changelog: v7.37.0...v7.37.1"
+"* e06948096 Add metedata plugin to bom project
+* 8696e5633 Add the Gradle testRuntime configuration (#2536)
+* e6ab1b136 Enable package private SourceFile path renames in ChangeType. fixes #2528
+* 5c65f5a65 Finish disabling java type mapping annotaiton default values
+* d9681aefb Disable annotation parameter default value type information until we can figure out how to do it correctly
+* b214678c2 Add description to all projects, it is a required field when publishing
+* adf65569d Polish. Removed unused imports in FindProperty. Replaced getMarkers().searchResult() with SearchResult.found(..)
+* fcb8a4a54 Preserve the source code delimiter of property entries in PropertiesParser. (#2534)
+* 38afbf17a Make `FinalizeLocalVariables` aware of non-modifying unary operators (#2529)
+* 089146b7b Added Properties.Comment.Delimiter to distinguish between comments delimited by `#` or `!`. fixes #2531
+* f2049e8aa Add Set range support and find wrapper recipe (#2530)
+* dc30a8f89 Convert rewrite-properties tests to Java/RewriteTest. Deprecate PropertiesRecipeTest
+* 1175e6cb1 Convert rewrite-proto tests to Java/RewriteTest. Deprecate ProtoRecipeTest
+* b4dc95ed4 Convert rewrite-xml tests to Java/RewriteTest. Deprecate XmlRecipeTest
+* 114051cfb added FindProperties.find
+* ff1173fd9 Yaml parsing of arrays test
+* b25cfc293 Updated parent scope detection to check for java records in RenamePrivateFieldsToCamelCase. fixes #2526
+* a20a7bfa8 Do not import classes that are declared in the CU in the ChangeType recipe. (#2525)
+* 028bf9f8e Also type-attribute Gradle's defunct 'runtime' configuration to facilitate migration and modernization of old build files
+* 960e08720 Add `visitValue` to PropertyVisitor (#2523)
+* a3b97526c FindDependency now supports glob (Gradle)
+* 1de667a69 Fix import
+* 1f9e17019 ChangeDependency* reacts to blank configuration options correctly
+* ab9d3d22c FindDependency doesn't attempt to match configuration when configuration is blank
+* 79928ae3d Disabled test to reproduce issue 2521 in ChangeTypeTest.
+* ee3ecea2f Reproducer for ChangeType on private inner class creates import statements that fails to compile (#2522)
+* cb446312d Add AutoCRLF and EOL to GitProvenance
+* 5427bbdd1 Set group to org.openrewrite, add shadow plugin to rewrite-gradle
+* 4d9f29f80 Do not call JavaType$Class#getKind() on null object in BlockStatementTemplateGenerator. fixes #2518
+* 4cbd8721a Remove buildSrc in favor of a plugin built separately (#2517)
+* 0e85929f4 Updated parent scope detection to handle java records in the RenameLocalVariablesToCamelCase recipe. fixes #2509
+* 6493a63c7 Updated parent scope detection to handle java records in the RemoveUnusedLocalVariables recipe. fixes #2509
+* 31072eba0 Fix license.
+* 76b3627c5 Maven credentials in the execution context were being incorrectly ignored. Fixes #2515
+* 83912f5f6 Added support for empty json files. Converted JsonParserTest from kotlin to java and updated with RewriteTest. fixes #2511","What's Changed
+JSON parser doesn't support empty JSON files
+Remove buildSrc in favor of a plugin built separately by @jkschneider in
+RemoveUnusedLocalVariables doesn't correctly handle records
+NPE in BlockStatementTemplateGenerator
+Add AutoCRLF and EOL to GitProvenance cb44631
+ChangeDependency* reacts to blank configuration options correctly 1f9e170
+FindDependency doesn't attempt to match configuration when the configuration is blank ab9d3d2
+FindDependency now supports glob (Gradle) a3b9752
+Reproducer for ChangeType on private inner class creates import state… by @ge0ffrey in
+Add visitValue() to PropertyVisitor by @tkvangorder in
+Added FindProperties.find() 114051c
+Do not import classes that are declared in the CU in the ChangeType recipe. by @traceyyoshima in
+Add Set range support and find wrapper recipe by @shanman190 in
+Make FinalizeLocalVariables aware of non-modifying unary operators by @knutwannheden in
+Preserve the source code delimiter of property entries in PropertiesParser by @traceyyoshima in
+Full Changelog: v7.34.0...v7.34.1"
+"* 5ac808b91 Fix broken test
+* ca25377be Any source applicable tests should be ANDed together not ORed / fixes #2543
+* dbf7dbac9 Any source applicable tests should be ANDed together not ORed / fixes #2543
+* a2529121f Ensure JavaType.Method's primary constructor is the Jackson @JsonCreater
+* bf0ad2524 Add overloaded constructor to `AddProperty`. Fixes #2542
+* 0bbea98d8 Add MemberReference to MethodMatcher (#2541)","What's Changed
+Add MemberReference to MethodMatcher by @JLLeitschuh in
+Any source applicable tests should be applied together as a logical and instead of a logical or
+Add overloaded constructor in AddProperty to maintain backward compatibility
+Ensure JavaType.Method primary constructor is the Jackson @JsonCreater a252912
+Full Changelog: v7.34.2...v7.34.3"
+"*   9e62994bc Merge pull request #21135 from hawkinsp:release
+|\  
+| * 038dfeec1 Prepare 0.4.28 release.
+|/  
+* f98e70755 Update XLA dependency to use revision http://github.com/openxla/xla/commit/d60579f54a0b6c37d1caf11dc3eb34488cf6922a.
+*   1a7a2aa55 Merge pull request #21106 from jakevdp:linalg-precision
+|\  
+| * 2ddb7ff80 jnp.linalg: add precision & preferred_element_type to dot-like functions
+* |   0c4d81c8c Merge pull request #21138 from jakevdp:einsum-doc
+|\ \  
+| |/  
+|/|   
+| * e8700523d jnp.einsum: improve documentation
+* |   eb0b1b06e Merge pull request #21108 from justinjfu/skip_pallas_test_64
+|\ \  
+| * | 080b3f1b7 Skip float64 test_nextafter on TPU
+* | | 671fb1265 Update the multi-process note in pjit's docstring
+* | |   2be3f6d14 Merge pull request #21146 from jakevdp:fix-multidot
+|\ \ \  
+| * | | 5edfaa678 jnp.linalg.multi_dot: use optimize='auto'
+* | | | 89d25bb1a Reenable examples_test in Bazel build.
+|/ / /  
+* | | 1e88e2f86 Update XLA dependency to use revision http://github.com/openxla/xla/commit/4872030c44e20556efdfea47829d942985e0ccf1.
+* | | 168f40ee3 [XLA:Python] Fix a memory corruption bug in the tp_name attribute of ArrayImpl and PjitFunction for Python 3.10 or earlier.
+* | | 96f888bcf Reverts 1956ff7d7b73794012fece2d8452e097196587fc
+* | |   f991dd8bf Merge pull request #21139 from jakevdp:fix-lpmn-test
+|\ \ \  
+| * | | f556a1703 TST: fix Lpmn test for new scipy
+| | |/  
+| |/|   
+* | |   962f08454 Merge pull request #21137 from superbobry:pallas
+|\ \ \  
+| * | | 4b62425b4 Renamed is_device_gpu_at_least to is_cuda_compute_capability_at_least
+* | | | 65d4c688e Generic reduce window jvp
+|/ / /  
+* | |   bfdc87d6d Merge pull request #21136 from superbobry:pallas
+|\ \ \  
+| * | | 575ba942e Removed get_compute_capability from jax.experimental.pallas.gpu
+|/ / /  
+* | | a145109ac Update XLA dependency to use revision http://github.com/openxla/xla/commit/68b17a8571f197676ea07479637da1546b3b501d.
+* | | f768cb74b Refactor pipeline emitter API.
+* | | e652d62b8 Cleanup second registration of custom_partitioning callbacks now that the jaxlib version has been bumped.
+* | |   8baa5d818 Merge pull request #21128 from hawkinsp:loggingtest
+|\ \ \  
+| * | | 919832a63 Enable logging_test on all CI platforms.
+* | | |   2967ec9b1 Merge pull request #21129 from superbobry:pallas
+|\ \ \ \  
+| * | | | 0feeaa599 Removed stale version guards and try/except blocks from Pallas GPU
+| | |/ /  
+| |/| |   
+* / | | 0e57c79b0 Switch Windows jobs to use Clang.
+|/ / /  
+* | |   11da3df23 Merge pull request #21096 from gspschmid:gschmid/sourcemaps
+|\ \ \  
+| |/ /  
+|/| |   
+| * | b0b322d48 Add sourcemap module to generate TC39-compliant source maps
+|  /  
+* | 335f27b0b Update XLA dependency to use revision http://github.com/openxla/xla/commit/c6df436f9e3d2a706a3a9595e37224276fb6013b.
+* | e9e4e5341 [jax:mosaic-gpu] FragmentedArray can do tiled load.
+* | 79f11d549 [Pallas] Fix some typos.
+* | 395d3cb79 Bump minimum jaxlib version to 0.4.27
+* | 5ba56bb07 Recommend the plugin in the CUDA installation instructions.
+* |   78e10eea7 Merge pull request #21115 from jakevdp:multi-dot
+|\ \  
+| * | 09810be0c Implement jnp.linalg.multi_dot using opt_einsum
+* | |   2b3251ed4 Merge pull request #21092 from jakevdp:dot-doc
+|\ \ \  
+| |/ /  
+|/| |   
+| * | 034d843e8 jax.numpy: better docs for matmul-like functions
+* | |   5f702674f Merge pull request #21103 from superbobry:mosaic-gpu-fix
+|\ \ \  
+| * | | 8ccbebae4 Fixed Mosaic GPU build following #21029
+| | |/  
+| |/|   
+* | |   715373855 Merge pull request #21104 from superbobry:triton-fixes
+|\ \ \  
+| * | | 2ca326405 Updated the Pallas GPU lowering to work with older jaxlib versions
+| |/ /  
+* | | 174405c95 The Bazel version used in JAX is bumped from 6.1.2 to 6.5.0.
+* | |   b6fea3734 Merge pull request #21111 from jakevdp:fix-changelog
+|\ \ \  
+| * | | c18851b65 CHANGELOG: move change from 0.4.27 to 0.4.28
+* | | |   9524188e4 Merge pull request #21110 from jakevdp:upstream-nightly
+|\ \ \ \  
+| |/ / /  
+|/| | |   
+| * | | 496795e95 CI: fix typo in workflow
+| | |/  
+| |/|   
+* / | 5031a1ddc Finish jax and jaxlib 0.4.27 release
+|/ /  
+* |   3dd8af93b Merge pull request #21090 from jakevdp:extract
+|\ \  
+| * | 0c26a34df Add optional size argument to jnp.compress & jnp.extract.
+| |/  
+* |   274e7355d Merge pull request #21105 from albanie:patch-3
+|\ \  
+| * | fdd8b6109 Minor doc fix to `jaxpr.rst`
+| |/  
+* / daab7a032 Handle ellipsis `...` in `_attempt_rewriting_take_via_slice`.
+|/  
+* 9b79f6520 Remove deprecated `kind` argument from `jnp.sort` and `jnp.argsort`.","Bug fixes
+Reverted a change to make_jaxpr that was breaking Equinox ().
+Deprecations & removals
+The kind argument to jax.numpy.sort and jax.numpy.argsort
+is now removed. Use stable=True or stable=False instead.
+Removed get_compute_capability from the jax.experimental.pallas.gpu
+module. Use the compute_capability attribute of a GPU device, returned
+by jax.devices or jax.local_devices, instead.
+Changes
+The minimum jaxlib version of this release is 0.4.27."
+"* dc16b068d Fix UpdateStaticAnalysisPackageTest
+* 70e21cce1 License headers
+* 90fc38ed5 Avoid duplicate recipe loads
+* f48a1328c fix: Scan ScanningRecipes too when scanning jars (#3317)
+* bba8b92fd [Rewrite8 migration] Add recipe to handle moved recipe in yaml file && polish && more tests
+* d364bf15f [Rewrite8 migration]polish and add examples
+* ed95ded64 Do not throw when visiting a block not contained in a method declaration
+* 2fbde31ec Java import autodetect extracts import package name (and other stats) eagerly
+* 522a98517 Tweak style autodetect (#3311)
+* 73db4837a TypeUtils#isOfType infinite recursion (#3316)
+* d68327c58 Update Gradle Enterprise plugin to 3.13.3 (#3314)
+* 7bfa81fa3 Fix/yaml encoding (#3313)
+* 4a06975d4 [rewrite8 migration] Add handling of removed TreeVisitor#doAfterVisit(Recipe)
+* a66417880 [rewrite8 migration] Add a recipe to update referencing package name for the recipes moved to rewrite-static-analysis
+* 203adda08 Add recipe UpdateMovedPackageClassName to update class fqn after moving it to a new package
+* 7c182ff8d Add support for instanceof to groovy parser
+* 186a1a0d0 [rewrite8 migration]Make MigrateMarkersSearchResult works again
+* a794ded70 Add license headers
+* f32c36c31 [Rewrite8 migration]Add recipe to migrate JavaTemplate to rewrite8
+* 9f0ed1ffa SearchResult is now final
+* 056be446a Update java-categories.yml","What's Changed
+Fix/yaml encoding by @thomaszub in
+Update Gradle Enterprise plugin to 3.13.3 by @jprinet in
+TypeUtils#isOfType infinite recursion by @jkschneider in
+Tweak style autodetect by @sambsnyd in
+fix: Scan ScanningRecipes too when scanning jars by @kmccarp in
+New Contributors
+@jprinet made their first contribution in
+Full Changelog: v8.1.1...v8.1.2"
+"* e3116a64a fix: skip blocked repository (#3212)
+* 4e00ff471 Compare XML tag names for equality (#3251)
+* 1f250f378 Support default package in `JavaParser.Builder.classpath(byte[][])` (#3249)
+* d4f43a239 Invalid Javadoc should remain unchanged (#3247)
+* 0c6589aef Add options to the Add Gradle Enterprise Maven recipe (#3233)
+* 75ed79226 Fix AddGradleEnterpriseMavenExtension running on Windows
+* 2aae57a18 Suppress exceptions in Autodetect to prevent it from dying on some kotlin sources
+* 57412729e JavaParser classpath from byte array has issue with default package (#3245)
+* 81d5a90bd Handle assignments in Gradle extra properties (#3246)
+* 0adaf595a Feature/gradle/enhance update java compatibility (#3238)
+* 12e7dd69e Improve accuracy and performance of template matching
+* 4be2a1b30 Fix NoClassDefFoundError in RewriteTest on jgit diff() (#3244)
+* 0a6b55efd Fixes #3144 RenamePropertyKey and ChangePropertyValue running together (#3226)
+* 5f861ff90 fix: parse environment properties in maven repositories (#3211)
+* 35acf34a8 Support 21-ea as value for java.version in JavaParser (#3242)
+* 139514eee Reproducer for #3227 Gradle change dependency ignores platform (#3228)
+* 2236bd336 Add support for G.GString matching when adding dependencies
+* 5255824f4 Polish
+* 0cf42c81f Support G.GString types in ChangeDependencyArtifactId
+* cbe8048fa Support G.GString types in ChangeDependencyGroupId
+* 1c9f75426 Correct marker computation for replace, if present
+* 9a6879c75 `ReplaceConstantWithAnotherConstant` should keep static imports (#3177)
+* 76a69168d Add exception for `J.EnumValueSet` to `WrappingAndBracesTest`
+* 3f10c7b3d Remove Analysis Code From Rewrite (#3197)","What's Changed
+Remove Analysis Code From Rewrite by @JLLeitschuh in
+ReplaceConstantWithAnotherConstant should keep static imports by @knutwannheden in
+Reproducer for Gradle change dependency ignores platform by @ge0ffrey in
+Support 21-ea as value for java.version in JavaParser by @timtebeek in
+fix: parse environment properties in maven repositories by @yeikel in
+Fixes RenamePropertyKey and ChangePropertyValue running together by @ge0ffrey in
+Fix NoClassDefFoundError in RewriteTest on jgit diff() by @timtebeek in
+Feature/gradle/enhance update java compatibility by @shanman190 in
+Handle assignments in Gradle extra properties by @shanman190 in
+JavaParser classpath from byte array has issue with default package by @timtebeek in
+Add options to the Add Gradle Enterprise Maven recipe by @alextu in
+Invalid Javadoc should remain unchanged by @mduerig in
+Support default package in JavaParser.Builder.classpath(byte[][]) by @timtebeek in
+Compare XML tag names for equality by @timtebeek in
+fix: skip blocked repository by @yeikel in
+Full Changelog: v7.40.7...v7.40.8"
+"* d1f951210 Handle `JavaType.Intersection` in `DefaultJavaTypeSignatureBuilder` (#3732)
+* f2bd62e07 Fix plain text parser failing to consider the path ""README.md"" as being matched by a pattern like ""**/README.md""
+* aa84b6138 Don't use static import on collision with local method (#3729)
+* d9ea65b50 Prevent NPE as reported due to null normalized repository (#3727)
+* 4005e970a Migrate single-source applicability tests to preconditions (#3726)","What's Changed
+Migrate single-source applicability tests to preconditions by @knutwannheden in
+Prevent NPE as reported due to null normalized repository by @timtebeek in
+Don't use static import on collision with local method by @Bananeweizen in
+Handle JavaType.Intersection in DefaultJavaTypeSignatureBuilder by @knutwannheden in
+Full Changelog: v8.9.6...v8.9.7"
+"* 28e7b1256 Replaced early exit logic for versions using property values with property resolution, allowing dependencies/plugins using redundant property versions to correctly be removed. (#4236)
+* da30d7e94 Only consider specified configurations for UpgradeTransitiveDependencyVersion created constraints if these are mentioned. (#4233)
+* d304dc819 Correct `AnnotationMatcher` calls
+* 0fffdf6df refactor: OpenRewrite best practices (#4231)
+* 5cd5675b9 Do not add constraints inside version J.MethodInvocations part of the constraint itself. (#4229)","What's Changed
+Do not add constraints inside version J.MethodInvocations part of the constraint itself. by @Jenson3210 in
+refactor: OpenRewrite best practices by @timtebeek in
+Only consider specified configurations for UpgradeTransitiveDependencies created constraints by @Jenson3210 in
+Add Property Resolution to RemoveRedundantDependencyVersions by @ryan-hudson in
+Full Changelog: v8.27.3...v8.27.4"
+* 0893a6fcb Recipes must be public to be loaded by ClasspathScanningLoader,"What's changed
+Recipes must be public to be loaded by ClasspathScanningLoader (avoids attempted classloads of Recipe$Noop, etc.)"
+"* e2a8cb87c Guard against NPE in MavenVisitor#visitPlugin
+* e7622c8f0 Get tools compiling
+* b8d255997 Get tools compiling again
+* 8a8d5ef1d Fall back to  default groupId when comparing plugins
+* d24949ead Add recipe `AddLiteralMethodArgument` (#4053)
+* 78bbc0984 Switch to Objects.equals for null safe plugin comparison","What's Changed
+Add recipe AddLiteralMethodArgument by @pstreef in
+Guard against NPE in MavenVisitor#visitPlugin by @jkschneider in  e2a8cb8
+Full Changelog: v8.18.1...v8.18.2"
+"* 3ecebb882 Less than 100 response status implies bad connection (#3977)
+* e7dd3768e Fix AddProperty insertion point not properly taking comments into account
+* 7e74b11e4 Polish
+* 51ab0e2b4 Trim out some redundant tests
+* e2e1bd59d Add support for adding JavaCompatibility statements where missing to `UpdateJavaCompatibility` recipe (#3975)
+* afd218e23 Submit dependency graph to GitHub after publish (#3971)
+* b967406a3 Limit RecipeEqualsAndHashCodeCallSuper to recipes and callSuper (#3973)
+* ab83dc28a refactor: Remove unused imports (#3974)
+* 0a3246e0a refactor: Remove `test` prefix from JUnit 5 tests
+* 076683362 refactor: Remove `public` visibility of JUnit 5 tests
+* 2de7b61b6 Document non-whitespace semicolon after class
+* 09115e9f2 Fix cast exception in UseTreeRandomId
+* f3d4cf06e Use `Tree.randomId()` to construct LST elements, not `UUID.randomUUID()` (#3784)
+* 78a55a460 Another trailing comma parser error with arrays
+* 06e561d4c Drop UseJavaParserBuilderInJavaTemplate following #3285
+* c3b712b1d Resolve unrelated test failures and add disabled dedicated test
+* 8b4b68b7c Decouple UpdateGradleWrapperTest from project Gradle version
+* c1cacd326 `MergeYaml` should only make changes when required
+* 54a4410b0 chore: Delete unused .github/workflows/dependency-check.yml
+* 0dd5997df Changes packaging only if it matches provided packaging (#3968)
+* 33d8f7d42 Add whitespace validation to RewriteTest
+* 2923de5a0 refactor: Update Gradle wrapper","What's Changed
+Changes packaging only if it matches provided packaging by @ammachado in
+Use Tree.randomId() to construct LST elements, not UUID.randomUUID() by @TheMarvelFan in
+refactor: Remove unused imports by @timtebeek in
+Limit RecipeEqualsAndHashCodeCallSuper to Recipe and callSuper by @timtebeek in
+Submit dependency graph to GitHub after publish by @timtebeek in
+Add support for adding JavaCompatibility statements where missing to … by @krlittle in
+Less than 100 response status implies bad connection by @pstreef in
+New Contributors
+@krlittle made their first contribution in
+Full Changelog: v8.15.1...v8.15.2
+What's Changed
+Changes packaging only if it matches provided packaging by @ammachado in
+Use Tree.randomId() to construct LST elements, not UUID.randomUUID() by @TheMarvelFan in
+refactor: Remove unused imports by @timtebeek in
+Limit RecipeEqualsAndHashCodeCallSuper to Recipe and callSuper by @timtebeek in
+Submit dependency graph to GitHub after publish by @timtebeek in
+Add support for adding JavaCompatibility statements where missing to … by @krlittle in
+Less than 100 response status implies bad connection by @pstreef in
+New Contributors
+@krlittle made their first contribution in
+Full Changelog: v8.15.1...v8.15.2"
+"* 6fbb85dc1 Disable nested jar scanning in `dependenciesFromClasspath()`
+* 9a5b79df0 Minor fix in FindRecipes to prevent unexpected reported errors.
+* 8c8c9ad07 [TypeUtils.findOverridenMethod] Skip found methods with default access and not same package (#3603)
+* acb7c2bfa Include tools in build.","What's Changed
+Fix problem caused by nested jar scanning in tests: 6fbb85d
+[TypeUtils.findOverridenMethod] Skip found methods with default access and not same package by @joteri in
+New Contributors
+@joteri made their first contribution in
+Full Changelog: v8.7.3...v8.7.4"
+"* 06495919 Test in Python 3.9. (#887)
+* ec3ee10f Switch publishing gh-pages to Circle-CI. (#886)
+* a5ed0bb9 Fix tests. (#885)
+* 3e72d898 BUG: Fix merge_colinear (#882)
+* 2a1df192 Update config.yml
+* fa03ef6f Fix build for CI. (#881)
+*   8d8f9720 Merge pull request #878 from DigitalSlideArchive/simplify-dockerfile
+|\  
+| * 9cdf219b Simplify the Dockerfile.
+* 597b78dd Merge pull request #877 from DigitalSlideArchive/switch-return-order-in-get_tissue_mask-docstring
+* c6611881 Update tissue_detection.py","Notes
+This will be the last version to support Python 2.7 and 3.5."
+* e26235ac Add a console entry point. (#1102),"What's Changed
+Add a console entry point. by @manthey in
+Full Changelog: v1.3.4...v1.3.5"
+"*   77b15c48 Merge pull request #94 from DigitalSlideArchive/nuclei_segmentation_cli
+|\  
+| * 40e9feb0 Fix style error
+| * 79e1892d Fix style errors
+| * 0ac89743 Merge two RUN commands in Dockerfile
+| * e3049bd3 Install ctk_cli 1.3.1 using my binstar channel until available on pypi
+| * 009737b0 Enabling docker in .travis.yml
+| * 78645e4e Fixed bugs in NucleiSegmentation CLI
+| * a8ad9fe0 Change rest end point code to pass reference imageid and userid for files
+| * 049e1021 git clone install ctk_cli until new changes become available on pypi
+| * 6f6577b2 Bump version of ctk_cli to 1.3.1 to expose reference field of file parameter
+| * ee213831 Disabling BinaryMixtureCut until we get pygco installed
+| * ff6e37a6 BUG: Make centroid three-dimensional by adding zero for z-coord
+| * 9129afe5 Fix bugs and add reference to input image in xmlspec of annotation file
+| *   e93e70a4 Merge conflict with master
+| |\  
+| |/  
+|/|   
+* |   4c501c84 Merge pull request #100 from DigitalSlideArchive/update-phantomjs
+|\ \  
+| * | f0c6264b Upgrade Travis to fix an issue with PhantomJS install
+|/ /  
+* |   c3baa42a Merge pull request #99 from DigitalSlideArchive/upgrade-deps
+|\ \  
+| * | 8efbeef8 Upgrade requirements for upstream packages
+|/ /  
+* |   795e8eeb Merge pull request #97 from DigitalSlideArchive/json-encode-strings
+|\ \  
+| * \   c871e145 Merge branch 'master' into json-encode-strings
+| |\ \  
+| |/ /  
+|/| |   
+| | *   9eac1c9d Merge changes from master
+| | |\  
+| |_|/  
+|/| |   
+* | |   76504031 Merge pull request #96 from DigitalSlideArchive/cli-feature-extraction
+|\ \ \  
+| * | | 557db49f Updated FeatureExtraction.xml added grouped parameters
+| * | | 10941053 Updated FeatureExtraction.py removed hard-coded parameters and followed NucleiSegmentation processing
+| * | | d18b39d9 Updated FeatureExtraction.py removed hard-coded parameters and followed NucleiSegmentation processing
+| * | | 80960d5f Updated FeatureExtraction.py removed a hard-coded cropping
+| * | | f959a1e1 Added feature extraction to server/slicer_cli_list.json
+| * | | 27836b0f Added FeatureExtraction.xml for CLI
+| * | |   5a74c091 Merge branch 'master' of github.com:DigitalSlideArchive/HistomicsTK into cli-feature-extraction
+| |\ \ \  
+| |/ / /  
+|/| | |   
+| * | |   74d07a87 Merge branch 'master' of github.com:DigitalSlideArchive/HistomicsTK into cli-feature-extraction
+| |\ \ \  
+| * | | | b12024d8 Added FeatureExtraction.py for CLI
+| * | | | 4b4e7b97 Added FeatureExtraction.py for CLI
+| * | | | 3e3c7ad2 Added FeatureExtraction.py for CLI
+|  / / /  
+| | | * b5031c7a Fix a bug in exception handling of _getParamCommandLineValue
+| | | * 720f39fd Catch exceptions generated in _getParamCommandLineValue and print a user friendly error
+| | | *   2e85c8b3 Merge remote-tracking branch 'origin/json-encode-strings' into nuclei_segmentation_cli
+| | | |\  
+| | | |/  
+| | |/|   
+| | * | 95d46dd2 JSON encode values passed back to the server
+| |/ /  
+|/| |   
+| | * 884686a4 BUG: Use json.loads to decode json value in _getParamCommandLineValue
+| | * 93f9568f Bump commit hash of girder, girder_worker, and large_image
+| | *   eaeb49cd Merge remote-tracking branch 'origin/master' into nuclei_segmentation_cli
+| | |\  
+| |_|/  
+|/| |   
+* | |   63eaf6bd Merge pull request #93 from DigitalSlideArchive/mixture-model-fix
+|\ \ \  
+| * | | 6c774fae Update BinaryMixtureCut.py
+|/ / /  
+* | |   120eb63e Merge pull request #92 from DigitalSlideArchive/mixture-model
+|\ \ \  
+| |/ /  
+|/| |   
+| * | 71788c23 Update BinaryMixtureCut.py
+| * | b3967233 Update PoissonMixture.py
+| * | ffbff190 Update __init__.py
+| * | e30b3b0e Create PoissonMixture.py
+| * | 605c24b3 Create BinaryMixtureCut.py
+|/ /  
+| * 4cafbc47 Fixed bugs in NucleiSegmentation CLI
+| * b1e7046c Fixed a bug in MaxClustering
+| * 460478d6 Removed print statement in rest_slicer_cli.pu
+| * 67605a61 Specify .anot extension for annotation file in xmlspec of Nuclei segmentation
+| * cbba43a4 style fix
+| * b1580c75 Finished adding code for generating annotations for each nucleus
+| * 2533ec6d Using regionprops to stuff needed to generate annotations for nuclei
+| * 94eba721 Added nuclei segmentation to server/slicer_cli_list.json
+| * 8fdc2cd9 Fix bug in MaxClustering
+| * c1f7d719 First implementation of nuclei segmentation CLI
+| *   87cb5d7a Merge remote-tracking branch 'origin/master' into nuclei_segmentation_cli
+| |\  
+| |/  
+|/|   
+* | 0f4fe16d Merge pull request #91 from DigitalSlideArchive/tagged-docker
+* | e17fe265 Use an immutable tagged version of the Docker CLI container
+ /  
+* 29bdb7ee Merge branch 'master' of github.com:DigitalSlideArchive/HistomicsTK
+* 0577fede Merge branch 'master' of github.com:DigitalSlideArchive/HistomicsTK
+* 2f2d4a97 Merge branch 'master' of github.com:DigitalSlideArchive/HistomicsTK
+* 311d7d61 Merge branch 'master' of github.com:DigitalSlideArchive/HistomicsTK
+* a1f6c9b0 Added mock for sklearn.cluster","This release includes two new CLIs
+FeatureExtraction
+NucleiSegmentation
+It also includes changes to the automatic rest end-point generation code to pass on additional information (reference image itemId and userId) to the girder_worker binding spec for output files that specify the reference attribute in their xml spec."
+"* 012caa5 chore(release): 1.7.5 [skip ci]
+*   54d084e Merge pull request #298 from iamkun/feature/iamkun
+|\  
+| * b5fc3d1 fix: add isBetween API & update
+|/  
+*   11428ff Merge pull request #296 from lamartire/master
+|\  
+| *   9b12e14 Merge branch 'master' into master
+| |\  
+| |/  
+|/|   
+* |   555782a Merge pull request #295 from borgiman/master
+|\ \  
+| * \   2775d52 Merge branch 'master' into master
+| |\ \  
+| |/ /  
+|/| |   
+* | |   81e7ad4 Merge pull request #291 from c10b10/master
+|\ \ \  
+| * | | f5e80ee Add romanian locale
+|/ / /  
+| * / a45e244 fix german locale
+|/ /  
+| * fc377d8 Prettify isBetween output
+| * dfb756b Changes logic of isBetween Now it works with non dayjs-like arguments and not depends on order of input
+| * d1e4981 Implements isBetween plugin Sets testURL in jest config for resolve issue with failing tests
+|/  
+* e05de60 Update README.md
+* e51ca3a Update README.md","Bug Fixes
+add isBetween API & update (b5fc3d1)"
+"*   2da0f8261 Merge pull request #2562 from travisn/release-0-9-2-version
+|\  
+| * 0bc2da4aa use rook v0.9.2 and ceph v13.2.4 for the sample image tags
+|/  
+*   6071f871b Merge pull request #2561 from noahdesu/backport-osd-logging-fix
+|\  
+| * b4f13eed6 exec: interleave stdout/stderr logging
+* |   8bab734af Merge pull request #2557 from travisn/backport-logging-fsgroup
+|\ \  
+| |/  
+|/|   
+| * ffb6195e2 allow disabling of fsGroup in the flex driver
+|/  
+*   56a4d4eb2 Merge pull request #2548 from travisn/backport-mgr-privs
+|\  
+| * 1024737a3 set mgr privs for access to the rbd mirroring settings
+* |   0c60d0cfb Merge pull request #2554 from Defilan/backport-fix-gce-ubuntu-issue
+|\ \  
+| |/  
+|/|   
+| * 768da64e6 Changing timeout for dpkg unlock for Ubuntu GCE CI/CD systems
+|/  
+*   0941ebd5e Merge pull request #2493 from syncroswitch/backport-ssl-fix
+|\  
+| * ca39bb8d5 fix for enabling tls on rados gateway s3 api:
+* |   c7ffa1e59 Merge pull request #2481 from noahdesu/v0.9-dashboard-backports
+|\ \  
+| |/  
+|/|   
+| * c0dc3cf70 ceph: support dashboard ssl on/off
+| * 4513b16ca ceph: support custom dashboard port
+|/  
+*   b4da02758 Merge pull request #2488 from galexrt/backport_2484
+|\  
+| * 4e2ed3038 Correctly set secretkey from mountSecretKey param
+|/  
+*   09f0f48c0 Merge pull request #2478 from allen13/backport-selinux-env
+|\  
+| * f8bd2aa38 Add ENV flag for selinux labeling
+|/  
+* 75fc3243a Merge pull request #2459 from bassam/pr-fix-slack
+* 11c194bf5 fix slack links","Rook v0.9.2 is a patch release limited in scope and focusing on bug fixes.
+Improvements
+Ceph
+Correctly capture and log the stderr output from child processes (, @noahdesu)
+Allow disabling setting fsgroup when mounting a volume (, @travisn)
+Allow configuration of SELinux relabeling (, @allen13)
+Correctly set the secretKey used for cephfs mounts (, @galexrt)
+Set ceph-mgr privileges to prevent the dashboard from failing on rbd mirroring settings (, @travisn)
+Correctly configure the ssl certificate for the RGW service (, @syncroswitch)
+Allow configuration of the dashboard port (, @noahdesu)
+Allow disabling of ssl on the dashboard (, @noahdesu)
+General
+Increase timeout for starting GCE instances (, @Defilan)
+Fix the links to Slack (, @bassam)"
+"*   5e95b36eb Merge pull request #3625 from travisn/release-1.0.5
+|\  
+| * 56bfdd379 Update the yaml and doc version to v1.0.5 for the release
+* |   ebf292b42 Merge pull request #3623 from travisn/backport-owner-ref
+|\ \  
+| |/  
+|/|   
+| * 70b41a65f Make the ownerreference name match the cluster name referenced
+|/  
+*   e657a4a7f Merge pull request #3585 from calmacara/improve-docs-update-0.9-1.0
+|\  
+| * 880c08f2e Improve update 0.9 to 1.0 docs
+|/  
+* 2878e3d2d Merge pull request #3464 from k0da/prom_annotations_10
+* 3549b1f30 Mgr: fix prometheus annotations","Rook v1.0.5 is a patch release limited in scope and focusing on bug fixes.
+Improvements
+Ceph
+Set owner references properly to avoid unexpected K8s garbage collection (, @renekalff)
+Add prometheus annotations properly to mgr deployment (, @k0da)"
+"* bc07156 chore(release): 1.8.28 [skip ci]
+* 8cd5745 Merge pull request #919 from iamkun/dev
+* fa2ec7f fix: Fix CustomParseFormat plugin month index error (#918)
+* a08756e fix: Update Ukrainian (uk) locale monthFormat and monthStandalone (#899)","Bug Fixes
+Fix CustomParseFormat plugin month index error () (fa2ec7f), closes
+Update Ukrainian (uk) locale monthFormat and monthStandalone () (a08756e)"
+"*   02e5dad54 Merge pull request #5753 from travisn/release-1.3.7
+|\  
+| * 999a87971 build: set manifest versions to v1.3.7
+|/  
+*   09e2198db Merge pull request #5749 from cloudical-io/backport_cassandra_baseimagecve
+|\  
+| * 0c2980248 cassandra: update base image to alpine:3.12
+*   385aaab04 Merge pull request #5703 from cybozu-go/bp-1.3-ceph-fix-the-wrong-document-of-tuneDeviceClass
+|\  
+| * 41fdc917f ceph: fix the wrong document of tuneDeviceClass
+*   0e5c6f67a Merge pull request #5737 from rook/mergify/bp/release-1.3/pr-5720
+|\  
+| * 84fb6b64f ceph: force delete stuck mons in every reconcile
+|/  
+*   ca840e7fb Merge pull request #5733 from leseb/fix-rgw-bucket
+|\  
+| * fa1de8e7b ceph: fix GetUser
+| * 9c35f5e41 ceph: fix exec output
+|/  
+*   2b05cc79e Merge pull request #5704 from anmolsachan/backport_release_1.3
+|\  
+| * a06671b26 ceph: updated PVC utilizaztion alerts
+* |   13a26500e Merge pull request #5708 from rook/mergify/bp/release-1.3/pr-5698
+|\ \  
+| |/  
+|/|   
+| * db422a2df ceph: during mon failover remove the backing pvc
+| * b63b02aca ceph: save mon config even if failed to remove dead mon
+|/  
+*   f9d6d2d7c Merge pull request #5689 from rook/mergify/bp/release-1.3/pr-5628
+|\  
+| * de1b68d8a ceph: fix ignoring device specification with non-kname
+| * 1e6e8b5db ceph: fix the test of OSD
+|/  
+*   8119f0f55 Merge pull request #5681 from rook/mergify/bp/release-1.3/pr-5673
+|\  
+| * 139e9e21e ceph: added CephClusterReadOnly alert and updated utilization alerts
+|/  
+* 58ef8387c Merge pull request #5678 from leseb/bp-5664
+* 121568701 ceph: small user delete refactor
+* ee3c2307f ceph: add external support for objectstoreuser","Improvements
+Rook v1.3.7 is a patch release limited in scope and focusing on small feature additions and bug fixes.
+Ceph
+Force delete stuck mons in every reconcile instead of only in the health check (, @travisn)
+During mon failover remove the backing pvc (, @travisn)
+Fix for the devicePathFilter during OSD creation (, @satoru-takeuchi)
+External support for object store users (, @leseb)
+Added warning and critical alerts for all the Ceph PVCs (, @anmolsachan)
+Added CephClusterReadOnly alert and updated utilization alerts (, @anmolsachan)
+Cassandra
+Update base image to alpine:3.12 (, @galexrt)"
+"*   9ce0f293f Merge pull request #3446 from travisn/version-1.0.4
+|\  
+| * 5f6dcedcf Update the yaml and doc versions to v1.0.4 for the release
+|/  
+* c26c06911 Merge pull request #3422 from leseb/bpk-do-not-create-cm
+* fc11de42c tests: ensure cluster does not exist before starting a test
+* 82d6cef5b ceph: rgw: set proper port syntax on beast
+* 9ab251215 ceph: adjust M-to-Mi rounding in PV creation
+* 256fbf584 ceph: stop creating initial crushmap
+* ba81e9db0 ceph: keyring: stop using auid 0","Rook v1.0.4 is a patch release limited in scope and focusing on bug fixes.
+Improvements
+Ceph
+RGW: Set proper port syntax for beast in nautilus deployments (, @leseb)
+Stop creating initial crushmap to avoid incorrect crush map warning (, @leseb)
+Use correct rounding of PV size for binding of PVCs (for example G or Gi) (, @noahdesu)"
+"* fb3dd1b chore(release): 1.9.8 [skip ci]
+* 991be33 Merge pull request #1291 from iamkun/dev
+* 1c4b0da fix: update Hebrew [he] locale for double units (#1287)
+* 1605cc0 fix: fix Ukrainian [uk] locale typo
+* 0e7ff3d fix: update zh locale meridiem ""noon""
+* aaabd80 test: update zh-cn locale test
+* d5930b9 fix: update zh-cn locale definition of noon  (#1278)","Bug Fixes
+fix Ukrainian [uk] locale typo (1605cc0)
+update Hebrew [he] locale for double units () (1c4b0da)
+update zh locale meridiem ""noon"" (0e7ff3d)
+update zh-cn locale definition of noon  () (d5930b9)"
+"* ed9629b chore(release): 1.9.6 [skip ci]
+* 272c78b Merge pull request #1199 from iamkun/dev
+* 50f05ad fix: fix customParseFormat plugin parsing date bug (#1198)
+* 6d6c684 fix: Update lv (Latvian) locale relative time (#1192)","Bug Fixes
+fix customParseFormat plugin parsing date bug () (50f05ad), closes
+Update lv (Latvian) locale relative time () (6d6c684)"
+"* 6cc12b7 chore(release): 1.11.12 [skip ci]
+*   35727b3 Merge pull request #2694 from iamkun/dev
+|\  
+| * 7b99f68 chore: rm useless import
+| * 5e6d8b0 chore: added README translation for Swahili speakers (#2691)
+| * b575c81 fix: timezone plugin currect parse UTC tz (#2693)
+| * f3ef705 fix: add UTC support to negativeYear plugin (#2692)
+| * d0e6738 fix: Fix zero offset issue when use tz with locale (#2532)
+| * 9635a93 chore: update demo
+| * 8d5d521 chore: update demo
+| * f4cb2cf chore: Update README.md
+| * 4fbe94a fix: Improve typing for min/max plugin (#2573)
+| * 1e61e42 chore: update doc demo
+| * e5a1c03 chore: Update README.md
+| * 6a42e0d fix: Add NegativeYear Plugin support  (#2640)
+|/  
+* 3737c8c Merge branch 'dev' into master
+* 39a9410 chore: update readme
+* 7b8881e chore: update ci","Bug Fixes
+Add NegativeYear Plugin support  () (6a42e0d)
+add UTC support to negativeYear plugin () (f3ef705)
+Fix zero offset issue when use tz with locale () (d0e6738)
+Improve typing for min/max plugin () (4fbe94a)
+timezone plugin currect parse UTC tz () (b575c81)"
+"* 4acbb72 chore(release): 1.11.1 [skip ci]
+* 5322037 Merge pull request #1855 from iamkun/dev
+* a597d0b fix: update Kurdish [ku] locale strings and formatted output contains non-standard kurdish characters (#1848)
+* e790516 fix: update locale bo [Tibetan]: corrected the orders in formats (#1823)
+* 8e6d11d fix: update Italian (Switzerland) [it-ch] locale relativeTime (#1829)
+* 4e2802c fix: Update German [de] locale, adds the abbreviations for month including a . in the end, as in September -> Sept. (#1831)
+* 627fa39 fix: refactor replace deprecated String.prototype.substr() (#1836)
+* d2783a4 chore: Add Turkish README.md (#1840)
+* 840ed76 fix: add Bengali (Bangladesh) [bn-bd] locale (#1806)
+* 32b7fe3 chore: add sponsors (#1851)","Bug Fixes
+add Bengali (Bangladesh) [bn-bd] locale () (840ed76)
+refactor replace deprecated String.prototype.substr() () (627fa39)
+Update German [de] locale, adds the abbreviations for month including a . in the end, as in September -> Sept. () (4e2802c)
+update Italian (Switzerland) [it-ch] locale relativeTime () (8e6d11d)
+update Kurdish [ku] locale strings and formatted output contains non-standard kurdish characters () (a597d0b)
+update locale bo [Tibetan]: corrected the orders in formats () (e790516)"
+"* 6b587da chore(release): 1.8.18 [skip ci]
+* 18a294a Merge pull request #754 from iamkun/dev
+* 78ec173 fix: Fix .locale() handel unsupported locale
+* 6d51435 fix: Update Mongolian (mn) locale relativeTime (#753)
+* aa0f210 fix: Update LocaleData plugin to support dayjs().longDateFormat() (#734)
+* cde5d0b fix(): Add missing locale type definition (#716)
+* 49670d5 fix: Update Swedish locale (sv) fix ordinal error (#745)
+* 15d1b81 fix: Update locale (zh-cn) meridiem (#735)
+* e31e544 fix: Update locale (zh-cn) (#706)
+* 9ad2e47 fix: Update locale (fa) (#733)
+* 5b53e98 fix: Update Italian locale (it) (#727)
+* bd8a378 Merge pull request #728 from iamkun/master
+* f287992 chore: Update changelog","Bug Fixes
+Add missing locale type definition () (cde5d0b)
+Fix .locale() handel unsupported locale (78ec173)
+Update Italian locale (it) () (5b53e98)
+Update locale (fa) () (9ad2e47)
+Update locale (zh-cn) () (e31e544)
+Update locale (zh-cn) meridiem () (15d1b81)
+Update LocaleData plugin to support dayjs().longDateFormat() () (aa0f210), closes
+Update Mongolian (mn) locale relativeTime () (6d51435)
+Update Swedish locale (sv) fix ordinal error () (49670d5), closes"
+"*   7dfaf2c50 Merge pull request #4175 from travisn/release-1.1.4
+|\  
+| * 61f2888a5 build: set the v1.1.4 release tag
+|/  
+* fac5d702d Merge pull request #4165 from travisn/osd-config-overrides
+* 78922f6ab Revert ""ceph: osd remove --conf flag""
+* fbd30dcb1 ceph: re-enable config overrides for osds","Improvements
+Rook v1.1.4 is a patch release limited in scope and focusing on bug fixes. Note that release v1.1.3 was skipped.
+Ceph
+OSD config overrides were ignored for some upgraded OSDs (, @leseb)
+Enable restoring a cluster after disaster recovery (, @travisn)
+Enable upgrade of OSDs configured on PVCs (, @sp98)
+Automatically removing OSDs requires setting: removeOSDsIfOutAndSafeToRemove(, @rohgupta)
+Rework csi keys and secrets to use minimal privileges (, @leseb)
+Expose OSD prepare pod resource limits (, @leseb)
+Minimum K8s version for running OSDs on PVCs is 1.13 (, @sp98)
+Add 'rgw.buckets.non-ec' to list of RGW metadataPools (, @OwenTuz)
+Hide wrong error for clusterdisruption controller (, @leseb)
+Multiple integration test fixes to improve CI stability (, @travisn)
+Detect mount fstype more accurately in the flex driver (, @leseb)
+Do not override mgr annotations (, @leseb)
+Add OSDs to proper buckets in crush hierarchy with topology awareness (, @mateuszlos)
+More robust removal of cluster finalizer (, @travisn)
+Take activeStandby into account for the CephFileSystem disruption budget (, @rohantmp)
+Update the CSI CephFS registration directory name (, @Madhu-1)
+Fix incorrect Ceph CSI doc links (, @binoue)
+Remove decimal places for osdMemoryTargetValue monitoring setting (, @eknudtson)
+Relax pre-requisites for external cluster to allow connections to Luminous (, @leseb)
+Avoid nodes getting stuck in OrchestrationStatusStarting during OSD config (, @mantissahz)
+Make metrics and liveness port configurable (, @Madhu-1)
+Correct system namespace for CSI driver settings during upgrade (, @Madhu-1)
+Other
+Proper owner references for garbage collection for yugabytedb, minio, & cockroachdb (, @travisn)"
+"*   7915e0233 Merge pull request #1285 from kokhang/backport-volumeattachment-lock
+|\  
+| * 0998938f2 Ensuring volume lock is released when the same pod is requesting it
+|/  
+*   65d650c80 Merge pull request #1275 from jbw976/backport-rook-api-cpu
+|\  
+| * 5bf10e90b api: recreate mon endpoint watcher when the result channel is closed
+|/  
+*   9884b77fd Merge pull request #1271 from travisn/backport-multiple-obj-delete
+|\  
+| * 80e844dda rgw: skip deleting root pool when there are multiple object stores
+* |   daa76f795 Merge pull request #1272 from travisn/backport-replica-docs
+|\ \  
+| |/  
+|/|   
+| * 9a1f2701a docs: add replica count param to client walkthrough
+|/  
+*   2f0207146 Merge pull request #1266 from jbw976/backport-flexvolume-provisioner-check
+|\  
+| * 37da71397 Add existence checks for FlexVolume on Delete
+|/  
+*   e26f59222 Merge pull request #1263 from jbw976/backport-volume-plugin-dir-1.8
+|\  
+| * a26a73458 tests: use a non default volume plugin dir path for k8s 1.8
+| * 78ffa0b83 tests: integration test for flexvolume path discovery
+| * 222130d6f Unmarshal volume plugin dir from kubelet config response for 1.8
+|/  
+* 93c619cbc Merge pull request #1210 from jbw976/v0.6.0-docs-yaml
+* feefdcf04 docs: update docs and yaml to v0.6.0","Rook v0.6.1 is a patch release limited in scope and focusing on bug fixes.
+Improvements
+Non-default locations in Kubernetes 1.8 for the volume plugin directory will now correctly be discovered by the rook agents (@jbw976)
+Fixed an issue where the rook-api pod would over time begin to consume 100% CPU (@jbw976)
+Deletion of an object store will now be scoped to just the specified object store (@travisn)
+Volume attachment locks will be cleaned up appropriately when a volume fails to attach for a pod and then the pod is deleted and recreated (@kokhang)
+The dynamic volume provisioner in the Rook Operator no longer encounters a panic when a volume from before v0.6.0 is encountered (@Ulexus)"
+"*   5db568468 Merge pull request #3743 from travisn/manifests-1.0.6
+|\  
+| * fc542ee4f set image version in manifests to v1.0.6
+|/  
+*   808eed96b Merge pull request #3737 from travisn/backport-default-db-size
+|\  
+| * 886ecf588 ceph: remove default database size for OSDs
+|/  
+*   fabb817c2 Merge pull request #3643 from odinuge/release-1.0-cherry-osd-mem
+|\  
+| * 059b68770 ceph: set osd mem target correctly
+*   2284fa294 Merge pull request #3644 from odinuge/release-1.0-cherry-delete-mds-deploy
+|\  
+| * 3e6e79a4e ceph: properly propagate errors when deleting mds
+* 3ff9c2a1a Merge pull request #3647 from galexrt/backport_fix_3136
+* 56a523bd4 mgr: set public-addr flag for MGR","Rook v1.0.6 is a patch release limited in scope and focusing on bug fixes.
+Improvements
+Ceph
+Set public-addr flag for MGR (, @galexrt)
+Remove the 20GB default for OSD db size and allow ceph-volume to use all available space (, @travisn)
+Correctly set osd mem target for init-ed clusters (, @odinuge)
+Properly propagate errors when deleting mds deployment (, @odinuge)"
+"*   dc5bb9fd2 Merge pull request #5325 from travisn/release-1.3.2
+|\  
+| * 194b69b69 release: set the manifest versions to v1.3.2
+|/  
+*   feedee038 Merge pull request #5326 from rook/mergify/bp/release-1.3/pr-5322
+|\  
+| * a90a09300 ceph: metadatadevice to not be added to osd data device list
+|/  
+*   18ddc6f2c Merge pull request #5324 from rook/mergify/bp/release-1.3/pr-5297
+|\  
+| * ce16a069c ceph: update helm chart manifests
+|/  
+*   c9069d6c8 Merge pull request #5318 from rook/mergify/bp/release-1.3/pr-5289
+|\  
+| * a992195e7 CSI: update cephcsi to v2.1.0
+* |   6e20b15f8 Merge pull request #5320 from rook/mergify/bp/release-1.3/pr-5305
+|\ \  
+| |/  
+|/|   
+| * 81f2903c3 ceph: restore the cluster-test.yaml example
+|/  
+*   72d11c8d9 Merge pull request #5314 from travisn/backport-cluster-lookup
+|\  
+| * 5c8a8fb3f ceph: lookup of the cluster cannot rely on namespace name
+|/  
+*   c6e6d52e9 Merge pull request #5303 from travisn/backport-toolbox-skip-watch
+|\  
+| * 0d4af5dde ceph: allow toolbox script to skip watching mons
+* |   bd2545174 Merge pull request #5306 from rook/mergify/bp/release-1.3/pr-5286
+|\ \  
+| |/  
+|/|   
+| * 5a5eb8057 docs: fix secret env keys on ObjectBucketClaim
+|/  
+*   c34f1a408 Merge pull request #5294 from leseb/bp-5227
+|\  
+| * 2c11ad38c ceph: make admin key optional for external cluster
+| * e2810fda6 ceph: stop potential secret leak
+* |   4ec4f5d72 Merge pull request #5292 from rook/mergify/bp/release-1.3/pr-5280
+|\ \  
+| |/  
+|/|   
+| * b02162ea4 ceph: configure mgr modules in parallel of osds
+|/  
+*   43a1b7d51 Merge pull request #5282 from rook/mergify/bp/release-1.3/pr-5281
+|\  
+| * 2a1a0ee45 ceph: update defaults to the ceph v14.2.9 release
+|/  
+*   2bc109c97 Merge pull request #5275 from rook/mergify/bp/release-1.3/pr-5261
+|\  
+| * cee719b1b ceph: add requireSafeReplicaSize to CRD
+| * 6a3bafc81 ceph: Add requireSafeReplicaSize in CephObjectStore CRD
+|/  
+*   1fdcac06d Merge pull request #5273 from rook/mergify/bp/release-1.3/pr-5263
+|\  
+| * f4ec85ff2 PSP: Add seccomp annotations
+|/  
+*   88ed63df4 Merge pull request #5233 from rook/mergify/bp/release-1.3/pr-5183
+|\  
+| * ad5f35e4e Ceph: revert mgr to minimal privilege
+*   b255063a6 Merge pull request #5268 from rook/mergify/bp/release-1.3/pr-5218
+|\  
+| * 8b4326746 build: codegen needs to copy to pkg subfolder
+|/  
+*   3782dbda4 Merge pull request #5266 from rook/mergify/bp/release-1.3/pr-4904
+|\  
+| * 677c5ab1a Ceph: Update Helm Chart documentation
+|/  
+*   c8e54c16e Merge pull request #5262 from rook/mergify/bp/release-1.3/pr-5256
+|\  
+| * 458ab89cf ceph: document example for skipping osd creation
+| * f8196e9c4 ceph: reduce verbose logging for ok-to-stop failures
+|/  
+*   1f192f8fb Merge pull request #5255 from rook/mergify/bp/release-1.3/pr-4740
+|\  
+| * 857d5bca9 Ceph: PV provisioning fails upon upgrade
+|/  
+*   40e3af757 Merge pull request #5254 from rook/mergify/bp/release-1.3/pr-5253
+|\  
+| * f9bc3570c doc: fix link in k8s-pre-reqs page
+|/  
+*   9f89c9e17 Merge pull request #5239 from rook/mergify/bp/release-1.3/pr-5237
+|\  
+| * c7f2f0238 ceph: helm add default value for the `nodeSelector`
+|/  
+*   2e73bbc7e Merge pull request #5234 from rook/mergify/bp/release-1.3/pr-5219
+|\  
+| * 8cfd4fe64 ceph: skip reconcile events where the spec not updated
+| * f4f688e92 ceph: update status on current version of resources
+* 68b80aad4 Merge pull request #5232 from rook/mergify/bp/release-1.3/pr-4433
+* 1646e20bb Ceph: Filesystem Pool Size are ignored","Improvements
+Rook v1.3.2 is a patch release limited in scope and focusing on bug fixes.
+Ceph
+MetadataDevice was failing the OSD creation (, @travisn)
+Helm chart updates to be in sync with yaml manifests (, @binoue)
+Update Ceph CSI driver to v2.1.0 (, @Madhu-1)
+Restore the cluster-test.yaml example (, @travisn)
+Properly reconcile CephCluster if named differently from namespace (, @travisn)
+Enable running a toolbox job with the toolbox script (, @travisn)
+Remove need for admin key for external cluster configuration (, @leseb)
+Configure mgr modules in parallel of OSD reconcile (, @travisn)
+Set default manifests to configure Ceph v14.2.9 (, @travisn)
+Add requireSafeReplicaSize in CephObjectStore CRD (, @zoetrope)
+Add seccomp annotations to the PSP (, @surajssd)
+Revert mgr keyring to minimal privilege (, @umangachapagain)
+Codegen needs to copy to pkg subfolder (, @travisn)
+CephFS provisioner fails to provision a Persistent Volume after upgrading (, @rajatsingh25aug)
+Add default value for the nodeSelector in the helm chart (, @zerkms)
+Skip reconcile events where the spec is not updated (, @travisn)
+Add support for updating filesystem pool replicated size (, @rajatsingh25aug)
+Docs: Troubleshooting an OSD that can't be created on a previously configured device (, @travisn)
+Docs: Fix secret env keys on ObjectBucketClaim (, @terorie)"
+"*   b2704316b Merge pull request #11850 from travisn/release-1.11.1
+|\  
+| * 35b31f92a build: update release version to v1.11.1
+|/  
+*   f6b3d53f5 Merge pull request #11849 from rook/mergify/bp/release-1.11/pr-11848
+|\  
+| * 6accfb638 core: add env var to exporter for ceph config
+* |   0640427e1 Merge pull request #11843 from rook/mergify/bp/release-1.11/pr-11842
+|\ \  
+| * | f3de021b5 monitoring: remove alerts that don't apply to rook
+| |/  
+* |   b264d9d34 Merge pull request #11847 from rook/mergify/bp/release-1.11/pr-11829
+|\ \  
+| |/  
+|/|   
+| * eaf09ad77 Revert ""mgr: use k8s readiness probe to implement mgr HA""
+| * 9a3e5c4e9 Revert ""mgr: remove mgr sidecar""
+| * 4d56aca86 Revert ""mgr: addressing review comments""
+| * 580a9ec5c Revert ""ci: fix MultiClusterDeploySuite CI""
+| * f6fa00434 Revert ""mgr: wait for the mgr pod to be running""
+|/  
+*   5864bf4e9 Merge pull request #11841 from rook/mergify/bp/release-1.11/pr-11822
+|\  
+| * 36ca16fce ci: fix fs multicluster mirroring
+* |   3ddc7da26 Merge pull request #11830 from rook/mergify/bp/release-1.11/pr-11804
+|\ \  
+| |/  
+|/|   
+| * 5bea2695c manifest: fix whitespace issues
+* |   b4d5ffbe3 Merge pull request #11838 from rook/mergify/bp/release-1.11/pr-11825
+|\ \  
+| |/  
+|/|   
+| * 6c4507d7e docs: fix documentation indentation
+|/  
+*   d70d8ad60 Merge pull request #11813 from rook/mergify/bp/release-1.11/pr-11584
+|\  
+| * 134403641 external: add realm support for external cluster
+* |   325062979 Merge pull request #11816 from rook/mergify/bp/release-1.11/pr-11665
+|\ \  
+| * | 0ced2b6f8 object: make OBC genUserID unique across clusters
+| |/  
+* |   4def78715 Merge pull request #11807 from rook/mergify/bp/release-1.11/pr-11797
+|\ \  
+| * | 5cb72de8d osd: add container ports only if mcs is enabled
+* | |   c883571e8 Merge pull request #11824 from rook/mergify/bp/release-1.11/pr-11818
+|\ \ \  
+| * | | a0b696918 ci: fix multus ci
+|/ / /  
+* | |   d8111c9e2 Merge pull request #11812 from rook/mergify/bp/release-1.11/pr-11221
+|\ \ \  
+| |_|/  
+|/| |   
+| * | 6f36d10a1 file: check if fs exists before checking dependencies
+|/ /  
+* |   e34b77fa8 Merge pull request #11810 from rook/mergify/bp/release-1.11/pr-11808
+|\ \  
+| |/  
+|/|   
+| * ed2c6e325 docs: change old version hint in docs
+|/  
+* 5a1136c4c Merge pull request #11794 from rook/mergify/bp/release-1.11/pr-11760
+* 0cccf48a1 core: on crash pod ensure rook version label is not set","Improvements
+Rook v1.11.1 is a patch release limited in scope and focusing on feature additions and bug fixes to the Ceph operator.
+ceph: Fix host networking by only adding OSD ports when required for multi-cluster config (, @sp98)
+core: Ceph exporter requires ceph config where OSDs are not running (, @avanthakkar)
+monitoring: Remove prometheus alerts that don't apply to rook (, @travisn)
+mgr: Revert readiness probe and go back to the original sidecar HA implementation (, @rkachach)
+manifest: Align whitespace in example cluster.yaml (, @gauravsitlani)
+external: Add realm support for external cluster (, @parth-gr)
+object: Make OBC genUserID unique across clusters (, @BlaineEXE)
+file: Check if a filesystem exists before checking dependencies during deletion (, @zhucan)
+core: On crash pod ensure rook version label is not set (, @gaord)"
+"*   e8fd65f08 Merge pull request #7853 from travisn/release-1.6.2
+|\  
+| * 9f9bcbd40 build: set the patch release to v1.6.2
+|/  
+*   4367d74aa Merge pull request #7852 from rook/mergify/bp/release-1.6/pr-7850
+|\  
+| * d26bba7ad ceph: run ceph tests in jenkins if requested
+| * d0bb589ea ceph: multicluster test cleanup of external cluster first
+|/  
+*   c0b1ea18e Merge pull request #7846 from rook/mergify/bp/release-1.6/pr-7807
+|\  
+| * 7d12a56d1 ceph: allow setting primary-affinity to osd
+* |   b6132e47e Merge pull request #7848 from rook/mergify/bp/release-1.6/pr-7526
+|\ \  
+| |/  
+|/|   
+| * f8b8c8c38 core: enhancement in debug logs
+|/  
+*   d08215a7d Merge pull request #7841 from leseb/bkp-7783
+|\  
+| * 52803c0de build: fix parallel build
+| * 555682656 build: fix sed command for linux
+|/  
+*   9d68f32c5 Merge pull request #7840 from rook/mergify/bp/release-1.6/pr-7838
+|\  
+| * ed0e5bdbf ceph: fix intermittent volume unit test
+|/  
+*   e623e0d8e Merge pull request #7836 from rook/mergify/bp/release-1.6/pr-7835
+|\  
+| * 5a5e7d91c ceph: preserve volume claim template annotations during upgrade
+|/  
+*   f0aa80c76 Merge pull request #7834 from rook/mergify/bp/release-1.6/pr-7820
+|\  
+| * 6788741e5 ceph: update erasure coded profile command
+* |   863def552 Merge pull request #7832 from rook/mergify/bp/release-1.6/pr-7801
+|\ \  
+| * | 4cff84a66 ceph: retry once before mon failover if mon pod is unscheduled
+| |/  
+* |   4d94a8fb6 Merge pull request #7833 from rook/mergify/bp/release-1.6/pr-7829
+|\ \  
+| |/  
+|/|   
+| * 832c86fed ceph: update images to v16.2.2
+|/  
+*   fdc0d3bc0 Merge pull request #7828 from rook/mergify/bp/release-1.6/pr-7711
+|\  
+| * 7cb82afb3 ceph: update snapshot APIs from v1beta1 to v1
+|/  
+*   c5bdbc12a Merge pull request #7825 from rook/mergify/bp/release-1.6/pr-7815
+|\  
+| * e078b1134 ceph: set the device class on raw mode osds
+|/  
+*   db7667aac Merge pull request #7821 from rook/mergify/bp/release-1.6/pr-7813
+|\  
+| * f0551e927 ceph: remove unused volumesource schema from cephcluster
+|/  
+*   220e354f8 Merge pull request #7812 from rook/mergify/bp/release-1.6/pr-7789
+|\  
+| * e14d4bff7 ceph: fix external mode setup
+|/  
+*   c28ed3163 Merge pull request #7792 from rook/mergify/bp/release-1.6/pr-7782
+|\  
+| * 9c5e4da89 docs: add static pv and static pvc creation info
+* |   4309e25f1 Merge pull request #7784 from rook/mergify/bp/release-1.6/pr-7752
+|\ \  
+| * | 1e038bd9f ceph: add phase to cephfilesystems crd
+* | |   e50787670 Merge pull request #7805 from rook/mergify/bp/release-1.6/pr-7777
+|\ \ \  
+| |/ /  
+|/| |   
+| * | 747c4bba7 ceph: allow null values for pool settings
+|/ /  
+* |   3db05f957 Merge pull request #7771 from rook/mergify/bp/release-1.6/pr-7631
+|\ \  
+| * | a90657007 core: persist VolumeClaimTemplate metadtata
+|/ /  
+* |   253a03d4c Merge pull request #7786 from rook/mergify/bp/release-1.6/pr-7445
+|\ \  
+| * | 0adf001f9 ceph: upgrade mds fix typos
+| * | 25293d986 ceph: make sure standbys are stopped
+| * | 44458f8e0 ceph: reset max_mds and allow_standby_replay in deferred function
+| * | 4541eb3a5 ceph: complete missing steps of upgrading mds
+* | |   7e3934515 Merge pull request #7799 from rook/mergify/bp/release-1.6/pr-7798
+|\ \ \  
+| |_|/  
+|/| |   
+| * | ac276d4a3 docs: common-issue link updated in ceph-upgrade doc
+|/ /  
+* |   6bee48c4e Merge pull request #7785 from thotz/rgwkmskvv1checkbp1.6
+|\ \  
+| * | b1826e3b4 test: add seperate test for rgw vault integration
+| * | 410d5eec9 docs: update the vault kms documentation for RGW
+| * | db1cb6845 ceph: add security spec to object store spec
+| * | c75c47e43 ceph: check for kv engine version for SSE RGW
+| * | 2d32bbf00 ceph: modify ValidateConnectionDetails() in kms
+| |/  
+* |   fddad9810 Merge pull request #7781 from leseb/bkp-7735
+|\ \  
+| |/  
+|/|   
+| * 04033b00e ci: use latest pacific for mirroring test
+|/  
+*   d1ba3880b Merge pull request #7780 from rook/mergify/bp/release-1.6/pr-7633
+|\  
+| * f413a5dce ceph: ensure object store endpoint is initialized for user
+|/  
+*   a4d0c8c6a Merge pull request #7775 from rook/mergify/bp/release-1.6/pr-7764
+|\  
+| * 6d788b317 ceph: support for OBC operations on enabled TLS RGW endpoint
+| * 6ecc3769b ceph: add api to fetch cacert for RGW server
+* |   84c0b7189 Merge pull request #7774 from rook/mergify/bp/release-1.6/pr-7768
+|\ \  
+| |/  
+|/|   
+| * bb48bd486 ceph: clarify log message to continue with upgrade if needed
+|/  
+*   0dd5ec530 Merge pull request #7765 from rook/mergify/bp/release-1.6/pr-7606
+|\  
+| * 818f28e8b ceph: moved multus support out of experimental
+* |   4fa97efe0 Merge pull request #7772 from rook/mergify/bp/release-1.6/pr-7685
+|\ \  
+| * | 49c5bdfde docs: remove ""this is long video b""
+|/ /  
+* |   56ef7c88e Merge pull request #7767 from rook/mergify/bp/release-1.6/pr-7759
+|\ \  
+| |/  
+|/|   
+| * 4988b1587 ceph: detect the osd topology affinity during upgrade
+|/  
+*   c878d257c Merge pull request #7763 from rook/mergify/bp/release-1.6/pr-7757
+|\  
+| * 733d0eefd docs: workaround preserveUnknownFields upgrade
+* |   e164d9a2a Merge pull request #7758 from rook/mergify/bp/release-1.6/pr-7719
+|\ \  
+| |/  
+|/|   
+| * c5a3c8569 ceph: unity timeout values of commands
+|/  
+*   dbc11cac2 Merge pull request #7755 from rook/mergify/bp/release-1.6/pr-7598
+|\  
+| * 8e637f80d docs: add documentation for service serving cert
+| * e80fdf241 test: adding unit test for service serving cert
+| * 0d1f5e774 ceph: service server cert support for rgw
+|/  
+*   ae5f2da2f Merge pull request #7748 from rook/mergify/bp/release-1.6/pr-7715
+|\  
+| * ebfbebc9b ceph: stop using updatePVCIfChanged and start using ExpandPVCIfRequired
+| * c3deaa9ad ceph: expand Mon Pvc's
+| * 71a5a28b1 core: add func ExpandPVCIfRequired in k8sutil pkg
+* 4b4e27b28 Merge pull request #7749 from rook/mergify/bp/release-1.6/pr-7747
+* 40c13e58a docs: fix ceph pacific related descriptions","Improvements
+Rook v1.6.2 is a patch release limited in scope and focusing on small feature additions and bug fixes.
+Ceph
+Set base Ceph operator image and example deployments to v16.2.2 (, @BlaineEXE)
+Update snapshot APIs from v1beta1 to v1 (, @Rakshith-R)
+Documentation for creating static PVs (, @Rakshith-R)
+Allow setting primary-affinity for the OSD (, @synarete)
+Remove unneeded debug log statements (, @parth-gr)
+Preserve volume claim template annotations during upgrade (, @travisn)
+Allow re-creating erasure coded pool with different settings (, @subhamkrai)
+Double mon failover timeout during a node drain (, @sp98)
+Remove unused volumesource schema from CephCluster CRD (, @travisn)
+Set the device class on raw mode osds (, @travisn)
+External cluster schema fix to allow not setting mons (, @leseb)
+Add phase to the CephFilesystem CRD (, @jshen28)
+Generate full schema for volumeClaimTemplates in the CephCluster CRD (, @BlaineEXE)
+Automate upgrades for the MDS daemon to properly scale down and scale up (, @jshen28)
+Add Vault KMS support for object stores (, @thotz)
+Ensure object store endpoint is initialized when creating an object user (, @alimaredia)
+Support for OBC operations when RGW is configured with TLS (, @thotz)
+Preserve the OSD topology affinity during upgrade for clusters on PVCs (, @travisn)
+Unify timeouts for various Ceph commands (, @satoru-takeuchi)
+Allow setting annotations on RGW service (, @thotz)
+Expand PVC size of mon daemons if requested (, @iamniting)"
+"*   bdeecf309 Merge pull request #11194 from travisn/release-1.10.4
+|\  
+| * 1ca8adaed build: update release version to v1.10.4
+|/  
+*   f08689aa6 Merge pull request #11193 from rook/mergify/bp/release-1.10/pr-11170
+|\  
+| * 8644ebe78 build: update the go modules to the latest
+|/  
+*   4e1c1548e Merge pull request #11117 from rook/mergify/bp/release-1.10/pr-10510
+|\  
+| * f32531ef3 ci: enable and fixes for nfs ci
+*   e14d1d824 Merge pull request #11190 from rook/mergify/bp/release-1.10/pr-11171
+|\  
+| * e5592dc87 docs: updated note syntax in markdown files
+* |   9044148a1 Merge pull request #11192 from rook/mergify/bp/release-1.10/pr-11183
+|\ \  
+| * | e0806d57b object: fix logic for rgw period commit detection
+|/ /  
+* |   12d9ea629 Merge pull request #11191 from rook/mergify/bp/release-1.10/pr-11184
+|\ \  
+| |/  
+|/|   
+| * 7a6445cf9 docs: use krew restore-quorum command for disaster scenario
+|/  
+*   93f9637a6 Merge pull request #11189 from rook/mergify/bp/release-1.10/pr-11178
+|\  
+| * 7e8e8e2ea csi: update csi to latest release
+|/  
+*   1b644d551 Merge pull request #11185 from rook/mergify/bp/release-1.10/pr-11182
+|\  
+| * f9a11b71e operator: remove obsolete flex driver properties
+|/  
+*   2241e61ca Merge pull request #11181 from rook/mergify/bp/release-1.10/pr-11163
+|\  
+| * 4ac46ef90 core: enabling logCollector by default for coredump
+|/  
+*   089c461fa Merge pull request #11167 from rook/mergify/bp/release-1.10/pr-11165
+|\  
+| * 78eb66528 csi: add setmetadata and clustername flag to omap
+* |   f9bc65288 Merge pull request #11168 from rook/mergify/bp/release-1.10/pr-11090
+|\ \  
+| |/  
+|/|   
+| * 6db827e84 external: fix endpoint_dial check for rgw endpoint
+|/  
+*   b7bda4ae6 Merge pull request #11164 from rook/mergify/bp/release-1.10/pr-11138
+|\  
+| * d076f343d osd: osdSafeToDestroy check should be after osd out
+|/  
+*   15f6692ba Merge pull request #11160 from rook/mergify/bp/release-1.10/pr-10986
+|\  
+| * b187539e1 core: increase liveness probe timeout to 5s
+|/  
+*   64d7a1f2e Merge pull request #11146 from rook/mergify/bp/release-1.10/pr-11099
+|\  
+| * 993942b89 operator: don't remove existing pools for mgr/prometheus/rbd_stats_pools
+|/  
+*   36e170572 Merge pull request #11140 from rook/mergify/bp/release-1.10/pr-11122
+|\  
+| * ab306b054 docs: add point about physical disks visualization in dashboard
+* |   447df37d7 Merge pull request #11139 from rook/mergify/bp/release-1.10/pr-11136
+|\ \  
+| |/  
+|/|   
+| * 39ae487aa docs: document expectations for releases
+|/  
+* 6ddd0ab1e Merge pull request #11134 from rook/mergify/bp/release-1.10/pr-11131
+* f9a3e6d73 ci: update mon_data_avail_warn percentage","Improvements
+Rook v1.10.4 is a patch release limited in scope and focusing on feature additions and bug fixes to the Ceph operator.
+build: Update the go modules to the latest versions (, @travisn)
+core: Enabling logCollector by default for coredump collection (, @gauravsitlani)
+docs: Use Krew restore-quorum command for mon quorum disaster scenario (, @travisn)
+csi: Update Ceph-CSI to v3.7.2 (, @Madhu-1)
+operator: Remove obsolete flex driver properties (, @travisn)
+csi: Add setmetadata and clustername flag to omap (, @Madhu-1)
+external: Fix endpoint_dial check for rgw endpoint (, @parth-gr)
+osd: During OSD purge mark the osd out before other checks (, @subhamkrai)
+core: Increase liveness probe timeout to 5s (, @randymtz)
+operator: Don't remove existing pools for mgr/prometheus/rbd_stats_pools (, @avanthakkar)
+docs: Add point about physical disks visualization in dashboard (, @jmolmo)
+docs: Document expectations for releases (, @travisn)
+ci: Set mon_data_avail_warn percentage in test cluster to 10% (, @parth-gr)
+object: Fix logic for rgw period commit detection (, @BlaineEXE)
+ci: Enable more NFS tests in the CI (, @Rakshith-R)"
+"*   8bc7249a7 Merge pull request #12391 from travisn/release-1.11.8
+|\  
+| * 24b1de64d build: update release version to v1.11.8
+|/  
+*   1af2e1f10 Merge pull request #12387 from rook/mergify/bp/release-1.11/pr-12368
+|\  
+| * 427e2579e docs: remove the line generated by gen-crd-api-reference-docs
+* |   fdfb70c6c Merge pull request #12386 from rook/mergify/bp/release-1.11/pr-11722
+|\ \  
+| * | 63c14f5df docs: suggest qeumu driver for minikube on apple silicon
+| |/  
+* |   1b003a6dd Merge pull request #12382 from rook/mergify/bp/release-1.11/pr-12324
+|\ \  
+| |/  
+|/|   
+| * 254578194 helm: add EC Block Pool config in helm chart
+* |   dc2f86fdb Merge pull request #12385 from rook/mergify/bp/release-1.11/pr-12383
+|\ \  
+| * | affb56509 docs: improve external doc format
+|/ /  
+* |   fb28df72f Merge pull request #12377 from rook/mergify/bp/release-1.11/pr-12360
+|\ \  
+| |/  
+|/|   
+| * b43d45602 pool: add .mgr pool to the stretch cluster examples
+|/  
+*   9d70202ea Merge pull request #12355 from rook/mergify/bp/release-1.11/pr-12220
+|\  
+| * 870213fd2 nfs: set correct kerberos domain in /etc/idmapd.conf
+|/  
+*   69686ec6d Merge pull request #12348 from rook/mergify/bp/release-1.11/pr-12257
+|\  
+| * e452ec8c4 docs: update the integration test guide
+* |   3c45fba70 Merge pull request #12339 from rook/mergify/bp/release-1.11/pr-12337
+|\ \  
+| * | cc4dc73e8 mgr: removing unnecessary rook-ceph-mgr rbac entries
+* | |   af299fa46 Merge pull request #12345 from rook/mergify/bp/release-1.11/pr-12217
+|\ \ \  
+| |_|/  
+|/| |   
+| * | 815d8af14 core: typo in logs to print fullname of CephCluster
+| |/  
+* |   d6f1e098b Merge pull request #12346 from rook/mergify/bp/release-1.11/pr-12334
+|\ \  
+| |/  
+|/|   
+| * 7600074cc docs: prevent to delete other clusters data on cluster deletion
+|/  
+*   79e82c9f5 Merge pull request #12319 from rook/mergify/bp/release-1.11/pr-12299
+|\  
+| * d216c2ddd core: use ROOK_CEPH_MON_HOST from config store in OSD pods too
+* 586d981db Merge pull request #12338 from rook/mergify/bp/release-1.11/pr-12213
+* 3e61efc97 docs: update external cluster docs","Improvements
+Rook v1.11.8 is a patch release limited in scope and focusing on feature additions and bug fixes to the Ceph operator.
+helm: add EC Block Pool config in helm chart (, @Javlopez)
+pool: Add .mgr pool to the stretch cluster examples (, @travisn)
+nfs: Add Spec.Security.Kerberos.DomainName to the CRD to configure /etc/idmapd.conf (, @spuiuk)
+mgr: Removing unnecessary rook-ceph-mgr rbac entries (, @rkachach)
+core: typo in logs to print fullname of CephCluster (, @takirala)
+core: empty ceph-daemons-sock-dir for osd onPVC (, @avanthakkar)
+docs: prevent to delete other clusters data on cluster deletion (, @satoru-takeuchi)
+docs: improve external doc format (, @parth-gr)
+docs: Suggest qemu driver for minikube on apple silicon (, @BlaineEXE)"
+"*   721ddf3cd Merge pull request #10565 from travisn/release-1.9.7
+|\  
+| * c61f909be build: set release version to v1.9.7
+|/  
+*   7ea5cc8ee Merge pull request #10564 from rook/mergify/bp/release-1.9/pr-10558
+|\  
+| * b13bb0bdb helm: use recommended value for helm managed-by label
+|/  
+*   53e51db44 Merge pull request #10554 from rook/mergify/bp/release-1.9/pr-10547
+|\  
+| * cd9333394 manifest: use `Recreate` strategy for operator upgrade
+* |   05714cd72 Merge pull request #10549 from parth-gr/backport-1.9-subvolume
+|\ \  
+| * | d6a4187bd csi: add support for subvolumegroup and rados namespace
+|/ /  
+* |   51c4c9dbb Merge pull request #10550 from rook/mergify/bp/release-1.9/pr-10506
+|\ \  
+| * | 89e81fb0e docs: refactor cluster crd doc for subtopics
+| |/  
+* |   96f54be7e Merge pull request #10553 from rook/mergify/bp/release-1.9/pr-10539
+|\ \  
+| |/  
+|/|   
+| * eddc8289a ci: make sure PVC is deleted before proceeding for file test
+| * 0ea2c87e6 ci: skip nfs csi e2e to avoid flaky e2e
+|/  
+*   3cbc8b665 Merge pull request #10527 from rook/mergify/bp/release-1.9/pr-10495
+|\  
+| * a9bf553f5 ci: explain why ""nolock"" mountOption is needed for nfs
+| * 92a473312 ci: rename TestCephSettings.EnableCSINFS to TestNFSCSI
+|/  
+*   d8c86ee19 Merge pull request #10524 from rook/mergify/bp/release-1.9/pr-10154
+|\  
+| * b11622fbc docs: added upgrade note (#10153)
+| * 16dedbf3f test: delete object sc before upgrade tests (#10153)
+| * 0d8a46d26 helm: use correct namespace for provisioner in cephobjectstore template (fixes #10153)
+|/  
+*   31a69cba9 Merge pull request #10517 from rook/mergify/bp/release-1.9/pr-10505
+|\  
+| * 6d9ecf48b mon: disable insecure global ids for new deployments
+| * 9f42987fe mon: fix typo in log message for msgr2
+|/  
+* 7f2302ad2 Merge pull request #10512 from rook/mergify/bp/release-1.9/pr-10490
+* 19c72a31a csi: fix stagingpath","Improvements
+Rook v1.9.7 is a patch release limited in scope and focusing on feature additions and bug fixes to the Ceph operator.
+helm: Use recommended value for helm managed-by label (, @galexrt)
+manifest: Use Recreate strategy for operator upgrade (, @sp98)
+external: Add support for subvolumegroup and rados namespace (, @parth-gr)
+docs: Refactor cluster crd doc for subtopics (, @travisn)
+helm: use correct namespace for provisioner in cephobjectstore template (, @bitfisher)
+mon: Disable insecure global ids immediately for new deployments (, @travisn)
+csi: Update staging path to support K8s 1.24+ (, @pkalever)"
+"*   d7e761ec2 Merge pull request #6754 from travisn/release-1.5.2
+|\  
+| * 8a08f70ee build: update manifest versions to v1.5.2 for the release
+|/  
+*   f8cc3d731 Merge pull request #6753 from rook/mergify/bp/release-1.5/pr-6699
+|\  
+| * f6a99bb80 ceph: update object bucket provisioner library
+|/  
+*   b9a6859a2 Merge pull request #6747 from rook/mergify/bp/release-1.5/pr-6687
+|\  
+| * 0bf3bbed2 ceph: include csi by default in the csv
+* |   2a1f79d6a Merge pull request #6746 from rook/mergify/bp/release-1.5/pr-6742
+|\ \  
+| * | fbb59d668 ceph: rgw service selector should not change
+| |/  
+* |   dfbe00959 Merge pull request #6739 from rook/mergify/bp/release-1.5/pr-6657
+|\ \  
+| |/  
+|/|   
+| * 799ce1d98 ceph: add more debug logging to obj bucket claims
+|/  
+*   ed6d0ba49 Merge pull request #6727 from rook/mergify/bp/release-1.5/pr-6679
+|\  
+| * 404f2ba70 ceph: add log collector
+| * 60c6375ee ceph: use debug message for snap schedule
+* |   20c6c2167 Merge pull request #6734 from rook/mergify/bp/release-1.5/pr-6731
+|\ \  
+| * | 76078a55d docs: update vault kms integration doc
+|/ /  
+* |   bd4fe053e Merge pull request #6729 from rook/mergify/bp/release-1.5/pr-6726
+|\ \  
+| * | 8e1b8d79a ceph: update examples and base image to v15.2.7
+| |/  
+* |   6e00b491b Merge pull request #6725 from rook/mergify/bp/release-1.5/pr-6720
+|\ \  
+| |/  
+|/|   
+| * a4982a10b core: fix label merge
+|/  
+*   c0ef6bfde Merge pull request #6722 from rook/mergify/bp/release-1.5/pr-6719
+|\  
+| * e4e4ced45 ceph: ignore unscheduled ceph daemons while cleaning up
+|/  
+*   3ac7edf0d Merge pull request #6706 from rook/mergify/bp/release-1.5/pr-6702
+|\  
+| * 534a0e7fa ceph: fix pod labels set on csi components
+|/  
+*   4d72bf2ae Merge pull request #6705 from rook/mergify/bp/release-1.5/pr-6696
+|\  
+| * 44b2df0c4 ceph: fix metadata device passed by-id
+|/  
+*   311d77214 Merge pull request #6704 from rook/mergify/bp/release-1.5/pr-6693
+|\  
+| * c00c551bc ceph: ability to abort orchestration
+| * 9d0e61ee9 ceph: add dedicated predicate for CephCluster object
+| * 14dad124c ceph: export isDoNotReconcile function
+| * 4f8268252 ceph: remove ""createInstance"" function
+|/  
+* 69e5ba94a Merge pull request #6684 from rook/mergify/bp/release-1.5/pr-6568
+* c97c889f9 ceph: apply finalizer before updating object status
+* ae303c1ca ceph: changes after the latest multus CSI updates
+* 159209edc ceph: changes for 'sigs.k8s.io/sig-storage-lib-external-provisioner/v6'
+* 3710d1405 ceph: manual changes needed for kubernetes api updates
+* 3fe2d11ef ceph: changes made by running `make codegen` target
+* 2384f4087 ceph: updating the dependencies for operator SDK v1.0.0","v1.5.2 is taken down due to a potential data loss with OBCs in
+Improvements
+Rook v1.5.2 is a patch release limited in scope and focusing on small feature additions and bug fixes.
+Ceph
+Enable collecting Ceph logs from the host in case the pods restarted multiple times (, @leseb)
+Support OSD metadata device passed by-id (, @leseb)
+Ability to abort and restart orchestration when the cluster CR is modified (, @leseb)
+Object bucket provisioning error handling (, @BlaineEXE)
+Object workloads failed briefly during Rook upgrades until RGW pods updated (, @travisn)
+Update Ceph manifests and operator base image to v15.2.7 (, @travisn)
+Avoid duplicate labels when merging custom labels (, @galexrt)
+Properly apply custom labels on CSI components (, @galexrt)
+Uninstall cleanup ignores pending Ceph daemon pods (, @sp98)
+Update the Controller Runtime version to 0.6 (, @aruniiird)"
+"*   21752fa58 Merge pull request #12032 from travisn/release-1.10.13
+|\  
+| * 1d0913e70 build: update the release version to v1.10.13
+|/  
+*   7f3754296 Merge pull request #11999 from rook/mergify/bp/release-1.10/pr-11966
+|\  
+| * 1d8acf953 osd: handle global or node-local device class configuration correctly
+|/  
+*   b358fc04b Merge pull request #11920 from rook/mergify/bp/release-1.10/pr-11904
+|\  
+| * 9419f3805 ci: fix golangci-lint issue in 1.10 specific which are already done in 1.11
+| * 35f9fdd97 ci: update golangci-lint version as it fails for some k8s version in 1.10
+|/  
+*   7b9703339 Merge pull request #11892 from rook/mergify/bp/release-1.10/pr-11880
+|\  
+| * 0815bb21d ci: update golangci lint version
+| * 8a7b6d000 manifest: add missing quote
+|/  
+*   b31a26d3d Merge pull request #11837 from rook/mergify/bp/release-1.10/pr-11825
+|\  
+| * 50e2cbf2e docs: fix documentation indentation
+|/  
+*   027bafc2b Merge pull request #11815 from rook/mergify/bp/release-1.10/pr-11665
+|\  
+| * 3141e64e3 object: make OBC genUserID unique across clusters
+|/  
+*   0dce4a048 Merge pull request #11811 from rook/mergify/bp/release-1.10/pr-11221
+|\  
+| * 3d2910053 file: check if fs exists before checking dependencies
+|/  
+*   cb7eba43d Merge pull request #11809 from rook/mergify/bp/release-1.10/pr-11808
+|\  
+| * 380b0270f docs: change old version hint in docs
+|/  
+*   2d80f9764 Merge pull request #11782 from rook/mergify/bp/release-1.10/pr-11778
+|\  
+| * 61c3d2141 ci: enable snyk flag not to build vcs
+* d56c1ebea Merge pull request #11793 from rook/mergify/bp/release-1.10/pr-11760
+* dcdffce9f core: on crash pod ensure rook version label is not set","Improvements
+Rook v1.10.13 is a patch release limited in scope and focusing on feature additions and bug fixes to the Ceph operator.
+osd: Handle global or node-local device class configuration correctly (, @satoru-takeuchi)
+manifest: Add missing quote (, @DjVinnii)
+object: Make OBC genUserID unique across clusters (, @BlaineEXE)
+file: Check if the filesystem exists before checking dependencies (, @zhucan)
+core: On crash pod ensure rook version label is not set (, @gaord)"
+"*   bc6a58163 Merge pull request #11066 from travisn/release-1.10.2
+|\  
+| * 4900cfe02 build: update the release version to 1.10.2
+|/  
+*   6e35e9182 Merge pull request #11063 from rook/mergify/bp/release-1.10/pr-11042
+|\  
+| * 76ada4bc0 nfs: allow users to include additional files in the SSSD sidecar
+* |   2951cb9b8 Merge pull request #11062 from rook/mergify/bp/release-1.10/pr-11048
+|\ \  
+| |/  
+|/|   
+| * e10f3cd4f osd: allow raw partitions to be picked up by discover daemon
+|/  
+*   a58cb2ecc Merge pull request #11057 from rook/mergify/bp/release-1.10/pr-11004
+|\  
+| * 6713d178b ci: move to ubuntu 2004 completely
+|/  
+*   d0c1b061a Merge pull request #11041 from rook/mergify/bp/release-1.10/pr-10898
+|\  
+| * 93f18188a core: update loadclusterInfo with multus check
+| * 58f85cdf4 nfs: fix nfs if multus is enabled
+|/  
+*   4acb6214a Merge pull request #11033 from rook/mergify/bp/release-1.10/pr-11030
+|\  
+| * 4ae52c61e csi: make sure we reset CSIParam booleans to default
+|/  
+*   5ac825652 Merge pull request #11023 from rook/mergify/bp/release-1.10/pr-11022
+|\  
+| * 97fe1131a docs: fix indentation in CephCluster on PVC example yaml
+* |   6c6b173fa Merge pull request #11021 from rook/mergify/bp/release-1.10/pr-11016
+|\ \  
+| |/  
+|/|   
+| * 9f977447c docs: clarify Object Pool CRD is same as Block Pool CRD
+|/  
+*   b4df1f482 Merge pull request #11020 from rook/mergify/bp/release-1.10/pr-11012
+|\  
+| * e177e2ba4 operator: silence 'cm is handled by another watcher' DEBUG messages
+|/  
+*   58243b3cf Merge pull request #11010 from rook/mergify/bp/release-1.10/pr-10942
+|\  
+| * ec3f81af6 csi: customize plugin volumes and volumemounts
+|/  
+*   64d526710 Merge pull request #10999 from rook/mergify/bp/release-1.10/pr-10934
+|\  
+| * 5944d208a core: use assimilate-conf command to run commands
+* |   128f463d4 Merge pull request #11001 from rook/mergify/bp/release-1.10/pr-10990
+|\ \  
+| * | fd25c88d9 ci: add mon_data_avail_warn to canary ci test
+| |/  
+* |   8d5b9fe45 Merge pull request #11003 from rook/mergify/bp/release-1.10/pr-10991
+|\ \  
+| |/  
+|/|   
+| * 03f065d1b build: fix intermittent gen-rbac failure
+|/  
+*   370565ffa Merge pull request #10997 from rook/mergify/bp/release-1.10/pr-10992
+|\  
+| * 3a5d4c4e7 docs: add logical volume to storage options
+|/  
+*   d34737f84 Merge pull request #10988 from rook/mergify/bp/release-1.10/pr-10912
+|\  
+| * 4fd0ccdcc docs: add upgrade steps for multi-tenant custer
+|/  
+*   33ca59624 Merge pull request #10987 from rook/mergify/bp/release-1.10/pr-10909
+|\  
+| * 71bf886da external: fix import errors for python2
+|/  
+*   8e5435f97 Merge pull request #10985 from rook/mergify/bp/release-1.10/pr-10983
+|\  
+| * 68bd66b19 ci: update arm host to pick up correct self-hosted machine
+* |   749f1f059 Merge pull request #10982 from rook/mergify/bp/release-1.10/pr-10968
+|\ \  
+| * | 71a89b162 osd: disallow to create encrypted osd on partition
+| |/  
+* |   a67d71551 Merge pull request #10980 from rook/mergify/bp/release-1.10/pr-10975
+|\ \  
+| * | 9f4e0a4b1 build: stop printing verbose rbac generation details
+| |/  
+* |   0cd94677d Merge pull request #10977 from rook/mergify/bp/release-1.10/pr-10700
+|\ \  
+| * | f1f631de6 monitoring: fix pool growth warning grouping
+* | |   4458d2968 Merge pull request #10974 from rook/mergify/bp/release-1.10/pr-10965
+|\ \ \  
+| * | | c25f42028 build: update goceph module to v0.17
+| |/ /  
+* | |   54200477d Merge pull request #10973 from rook/mergify/bp/release-1.10/pr-10950
+|\ \ \  
+| |_|/  
+|/| |   
+| * | 487bed5ee nfs: add kerberos client security support
+| |/  
+* |   e5cfd812d Merge pull request #10979 from rook/mergify/bp/release-1.10/pr-10969
+|\ \  
+| |/  
+|/|   
+| * 514c75d9b ci: disallow to create osd on lv with metadata by accident
+| * 5dd063750 ci: disallow to create encrypted osd on lv
+|/  
+*   2c9751e5b Merge pull request #10970 from rook/mergify/bp/release-1.10/pr-10963
+|\  
+| * e7df1deb5 pool: initialize only rbd application pools
+* |   efb69973e Merge pull request #10955 from rook/mergify/bp/release-1.10/pr-10943
+|\ \  
+| |/  
+|/|   
+| * a58c949e7 csi: add topology provisioning support
+* |   3fd2db315 Merge pull request #10961 from rook/mergify/bp/release-1.10/pr-10948
+|\ \  
+| * | 507d037da ci: add debug flag to identify any failing yaml origin
+* | |   fbf9caf31 Merge pull request #10960 from rook/mergify/bp/release-1.10/pr-10931
+|\ \ \  
+| |/ /  
+|/| |   
+| * | 77aef5910 external: do not add info=read cap if ceph version doesn't support it
+|/ /  
+* |   5dcfeca42 Merge pull request #10957 from rook/mergify/bp/release-1.10/pr-10728
+|\ \  
+| |/  
+|/|   
+| * 8f30d8d6d rgw: delete zone/pools for multisite configuation
+|/  
+*   05ced32e3 Merge pull request #10952 from rook/mergify/bp/release-1.10/pr-10951
+|\  
+| * fed8b7431 docs: clarify storage prereqs in quickstart guide
+|/  
+* f10084725 Merge pull request #10949 from rook/mergify/bp/release-1.10/pr-10889
+* 666793fd7 docs: add doc for kmip encryption support
+* d58d5313f osd: add kmip encryption support","Improvements
+Rook v1.10.2 is a patch release limited in scope and focusing on feature additions and bug fixes to the Ceph operator.
+nfs: Allow users to include additional files in the SSSD sidecar (, @BlaineEXE)
+osd: Allow raw partitions to be picked up by discover daemon (, @dkeven)
+nfs: Fix nfs if multus is enabled (, @parth-gr)
+csi: Ensure CSI settings are applied with each update to configmap (, @pkalever)
+operator: Silence verbose watcher debug messages (, @jhoblitt)
+csi: Customize plugin volumes and volumemounts (, @Madhu-1)
+core: Use assimilate-conf command to run commands (, @subhamkrai)
+external: Fix import errors for python2 (, @subhamkrai)
+osd: Disallow to create encrypted osd on partition (, @satoru-takeuchi)
+build: Stop printing verbose rbac generation details (, @travisn)
+monitoring: Fix pool growth warning grouping (, @jdloft)
+build: Update goceph module to v0.17 (, @thotz)
+nfs: Add kerberos client security support (, @BlaineEXE)
+ci:  Disallow to create encrypted osd on lv and osd on lv with metadata device (, @satoru-takeuchi)
+pool: Initialize only rbd application pools (, @Rakshith-R)
+csi: Add topology provisioning support (, @Rakshith-R)
+external: Do not add info=read cap if ceph version doesn't support it (, @parth-gr)
+rgw: Delete zone/pools for multisite configuration (, @thotz)
+osd: Add kmip encryption support (, @Rakshith-R)
+ci: Move to ubuntu 20.04 runner completely (, @satoru-takeuchi)
+ci: Fix intermittent gen-rbac failure (, @travisn)"
+"*   dd581ad49 Merge pull request #12241 from travisn/release-1.11.6
+|\  
+| * abb948d8c build: update release version to v1.11.6
+|/  
+*   18667fa45 Merge pull request #12240 from rook/mergify/bp/release-1.11/pr-12164
+|\  
+| * 4c0c67df1 osd: supoprt expand lvm osd on pvc
+|/  
+*   75c9efa44 Merge pull request #12239 from rook/mergify/bp/release-1.11/pr-12238
+|\  
+| * 66a48dea6 external: fix rgw check if no multisite flag is passed
+|/  
+*   b57fbf2ab Merge pull request #12226 from rook/mergify/bp/release-1.11/pr-12190
+|\  
+| * 3fce0e443 docs: update ruleNamesapce to rulesNamespaceOverride
+|/  
+*   6bcb53749 Merge pull request #12222 from rook/mergify/bp/release-1.11/pr-12216
+|\  
+| * eac19b36d monitoring: no service monitor by default for exporter
+* |   21c50bc42 Merge pull request #12221 from rook/mergify/bp/release-1.11/pr-12215
+|\ \  
+| |/  
+|/|   
+| * 262597b2c core: add termination grace period for exporter pods
+|/  
+*   cdfcb9b99 Merge pull request #12210 from rook/mergify/bp/release-1.11/pr-12170
+|\  
+| * c73591860 helm: servicemonitor for rook-ceph csi drivers
+* |   065fa8f7b Merge pull request #12209 from rook/mergify/bp/release-1.11/pr-12193
+|\ \  
+| |/  
+|/|   
+| * 6cbf660e0 monitoring: configurable option to disable prometheus metrics
+|/  
+*   b7827a74e Merge pull request #12199 from rook/mergify/bp/release-1.11/pr-12137
+|\  
+| * 28edc07c5 mgr: default to active mgr label
+|/  
+*   317be1d4f Merge pull request #12135 from rook/mergify/bp/release-1.11/pr-11976
+|\  
+| * f39fd3075 test: increase integration-test timeout
+| * 7e82ddc83 osd: allow to use filter device
+* |   96c629d53 Merge pull request #12197 from rook/mergify/bp/release-1.11/pr-12194
+|\ \  
+| * | c7cb7c058 core: disable controller runtime metrics server
+| |/  
+* |   f741d5cb7 Merge pull request #12198 from rook/mergify/bp/release-1.11/pr-11845
+|\ \  
+| * | 5395d17a5 mgr: using dynamic mgr_role label to implement mgr HA
+| |/  
+* |   7d2461325 Merge pull request #12196 from rook/mergify/bp/release-1.11/pr-12192
+|\ \  
+| |/  
+|/|   
+| * 2673c466d operator: use KUBECONFIG context for cli if present
+|/  
+*   7ae45369d Merge pull request #12189 from rook/mergify/bp/release-1.11/pr-12182
+|\  
+| * 95c356e5b external: fix rgw multisite config check
+* |   30cd9ee3c Merge pull request #12191 from rook/mergify/bp/release-1.11/pr-12187
+|\ \  
+| * | 583ce2b77 operator: validate multus validation networks in cli
+|/ /  
+* |   5adea6299 Merge pull request #12188 from rook/mergify/bp/release-1.11/pr-12186
+|\ \  
+| * | d69d6fe19 operator: fix package logger name for rookcli
+| |/  
+* |   f005bf38e Merge pull request #12184 from rook/mergify/bp/release-1.11/pr-12179
+|\ \  
+| |/  
+|/|   
+| * a30a22752 docs: update documentation for CRDs
+* |   85e3b39f2 Merge pull request #12183 from rook/mergify/bp/release-1.11/pr-12181
+|\ \  
+| |/  
+|/|   
+| * b5584ce8a core: unset all encryption configuration before setting
+* a16346b9d Merge pull request #12178 from rook/mergify/bp/release-1.11/pr-12110
+* 2ab562c91 docs: auto-generate the documentation for CRDs","Improvements
+Rook v1.11.6 is a patch release limited in scope and focusing on feature additions and bug fixes to the Ceph operator.
+osd: Support expanding lvm osd on pvc (, @satoru-takeuchi)
+monitoring: Skip creating the service monitor for the exporter if monitoring is not enabled (, @travisn)
+docs: Generate documentation for CRDs (, @Javlopez)
+core: Add termination grace period for exporter pods (, @avanthakkar)
+csi: servicemonitor for rook-ceph csi drivers (, @jouve)
+monitoring: Configurable option to disable prometheus metrics (, @travisn)
+mgr: Default to active mgr label if only one mgr is running (, @travisn)
+osd: Allow scanning devices with filter (, @Javlopez)
+core: Disable controller runtime metrics server (, @Madhu-1)
+mgr: Use mgr_role dynamic label to tag the active ceph manager (, @rkachach)
+operator: use KUBECONFIG context for cli if present (, @BlaineEXE)
+external: fix rgw multisite config check (, @parth-gr)
+operator: validate multus validation networks in cli (, @BlaineEXE)
+operator: Fix package logger name for rookcli (, @BlaineEXE)
+ceph: Unset the encryption configuration before updating the setting (, @Madhu-1)"
+"*   391e3e2c1 Merge pull request #12177 from travisn/release-1.11.5
+|\  
+| * b70cc768f build: update patch version to v1.11.5
+|/  
+*   d4381f740 Merge pull request #12150 from rook/mergify/bp/release-1.11/pr-12146
+|\  
+| * ba00d251c docs: clarify docs for wording or obsolete info
+* |   2c12f4ef7 Merge pull request #12171 from rook/mergify/bp/release-1.11/pr-12155
+|\ \  
+| * | 52eb79c3b nfs: pare down config file volume sources
+* | |   c4e801533 Merge pull request #12158 from rook/mergify/bp/release-1.11/pr-12151
+|\ \ \  
+| * | | a0a9d75ee ci: disable multi-cluster-mirroring
+| | |/  
+| |/|   
+* | |   d8bd4fa6d Merge pull request #12169 from rook/mergify/bp/release-1.11/pr-12069
+|\ \ \  
+| |_|/  
+|/| |   
+| * | 8bb189c5c test: add multus validation test routine to rook binary
+* | |   bd9874d40 Merge pull request #12168 from rook/mergify/bp/release-1.11/pr-12161
+|\ \ \  
+| |/ /  
+|/| |   
+| * | 549ab54ad core: update k8s module to lastet version
+|/ /  
+* |   6eaa445a8 Merge pull request #12167 from rook/mergify/bp/release-1.11/pr-12149
+|\ \  
+| |/  
+|/|   
+| * 9bc7debca mgr: fix ceph dashboard login issue
+|/  
+*   abe5cd7d5 Merge pull request #12141 from rook/mergify/bp/release-1.11/pr-12132
+|\  
+| * 67d4bc499 external: check for pool and cluster name is provided
+|/  
+*   ff6cc553a Merge pull request #12136 from rook/mergify/bp/release-1.11/pr-12075
+|\  
+| * 6cb4dab7d core: skip OBC and Notification controllers
+* |   7e9b89aa6 Merge pull request #12134 from rook/mergify/bp/release-1.11/pr-12109
+|\ \  
+| |/  
+|/|   
+| * bb649aa02 helm: add an ingress for ceph-objectores
+* |   7c48dd6f6 Merge pull request #12128 from rook/mergify/bp/release-1.11/pr-12118
+|\ \  
+| |/  
+|/|   
+| * 7f4f2a403 core: disable exporter service
+|/  
+*   361d09155 Merge pull request #12119 from rook/mergify/bp/release-1.11/pr-10446
+|\  
+| * bce388ebb docs: mention about reconciliation issue in hpa docs
+|/  
+* 445120e04 Merge pull request #12093 from rook/mergify/bp/release-1.11/pr-12086
+* 2e2925b04 nfs: set nsswitch.conf to lookup local files
+* 06694b0eb nfs: do not restrict search domain to localhost","Improvements
+Rook v1.11.5 is a patch release limited in scope and focusing on feature additions and bug fixes to the Ceph operator.
+mgr: Retry creating ceph dashboard credentials (, @parth-gr)
+nfs: Reduce size CephNFS CRD from unnecessary file volume sources (, @BlaineEXE)
+core: Update k8s API references to more recent version (, @subhamkrai)
+test: Add multus validation test routine to rook binary (, @BlaineEXE)
+external: check that the pool and cluster name is provided (, @parth-gr)
+core: Skip OBC controllers if not needed based (, @sp98)
+Add an ingress for Ceph object stores (, @jouve)
+core: Disable the exporter service (, @avanthakkar)
+nfs: Fixes for mounting CephNFS using Kerberos auth (, @spuiuk)"
+"*   79c74dfeb Merge pull request #8194 from travisn/release-1.6.6
+|\  
+| * 358c0d25f build: update release version to v1.6.6
+|/  
+*   93438c8af Merge pull request #8193 from rook/mergify/bp/release-1.6/pr-8190
+|\  
+| * 22c951891 ceph: update csi node-driver-registrar to latest release
+|/  
+*   564be28d6 Merge pull request #8186 from rook/mergify/bp/release-1.6/pr-8181
+|\  
+| * 0b0d05ef0 ceph: evict a mon if colocated with another mon
+|/  
+*   8f42cc6a1 Merge pull request #8178 from rook/mergify/bp/release-1.6/pr-8175
+|\  
+| * 3c9838c98 ceph: run CLI output with Info logging
+|/  
+*   7b5c10c05 Merge pull request #8177 from rook/mergify/bp/release-1.6/pr-8173
+|\  
+| * 0e7db8e28 ceph: do not leak key encryption key
+|/  
+*   b78faab64 Merge pull request #8174 from rook/mergify/bp/release-1.6/pr-8140
+|\  
+| * 89be6d2ab ceph: read and validate CSI params in Go routine
+|/  
+*   7a09c2d78 Merge pull request #8171 from rook/mergify/bp/release-1.6/pr-8164
+|\  
+| * 20521a4ca ceph: only require rgw-admin-ops user when an endpoint is provided
+* |   1d8030f2e Merge pull request #8167 from rook/mergify/bp/release-1.6/pr-8142
+|\ \  
+| |/  
+|/|   
+| * aaeeb4f10 core: sort multus annotation strings when applying
+|/  
+*   d8b8875fd Merge pull request #8161 from rook/mergify/bp/release-1.6/pr-8157
+|\  
+| * b88257915 ceph: use cacert if no client cert/key are present
+* |   a579730b7 Merge pull request #8162 from rook/mergify/bp/release-1.6/pr-8147
+|\ \  
+| * | 76be4ac7c ceph: mons in stretch cluster assign to node
+| |/  
+* |   094f0eef8 Merge pull request #8159 from rook/mergify/bp/release-1.6/pr-8114
+|\ \  
+| |/  
+|/|   
+| * 229b550ee ceph: update cronjob from v1beta1 to v1
+|/  
+*   1ceabe8b1 Merge pull request #8158 from rook/mergify/bp/release-1.6/pr-8139
+|\  
+| * d39f98d76 ceph: initialise httpclient for bucketchecker and objectstoreuser
+|/  
+*   c312d868d Merge pull request #8152 from rook/mergify/bp/release-1.6/pr-8137
+|\  
+| * d6962b83c ceph: activate osd container should use correct dataDirHostPath
+* |   896ff64bd Merge pull request #8150 from rook/mergify/bp/release-1.6/pr-8145
+|\ \  
+| |/  
+|/|   
+| * 1563ebef1 docs: clarify resource documentation
+|/  
+*   a90962dde Merge pull request #8134 from rook/mergify/bp/release-1.6/pr-8117
+|\  
+| * dff8d4732 ceph: set device class for already present osd deployments
+|/  
+*   18977bfb1 Merge pull request #8133 from rook/mergify/bp/release-1.6/pr-8130
+|\  
+| * b3ad01b26 ceph: remove --force when creating filesystem
+|/  
+*   40888ad28 Merge pull request #8131 from rook/mergify/bp/release-1.6/pr-8125
+|\  
+| * 2cbed5d3f ceph: update csi sidecar images to latest release
+|/  
+*   c778609c7 Merge pull request #8075 from rook/mergify/bp/release-1.6/pr-8074
+|\  
+| * 59dfa19db ceph: correct enableCSIHostNetwork in helm charts
+*   331c21656 Merge pull request #8079 from degorenko/device-classes-resource-limits-1.6
+|\  
+| * eef8fe04d ceph: add ability to set resource limit for OSDs based on device classes
+* |   243f5291b Merge pull request #8124 from rook/mergify/bp/release-1.6/pr-8118
+|\ \  
+| |/  
+|/|   
+| * 0474e35b8 ceph: add rbac for mgr to create service monitor
+|/  
+*   48b2347fd Merge pull request #8099 from subhamkrai/backport-8087
+|\  
+| * b1508bde9 ceph: bump controller runtime and k8s version
+* b78358e6b Merge pull request #8088 from henryzhangsta/backport-helm
+* fd7499026 ceph: backport installation documentation for Ceph Cluster chart","Improvements
+Rook v1.6.6 is a patch release limited in scope and focusing on small feature additions and bug fixes.
+Ceph
+Update csi sidecar images to latest release (, @Madhu-1)
+Update csi node-driver-registrar to latest release (, @Rakshith-R)
+Evict a mon if colocated with another mon (, @travisn)
+Enable logging in legacy LVM OSD daemons (, @leseb)
+Do not leak key encryption key to the log (, @leseb)
+Read and validate CSI params in a goroutine (, @Rakshith-R)
+Only require rgw-admin-ops user when an RGW endpoint is provided (, @leseb)
+Avoid unnecessary OSD restarts when multus is configured (, @BlaineEXE)
+Use cacert if no client cert/key are present for OSD encryption with Vault (, @leseb)
+Mons in stretch cluster should be assigned to a node when using dataDirHostPath (, @travisn)
+Support cronjob v1 for newer versions of K8s to avoid deprecated v1beta1 (, @subhamkrai)
+Initialise httpclient for bucketchecker and objectstoreuse (, @thotz)
+Activate osd container should use correct host path for config (, @travisn)
+Set device class for already present osd deployments (, @degorenko)
+No need for --force when creating filesystem (, @subhamkrai)
+Expose enableCSIHostNetwork correctly in the helm chart (, @Madhu-1)
+Add RBAC for mgr to create service monitor (, @travisn)
+Update operator internal controller runtime and k8s reference version (, @subhamkrai)"
+"*   1899eda8a Merge pull request #10429 from travisn/release-1.8.10
+|\  
+| * 125e07f65 build: update release version to v1.8.10
+|/  
+*   fcb119252 Merge pull request #10366 from parth-gr/upgrade-ceph
+|\  
+| * 9076e4634 build: update examples and base image to use ceph v16.2.9
+|/  
+*   082237f76 Merge pull request #10300 from rook/mergify/bp/release-1.8/pr-10298
+|\  
+| * f7834b6d0 osd: remove broken argument
+* |   86d47c3c0 Merge pull request #10304 from travisn/disable-docs
+|\ \  
+| |/  
+|/|   
+| * ce798f302 build: disable docs build in 1.8 branch
+|/  
+*   db185e371 Merge pull request #10283 from rook/mergify/bp/release-1.8/pr-10279
+|\  
+| * 7ac7b5d48 operator: rename telemetry rook-version to rook/version
+|/  
+*   5d0851697 Merge pull request #10256 from rook/mergify/bp/release-1.8/pr-10250
+|\  
+| * 1735e202e osd: allow the osd to take a long time to start
+* |   3326bff10 Merge pull request #10259 from rook/mergify/bp/release-1.8/pr-10161
+|\ \  
+| |/  
+|/|   
+| * 2cad7ba15 operator: set 'rook-version' in mon k/v store
+|/  
+*   d14d16be1 Merge pull request #10235 from rook/mergify/bp/release-1.8/pr-10230
+|\  
+| * 2eb54a0dc core: add mountpoint detection to the prepare pod
+| * 4524b31e2 core: add more debug info to the prepare pod
+| * 7119e634d core: append filesystem property on disk
+|/  
+* 947bf227f Merge pull request #10239 from rook/mergify/bp/release-1.8/pr-10156
+* f617a191b ci: use stringData instead of data for secret","Improvements
+Rook v1.8.10 is a patch release limited in scope and focusing on small feature additions and bug fixes to the Ceph operator.
+core: Improve detection of filesystem properties for disk in use (, @leseb)
+osd: Remove broken argument for upgraded OSDs on PVCs in legacy lvm mode (, @leseb)
+osd: Allow the osd to take two hours to start in case of ceph maintenance (, @travisn)
+operator: Report telemetry 'rook/version' in mon store (, @BlaineEXE)"
+"*   b828f714c Merge pull request #9303 from BlaineEXE/release-1.7.9
+|\  
+| * 29b936ab9 build: set the release version to v1.7.9
+|/  
+*   73bad39ca Merge pull request #9293 from TomHellier/cherry-picked-from-9280
+|\  
+| * b3cbd3d23 helm: use a more explicit value for ingress
+* |   a899d960b Merge pull request #9222 from subhamkrai/add-flex-doc
+|\ \  
+| |/  
+|/|   
+| * bd55c7ea2 docs: last nits of flex-migrator yaml
+| * aee981bec docs: add guide doc for flex migration
+|/  
+*   703b327cb Merge pull request #9289 from rook/mergify/bp/release-1.7/pr-9287
+|\  
+| * aab253750 helm: addition of mountOptions into storage class configuration
+|/  
+*   f95602b69 Merge pull request #9274 from subhamkrai/add-binary
+|\  
+| * 91a9ba6b6 core: adding migrator.yaml for pv-migrator tool
+| * 5f95e7818 build: add pv-migrator binary to rook image in 1.7.8 branch
+|/  
+*   a9cda1e4c Merge pull request #9271 from rook/mergify/bp/release-1.7/pr-9259
+|\  
+| * cb6f87e8c osd: update existing OSDs with deviceClass
+|/  
+*   cf2b787ed Merge pull request #9269 from rook/mergify/bp/release-1.7/pr-9264
+|\  
+| * c0d0f16cc cephfs-mirror: use combined output to possibly catch peer import error
+| * d07549aa3 core: add the ability to execute ceph commands with a combined output
+| * 37bacae99 cephfs-mirror: try to mitigate peer import error
+|/  
+*   3a7dfdd19 Merge pull request #9237 from TomHellier/cherrypick-pr-9176
+|\  
+| * 80b63bd69 helm: allow further configurability of ingress version
+* |   f38dcb942 Merge pull request #9255 from rook/mergify/bp/release-1.7/pr-9230
+|\ \  
+| * | 29065e33a osd: check if osd is ok-to-stop before removal
+* | |   fbe47e4be Merge pull request #9249 from olivierbouffet/fixrgwflag
+|\ \ \  
+| |/ /  
+|/| |   
+| * | c92270cd6 object: fix rgw ceph config
+|/ /  
+* |   32cb63b8d Merge pull request #9245 from rook/mergify/bp/release-1.7/pr-9243
+|\ \  
+| * | fc9f05e71 monitoring: update label on prometheus resources
+* | |   0a94e114d Merge pull request #9247 from rook/mergify/bp/release-1.7/pr-9236
+|\ \ \  
+| * | | 6a28173fa core: fix openshift security context
+* | | |   f1777e843 Merge pull request #9239 from rook/mergify/bp/release-1.7/pr-9224
+|\ \ \ \  
+| * | | | 1d70afd2f nfs: always run default pool creation
+| * | | | 760a8d3d2 nfs: only set the pool size when it exists
+| | |/ /  
+| |/| |   
+* | | |   9c0eb3eb0 Merge pull request #9240 from LittleFox94/backport-9180
+|\ \ \ \  
+| |_|/ /  
+|/| | |   
+| * | | 7da43aae2 monitoring: allow overriding monitoring labels
+|  / /  
+* | |   ec6f55e1c Merge pull request #9143 from olivierbouffet/fixobjectstore
+|\ \ \  
+| |/ /  
+|/| |   
+| * | e06c6fc3e object: fix search user in objectstore
+| * | 184f2fdb3 operator: fix search user in objectstore
+|  /  
+* / 10e687813 Merge pull request #9229 from rook/mergify/bp/release-1.7/pr-9202
+|/  
+* adcad808c docs: add details about HPA via KEDA","Improvements
+Rook v1.7.9 is a patch release limited in scope and focusing on small feature additions and bug fixes to the Ceph operator.
+This release includes the new migration tool from flex to CSI. The conversion is required before clusters can be upgraded to v1.8 where flex volumes will not be supported.
+docs: Guide for migrating from flex to csi volumes  (, @subhamkrai)
+build: Add pv-migrator tool to rook image in 1.7.x branch (, @subhamkrai)
+helm: Addition of mountOptions into storage class configuration (, @TomHellier)
+osd: Update existing OSDs with deviceClass (, @parth-gr)
+cephfs-mirror: Various fixes for random bootstrap peer import errors (, @leseb)
+helm: Allow configurability of ingress version (, @TomHellier)
+osd: Check if osd is safe-to-destroy before removal from the osd purge job (, @leseb)
+object: Configure object store with correct zone name for multisite (, @olivierbouffet)
+monitoring: Update label on prometheus resources (, @LittleFox94)
+core: Add expected capabilities to OpenShift security context (, @leseb)
+nfs: Only set the pool size when it exists and always run default pool creation for NFS (, @leseb)
+monitoring: Allow overriding monitoring labels (, @LittleFox94)
+helm: Use a more explicit value for ingress for K8s 1.18 (, @TomHellier)
+object: Create system user with correct realm for external cluster (, @olivierbouffet)
+docs: Add details about HPA via KEDA (, @thotz)"
+"*   d575ad537 Merge pull request #11655 from travisn/release-1.10.11
+|\  
+| * 0f8a91100 build: update the release version to v1.10.11
+*   2656eae92 Merge pull request #11652 from rook/mergify/bp/release-1.10/pr-11630
+|\  
+| * 217752d81 rgw: handle insecure flag skip for object bucket notification in the tls config
+|/  
+*   08d3c9cfb Merge pull request #11605 from rook/mergify/bp/release-1.10/pr-11593
+|\  
+| * bda24bbc7 operator: fix webhook loggin during deletion
+* |   b8eb4dafe Merge pull request #11651 from rook/mergify/bp/release-1.10/pr-11616
+|\ \  
+| * | e565fb3ff helm: add labels and annotations to config overrides configmap
+|/ /  
+* |   ff36cb759 Merge pull request #11648 from rook/mergify/bp/release-1.10/pr-11646
+|\ \  
+| * | 0b79977db test: change ceph version of osd on pvc canary test to avoid failures
+|/ /  
+* |   4ed612b85 Merge pull request #11636 from rook/mergify/bp/release-1.10/pr-11525
+|\ \  
+| * | b39b78328 docs: add glossary page
+|/ /  
+* |   cf508946b Merge pull request #11635 from rook/mergify/bp/release-1.10/pr-11611
+|\ \  
+| * | 935d3bfae mds: support mds with multus
+|/ /  
+* |   52227ddca Merge pull request #11615 from rook/mergify/bp/release-1.10/pr-11505
+|\ \  
+| * | 584d194c8 helm: document installing different types of CephClusters
+| |/  
+* |   e06b13cb0 Merge pull request #11633 from rook/mergify/bp/release-1.10/pr-11620
+|\ \  
+| * | a3e6f8e3f docs: fixing build instructions
+|/ /  
+* |   742e5fde4 Merge pull request #11608 from rook/mergify/bp/release-1.10/pr-11606
+|\ \  
+| * | 7626cfd44 docs: fix lint error in doc generating python code
+| |/  
+* |   f7a903d24 Merge pull request #11622 from rook/mergify/bp/release-1.10/pr-11621
+|\ \  
+| |/  
+|/|   
+| * e9cc07d6c docs: fix formatting issues
+|/  
+*   bef8ec976 Merge pull request #11604 from rook/mergify/bp/release-1.10/pr-11601
+|\  
+| * 2983a76e1 docs: add export path example for NFS CSI
+|/  
+*   34498e0cf Merge pull request #11582 from rook/mergify/bp/release-1.10/pr-11453
+|\  
+| * b9056d49e core: fix CephFS status updates
+* |   3ba419afc Merge pull request #11581 from rook/mergify/bp/release-1.10/pr-11577
+|\ \  
+| |/  
+|/|   
+| * 4dac8a2ce csi: add default version to images if it is missing
+|/  
+*   04832ec17 Merge pull request #11580 from rook/mergify/bp/release-1.10/pr-11579
+|\  
+| * ed30d0620 external: dont do rgw validation if python version < 3
+|/  
+* f808d355c Merge pull request #11561 from rook/mergify/bp/release-1.10/pr-11538
+* fd7344799 mgr: role rook-ceph-mgr is lack of patch verb to compete ceph request","Improvements
+Rook v1.10.11 is a patch release limited in scope and focusing on feature additions and bug fixes to the Ceph operator.
+rgw: Handle insecure flag skip for object bucket notification in the tls config (, @microyahoo)
+operator: Fix webhook logging during deletion (, @subhamkrai)
+helm: Add labels and annotations to config overrides configmap (, @travisn)
+ci: Change ceph version of osd on pvc canary test to avoid failures (, @satoru-takeuchi)
+mds: Support the Shared filesystem with multus (, @subhamkrai)
+docs: Add glossary page (, @gauravsitlani)
+docs: Add export path example for NFS CSI (, @BlaineEXE)
+file: Retry CephFS Status updates (, @aruniiird)
+csi: add default version to images if it is missing (, @Rakshith-R)
+external: Skip RGW validation for python version 2 (, @parth-gr)
+mgr: Add patch verb to RBAC for completing ceph requests in orch module (, @gaord)"
+"*   b422ef4c8 Merge pull request #9634 from travisn/release-1.7.11
+|\  
+| * 161cf6825 build: update release version to v1.7.11
+|/  
+*   5ae833f3e Merge pull request #9599 from rook/mergify/bp/release-1.7/pr-9467
+|\  
+| * bad47a2be mgr: update services when active mgr changes
+|/  
+*   d85b4c7da Merge pull request #9592 from rook/mergify/bp/release-1.7/pr-9582
+|\  
+| * 76530fc2c osd: correct bluestore compression min blob size for ssd
+|/  
+*   6ae7ee513 Merge pull request #9527 from subhamkrai/doc-fix
+|\  
+| * 3b99b9edf docs: add section for disruptionManagement (backport 9522)
+|/  
+*   b66c7e4ab Merge pull request #9478 from BlaineEXE/release-1.7-use-go-1.16.12
+|\  
+| * 36cb504ee build: update build to go v1.16.12
+|/  
+* 92d0c728b Merge pull request #9460 from rook/mergify/bp/release-1.7/pr-9453
+* e9f1c960c docs: add jumbo frames note to common issues","Improvements
+Rook v1.7.11 is a patch release limited in scope and focusing on small feature additions and bug fixes to the Ceph operator.
+mgr: Update services with the app=rook-ceph-mgr label when the active Ceph mgr changes (, @travisn)
+osd: Correct bluestore compression min blob size for ssd (, @subhamkrai)
+build: Update to go v1.16.12 (, @BlaineEXE)"
+"*   8ce4eea56 Merge pull request #12642 from travisn/release-1.12.1
+|\  
+| * dd0401e71 build: update release version to v1.12.1
+|/  
+*   4ae720066 Merge pull request #12641 from rook/mergify/bp/release-1.12/pr-12640
+|\  
+| * 545568aa0 ci: run object suite in master and release branches
+|/  
+*   40b756803 Merge pull request #12635 from rook/mergify/bp/release-1.12/pr-12615
+|\  
+| * 3d7b88f02 docs: add note in upgrade guide about cephfs driver's breaking change
+|/  
+*   a63d8a227 Merge pull request #12632 from rook/mergify/bp/release-1.12/pr-12631
+|\  
+| * e326dc7c0 tests: multi cluster suite toolbox version
+|/  
+*   dd55645ab Merge pull request #12630 from rook/mergify/bp/release-1.12/pr-12625
+|\  
+| * 31cc2c554 tests: toolbox uses same ceph image as the test
+| * dd79c1f78 ci: allow commit prefixes for doc and tests
+* |   58b0f5f29 Merge pull request #12626 from rook/mergify/bp/release-1.12/pr-12501
+|\ \  
+| |/  
+|/|   
+| * 7a1954809 osd: use cp -a command for copying init-containers
+* |   fdbf4a4cc Merge pull request #12628 from rook/mergify/bp/release-1.12/pr-12534
+|\ \  
+| * | e2c92d16c external: added an optional flag for enabling v2 mon port
+| |/  
+* |   d10988da2 Merge pull request #12629 from rook/mergify/bp/release-1.12/pr-12537
+|\ \  
+| |/  
+|/|   
+| * d237dff98 external: set RequireMsgr2 if v2 port is configured
+|/  
+*   d1dccf5b1 Merge pull request #12620 from rook/mergify/bp/release-1.12/pr-12611
+|\  
+| * 15f3146ca multus: revise kube config/client loading
+|/  
+*   15f69f734 Merge pull request #12619 from rook/mergify/bp/release-1.12/pr-12617
+|\  
+| * 22b4e5d7e nfs: fix null pointer deref in generateSssdSidecarResources()
+|/  
+*   fe35e61ae Merge pull request #12554 from rook/mergify/bp/release-1.12/pr-12508
+|\  
+| * c50dfb105 external: create ceph cluster namespace
+*   366084646 Merge pull request #12586 from rook/mergify/bp/release-1.12/pr-12572
+|\  
+| * e8df41fe3 build(deps): bump wagoid/commitlint-github-action from 5.4.1 to 5.4.3
+* |   b3c3cfe38 Merge pull request #12587 from rook/mergify/bp/release-1.12/pr-12562
+|\ \  
+| * | 049f03e68 object: update ceph cosi driver image to v0.1.1
+| |/  
+* |   d81e8e6a1 Merge pull request #12590 from rook/mergify/bp/release-1.12/pr-12560
+|\ \  
+| * | 719a8cdb5 object: do not add objectstore endpoint to zone when sync is disabled
+| |/  
+* |   4bc21d226 Merge pull request #12606 from rook/mergify/bp/release-1.12/pr-12517
+|\ \  
+| * | b63ac550d nfs: mount krb5.conf and krb5.keytab in the sssd container
+|/ /  
+* |   d81d21367 Merge pull request #12588 from rook/mergify/bp/release-1.12/pr-12575
+|\ \  
+| * | 4c95a180e core: force delete rook-ceph-exporter pod
+| |/  
+* |   7d75997d9 Merge pull request #12604 from rook/mergify/bp/release-1.12/pr-12563
+|\ \  
+| * | 98f51c251 core: node fencing, skip pv when pv is not backed by csi
+* | |   a6bab103c Merge pull request #12601 from rook/mergify/bp/release-1.12/pr-12564
+|\ \ \  
+| |/ /  
+|/| |   
+| * | 73fed34bf test: collect kube-system logs for debugging
+* | |   910eca098 Merge pull request #12589 from rook/mergify/bp/release-1.12/pr-12466
+|\ \ \  
+| * | | 5d51214ad osd: configure backend store
+| | |/  
+| |/|   
+* | |   690338aa1 Merge pull request #12602 from rook/mergify/bp/release-1.12/pr-12578
+|\ \ \  
+| |_|/  
+|/| |   
+| * | 2c5672ab6 test: fix upgrade suite for 1.27.x version
+|/ /  
+* |   7d5cfea91 Merge pull request #12594 from rook/mergify/bp/release-1.12/pr-12592
+|\ \  
+| * | ec76ca6b8 build: cosi driver is missing from olm list
+|/ /  
+* |   a0413e323 Merge pull request #12584 from rook/mergify/bp/release-1.12/pr-12579
+|\ \  
+| |/  
+|/|   
+| * 1d34907cf ci: add detached mode in tmate
+|/  
+* e417b4b1a Merge pull request #12582 from rook/mergify/bp/release-1.12/pr-12574
+* 581e08921 docs: update the external doc format","Improvements
+Rook v1.12.1 is a patch release limited in scope and focusing on feature additions and bug fixes to the Ceph operator.
+docs: Add note in upgrade guide about cephfs driver's breaking change (, @Rakshith-R)
+osd: Use cp -a command for copying init-containers binary (, @Sheetalpamecha)
+external: added an optional flag for enabling v2 mon port (, @Nikhil-Ladha)
+external: set RequireMsgr2 if v2 port is configured (, @parth-gr)
+multus: Revise kube config/client loading (, @BlaineEXE)
+nfs: Fix null pointer deref in generateSssdSidecarResources() (, @spuiuk)
+external: Create cluster namespace for the external cluster (, @parth-gr)
+object: Update ceph COSI driver image to v0.1.1 (, @thotz)
+object: Do not add objectstore endpoint to zone when sync is disabled (, @polyedre)
+nfs: mount krb5.conf and krb5.keytab in the sssd container (, @spuiuk)
+core: Force delete rook-ceph-exporter pod on a down node (, @sp98)
+rbd: Skip PV during node fencing when PV is not backed by Ceph-CSI (, @subhamkrai)
+build: COSI driver is missing from OLM list (, @subhamkrai)
+ci: add detached mode in tmate (, @subhamkrai)"
+"* 485510b1 Merge pull request #640 from thewtex/limit-max-concurrency
+*   b4aef472 Merge pull request #2 from PaulHax/no-default-args
+|\  
+| * 08e0c71b refactor(ZarrMultiscaleSpatialImage): consolidate maxConcurrency logic
+|/  
+* 6689d941 fix(ZarrMultiscaleSpatialImage): Constrain concurrency for large server","Bug Fixes
+ZarrMultiscaleSpatialImage: Constrain concurrency for large server (6689d94)"
+"* 68bb0784 Merge pull request #67 from thewtex/unique-css-class-identifiers
+* 377d71dd chore(Dependencies): Bump vtk.js to 6.4.5
+* 09f0c851 fix(userInterface): Use unique CSS class identifiers","Bug Fixes
+userInterface: Use unique CSS class identifiers (09f0c85)"
+"* cfbca5e3 fix(standalone): Publish standalone html file
+* 7d50b471 doc(WebSite): Update logo and md","<a name""1.0.2"">
+Bug Fixes
+standalone: Publish standalone html file (cfbca5e3)"
+"* e845e3c6 fix(UI): Better look and feel
+* 76af8c38 doc(iframe): Remove invalid iframe","<a name""1.0.4"">
+Bug Fixes
+UI: Better look and feel (e845e3c6)"
+"*   3c517d6 Merge pull request #21 from jdb78/dependabot/pip/pytest-xdist-2.1.0
+|\  
+| * 45873ba Bump pytest-xdist from 2.0.0 to 2.1.0
+* |   892cd0b Merge pull request #20 from jdb78/dependabot/pip/cloudpickle-1.6.0
+|\ \  
+| * | e5638ff Bump cloudpickle from 1.5.0 to 1.6.0
+| |/  
+* |   c28b10a Merge pull request #22 from jdb78/feature/upgrade_pytorch_lightning
+|\ \  
+| |/  
+|/|   
+| * 4b6aa35 Update stallion tutorial
+| * 20ba92f Add favicon to docs
+| * 542b8b7 Fix plotting single prediction forecast point
+|/  
+* 62199c8 Merge pull request #19 from jdb78/fix/update-pypi-recipe
+* fd00e8f Update PyPI recipe on github actions","Fixes
+Fix bug where predictions were not correctly logged in case of decoder_length == 1.
+Additions
+Add favicon to docs page"
+"*   48f3595 Merge pull request #172 from jdb78/fix/allow-new-series-ids-in-test-data
+|\  
+| * 0cb2248 Ensure encoding of group ids is only done if needed
+| * b8112ff Re-encode group ids by dataset to identify series
+|/  
+*   c7574bc Merge pull request #170 from jdb78/feature/improved-encoder-keyerror
+|\  
+| * 684a450 Better KeyError for NaNLabelEncoder
+|/  
+*   9cd0dab Merge pull request #169 from jdb78/fix/gpu-rnn
+|\  
+| * f737752 Fix: need sequence lengths of pack rnn sequence on CPU
+|/  
+*   619459a Merge pull request #161 from jdb78/dependabot/pip/pytorch-lightning-1.0.7
+|\  
+| * b1192a9 Bump pytorch-lightning from 1.0.6 to 1.0.7
+* |   70dcff6 Merge pull request #168 from jdb78/docs/conda-install
+|\ \  
+| |/  
+|/|   
+| * b5a4528 Clarify conda installation
+|/  
+*   9b162f6 Merge pull request #167 from jdb78/fix/warnings-timeseries
+|\  
+| * b999d7b Fix formatting
+| * 9cd133e Fix for timeseries warning
+|/  
+*   234dcce Merge pull request #166 from jdb78/fix/ci
+|\  
+| * 7c01824 Run linters on fork, annotate only master
+| * ff0f18f Run tests on forks
+|/  
+*   f4589ea Merge pull request #153 from JakeForsey/feature/support-gru-cells-in-deepar
+|\  
+| * 66e548b Added docstrings to deepar.sub_modules
+| * 138d250 Added tests for DeepAR GRU
+| * 93a1d79 Add support for GRU cells in DeepAR
+| * 5e07e90 Merge pull request #1 from jdb78/master
+* |   d5f45da Merge pull request #156 from jdb78/feature/actions_testing_on_base
+|\ \  
+| |/  
+|/|   
+| * 04924ed Run actions based on master and in master
+|/  
+*   6191521 Merge pull request #152 from JakeForsey/feature/parameterise-reduce-on-plateau-min-lr
+|\  
+| * 960ab4d Parameterize the minimum LR that ReduceLROnPlateau can reduce to
+*   389e82c Merge pull request #150 from JakeForsey/docs/add-optimiser-options-and-default
+|\  
+| * b92f392 Add the optimizer options and default to BaseModel doc string
+*   edff334 Merge pull request #151 from jdb78/dependabot/pip/sphinx-3.3.1
+|\  
+| * 1e5f099 Bump sphinx from 3.3.0 to 3.3.1
+|/  
+*   e90a073 Merge pull request #148 from jdb78/docs/clarifications
+|\  
+| * aa322ee Improved model and data docs
+|/  
+*   d44fc18 Merge pull request #147 from jdb78/dependabot/pip/matplotlib-3.3.3
+|\  
+| * fd37226 Bump matplotlib from 3.3.2 to 3.3.3
+|/  
+* 26f62d0 Merge pull request #146 from jdb78/dependabot/pip/pytorch-lightning-1.0.6
+* 9d8cf90 Bump pytorch-lightning from 1.0.5 to 1.0.6","Added
+Using GRU cells with DeepAR ()
+Fixed
+GPU fix for variable sequence length ()
+Fix incorrect syntax for warning when removing series ()
+Fix issue when using unknown group ids in validation or test dataset ()
+Run non-failing CI on PRs from forks ()
+Docs
+Improved model selection guidance and explanations on how TimeSeriesDataSet works ()
+Clarify how to use with conda ()
+Contributors
+JakeForsey"
+"*   b8ea11b6c Merge pull request #13937 from travisn/release-1.13.7
+|\  
+| * a9fa6205d build: update release version to v1.13.7
+|/  
+*   c69ed8bb6 Merge pull request #13935 from rook/mergify/bp/release-1.13/pr-13923
+|\  
+| * e2cc6f044 monitoring: set metrics scraping interval to 10s in examples files
+| * f90a13f13 monitoring: increasing metrics scraping interval from 5s to 10s
+|/  
+*   b79cc9104 Merge pull request #13924 from rook/mergify/bp/release-1.13/pr-13902
+|\  
+| * 6cc8ef770 doc: adding a doc example for ceph-exporter labels
+| * bbc482d82 exporter: applying labels from monitoring section to ceph-exporter
+* 1c8abbe28 Merge pull request #13920 from rook/mergify/bp/release-1.13/pr-13913
+* 8fae43f14 core: set default ceph version to v18.2.2","Improvements
+Rook v1.13.7 is a patch release limited in scope and focusing on feature additions and bug fixes to the Ceph operator.
+core: Set default ceph version to v18.2.2 (, @travisn)
+monitoring: Increase default metrics scraping interval from 5s to 10s (, @rkachach)
+exporter: Apply labels from monitoring section of CephCluster to ceph-exporter (, @rkachach)"
+"*   13997eb00 Merge pull request #14285 from travisn/release-1.14.5
+|\  
+| * 155eec15a build: set release version to v1.14.5
+|/  
+*   1f88479ad Merge pull request #14284 from rook/mergify/bp/release-1.14/pr-14281
+|\  
+| * ad70539d2 osd: configure cluster full settings when osds fill up
+|/  
+*   0b4b3501b Merge pull request #14239 from rook/mergify/bp/release-1.14/pr-14234
+|\  
+| * c556842e1 core: remove owner refs in resource cleanup jobs
+* |   6642e7475 Merge pull request #14280 from rook/mergify/bp/release-1.14/pr-14232
+|\ \  
+| * | ad9f34bdd mgr: setting balancer mode from cluster spec
+* | |   a7c81662d Merge pull request #14274 from rook/mergify/bp/release-1.14/pr-14257
+|\ \ \  
+| |/ /  
+|/| |   
+| * | 44c4eb378 osd: reduce safe-to-destroy retry timeout to 15s
+* | |   f4c22fc39 Merge pull request #14277 from rook/mergify/bp/release-1.14/pr-14271
+|\ \ \  
+| |/ /  
+|/| |   
+| * | 3a97692d0 docs: add a note for NixOS and containerd
+|/ /  
+* |   8cdfdc2f5 Merge pull request #14268 from rook/mergify/bp/release-1.14/pr-14266
+|\ \  
+| * | df1ae9a22 ci: fix codespell ci by skipping some words
+|/ /  
+* |   e38c36f83 Merge pull request #14261 from rook/mergify/bp/release-1.14/pr-14248
+|\ \  
+| * | ccafc2b71 mon: fix bind addr when IPv6 and msgr2 are enabled
+|/ /  
+* |   397a3e60e Merge pull request #14252 from rook/mergify/bp/release-1.14/pr-14250
+|\ \  
+| * | 276c2cd08 docs: fix broken link to network config
+|/ /  
+* |   4b97f988c Merge pull request #14242 from rook/mergify/bp/release-1.14/pr-14173
+|\ \  
+| |/  
+|/|   
+| * 98732a50f docs: document how to have StorageClass consume Rados Namespace
+|/  
+* 32fb43323 Merge pull request #14237 from rook/mergify/bp/release-1.14/pr-14236
+* 4fd104974 core: fix missing env in svg cleanup job","Improvements
+Rook v1.14.5 is a patch release limited in scope and focusing on feature additions and bug fixes to the Ceph operator.
+mon: Fix the bind address when IPv6 and msgr2 are enabled (, @BlaineEXE)
+osd: Configure cluster full settings related to OSDs filling up (, @travisn)
+core: Remove unnecessary owner refs in resource cleanup jobs (, @sp98)
+mgr: Set balancer mode for the balancer mgr module in the CephCluster CR (, @sp98)
+osd: Reduce safe-to-destroy retry timeout to 15s (, @bdowling)
+docs: Document how to define a StorageClass to consume a RADOS namespace (, @obnoxxx)
+core: Fix missing env in subvolume group cleanup job (, @sp98)"
+"*   a923c0f6 Merge pull request #80 from Kitware/package-lock-node-8
+|\  
+| * f00e840f ci(Travis): Use npm install instead of npm ci
+| * 5e906380 ci(TravisCI): Use Node.js version 10
+| * b4dca889 fix(package-lock.json): Update
+|/  
+* 385e45a1 Merge pull request #78 from thewtex/bump-itk-vtk
+* 796a26e8 fix(Dependencies): Bump itk.js and vtk.js to latest","Bug Fixes
+Dependencies: Bump itk.js and vtk.js to latest (796a26e)
+package-lock.json: Update (b4dca88)"
+"*   d974c836 Merge pull request #403 from thewtex/annotation-position-precision
+|\  
+| * dce4a107 fix(CornerAnnotation): Fix position precision truncation
+|/  
+*   af618cc6 Merge pull request #399 from Kitware/dependabot/npm_and_yarn/ssri-6.0.2
+|\  
+| * cde4700b build(deps): bump ssri from 6.0.1 to 6.0.2
+*   bb9749e0 Merge pull request #400 from Kitware/dependabot/npm_and_yarn/url-parse-1.5.1
+|\  
+| * f9fb4d02 build(deps): bump url-parse from 1.4.7 to 1.5.1
+*   ba8368fe Merge pull request #401 from Kitware/dependabot/npm_and_yarn/lodash-4.17.21
+|\  
+| * 426c7c56 build(deps): bump lodash from 4.17.20 to 4.17.21
+* 1c9d9164 Merge pull request #402 from Kitware/dependabot/npm_and_yarn/postcss-8.2.10
+* a1d9ed50 build(deps-dev): bump postcss from 8.2.6 to 8.2.10","Bug Fixes
+CornerAnnotation: Fix position precision truncation (dce4a10)"
+"*   08595622 Merge pull request #282 from scottwittenburg/labelmap-component-proportional
+|\  
+| * d209eca7 fix(Viewer): Make labelmap component proportional in volume rendering
+| * c0eae9db chore(deps): Bump vtk.js
+|/  
+*   c6619194 Merge pull request #287 from thewtex/action-badge
+|\  
+| * e920f660 doc(README): Add GitHub Action badge
+|/  
+* cd8dbeaa Merge pull request #285 from Kitware/github-actions
+* 12a10367 ci(GitHubActions): Initial addition","Bug Fixes
+Viewer: Make labelmap component proportional in volume rendering (d209eca)"
+"*   3d2cacaa Merge pull request #470 from thewtex/dandi-zarr
+|\  
+| * 70c634d4 fix(isZarr): Support DANDI urls
+| * 333477be fix(createViewerFromUrl): url undefined for image, labelImage
+|/  
+*   b1d67919 Merge pull request #469 from Kitware/dependabot/npm_and_yarn/src/IO/Downsample/async-2.6.4
+|\  
+| * 1a524213 build(deps): bump async from 2.6.3 to 2.6.4 in /src/IO/Downsample
+* 8e23aa24 Merge pull request #443 from Kitware/dependabot/npm_and_yarn/karma-6.3.16
+* 3eb3e1f8 build(deps-dev): bump karma from 5.2.3 to 6.3.16","Bug Fixes
+createViewerFromUrl: url undefined for image, labelImage (333477b)
+isZarr: Support DANDI urls (70c634d)"
+"* 35b2a0e7 fix(Publish): Move build script execution to prepack
+*   4c44ff2a Merge pull request #422 from thewtex/semantic-release
+|\  
+| * 607b0168 build(Dependencies): Bump semantic-release to 17.4.4
+|/  
+* 07df5c16 build(reference-ui): Bump package to 11.9.2","Bug Fixes
+Publish: Move build script execution to prepack (35b2a0e)"
+"* 63a7b3c2e Bump v9.0.3
+* bcb2f41ea fix: range mode not updating when selected prop changes (#2295)
+* 330ae8e4b fix: alignment of grid elements (#2294)
+*   0c4774065 Merge branch 'main' of github.com:gpbl/react-day-picker
+|\  
+| * cd7fbdb5d build(deps-dev): bump eslint-plugin-prettier from 5.1.3 to 5.2.1 (#2288)
+| * 607278797 build(deps-dev): bump ts-jest from 29.2.2 to 29.2.3 (#2287)
+* | 8eba7e6a1 playground: add reset button to selection
+|/  
+* d66ecafc2 Bump v9.0.2
+* ab27785c7 build(deps-dev): bump eslint-plugin-react from 7.34.4 to 7.35.0 (#2289)
+* f543227e8 build(deps-dev): bump typedoc from 0.26.3 to 0.26.5 (#2291)
+* 0fe0d800a build(deps-dev): bump @testing-library/dom from 10.3.1 to 10.4.0 (#2292)","This release fixes two issues found with the grid style and the range mode.
+What's Changed
+fix: alignment of grid elements by @gpbl in
+fix: range mode not updating when selected prop changes by @gpbl in
+Full Changelog: v9.0.2...v9.0.3"
+"*   1614479f Merge branch 'master' of https://github.com/nolimits4web/swiper
+|\  
+| * 384ca3b8 8.2.6 release
+* | d3932b28 8.2.6 release
+|/  
+* b77a1f41 chore: update playground
+* f5bb7af0 feat(core): add `changeLanguageDirection` method to change it to RTL/LTR after init
+* 838a8e0a chore: add copyright to scss and less styles
+*   ed201c81 Merge branch 'master' of https://github.com/nolimits4web/swiper
+|\  
+| * 8b003333 fix(vue): virtualUpdate event is not declared (#5830)
+| * 3267616d fix(thumbs): active class gets removed (#5826)
+* d0c63657 feat(navigation): add navigationPrev and navigationNext events","Bug Fixes
+thumbs: active class gets removed () (3267616)
+vue: virtualUpdate event is not declared () (8b00333)
+Features
+core: add changeLanguageDirection method to change it to RTL/LTR after init (f5bb7af), closes
+navigation: add navigationPrev and navigationNext events (d0c6365), closes"
+"* 3b6c21c7 9.4.1
+* 581eea82 fix(core): fix issue with calling freeMode introduced in 9.4.0","Bug Fixes
+core: fix issue with calling freeMode introduced in 9.4.0
+(581eea8), closes"
+"*   cff2928 Merge pull request #870 from CookieMonsterTeam/dev
+|\  
+| *   5fec386 Merge pull request #869 from DanielNoord/update
+| |\  
+| | * 1d325a2 Update CookieMonster.js
+| | * 33caf88 Push to 2.031.9
+| * | 2708903 Merge pull request #868 from DanielNoord/achievement
+| |\| 
+| | * 6b346e0 Add info about next achievement in stats #833
+| | * d6a3209 Update package-lock
+| | * dfd0d79 Add Achievements section to Stats page
+| |/  
+| *   f228365 Merge pull request #867 from CookieMonsterTeam/dependabot/npm_and_yarn/typescript-eslint/parser-4.27.0
+| |\  
+| | * e7536d4 Bump @typescript-eslint/parser from 4.26.1 to 4.27.0
+| |/  
+| *   9a6086d Merge pull request #866 from CookieMonsterTeam/dependabot/npm_and_yarn/webpack-5.39.1
+| |\  
+| | * 52d52ba Bump webpack from 5.38.1 to 5.39.1
+| * |   527de03 Merge pull request #863 from CookieMonsterTeam/dependabot/npm_and_yarn/eslint-7.29.0
+| |\ \  
+| | |/  
+| |/|   
+| | * 9c1bfbf Bump eslint from 7.28.0 to 7.29.0
+| |/  
+| *   d404368 Merge pull request #864 from CookieMonsterTeam/dependabot/npm_and_yarn/typescript-eslint/eslint-plugin-4.27.0
+| |\  
+| | * 3ba2a31 Bump @typescript-eslint/eslint-plugin from 4.26.1 to 4.27.0
+| * |   8cb0471 Merge pull request #865 from CookieMonsterTeam/dependabot/npm_and_yarn/types/chai-4.2.19
+| |\ \  
+| | * | 70df241 Bump @types/chai from 4.2.18 to 4.2.19
+| | |/  
+| * |   ce7f0eb Merge pull request #861 from CookieMonsterTeam/dependabot/npm_and_yarn/typescript-4.3.4
+| |\ \  
+| | |/  
+| |/|   
+| | * c4907e9 Bump typescript from 4.3.2 to 4.3.4
+| |/  
+| *   1c1afb6 Merge pull request #860 from tsr488/shiny
+| |\  
+| | * 1905f9a Fixing Pop All Normal wrinkler tooltip
+| |/  
+| *   23eb28e Merge pull request #855 from CookieMonsterTeam/dependabot/npm_and_yarn/typescript-eslint/eslint-plugin-4.26.1
+| |\  
+| | * 38f430c Bump @typescript-eslint/eslint-plugin from 4.26.0 to 4.26.1
+| |/  
+| *   035318c Merge pull request #857 from CookieMonsterTeam/dependabot/npm_and_yarn/typescript-eslint/parser-4.26.1
+| |\  
+| | * 3e53ba7 Bump @typescript-eslint/parser from 4.26.0 to 4.26.1
+| * |   a620efe Merge pull request #858 from CookieMonsterTeam/dependabot/npm_and_yarn/webpack-cli-4.7.2
+| |\ \  
+| | |/  
+| |/|   
+| | * 26b08c7 Bump webpack-cli from 4.7.0 to 4.7.2
+| |/  
+| *   9252d10 Merge pull request #848 from tsr488/achievementsort
+| |\  
+| | * 0278162 Update sort to handle the case where the source data is out of order
+| | * 6ab791d Adding option to sort buildings by price until next achievement
+| * |   ee0ed81 Merge pull request #851 from CookieMonsterTeam/dependabot/npm_and_yarn/prettier-2.3.1
+| |\ \  
+| | * | 058555b Bump prettier from 2.3.0 to 2.3.1
+| * | |   f69fb19 Merge pull request #852 from CookieMonsterTeam/dependabot/npm_and_yarn/eslint-7.28.0
+| |\ \ \  
+| | * | | be569ee Bump eslint from 7.27.0 to 7.28.0
+| | |/ /  
+| * | |   c0e93f3 Merge pull request #850 from CookieMonsterTeam/dependabot/npm_and_yarn/typescript-eslint/parser-4.26.0
+| |\ \ \  
+| | |/ /  
+| |/| |   
+| | * | dd2c4e5 Bump @typescript-eslint/parser from 4.25.0 to 4.26.0
+| |/ /  
+| * |   c0e27f3 Merge pull request #853 from CookieMonsterTeam/dependabot/npm_and_yarn/typescript-eslint/eslint-plugin-4.26.0
+| |\ \  
+| | * | d694e82 Bump @typescript-eslint/eslint-plugin from 4.25.0 to 4.26.0
+| * | |   ca796c0 Merge pull request #849 from CookieMonsterTeam/dependabot/npm_and_yarn/ts-loader-9.2.3
+| |\ \ \  
+| | |/ /  
+| |/| |   
+| | * | 6c95e34 Bump ts-loader from 9.2.2 to 9.2.3
+| |/ /  
+| * |   f84f6fc Merge pull request #847 from tsr488/automerge
+| |\ \  
+| | |/  
+| |/|   
+| | * be245da Update publish-dev.yml
+| | * 977c25e Update and rename merge-branch.yml to publish-dev.yml
+| | * 962a709 Adding auto branch merge
+| |/  
+| *   4fb5871 Merge pull request #839 from CookieMonsterTeam/dependabot/npm_and_yarn/typescript-eslint/parser-4.25.0
+| |\  
+| | * eaff9ef Bump @typescript-eslint/parser from 4.24.0 to 4.25.0
+| |/  
+| *   f403f89 Merge pull request #840 from CookieMonsterTeam/dependabot/npm_and_yarn/eslint-plugin-import-2.23.4
+| |\  
+| | * 1007459 Bump eslint-plugin-import from 2.23.3 to 2.23.4
+| |/  
+| *   18b151d Merge pull request #841 from CookieMonsterTeam/dependabot/npm_and_yarn/typescript-eslint/eslint-plugin-4.25.0
+| |\  
+| | * 2febfb4 Bump @typescript-eslint/eslint-plugin from 4.24.0 to 4.25.0
+| |/  
+| *   73b9ebc Merge pull request #838 from CookieMonsterTeam/dependabot/npm_and_yarn/webpack-5.38.1
+| |\  
+| | * 39744d5 Bump webpack from 5.37.1 to 5.38.1
+| |/  
+| *   97624bd Merge pull request #842 from CookieMonsterTeam/dependabot/npm_and_yarn/typescript-4.3.2
+| |\  
+| | * 66549c5 Bump typescript from 4.2.4 to 4.3.2
+| |/  
+| *   df152fd Merge pull request #837 from DanielNoord/autosavetimer
+| |\  
+| | * ff31c45 Add option for autosave timer bar #799
+| |/  
+| * 9ba81af Update README.md
+| *   66e906e Merge pull request #836 from DanielNoord/tillnextachiev
+| |\  
+| | * 865fc3b Make current season green in Stats section #821
+| * | 47ebed0 Merge pull request #835 from DanielNoord/tillnextachiev
+| |\| 
+| | * 734f3c3 Optimize & fix LeftTillNext calculation #805 #832
+| | * fcbf1b2 Simple refactor of calculation
+| |/  
+| *   4c6dfbb Merge pull request #828 from CookieMonsterTeam/dependabot/npm_and_yarn/ts-loader-9.2.2
+| |\  
+| | * 3edcb03 Bump ts-loader from 9.1.2 to 9.2.2
+| |/  
+| *   49e9711 Merge pull request #830 from CookieMonsterTeam/dependabot/npm_and_yarn/eslint-7.27.0
+| |\  
+| | * ace1c9f Bump eslint from 7.26.0 to 7.27.0
+| * |   a48ad37 Merge pull request #829 from CookieMonsterTeam/dependabot/npm_and_yarn/webpack-5.37.1
+| |\ \  
+| | * | fa942ff Bump webpack from 5.37.0 to 5.37.1
+| | |/  
+| * |   974b948 Merge pull request #827 from CookieMonsterTeam/dependabot/npm_and_yarn/typescript-eslint/eslint-plugin-4.24.0
+| |\ \  
+| | * | e1e4327 Bump @typescript-eslint/eslint-plugin from 4.23.0 to 4.24.0
+| |/ /  
+| * |   d054b55 Merge pull request #826 from CookieMonsterTeam/dependabot/npm_and_yarn/typescript-eslint/parser-4.24.0
+| |\ \  
+| | * | 6e0add1 Bump @typescript-eslint/parser from 4.23.0 to 4.24.0
+| |/ /  
+| * |   f431d2b Merge pull request #825 from CookieMonsterTeam/dependabot/npm_and_yarn/eslint-plugin-import-2.23.3
+| |\ \  
+| | * | 68d7295 Bump eslint-plugin-import from 2.23.2 to 2.23.3
+| | |/  
+| * |   68ad398 Merge pull request #824 from CookieMonsterTeam/dependabot/npm_and_yarn/ts-node-10.0.0
+| |\ \  
+| | |/  
+| |/|   
+| | * 2be4e2d Bump ts-node from 9.1.1 to 10.0.0
+| |/  
+| *   ae6db8f Merge pull request #820 from CookieMonsterTeam/dependabot/npm_and_yarn/typescript-eslint/parser-4.23.0
+| |\  
+| | * 5715274 Bump @typescript-eslint/parser from 4.22.1 to 4.23.0
+| |/  
+| *   74cdb61 Merge pull request #819 from CookieMonsterTeam/dependabot/npm_and_yarn/typescript-eslint/eslint-plugin-4.23.0
+| |\  
+| | * 5532e4d Bump @typescript-eslint/eslint-plugin from 4.22.1 to 4.23.0
+| * |   4eae459 Merge pull request #818 from CookieMonsterTeam/dependabot/npm_and_yarn/eslint-plugin-import-2.23.2
+| |\ \  
+| | * | e787031 Bump eslint-plugin-import from 2.22.1 to 2.23.2
+| | |/  
+| * |   d9ef469 Merge pull request #817 from CookieMonsterTeam/dependabot/npm_and_yarn/webpack-5.37.0
+| |\ \  
+| | |/  
+| |/|   
+| | * 63240b0 Bump webpack from 5.36.2 to 5.37.0
+| |/  
+| *   1a520b4 Merge pull request #814 from CookieMonsterTeam/dependabot/npm_and_yarn/typescript-eslint/parser-4.22.1
+| |\  
+| | * c7fd910 Bump @typescript-eslint/parser from 4.22.0 to 4.22.1
+| |/  
+| *   a3ad66a Merge pull request #815 from CookieMonsterTeam/dependabot/npm_and_yarn/prettier-2.3.0
+| |\  
+| | * 507e168 Bump prettier from 2.2.1 to 2.3.0
+| * |   ee3aac5 Merge pull request #812 from CookieMonsterTeam/dependabot/npm_and_yarn/mocha-8.4.0
+| |\ \  
+| | * | 7202f01 Bump mocha from 8.3.2 to 8.4.0
+| | |/  
+| * |   598a364 Merge pull request #813 from CookieMonsterTeam/dependabot/npm_and_yarn/eslint-7.26.0
+| |\ \  
+| | |/  
+| |/|   
+| | * 35bd55f Bump eslint from 7.25.0 to 7.26.0
+| * |   19edf86 Merge pull request #808 from CookieMonsterTeam/dependabot/npm_and_yarn/webpack-cli-4.7.0
+| |\ \  
+| | * | f791d47 Bump webpack-cli from 4.6.0 to 4.7.0
+| | |/  
+| * |   2885722 Merge pull request #811 from CookieMonsterTeam/dependabot/npm_and_yarn/ts-loader-9.1.2
+| |\ \  
+| | * | b674376 Bump ts-loader from 9.1.1 to 9.1.2
+| | |/  
+| * |   8d1d969 Merge pull request #809 from CookieMonsterTeam/dependabot/npm_and_yarn/types/chai-4.2.18
+| |\ \  
+| | * | 88a6fc3 Bump @types/chai from 4.2.17 to 4.2.18
+| | |/  
+| * |   6eb2b76 Merge pull request #810 from CookieMonsterTeam/dependabot/npm_and_yarn/typescript-eslint/eslint-plugin-4.22.1
+| |\ \  
+| | |/  
+| |/|   
+| | * 9c24deb Bump @typescript-eslint/eslint-plugin from 4.22.0 to 4.22.1
+| |/  
+| *   d6b0284 Merge pull request #807 from tsr488/patch-1
+| |\  
+| | * 0f2bd0a Small optimization when creating temp array for sorting buildings
+| | * 41c28c2 Sorting fixes
+| | * 67d3562 Update Upgrades.js
+| |/  
+| *   770b238 Merge pull request #804 from DanielNoord/bugfixes
+| |\  
+| | * 305454b Fix issues with ""till next achievement""
+| |/  
+| *   18ace33 Merge pull request #803 from DanielNoord/exposedata
+| |\  
+| | * af803b4 Fix link to old repo
+| | * 210f4d4 Colour column of green option #773
+| | * 5a045e7 Expose building and upgrade data to global scope
+| | * cc2a754 Run tests before build
+| | * e44e39b Stop making report minified
+| | * 48c1d12 Update to new repo location
+| |/  
+| *   195d733 Merge pull request #796 from DanielNoord/eslint
+| |\  
+| | * 941ccfe Updated ESLint to 7.25.0
+| |/  
+| *   eb71fd9 Merge pull request #792 from CookieMonsterTeam/dependabot/npm_and_yarn/ts-loader-9.1.1
+| |\  
+| | * 039155a Bump ts-loader from 8.1.0 to 9.1.1
+| |/  
+| *   9fe2e8b Merge pull request #795 from CookieMonsterTeam/dependabot/npm_and_yarn/webpack-5.36.2
+| |\  
+| | * 932b03f Bump webpack from 5.32.0 to 5.36.2
+| * |   11b3a99 Merge pull request #794 from CookieMonsterTeam/dependabot/npm_and_yarn/types/chai-4.2.17
+| |\ \  
+| | |/  
+| |/|   
+| | * be8cf10 Bump @types/chai from 4.2.16 to 4.2.17
+| |/  
+| * 98e6cd1 Create dependabot.yml
+* | c3adcf4 Merge pull request #790 from CookieMonsterTeam/dev
+|/  
+*   82bf56c Merge pull request #789 from DanielNoord/hotfix
+|\  
+| * 21c7140 Push hotfix
+| * d377702 Removed unnecessary lines of code
+|/  
+*   32f0572 Merge pull request #788 from puggan/feature/paybackClicks
+|\  
+| * 89952f2 compile
+| * 8bab891 Show Payback Period x clicks
+|/  
+* 0f6cffc Rename CookieMonsterDev.js.LICENSE copy.txt to CookieMonsterDev.js.LICENSE.txt
+* 0aebc35 Update README.md
+* ec87a8a Update README.md","This update implements the following functions:
+For developers: we now expose some data calculated by Cookie Monster to the global scope. You can access it through the CookieMonsterData object ()
+The column with the most optimal building now has a green coloured indicator whenever colour coding is turned on ()
+The current season in the seasons statistics section is now displayed with green text for easier identification ()
+New option to show a timer bar that counts down till next autosave ()
+New option to sort buildings based on the ""cost till next achievement"" ()
+Added extra information about achievements in statistics page ()
+This update fixes the following bugs:
+HOTFIX: Fixed the possibility of clicking Golden Cookies multiple times with autoclickers ()
+Fixed a bug where ignoring certain buildings in rare cases did not create a ""most optimal building"" ()
+Fixed some issues related to ""left till achievement"" ()
+Fixed some cases where upgrades and buildings were not correctly sorted ()
+Fixed the tooltip of ""Pop all normal wrinklers"" displaying an incorrect reward when Shiny's are present ()"
+"* dc6f1e13 Merge pull request #1315 from timbrel/improve-syntax-parsing
+* fafb012c Normalize line endings when reading help docs
+* 74e602ed Fallback to the standard ""markdown"" syntax for the help
+* f2da85bc Normalize paths coming from the status views
+* d8440b96 Guess the syntax by looking for an open view
+* 002f5d4b Parse "".tmLanguage"" syntax files for ""fileTypes""
+* ff19f306 Improve syntax file parsing","Improve syntax selection for the ""inline diff"" (gs_inline_diff) and ""historical file view"" (gs_show_file_at_commit)
+Fix: Normalize line endings for ""GitSavvy: Help""
+Fix: Reuse diff views when coming from the status dashboard (Windows)"
+"*   e2cdb98f Merge pull request #1723 from timbrel/fix-inline-navigation
+|\  
+| * be429aef Fix navigation to the first section in the inline diff
+|/  
+*   73afaaae Merge pull request #1722 from timbrel/when-do-a-full-render
+|\  
+| * e92de2bb Clarify when we need a full render
+|/  
+*   bbc0da73 Merge pull request #1721 from timbrel/iter-tags-dashboard
+|\  
+| * fc06456f Fix `gs_tags_show_graph` not going to annotated tags
+| * 52815c5d Draw markers once all remotes have been fetched
+| * bbfd0040 Do not write to the state concurrently
+| * 002b9d2c Special mark new and changes tags in the dashboard
+| * 3ce693c9 Ensure to fetch remote tags after `remotes` has been populated
+| * 8bcec723 Do not clear ""remote_tags"" when hiding the section
+| * 3fbfb92f Fix remote tags filter
+|/  
+*   04d3b877 Merge pull request #1720 from timbrel/snappy-dashboards
+|\  
+| * 851b8040 Ensure a newline during first render
+| * be0dfbff Inject more state into `get_remote_tags_list`
+| * 04e01e46 Move remote tag fetching out of the render phase
+| * 3fc6e773 Do not wait for the branch descriptions
+| * 26ac986b Add types to everything
+| * 11aacff1 No null objects just missing keys
+| * 9e5823c2 Automatically inject state values into the render functions
+| * 260325cb Centralize initializing the global and local state
+| * c51461da Optimize initial tags dashboard render
+| * abd9e105 Abort less obtrusive for typical runtime errors
+| * 90ba4cc8 Optimize initial status render
+| * 52a022a6 Cleanup state refreshing
+| * 6b1d301c Simplify the `__init__`s
+| * 5167f9ad Sort branches in python land
+| * c0c0b004 Never unpack `status` into the store
+| * d8a7bef2 Remove `short_status` and `long_status` from `WorkingDirState`
+| * b87d1bf4 Let the status bar subscribe to `short_status`
+| * 66d6536e Directly store `long_status` and `short_status` in the store
+| * 53a4f973 Cache `remotes` in the store
+| * 8d13d997 Cache `local_tags` in the store
+| * c7666393 Invent proper return type `TagList`
+| * c7405087 Simplify `gs_tags_navigate_tag`'s selector
+| * 7e97b7c7 Make tags a reactive dashboard
+| * 1fb52555 Add return type annotations to `ui.ReactiveInterface`
+| * 0540784b Simplify selectors to navigate the branches dashboard
+| * d8798afa Ensure cursor lands on the active branch for new views
+| * 8667e03d Put `cursor_is_on_something` onto `ui.Interface`
+| * 03dfb9c0 Do a deepcopy of the state for later comparison
+| * 44ac9fc5 Extract reactive bits into `ui.ReactiveInterface`
+| * 152ec530 Beware nulls in the store and provide defaults
+| * 26b8a3d4 Cache branch descriptions in the store
+| * e1116038 Implement reactive branch dashboard
+| * 6569220e Remove unused `reset_cursor` methods
+|/  
+* 87006637 Merge pull request #1718 from timbrel/tune-status-header-info
+* d6ccfe1c Fix status dashboard tests to not throw ugly
+* 0f911ecc Slight refactor into different functions
+* 94a8e5b2 Spelling
+* e6f4370d Explicitly handle the empty string case
+* c3e66136 More versatile parsing of the decoration string
+* 9ba9a177 Stop if HEAD has only semver tags
+* a5d162c0 Suppress upstream if up-to-date with local branch
+* e1825b44 Cache `branches` in the store
+* 4f1dc819 Decouple branches from their descriptions
+* 2212ee30 Do not print out `remote/HEAD` refs","This is a follow up to v2.38.0.  Tabbing through the dashboards should now finally be instantaneous.  And the new
+recent commits sections had some optics fine tuning. See for a before/after pic,
+Some minor fixes in the tags dashboard and a small improvement:  new, unpushed tags now have a * in front of them.
+If you see a ! instead it means that sha's between the local and the remote tag do not match.
+Fixed also a small scrolling annoyance when navigating an inline diff."
+"* 8e0a122ee build: bump v8.8.2
+* 6896a8d31 fix(a11y): Remove rowgroup role from tbody element (#1907)
+* 0fb60246c build(deps): bump focus-trap-react from 10.1.1 to 10.2.1 (#1898)
+* 95f0c6a46 build(deps-dev): bump @types/react from 18.0.38 to 18.2.21 (#1897)
+* 2249999cf docs: fix typo in Matcher example (#1896)
+* f899d2db5 build(deps-dev): bump eslint-plugin-import from 2.27.5 to 2.28.1 (#1892)
+* 88c1c0bdb build(deps-dev): bump tslib from 2.5.0 to 2.6.2 (#1891)
+* 42a3a22f2 build(deps-dev): bump @testing-library/dom from 9.3.0 to 9.3.1 (#1886)
+* dbcfabc4d build(deps-dev): bump jest and @types/jest (#1888)
+* e973b221d build(deps-dev): bump rollup-plugin-dts from 5.3.0 to 5.3.1 (#1889)","What's Changed
+Bug fixes
+fix(a11y): remove redundant rowgroup role from tbody element by @gpbl in
+Other
+docs: fix typo in Matcher example by @triptu in
+Dependencies Updates
+build(deps-dev): bump rollup-plugin-dts from 5.3.0 to 5.3.1 by @dependabot in
+build(deps-dev): bump jest and @types/jest by @dependabot in
+build(deps-dev): bump @testing-library/dom from 9.3.0 to 9.3.1 by @dependabot in
+build(deps-dev): bump tslib from 2.5.0 to 2.6.2 by @dependabot in
+build(deps-dev): bump eslint-plugin-import from 2.27.5 to 2.28.1 by @dependabot in
+build(deps-dev): bump @types/react from 18.0.38 to 18.2.21 by @dependabot in
+build(deps): bump focus-trap-react from 10.1.1 to 10.2.1 by @dependabot in
+New Contributors
+@triptu made their first contribution in
+Full Changelog: v8.8.1...v8.8.2"
+"* 278bbc2db Bump v8.7.1
+* 6b5323f0a fix: cannot extend DayPickerProps, DataAttributes interface (#1755)
+* 8576c0433 build(deps): bump eslint-config-prettier from 8.7.0 to 8.8.0 (#1748)
+* 63030a676 build(deps-dev): bump @rollup/plugin-node-resolve from 15.0.1 to 15.0.2 (#1749)
+* 9fa0bea02 build(deps-dev): bump webpack from 5.76.1 to 5.78.0 (#1750)
+* 8ef405cfa build(deps-dev): bump @rollup/plugin-typescript from 11.0.0 to 11.1.0 (#1751)","What's Changed
+fix: cannot extend DayPickerProps, DataAttributes interface by @gpbl in
+Full Changelog: v8.7.0...v8.7.1"
+"* d62b6ab3 streaming metrics for stateless pods (#1745)
+* 4cfac182 streaming metrics for stateless pods (#1745)
+* 0bbae6f3 streaming metrics for stateless pods (#1745)","What's Changed
+add option to specify consumer concurrency by @yehiyam in
+update version db.hkube by @zivglik in
+add errors to version not last by @zivglik in
+test get pod by @zivglik in
+add filter time and word name in get logs by @zivglik in
+add jobid in worker by @zivglik in
+Task execution problems, not fail right away by @golanha in
+fix log orderBy to desc by @zivglik in
+no create new version if error build by @zivglik in
+allow creating a pipeline with no ttl by @golanha in
+fix get all data from algo and pipeline by @zivglik in
+Convert graphql objects in algo pipeline by @zivglik in
+Convert graphql objects in algo pipeline by @zivglik in
+update python wrapper to hkube-python-wrapper==2.5.0.dev3 by @hkube-ci in
+insert each node version algorithem  after run by @zivglik in
+Node version algorithem by @zivglik in
+get pods output log path as environment variable by @golanha in
+fix save algo with similar file by @zivglik in
+Node version algorithem by @zivglik in
+fix name keepOldVersions by @zivglik in
+fix version to debug by @zivglik in
+create version in start updater by @zivglik in
+fix download name by @zivglik in
+fix api cron promlem cors from ui localhost by @zivglik in
+fix name download file  from ui by @zivglik in
+fix download file pipeline by @zivglik in
+Resource logging upgrade by @RonShvarz in
+support elastic with brear by @golanha in
+Added error or warning facilitation for unscheduled algs. by @RonShvarz in
+Add versions to example algs with no version by @golanha in
+streaming metrics for prometheus by @RonShvarz in
+grafana trendline fix by @RonShvarz in
+Streaming pod count metric, and additionals by @RonShvarz in
+streaming metrics for stateless pods by @RonShvarz in
+New Contributors
+@RonShvarz made their first contribution in
+Full Changelog: v2.4.47...v2.5.40"
+"* c94e08d9 9.0.4
+* d59183db fix(virtual): grab DOM slides only from wrapper children
+* c89b2dd3 fix(zoom): fix gesture scale origin
+* 8bcff396 fix(pagination): fix pagination bullets children clicks
+* 539a8596 chore: lint
+* f2a0572b fix(autoplay): fixing autoplay undefined error (#6366)","Bug Fixes
+autoplay: fixing autoplay undefined error ()
+pagination: fix pagination bullets children clicks
+(8bcff39), closes
+virtual: grab DOM slides only from wrapper children
+zoom: fix gesture scale origin
+(c89b2dd), closes"
+"* fdd9b710 cue: fixes number groundness inference
+* e53305e3 cue/parser: allow full expressions for embeddings
+* 7c9b88cb cue: fix bug in type inference
+* 0ac550c8 cue: eliminate generation of block quotes","A few bug fixes
+There were a few small bug fixes that, even though old, were serious enough to warrant a new release.
+This also finalizes the implementation of allowing full expressions for embeddings.
+Changelog
+e53305e cue/parser: allow full expressions for embeddings
+0ac550c cue: eliminate generation of block quotes
+7c9b88c cue: fix bug in type inference
+fdd9b71 cue: fixes number groundness inference"
+"* c9c38045 v9.1.7
+* 5dfe5778 refactor: use conditional spread
+* 33e4e01b refactor: load certs private method
+* 2b2a8fa8 refactor: https protocol ternary consistency
+* 57f7d874 fix: https protocol option default value
+* 364ef2c2 refactor: declare fields, remove from constructor, part 2
+* 0e82819d refactor: declare fields, remove from constructor","Bug Fixes
+https protocol option default value (57f7d87)
+Maintenance Improvements
+declare fields, remove from constructor (0e82819)
+declare fields, remove from constructor, part 2 (364ef2c)
+https protocol ternary consistency (2b2a8fa)
+load certs private method (33e4e01)
+use conditional spread (5dfe577)"
+"* 0ce8c7fd v3.4.1
+* b424b4fb Merge branch 'miltador-fix-paths'
+* 3982b09e Fix path to authorization handlers","Bugfixes
+--location -l option now works on authorization handlers."
+"* 7e4dfaec v2.2.8
+*   e59ca17e Merge pull request #29 from minibikini/master
+|\  
+| * 0b0bab63 Adds `node4.3` runtime
+|/  
+* 8798c3f8 unsupported runtime warning and 404 route","Support for Nodev4 runtime. See
+Warning on unsupported runtime. See
+New catch-all route for 404s tells you what routes are valid."
+"* a8789176 v5.12.1
+* 9c90c157 Fix private http events
+* c058fa63 Linting/prettier
+* 0be8ad1e Update deps
+* 0894fce5 check for http event with private: true","Bugfixes
+randomly generated API key is not displayed if no API key is defined (thanks to @christophgysin)"
+"* c8868351 v11.1.2
+* ad48011a chore: bump deps
+* 7070416a chore: remove unused @middy/http-error-handler
+* 770ed130 revert: remove unreachable condition, fixes #1595
+* 9a8e4e79 test: add scenario test for middy, issue #1595 (#1596)
+* 4c421a3b chore: destructuring order nit
+* 4b62dfc9 chore: bump deps","Bug Fixes
+revert: remove unreachable condition (770ed13) thank you @thehenrymcintosh"
+"* 4382c44b v7.2.2.0
+* 58e7dc6d v7.2.2.0
+* a8d401d2 v7.2.2.0
+* f57b418d v7.2.2.0
+* 396d6b85 v7.2.2.0
+* 715187b0 v7.2.2.0
+* c7570ec4 v7.2.2.0
+* b185ee78 v7.2.1.0
+* 8322ad40 v7.2.1.0","The Backup page is AJAX page now
+Network status has been added to the System Info
+The channels for alerting have separated page
+A new version of HAProxy has been added for installation"
+"* b5b8f1f0 v6.3.1
+*   6835a070 Merge pull request #1000 from chardos/handle-star-routes
+|\  
+| * da8bbd74 fix: Handle star routes
+|/  
+*   c31c41f7 Merge pull request #998 from chardos/prefix-unit-integration-tests
+|\  
+| *   f8d1a9ea Merge branch 'master' into prefix-unit-integration-tests
+| |\  
+| |/  
+|/|   
+* |   6e0b5d3b Merge pull request #997 from chardos/run-unit-tests
+|\ \  
+| * | ec762373 Command for running only unit tests
+|/ /  
+| * 6dbd28fc chore(tests): Add integration test for prefix option
+| * 79c51243 chore(tests): generateHapiPath unit tests
+|/  
+* 540f03d2 Fix typo","Bug fix:
+Fix * routes handling
+Enhancements:
+NPM script for running only unit tests
+generateHapiPath unit tests, prefix integration test"
+"* dc541a6b v3.15.3
+* 6c2f3906 use unprocessed request headers. fixes","Bugfixes
+Header keys passed to your handlers by the event object are now case-sensitive (i.e. are not lowercased anymore). See"
+"* 50b2a1a9 v11.0.2
+* 0ef0dad7 test: add tests for timeout termination bug #1592
+* 552081c0 fix: timeout terminating process (#1593)
+* ae1c8b3d fix: remove unreachable condition
+* 979d6b7f chore: destructuring order nit
+* 290ca5ff chore: move provider.apiGateway.apiKeys tests
+* 59aadba8 test: add test for generated api key (#1590)
+* 03188214 chore: remove test.only
+* 97b569d3 chore: move private lambda tests
+* d7305ca0 chore: bump deps","Bug Fixes
+remove unreachable condition (ae1c8b3)
+timeout terminating process () (552081c)"
+"* 8503ed84 Update stable version to 0.4.1
+* 3b5adde3 Update API docs
+* 3143678e Update version to 0.4.1
+* 8f70387d External constants support (#163)
+* 9e4910e1 Check if model input is dict before accessing
+* 1a6ab44d Support resource references in model target_vocab
+* a390444a Fix constants bug
+* 89e28019 Remove json from valid config file extensions
+* 3c060b25 Remove my_model.py from init CLI command
+* 31971877 Update video link","New features:
+Support external constants (1vn)
+Bug fixes:
+Remove my_model.py from init CLI command fef5fae (deliahu)
+Fix constant data status bug b7e0aa4 (deliahu)
+Support resource references in model target_vocab 597d844 80e091e (deliahu)"
+"* 8981a585 Update stable version to 0.18.1
+* c37487c8 Update README.md
+* 8508d154 Remove unnecessary env var & reposition env var source (#1184)
+* 5db30840 Add retries for resource tagging (#1188)
+* 80d977e2 Fix dynamic axes for ONNX models (#1187)
+* 72b21dcb Update memory capacity calculation
+* 268b19f3 Verify operator and image versions match first in run.sh (#1183)
+* f99eeda2 Move cortex verification from serve.py to run.sh (#1180)
+* 73a88b0b Update version to 0.18.1
+* 4cdb2f82 Update install docs (#1176)
+* fd2d99c5 Update README.md (#1175)
+* 457bbb3d Allow empty cluster config (#1179)
+* 940811a6 Delete API Gateway if cluster up fails (#1172)
+* d9b5785b Check cluster-name tag when choosing load balancer for VPC Link integration (#1173)
+* 8a9917a1 Add missing extra-index-url & improve Inf docs (#1170)
+* 10becbb7 Use info log level when TF model is still loading (#1171)
+* cebacd86 Change max limit of processes per API replica (#1166)
+* 6eb9f558 Update local model downloading new lines (#1163)
+* 65ec0d3b Add troubleshooting docs for API request errors (#1165)
+* f211d341 Add troubleshooting page for TF sessions used in predict method (#1141)
+* 2a2dc0e1 Update tensorflow resnet50 example README (#1162)","Bug fixes
+Fix dynamic axes for ONNX models (RobertLucian)
+Fix memory node capacity calculation for multi-api configuration files (deliahu)
+Check cluster-name tag when choosing load balancer for VPC Link integration (deliahu)
+New guides
+Troubleshooting: API request errors (deliahu)
+Troubleshooting: TensorFlow session in predict() (RobertLucian)
+Misc
+Delete API Gateway if cluster up fails (deliahu)
+Move image version verification from serve.py to run.sh (vishalbollu)
+Add retries for resource tagging during cluster up (deliahu)
+Use info log level when TensorFlow model is being loaded (RobertLucian)
+Increase max number of processes per API replica to 100 (RobertLucian)
+Allow empty cluster config (deliahu)"
+"* 97fc76ae v4.11.2
+* 189834ea 📸 snapshots: snapshots updated
+* 388caea9 📌 versions: up @ant-design/compatible","snapshots: snapshots updated  189834e
+versions: up @ant-design/compatible  388caea"
+"* f5b9ea0f2 all: Bump to version 3.2.1
+*   f4779984a Merge pull request #1448 from TheThingsNetwork/feature/1404-console-bulk-create
+|\  
+| * 9ba19dcc9 console: Render bulk creation button conditionally
+| * 274ee842c console: Update messages
+| * b769fac9f console: Add bulk device add view
+| * cf2331f8b console: Add bulk device creator container
+| * ada0484ce console: Add bulk device create form component
+| * 84c9c0559 console: Add bulk create icon
+| * 88975df6a console: Add change handler to fetch select
+| * e662e5234 console,oauth: Add disabled prop for link button
+| * c569b8949 console,oauth: Add pulse prop to status component
+| * 67e228360 console,oauth: Add scroll-to-bottom feature to code editor
+| * 640cc908c console,oauth: Hide progress bar estimation when done
+* |   4fab5e7f3 console: Restart organization event stream (#1452)
+|\ \  
+| * | 18fcc9382 console: Restart organization event stream
+| |/  
+* |   ebd66ecf2 Merge pull request #1444 from rvolosatovs/feature/changelog
+|\ \  
+| * | 5154b2900 doc: Document release note adding
+| * | 4b1b579ad dev: Remove Release notes section from PR templates
+| * | dff629bec ci: Reference CHANGELOG.md in release notes
+| * | ab9836cff dev: Add CHANGELOG.md
+| |/  
+* |   93e8a394b Merge pull request #1451 from TheThingsNetwork/fix/ambiguous-config
+|\ \  
+| |/  
+|/|   
+| * 95c253db1 all: Add TODOs to get rid of config fallbacks
+| * cbdb68fc1 all: Use explicit config sources and providers with fallback
+|/  
+*   ca769cc65 Merge pull request #1449 from TheThingsNetwork/quickfix/kv-rename-load-cert
+|\  
+| * 32c74292b all: Document key vault certification operations
+| * e71597d0b all: Clarify get and export cert key vault operations
+|/  
+*   4025c539a Don't render button when action is not passed to notification (#1446)
+|\  
+| * 2b2dfb01f console: Set action to undefined
+|/  
+*   6983faada Handle non-existing routes in console (#1437)
+|\  
+| * 5949b4964 console: Add exact to routes for add views
+| * 0a4184cae console: Handle undefined routes for organization sub views
+| * a819090b4 console: Handle undefined routes for gateway sub views
+| * 643df59d3 console: Handle undefined routes for device sub views
+| * 81c98f204 console: Handle undefined routes for application sub views
+| * db45e209d console,oauth: Add not found route component
+|/  
+*   ad84cbf16 Merge pull request #1438 from TheThingsNetwork/feature/1404-sdk-bulk-create
+|\  
+| * cb2042b3a dev: Update locales
+| * 19cbdccf5 console: Update api tree
+| * 2bda44cd8 console: Add device template format selector
+| * fbebe15fb console: Add redux primitives for device template formats
+| * af0076ea6 util: Add device bulk create service
+| * 3f2a3055f util: Add template conversion stream service
+| * cacb83d5a util: Add template format list service
+| * bddbb139b util: Improve scope of makeRequests utility function
+| * 16033cb79 util: Improve device set helper function
+| * fb2e5610c util: Add component whitelist to path splitter
+| * 77e7f1861 console: Rename event to chunk in event stream
+| * a35b9075b util: Rename event to chunk in streams
+* |   91916c809 Add restart button on event stream error (#1415)
+|\ \  
+| * | ba88cf7a4 console: Add restart stream message
+| * | 9edf48ce7 console: Set error to undefined on start stream success
+| * | 19b991bc9 console: Display restart button in notification
+| * | eeb46981c console: Pass restart logic to notification
+| * | 99860ff1e console: Pass onRestart to events
+| * | e0a493d06 console: Add dispatch actions for starting event stream
+* | |   5108df604 Merge pull request #1443 from TheThingsNetwork/quickfix/kek-labeler-escaping
+|\ \ \  
+| * | | 2ce8e5524 all: Regenerate messages
+| * | | 83d45b85d all: Add empty key vault
+| * | | e71e91a5e all: Support KEK label escaping
+* | | |   b54c3a0ac Merge pull request #1442 from TheThingsNetwork/quickfix/auto-discovery
+|\ \ \ \  
+| |/ / /  
+|/| | |   
+| * | | 0bcee8ec6 all: Add dial option discovery and helper
+|/ / /  
+* | |   6f53f7733 Merge pull request #1440 from TheThingsNetwork/feature/as-tls-links
+|\ \ \  
+| * | | 3d46af04c as: Use explicit TLS setting for external NS links
+| * | | 01ccc0603 api: Add TLS setting to AS links
+|/ / /  
+* | |   4d17e30e6 Merge pull request #1429 from rvolosatovs/feature/fetch-blobs
+|\ \ \  
+| * | | 476c8a678 util: Return fetchers directly in config
+| * | | 842da6758 dev: Regenerate messages
+| * | | f2c05f6b9 all: Refactor interop client configuration
+| * | | c08d2d9f7 all: Support fetching from blobs
+|/ / /  
+* | |   fe5b1d5bd Merge pull request #1435 from rvolosatovs/feature/predefined-channel-freqs
+|\ \ \  
+| * | | 81b529dd3 ns: Assume max data rate index is 5 for predefined channels
+| |/ /  
+* | |   9a98f28cc Merge pull request #1427 from TheThingsNetwork/feature/1404-progress-bar
+|\ \ \  
+| * | | 1710bf8e2 console,oauth: Add progress bar component
+| | |/  
+| |/|   
+* | |   1d38111c2 Merge pull request #1433 from TheThingsNetwork/feature/redirect-no-tls
+|\ \ \  
+| * | | 675cfcb17 util: Add fallback port for https redirection
+| | |/  
+| |/|   
+* | |   3e0643aaa Merge pull request #1434 from TheThingsNetwork/feature/crypto-ctx-aware
+|\ \ \  
+| * | | 018ed5540 all: Handle key vault initialization errors
+| * | | ad856dd7a all: Make key vault and dependencies context aware
+|/ / /  
+* | |   50d6cdeb8 Merge pull request #1431 from TheThingsNetwork/feature/tls-conf-sources
+|\ \ \  
+| |/ /  
+|/| |   
+| * | 2c8e5dcf3 all: Add TODO for caching the root CA file
+| * | 228ac1399 all: Add ALPN next protos explicitly for TLS listeners
+| * | 6491a4701 all: Split TLS client and server configuration
+| * | 9eaa917f4 all: Regenerate messages
+| * | 2f4e57c3f util: Support loading TLS certificates from the key vault
+| * | e2b753d98 util: Cancel component on init error
+| * | 3ea9c1be9 util: Converge TLS configuration and check ambiguity
+| |/  
+* |   391bbb4d9 Merge pull request #1430 from rvolosatovs/feature/update-protoc
+|\ \  
+| |/  
+|/|   
+| * 2b24e6616 dev: Update proto-related dependencies
+| * 13d90872a dev: Update protoc image version
+|/  
+*   4891ba904 Merge pull request #1413 from TheThingsNetwork/feature/1410-qr-code-svc
+|\  
+| * 5a9932799 cli: Read JSON array input as separate objects
+| * a5b3200d5 cli: Harmonize list format aliases
+| * 3ffd8459f all: Regenerate messages
+| * d72ee22f7 cli: Use QR Code Generator service to generate QR codes
+| * 179e7b0d0 qrg: Start QR Code Generator component
+| * aa73bd763 qrg: Add QR code generator component
+| * 0b2d6e302 dev: Add qrg commit topic
+| * f092030a5 all: Register LoRa Alliance TR005 draft 2 QR code format
+| * d55278b76 all: Add QR code formats and registry
+| * 1dc8afada api: Add end device QR code generator
+| * 7b9398ca5 api: Promote Picture to its own file
+|/  
+*   131cb2761 Merge pull request #1392 from TheThingsNetwork/feature/end-device-claiming
+|\  
+| * 6f89ce324 all: Regenerate messages
+| * fd49fde25 cli: Add generating QR codes for end devices
+| * 410c0ef82 util: Support encoding end device data in QR codes
+| * 3db3a855a util: Support escaped percentage sign
+| * 767a43858 util: Validate QR TR005 draft 2 DevVCode
+| * 1df69bda0 api: Change authentication code value to string
+| * 5b681026e ns: Remove nil-checks on specified field masks
+| * 5bb350ad8 all: Add RPC middleware to fallback to default port
+| * a27255572 api: Fix validation for QR code
+| * b3669209e cli: Add application claim (un)authorize commands
+| * b3b7a527a all: Interpret TR005 QR code DevVCode as string
+| * b1890a9f2 cli: Consistent casing in log warnings
+| * a0d12403c cli: Add command to claim end devices
+* |   6d3934cd1 Merge pull request #1419 from rvolosatovs/fix/test-coverage
+|\ \  
+| * | 6fce75e76 util: Fix crypto package test organization
+| * | 27fef9253 util: Improve crypto package test coverage
+| * | d0c1afeb0 util: Improve encoding/lorawan package test coverage
+* | |   686f0a675 Merge pull request #1421 from TheThingsNetwork/quickfix/gs-mqttv2-ports
+|\ \ \  
+| |_|/  
+|/| |   
+| * | 19c361023 gcs: Use MQTT V2 for TTKG
+| * | 7f777633f all: Enable GS MQTT V2 listener by default and assign port
+|/ /  
+* |   e8fd39902 Merge pull request #1420 from TheThingsNetwork/fix/console-collaborator-message
+|\ \  
+| * | 4783c34f0 console: Fix add collaborator message
+* | |   b0b7b5832 Merge pull request #1418 from TheThingsNetwork/issue/960-test-log
+|\ \ \  
+| |/ /  
+|/| |   
+| * | 161922e8d all: Remove unused pkg/log/middleware/filter
+| * | bd2688433 all: Improve test coverage of pkg/log
+| * | 0941ca6cb all: Remove unused log.Must
+* | |   b1c320bee Merge pull request #1417 from TheThingsNetwork/issue/960-test-email
+|\ \ \  
+| |_|/  
+|/| |   
+| * | 0b64e6f07 all: Test pkg/email/smtp with local smtp server
+| * | 3bcb01fc3 all: Improve test coverage of pkg/email
+| * | 182145bd0 all: Add initial template funcs for emails
+| |/  
+* |   278b1032b Merge pull request #1416 from TheThingsNetwork/issue/960-testing-johan
+|\ \  
+| * | e80807668 all: Cleanup and test password checks
+| * | 0daebbc6a gs: Improve test coverage
+| * | ebc60b943 as: Test MQTT topic structure
+| * | eaa92e1c6 all: Test invalid data and signature of Microchip manifests
+| * | 8519213a5 as: Test getting MQTT connection info
+| * | 488b55edb as: Test frontend formatters
+|/ /  
+* |   4e2c671e1 Merge pull request #1414 from TheThingsNetwork/fix/supported-versions
+|\ \  
+| * | 03e02dbd1 dev: Update release steps
+| * | 6ee79126c doc: Update list of supported versions
+| |/  
+* |   ae52aacce Merge pull request #1411 from TheThingsNetwork/feature/dtc-format-exts
+|\ \  
+| |/  
+|/|   
+| * 766afb006 all: Indicate .json file extension for Microchip manifests
+| * 9e1bd9e27 api: Add optional file extensions to device template formats
+* |   546d4508f Add axios interceptor for catching errors outside SDK (#1397)
+|\ \  
+| * | f9613f60d console: Propagate errors from axios instance in the correct format
+|  /  
+* |   b2cd2ecd7 Merge pull request #1412 from TheThingsNetwork/fix/oauthclient-config
+|\ \  
+| |/  
+|/|   
+| * 17c2fb25f oauth: Use config from request context
+|/  
+*   ae469dc3d Merge pull request #1408 from TheThingsNetwork/quickfix/config-location
+|\  
+| * 2fc90ff03 all: Use OS working, home and user config directory for config lookup
+| * a956839d6 all: Fix reading config from files in order
+|/  
+*   f05f4d278 Merge pull request #1409 from TheThingsNetwork/fix/console-env-structure
+|\  
+| * d8466ef82 console,oauth: Update env structure
+| * 696f09483 console,oauth: Refactor app config json structure
+|/  
+*   a83e5a2e6 Merge pull request #1400 from TheThingsNetwork/feature/mchp-atecc608a-tnglora
+|\  
+| * 7ded161ab util: Add default JoinEUI to device template
+| * b0b23c4e9 util: Support ATECC608A-TNGLORA
+| * 556256e1e util: Reorder ATECC608A types
+|/  
+*   f8c5f4527 Merge pull request #1402 from TheThingsNetwork/feature/console-support-button
+|\  
+| * 55482ce16 dev: Update locales
+| * 7a5d7872a console: Add prop-types to app view
+| * da15238d3 console: Add support button to console footer
+| * 0b43b5a31 console,oauth: Add optional support button to footer
+| * f27a259a9 console,oauth: Update env selectors
+| * eebfba3a9 console: Update prop-type library
+| * 97fc0f728 console,oauth: Extend env lib
+| * ff9aa3320 console: Add support link config
+* |   da3c2d22c Merge pull request #1403 from TheThingsNetwork/fix/1401-js-unexposed-root-keys
+|\ \  
+| * | a8369b3e5 js: Support nil root keys from crypto service
+| * | 99f269e5d api: Change documented expected error code for unexposed root keys
+* | |   c042a2fbb Merge pull request #1390 from TheThingsNetwork/fix/970-release-regex
+|\ \ \  
+| |/ /  
+|/| |   
+| * | 7856a153b ci: Release only on tagged releases
+|  /  
+* |   de8488465 Merge pull request #1398 from TheThingsNetwork/feature/939-right-management
+|\ \  
+| |/  
+|/|   
+| * dcb499356 dev: Update locales
+| * 83e7f5ab5 console: Fix add collaborator message
+| * 3f23f46b6 console,oauth: Update shared messages
+| * e28f1c1a4 console: Fix notification logic for right forms
+| * 0cf45dc56 console: Fix initial value for right forms
+| * f74e7df3a console: Rename universal rights to pseudo rights
+| * 45170c4d4 console: Renew rights group ui logic
+| * 0b4268026 console: Update prop-type library
+| * 4d13a7350 console,oauth: Add withComputedProps hoc
+* b06c103a2 Merge pull request #1395 from TheThingsNetwork/feature/offload-status-message
+* 6fe7d5880 gs: Add separate interface for status messages
+* 7f7217633 gs: Forward status messages to upstream host","Added
+support-link URI config to the Console to show a ""Get Support"" button.
+Option to explicitly enable TLS for linking of an Application Server on an external Network Server.
+Service to list QR code formats and generate QR codes in PNG format.
+Status message forwarding functions to upstream host/s.
+Support for authorizing device claiming on application level through CLI. See ttn-lw-cli application claim authorize --help for more information.
+Support for claiming end devices through CLI. See ttn-lw-cli end-device claim --help for more information.
+Support for converting Microchip ATECC608A-TNGLORA manifest files to device templates.
+Support for Crypto Servers that do not expose device root keys.
+Support for generating QR codes for claiming. See ttn-lw-cli end-device generate-qr --help for more information.
+Support for storage of frequency plans, device repository and interoperability configurations in AWS S3 buckets or GCP blobs.
+Changed
+Enable the V2 MQTT gateway listener by default on ports 1881/8881.
+Improve handling of API-Key and Collaborator rights in the console.
+Fixed
+Fix bug with logout sometimes not working in the console.
+Fix not respecting RootCA and InsecureSkipVerify TLS settings when ACME was configured for requesting TLS certificates.
+Fix reading configuration from current, home and XDG directories.
+Docker images
+docker pull thethingsnetwork/lorawan-stack:latest
+docker pull thethingsnetwork/lorawan-stack:3
+docker pull thethingsnetwork/lorawan-stack:3.2
+docker pull thethingsnetwork/lorawan-stack:3.2.1"
+"* 167d78f1 2.6.7
+* 51eb5021 Get ready for version 2.6.7 stable
+* abda7fb6 [Dashboard|User] Control over what cards are shown on the dashboard
+* 7f48eb71 Reformatted the code
+* 6dde203b Fixes #2915
+* 237f6796 Fixes search dropdown not appearing after editing
+*   13ede1b2 Merge branch 'dev' of https://github.com/magicbug/Cloudlog into dev
+|\  
+| *   e348de23 Merge pull request #3009 from PartTimeLegend/patch-1
+| |\  
+| | *   1eb655b5 Merge branch 'dev' into patch-1
+| | |\  
+| | |/  
+| |/|   
+| | * 7b457464 Remove extra comma causing error
+* | dfe5471b Fixed links not being visable
+|/  
+* 1818530c Returns the correct hamsat user fields
+* c2b17775 Fixes errors when the fields arent there
+*   135db2cb Merge pull request #3003 from phl0/workableHamsatPasses
+|\  
+| * 9a79cbcf Add option to configure private feed key and show only workable passe
+* | dff12980 Merge pull request #3002 from phl0/dokDetails
+|\| 
+| * 07bd0e64 Add link for DOK districts
+* 35bf8854 Merge pull request #3001 from DH5DAX/master
+* 7e315677 Cleanup unused class
+* f03b9696 Contesting Dupe Check Improvement","What's Changed
+Dashboard - Side Cards are now selectable (See Notes) by @magicbug
+Minor bug fixes and code formatting changes by @magicbug
+Contest Logging Dupe Checking Bugfix/Improvement by @DH5DAX in
+Add link for DOK districts by @phl0 in
+API Workable hamsat passes (You need to provide API key in your account settings) by @phl0 in
+Remove extra comma in the user edit save post code causing error by @PartTimeLegend in
+Dashboard Cards
+You will notice that the cards you used to see on the right side of the dashboard when you login have disappeared this is by design and you can now enable or disable ones that arent relevant to you in your account settings just click your callsign top right and select Account and its under Cloudlog Preferences.
+New Contributors
+@DH5DAX made their first contribution in
+@PartTimeLegend made their first contribution in
+Full Changelog: 2.6.6...2.6.7"
+"*   51606a79f Merge pull request #3893 from TheThingsNetwork/release/v3.11.2
+|\  
+| * 8e90543d5 all: Bump to version 3.11.2
+| * 50394183b data: Update external repositories
+|/  
+*   cb2f40957 Merge pull request #3884 from TheThingsNetwork/fix/webmiddleware-test
+|\  
+| * 839e542cf all: Move webmiddleware peer test to test package
+|/  
+*   1032f723a Merge pull request #3873 from TheThingsNetwork/fix/gcs-panic
+|\  
+| * 8f1187fc7 util: Handle empty radios in frequency plan
+|/  
+*   eaa37a13e Merge pull request #3880 from TheThingsNetwork/fix/3649-session-confirmation-fixes
+|\  
+| * 1c2911acb api: Allow FPort=0 uplinks
+| * 7603316f0 as: Rebuild end device sessions on downlink queue operations failure
+| * fcf207654 as: Match end device session on downlink nack
+| * 0031bd3e2 as: Match end device session on downlink queue invalidation
+| * 2f2e5cdd1 as: Extract session matching logic to a separate function
+* |   cc59cab71 Merge pull request #3866 from TheThingsNetwork/feature/identifiers-in-simulated-uplinks
+|\ \  
+| * | 22277f70a as: Unit tests for SimulateUplink
+| * | 18505c3c3 as: Add DevEUI and JoinEUI in simulated uplinks
+* | |   9100f5001 Merge pull request #3879 from TheThingsNetwork/fix/3649-ns-changes
+|\ \ \  
+| | |/  
+| |/|   
+| * | e9a99ae11 ns: Simplify queue error reporting
+| * | 3827aa071 ns: Send FPort=0 uplinks to the Application Server
+| * | 42e33b7b2 ns: Emit session information on downlink queue operation errors
+| * | fa66099e5 api: Add session information to AsNs communcation
+|/ /  
+* |   4ad3a21f4 Merge pull request #3852 from rvolosatovs/fix/ns-app-queue
+|\ \  
+| * | 0d3a32fee dev: Update CHANGELOG
+| * | 248899db0 ns: Remove unused error
+| * | 1722236ab cli: Retry application uplinks hanging for more than 1 minute
+| * | 0bbe14bfc ns: Reimplement application uplink queue draining
+| * | 675bc9c75 util: Add RangeStreams and XAUTOCLAIM implementation
+| * | 72aac65f8 dev: Regenerate messages
+| * | 8a422ab01 ns: Fix application uplink queue message ACK
+* | |   a740906e6 Merge pull request #3835 from TheThingsNetwork/feature/pba-telemetry
+|\ \ \  
+| * | | 18236100a pba: Add Telemetry
+|/ / /  
+* | |   216a3db0d Merge pull request #3822 from TheThingsNetwork/feature/dr-test-setup
+|\ \ \  
+| |/ /  
+|/| |   
+| * | 1254fd38e dev: Add test retries for cypress in headless mode
+| * | 9e85f232a dev: Adjust e2e tests
+| * | 254e1a71d dev: Extend device e2e tests
+| * | 65e4f9722 dev: Add device creation fixtures for e2e tests
+| * | acd6e953a dev: Update cypress dependency to 6.5.0
+| * | 86838c2cb console: Clean up device repo validation schema
+* | |   61192aef7 Merge pull request #3859 from TheThingsNetwork/issue/data-formats-documentation
+|\ \ \  
+| * | | 5fcf422e2 console: Add data formats documentation link
+* | | |   81116a483 Merge pull request #3877 from TheThingsNetwork/fix/ns-non-retryable-path-errors
+|\ \ \ \  
+| * | | | 9cfd2b5d4 dev: Revert changelog update
+| * | | | c94967806 ns: Fix determining non-retryable errors and add annotations
+|/ / / /  
+* | | |   5df6e14a7 Merge pull request #3867 from TheThingsNetwork/feature/api-key-created-at
+|\ \ \ \  
+| * | | | e9323e354 api,is: Add created_at and updated_at to APIKey protos
+* | | | |   562bf1b14 Merge pull request #3875 from TheThingsNetwork/feature/issue-triage
+|\ \ \ \ \  
+| * | | | | 2d7e62cab ci: Add workflow to triage new issues
+| |/ / / /  
+* | | | |   f2b35666e Merge pull request #3860 from TheThingsNetwork/feature/improve-sentry-logging
+|\ \ \ \ \  
+| * | | | | 06cfdb2ee dev: Add error utility tests
+| * | | | | 5b81a3a52 console,account: Improve sentry error ingestion
+* | | | | |   6540cf02e Merge pull request #3868 from TheThingsNetwork/feature/cli-doc
+|\ \ \ \ \ \  
+| |_|_|_|/ /  
+|/| | | | |   
+| * | | | | dc2a0ec57 cli: Improve documentation YAML
+* | | | | |   a2af52db7 Merge pull request #3872 from TheThingsNetwork/fix/gs-abs-time-error
+|\ \ \ \ \ \  
+| |_|_|/ / /  
+|/| | | | |   
+| * | | | | bbb1f652e dev: Update changelog
+| * | | | | 9138797cd gs: Change error code for conflict on absolute time to AlreadyExists
+|/ / / / /  
+* | | | |   4a628f614 Merge pull request #3853 from TheThingsNetwork/fix/as-panic-tlv
+|\ \ \ \ \  
+| |/ / / /  
+|/| | | |   
+| * | | | 1ac51b433 as: Process webhook traffic inside a task
+| * | | | d6e220514 as: Process application packages traffic inside a task
+| * | | | 692a2cbbc as: Ensure TLV encoding length does not overflow
+|/ / / /  
+* | | |   e2fa6c085 Merge pull request #3862 from TheThingsNetwork/fix/oauth-events
+|\ \ \ \  
+| * | | | ca32c2e66 all: Add remote IP and UA to web request context
+| * | | | e140d5f58 is: Publish logout event on oauth-initiated user logout
+| * | | | 6a5e11c4f is: Move account app observability back to oauth package
+| * | | | 6af9db64a is: Fix event type triggered on login
+|/ / / /  
+* | | |   76707e78f Merge pull request #3801 from TheThingsNetwork/feature/3522-prefill-id
+|\ \ \ \  
+| * | | | d1baf4b18 console: Select generated device id on focus in dr form
+| * | | | 402a787e9 console,account: Add inputRef to input component
+| * | | | eef98c490 dev: Extend device e2e tests
+| * | | | c397eacf1 console,account: Use arrow functions in field
+| * | | | 4ae9c2c47 console,account: Fix blur event handling in field
+| * | | | b9b2c8419 console: Prefill device id on dev_eui change
+|/ / / /  
+* | | |   dc6335806 Merge pull request #3783 from TheThingsNetwork/feature/docs-release-template
+|\ \ \ \  
+| |/ / /  
+|/| | |   
+| * | | f60b24134 dev: Update docs in release template
+|/ / /  
+* | |   265da0eef Merge pull request #3821 from TheThingsNetwork/issue/3736-goreleaser-docs
+|\ \ \  
+| * | | 6fc8dcb36 dev: Fix documentation of GoReleaser snapshots
+|  / /  
+* | |   1be7967fe Merge pull request #3861 from TheThingsNetwork/fix/oauth-api
+|\ \ \  
+| |/ /  
+|/| |   
+| * | e2c1b42cc cli: Add missing pagination flags to OAuth commands
+| * | be92ef434 is: Fix pagination in OAuth store
+|/ /  
+* |   27cfeea8d Merge pull request #3782 from TheThingsNetwork/feature/api-doc
+|\ \  
+| * | 4b4ed9309 api: Improve documentation
+|/ /  
+* | 2dbb08db6 as: Define package name as const
+* |   497e76321 Merge pull request #3834 from TheThingsNetwork/fix/device-create-conflict
+|\ \  
+| * | 3ff56dfc9 console: Fix device creation conflict
+|/ /  
+* | d8bf94f3e dev: Move NS fixes to Unreleased in CHANGELOG
+* |   14210aa24 Merge pull request #3846 from rvolosatovs/fix/ns-panic
+|\ \  
+| * | 0d5eeb085 dev: Update CHANGELOG
+| * | 96f76bc00 ns: Fix matching type conditional
+| |/  
+* |   306c01886 Merge pull request #3847 from TheThingsNetwork/fix/3840-unclaim-failure
+|\ \  
+| |/  
+|/|   
+| * e217ac557 gs: Decouple the lifetime of the context before unclaim
+| * 88d22a5e8 util: Keep context values during component context decoupling
+|/  
+*   ff6b0b755 Merge pull request #3836 from TheThingsNetwork/fix/as-strengthen-session-check
+|\  
+| * 9a9670aef as: Check if the AppSKey is available before access
+* |   724aca212 Merge pull request #3746 from TheThingsNetwork/feature/dev-api-key
+|\ \  
+| * | 2fac93f02 dev: Write admin API Key to file
+| * | 7f156d65e dev: Create admin API key for dev stack
+| |/  
+* |   f3d34b7bf Merge pull request #3837 from rvolosatovs/fix/ns-matching
+|\ \  
+| |/  
+|/|   
+| * 324cc5ec0 ns: Fix possible race condition in uplink matching
+|/  
+* a1df8cb0f Merge pull request #3826 from TheThingsNetwork/fix/3633-temp-value-stat
+* be17d6142 gs: Change type of temp field to float32","Added
+Pagination flags for the users oauth authorizations list and users oauth access-tokens list CLI commands.
+End device ID generation based on DevEUI in The LoRaWAN Device Repository creation form in the Console.
+remote_ip and user_agent metadata on OAuth events.
+created_at and updated_at fields to API Keys.
+Telemetry for Packet Broker Agent.
+Changed
+temp field of the UDP stats message is now type float32 (pointer).
+Fixed
+Ocassional race condition in uplink matching with replicated Network Server instances.
+Ocassional race condition when matching pending sessions.
+Conflict error when registering an end device via the wizard in the Console.
+Pagination in the List and ListTokens RPCs of the OAuthAuthorizationRegistry.
+Event name on user login.
+Application uplink queue handling in Network Server.
+Application Server session desynchronization with the Network Server. The Application Server will now attempt to synchronize the end device session view on downlink queue operational errors. This fixes the f_cnt_too_low and unknown_session errors reported on downlink queue push and replace.
+Panic while generating SX1301 config for frequency plans without radio configuration.
+Release notes
+Docker images
+docker pull thethingsnetwork/lorawan-stack:3.11
+docker pull thethingsnetwork/lorawan-stack:3.11.2
+docker pull ghcr.io/thethingsnetwork/lorawan-stack:3.11
+docker pull ghcr.io/thethingsnetwork/lorawan-stack:3.11.2"
+"* bb43cea8 5.0.16
+* a3f83c57 ✅ tests: fix ci
+* f1c6320c ✅ tests: fix ci
+* 9b43e137 🔥 clean: remove unuse code
+* 7b1e29a9 💄 UI: fix PageHeaderWrapper tablist style
+* 21463951 Update .umirc.js","tests: fix ci  a3f83c5
+tests: fix ci  f1c6320
+clean: remove unuse code  9b43e13
+UI: fix PageHeaderWrapper tablist style  7b1e29a
+Update .umirc.js  2146395"
+"* db1c33168 Merge pull request #2917 from rvolosatovs/release/3.8.7
+* 20ebefa5b all: Bump to version 3.8.7
+* c4b64525d doc: Update CHANGELOG
+* 1baaa8c94 Merge pull request #2904 from rvolosatovs/feature/ns-uplink-buffer-config
+* 6ee53e7f4 Merge pull request #2898 from rvolosatovs/fix/ns-as-fcnt","Release notes
+Docker images
+docker pull thethingsnetwork/lorawan-stack:3.8
+docker pull thethingsnetwork/lorawan-stack:3.8.7"
