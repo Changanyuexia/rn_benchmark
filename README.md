@@ -23,23 +23,12 @@
 
 ## Models
 
-### Fine-tuned Models
 
-- BART
-- T5
-- Qwen2.5-7B ([HuggingFace](https://huggingface.co/Qwen/Qwen2.5-7B-Instruct))
-- Mistral-8B ([HuggingFace](https://huggingface.co/mistralai/Mistral-8B-Instruct-2410))
-- Llama3.1-8B ([HuggingFace](https://huggingface.co/meta-llama/Llama-3.1-8B-Instruct))
+|  Settings   | Models |
+|--------------|--------|
+| Fine-tuned   | BART, T5, [Qwen2.5-7B](https://huggingface.co/Qwen/Qwen2.5-7B-Instruct), [Mistral-8B](https://huggingface.co/mistralai/Mistral-8B-Instruct-2410), [Llama3.1-8B](https://huggingface.co/meta-llama/Llama-3.1-8B-Instruct) |
+| Few-shot     | [Qwen2.5-7B](https://huggingface.co/Qwen/Qwen2.5-7B-Instruct), [Mistral-8B](https://huggingface.co/mistralai/Mistral-8B-Instruct-2410), [Llama3.1-8B](https://huggingface.co/meta-llama/Llama-3.1-8B-Instruct), [Mistral-22B](https://huggingface.co/mistralai/Mistral-Small-Instruct-2409), [Qwen2.5-32B](https://huggingface.co/Qwen/Qwen2.5-32B-Instruct), [Llama3.3-70B](https://huggingface.co/meta-llama/Llama-3.3-70B-Instruct), [Qwen2.5-72B](https://huggingface.co/Qwen/Qwen2.5-72B-Instruct) |
 
-### Few-shot Models
-
-- Qwen2.5-7B ([HuggingFace](https://huggingface.co/Qwen/Qwen2.5-7B-Instruct))
-- Mistral-8B ([HuggingFace](https://huggingface.co/mistralai/Mistral-8B-Instruct-2410))
-- Llama3.1-8B ([HuggingFace](https://huggingface.co/meta-llama/Llama-3.1-8B-Instruct))
-- Mistral-22B ([HuggingFace](https://huggingface.co/mistralai/Mistral-Small-Instruct-2409))
-- Qwen2.5-32B ([HuggingFace](https://huggingface.co/Qwen/Qwen2.5-32B-Instruct))
-- Llama3.3-70B ([HuggingFace](https://huggingface.co/meta-llama/Llama-3.3-70B-Instruct))
-- Qwen2.5-72B ([HuggingFace](https://huggingface.co/Qwen/Qwen2.5-72B-Instruct))
 
 ## Getting Started
 
