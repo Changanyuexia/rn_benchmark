@@ -269,6 +269,47 @@ def save_filtered_out_entries(filtered_entries, output_file_path):
     with open(output_file_path, 'w', encoding='utf-8') as f:
         json.dump(filtered_entries, f, indent=4, ensure_ascii=False)
 
+def load_words(path):
+    with open(path, 'r', encoding='utf-8') as f:
+        return set([w.strip().lower() for w in f if w.strip()])
+
+def normalize(s):
+    return s.strip().lower().replace('_', ' ').replace('-', ' ')
+
+def multi_label_filter(data):
+    # Load category keywords
+    F_SYNONYMS = load_words('words/features.txt') | {'features', 'feature'}
+    I_SYNONYMS = load_words('words/improvements.txt') | {'improvements', 'improvement'}
+    BF_SYNONYMS = load_words('words/bug_fixes.txt') | {'bug fixes', 'bug fix', 'bug', 'bugs'}
+    DR_SYNONYMS = load_words('words/deprecations_removals.txt') | {'deprecations and removals', 'deprecation', 'removal', 'removals'}
+    CATEGORIES = [F_SYNONYMS, I_SYNONYMS, BF_SYNONYMS, DR_SYNONYMS]
+
+    filtered = []
+    removed = []
+    for idx, item in enumerate(data):
+        crn = item.get('cleaned_release_note', '')
+        # Merge all text content
+        if isinstance(crn, str):
+            text = normalize(crn)
+        elif isinstance(crn, dict):
+            text = ' '.join([
+                normalize(str(k)) + ' ' + ' '.join([normalize(str(x)) for x in v]) if isinstance(v, list) else normalize(str(v))
+                for k, v in crn.items()
+            ])
+        else:
+            removed.append({'idx': idx, 'reason': 'invalid_type'})
+            continue
+
+        hit_types = 0
+        for synonyms in CATEGORIES:
+            if any(syn in text for syn in synonyms):
+                hit_types += 1
+        if hit_types >= 2:
+            filtered.append(item)
+        else:
+            removed.append({'idx': idx, 'reason': 'not_multi_label'})
+    return filtered, removed
+
 # Example usage:
 # Load data from final_data.jsonl
 all_data = load_jsonl('final_data.jsonl')
@@ -282,10 +323,13 @@ rn_entries = [
 # Clean release notes
 cleaned_data, filtered_out_entries = clean_release_notes(rn_entries)
 
+# ===== 新增：多标签分类筛选 =====
+cleaned_data, removed_multi = multi_label_filter(cleaned_data)
+
 # Save cleaned data and filtered out entries
 save_cleaned_data(cleaned_data, 'cleaned_rn.json')
-save_filtered_out_entries(filtered_out_entries, 'filtered_out_release_notes.json')
+save_filtered_out_entries(filtered_out_entries + removed_multi, 'filtered_out_release_notes.json')
 
 print(f"Number of cleaned release notes: {len(cleaned_data)}")
-print(f"Number of filtered out release notes: {len(filtered_out_entries)}")
+print(f"Number of filtered out release notes: {len(filtered_out_entries) + len(removed_multi)}")
 
