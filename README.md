@@ -2,7 +2,7 @@
 
 ## Dataset Overview
 
-**ReleaseEval** is a comprehensive benchmark for evaluating the release note generation capabilities of Language Models (LMs), covering three core tasks:
+**ReleaseEval** is a comprehensive benchmark for evaluating the release note generation capabilities of Language Models, covering three core tasks:
 
 - **commit2sum**: Generate release notes from commit messages.
 - **tree2sum**: Generate release notes using commit tree structure information.
@@ -14,9 +14,9 @@
 .
 ├── data_collection/   # Scripts for collecting release notes, commit messages, tags, and diffs from GitHub repositories. The repo.txt file specifies the target repositories.
 ├── clean/             # Scripts for cleaning and preprocessing release notes and commit data.
-├── data/              # Datasets for model evaluation across the three tasks (commit2sum, tree2sum, diff2sum). Includes both full and sample data.
+├── data/              # Datasets for model evaluation across the three tasks (commit2sum, tree2sum, diff2sum). Due to the large data limit, including CSV files for fine-tuning BART, T5, and few-shot LLMs. The _instruct.json files are specifically designed for fine-tuning LLMs.
 ├── experiments/       # Scripts and configs for model evaluation in both fine-tuning and few-shot settings.
-├── human_eval/        # Human evaluation results and annotation files for dataset quality and model performance analysis.
+├── human_eval/        # Human evaluation results and annotation files for dataset quality and model performance analysis, respectively.
 ├── results/           # Model evaluation results (few-shot and fine-tuning). Includes eval.py for automatic metric calculation (BLEU-4, ROUGE-L, METEOR).
 └── README.md          # Project documentation.
 ```
@@ -46,12 +46,6 @@
 ### Download the Data
 
 Download and unzip the dataset from the `data/` directory.  
-Due to the large size of the full dataset, we also provide sample data for quick testing and development.
-
-### Data Collection & Preprocessing
-
-- Use scripts in `data_collection/` to crawl and process release notes, commit messages, tags, and diffs from GitHub repositories listed in `repo.txt`.
-- Use scripts in `clean/` to clean and filter the raw data, producing high-quality release note datasets for each task.
 
 ### Run Experiments
 
@@ -60,20 +54,13 @@ Due to the large size of the full dataset, we also provide sample data for quick
 - We provide `job_bart.sh` and `job_t5.sh` for fine-tuning BART and T5 models on all three tasks.  
   Please download the corresponding pre-trained models into the `model/` directory before running.
 - For fine-tuning LLMs such as Qwen2.5-7B, LLaMA3.1-8B, and Mistral-8B, we utilize the [LLaMA-Factory](https://github.com/hiyouga/LLaMA-Factory) framework.
-- Example fine-tuning templates for Llama3.1-8B and other LLMs are provided in the `experiments/` directory.
-
-#### Few-shot Inference
+- Example fine-tuning templates for Llama3.1-8B are provided in the experiments/ directory.
+  
+#### Few-shot
 
 - Use `run_infer_all_tasks.sh` to perform few-shot inference with LLMs across all three tasks.
-- The script will automatically evaluate models using the sample or full datasets and save the results.
+- The script will automatically evaluate models and save the results.
 
-### Human Evaluation
-
-- Human evaluation results and annotation files are provided in the `human_eval/` directory for both dataset quality and model performance analysis.
-
-### Automatic Evaluation
-
-- Use `results/eval.py` to compute automatic metrics (BLEU-4, ROUGE-L, METEOR) for model predictions.
 
 ## Citation
 
