@@ -1,0 +1,18 @@
+{
+"diff_train": {
+    "file_name": "rn_benchmark/data/diff2sum/train_instruct.json",
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output"
+    }
+  },
+  "diff_test": {
+    "file_name": "rn_benchmark/data/diff2sum/test_instruct.json",
+    "columns": {
+      "prompt": "instruction",
+      "query": "input",
+      "response": "output"
+    }
+  }
+}
