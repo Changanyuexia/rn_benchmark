@@ -34,7 +34,7 @@
 
 ### Download the Data
 
-Download and unzip the dataset from the `data/` directory.  
+Download the dataset from the `data/` directory.  
 
 ### Run Experiments
 
