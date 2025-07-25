@@ -9,5 +9,5 @@ source ~/.bashrc
 conda activate lf
 
 
-CUDA_VISIBLE_DEVICES=0,1,2,3 llamafactory-cli train examples/train_lora/llama3_diff_train.yaml
-CUDA_VISIBLE_DEVICES=0,1,2,3 llamafactory-cli train examples/train_lora/llama3_diff_predict.yaml 
+CUDA_VISIBLE_DEVICES=0,1,2,3 llamafactory-cli train llama3_diff_train.yaml
+CUDA_VISIBLE_DEVICES=0,1,2,3 llamafactory-cli train llama3_diff_predict.yaml 
