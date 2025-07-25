@@ -41,7 +41,7 @@ Download the dataset from the `data/` directory.
 #### Fine-tuning
 
 - We provide `job_bart.sh` and `job_t5.sh` for fine-tuning BART and T5 models on all three tasks.  
-  Please download the corresponding pre-trained models into the `model/` directory before running.
+  Please download the corresponding pre-trained models into the `experiments/fine-tune/lm/model/` directory before running.
 - For fine-tuning LLMs such as Qwen2.5-7B, LLaMA3.1-8B, and Mistral-8B, we utilize the [LLaMA-Factory](https://github.com/hiyouga/LLaMA-Factory) framework.
 - Example fine-tuning templates for Llama3.1-8B are provided: `llama3_diff_ft`.sh.
   
