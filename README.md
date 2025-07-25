@@ -49,7 +49,7 @@ Download the dataset from the `data/` directory.
 #### Few-shot
 
 - Use `run_infer_all_tasks.sh` to perform few-shot inference with LLMs across all three tasks.
-- The script will automatically evaluate models and save the results.
+  The script will automatically evaluate models and save the results.
 
 
 ## Citation
